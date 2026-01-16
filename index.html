@@ -1,133 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bachata Barcelona</title>
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bachata Barcelona</title>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-    /* TITULOS */
-    h1 {
-      color: #d4af37;
-      font-size: 38px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin: 0;
-    }
+  h1 {
+    color: #d4af37;
+    font-size: 38px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 20px;
+  }
 
-    h2 {
-      font-size: 26px;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-      color: #fff;
-      letter-spacing: 1px;
-    }
+  h2 {
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #fff;
+  }
 
-    h3 {
-      font-size: 22px;
-      font-weight: 900;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-      color: #fff;
-    }
+  h3 {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    color: #fff;
+  }
 
-    header {
-      padding: 28px 20px;
-      text-align: center;
-    }
+  section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+  /* HERO VIDEO */
+  .hero-video {
+    max-width: 1000px;
+    margin: 10px auto 30px auto;
+    border-radius: 8px;
+    overflow: hidden;
+  }
 
-    /* HERO VIDEO */
-    .hero-video {
-      max-width: 1000px;
-      margin: 0 auto 20px auto;
-      border-radius: 10px;
-      overflow: hidden;
-    }
+  iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+  }
 
-    iframe {
-      width: 100%;
-      height: 350px;
-      border: none;
-    }
+  /* FOTOS */
+  .photos {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 
-    /* FOTOS */
-    .photos {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
+  .photos img {
+    width: 100%;
+    height: 140px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
 
-    .photos img {
-      width: 100%;
-      height: 140px;
-      border-radius: 6px;
-      object-fit: cover;
-    }
+  /* EVENTOS / HORARIOS */
+  .events {
+    display: grid;
+    gap: 35px;
+  }
 
-    /* EVENTOS */
-    .events {
-      display: grid;
-      gap: 35px;
-    }
+  .event-card {
+    background: #111;
+    padding: 22px;
+    border: 1px solid #333;
+    border-radius: 8px;
+  }
 
-    .event-card {
-      background: #111;
-      padding: 22px;
-      border: 1px solid #333;
-      border-radius: 8px;
-    }
+  .event-card p {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 6px 0;
+    letter-spacing: 0.5px;
+    color: #fff;
+  }
 
-    .event-card p {
-      font-size: 18px;
-      font-weight: 700;
-      margin: 6px 0;
-      letter-spacing: 0.5px;
-      color: #fff;
-    }
+  .btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #d4af37;
+    color: #000;
+    text-decoration: none;
+    font-weight: 900;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    font-size: 15px;
+  }
 
-    .btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 12px 16px;
-      background: #d4af37;
-      color: #000;
-      text-decoration: none;
-      font-weight: 900;
-      border-radius: 6px;
-      letter-spacing: 1px;
-      font-size: 15px;
-    }
+  /* BOTONES HISTÓRICO */
+  .big-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #bbb;
-      font-size: 14px;
-      letter-spacing: 0.5px;
-    }
-  </style>
+  .big-btn {
+    padding: 14px 20px;
+    background: #d4af37;
+    color: #000;
+    font-weight: 900;
+    font-size: 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    min-width: 150px;
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    color: #bbb;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+</style>
 </head>
 <body>
 
-<header>
-  <h1>Bachata Barcelona</h1>
-</header>
+<h1>Bachata Barcelona</h1>
 
-<!-- VIDEO PRINCIPAL -->
+<!-- HERO VIDEO -->
 <section class="hero-video">
   <iframe src="https://www.youtube.com/embed/2XkQdL-SyqE" allowfullscreen></iframe>
 </section>
@@ -146,7 +160,6 @@
 <!-- HORARIOS -->
 <section>
   <h2>HORARIOS</h2>
-
   <div class="events">
     <div class="event-card">
       <h3>MIÉRCOLES — BACHATA PARTY’S</h3>
@@ -161,6 +174,15 @@
       <p>En Hyde Club Barcelona</p>
       <a class="btn" href="https://share.google/xIyNLGc8Uux1TplxU" target="_blank">VER UBICACIÓN</a>
     </div>
+  </div>
+</section>
+
+<!-- HISTÓRICO -->
+<section>
+  <h2>HISTÓRICO</h2>
+  <div class="big-buttons">
+    <a class="big-btn" href="historico-miercoles.html">MIÉRCOLES</a>
+    <a class="big-btn" href="historico-domingos.html">DOMINGOS</a>
   </div>
 </section>
 
