@@ -13,7 +13,7 @@
   }
 
   h1 {
-    color: #d4af37;
+    color: #ff007b;
     font-size: 38px;
     font-weight: 900;
     text-transform: uppercase;
@@ -76,35 +76,34 @@
     gap: 35px;
   }
 
-  /* Tarjetas clicables */
+  /* TARJETAS EVENTO */
   .event-card {
     background: #111;
     padding: 22px;
-    border: 1px solid #333;
-    border-radius: 8px;
-    text-decoration: none;
+    border: 1px solid #222;
+    border-radius: 10px;
     display: block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.25s;
   }
 
-  .event-card p {
-    font-size: 18px;
-    font-weight: 700;
-    margin: 6px 0;
-    letter-spacing: 0.5px;
-    color: #fff;
+  .event-card:hover {
+    background: #181818;
+    transform: translateY(-3px);
   }
 
+  /* BOTÓN UBICACIÓN */
   .btn {
     display: inline-block;
-    margin-top: 12px;
-    padding: 12px 16px;
-    background: #d4af37;
-    color: #000;
+    margin-top: 14px;
+    padding: 12px 18px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 900;
-    border-radius: 6px;
-    letter-spacing: 1px;
     font-size: 15px;
+    color: #000;
+    background: linear-gradient(90deg, #ff007b 0%, #d4af37 100%);
   }
 
   footer {
@@ -138,18 +137,15 @@
   <h2>HORARIOS</h2>
   <div class="events">
 
-    <!-- Tarjeta miércoles (clic a histórico) -->
+    <!-- MIÉRCOLES -->
     <a href="historico-miercoles.html" class="event-card">
       <h3>MIÉRCOLES — BACHATA PARTY’S</h3>
       <p>22:00 — 03:00</p>
       <p>En Sala Vivaldi</p>
-      <span style="pointer-events: none;"></span>
-      <span></span>
-      <span></span>
       <a class="btn" href="https://share.google/40ePxd7SLmIvk48gW" target="_blank" style="pointer-events:auto;">VER UBICACIÓN</a>
     </a>
 
-    <!-- Tarjeta domingo (clic a histórico) -->
+    <!-- DOMINGO -->
     <a href="historico-domingos.html" class="event-card">
       <h3>DOMINGO — BACHASTATION</h3>
       <p>19:30 — 02:00</p>
