@@ -2,61 +2,131 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<title>Histórico Domingo — Bachastation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Histórico Domingos — Bachata Barcelona</title>
-<p>
-04 enero 2026 — BACHASTATION Hyde Club Barcelona — 
-<a href="https://drive.google.com/drive/folders/1VtooR6hNh3slwVmT2u3ZsY660ddS_8Bz" target="_blank">Ver vídeos</a>
-</p>
+
 <style>
-  body {
-    margin: 0;
-    background: #000;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #000;
+}
 
-  h1 {
-    color: #d4af37;
-    font-size: 32px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-top: 25px;
-    font-weight: 900;
-    letter-spacing: 1px;
-  }
+header {
+  text-align: center;
+  padding: 22px 8px;
+  font-size: 26px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
 
-  section {
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
-    font-size: 18px;
-    font-weight: 700;
-  }
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
 
-  .back {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 14px;
-    background: #d4af37;
-    color: #000;
-    font-weight: 900;
-    border-radius: 6px;
-    text-decoration: none;
-  }
+.section-mes {
+  width: 92%;
+  margin: 20px auto 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px;
+}
+
+.evento-fecha {
+  width: 92%;
+  margin: 10px auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #f2f2f2;
+}
+
+.evento-fecha h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btns {
+  margin-top: 10px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 6px 10px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-drive {
+  background: #ffd600;
+  color: #000;
+}
+
+.btn-wetransfer {
+  background: #6db1ff;
+  color: #000;
+}
+
+.btn-proximamente {
+  background: #d6d6d6;
+  color: #5a5a5a;
+  cursor: default;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  opacity: 0.6;
+}
 </style>
 </head>
+
 <body>
 
-<h1>Histórico — Domingos</h1>
+<header>
+  Histórico Domingo — Bachastation
+  <img class="logo" src="logo-bachastation.png" alt="Bachastation">
+</header>
 
-<section>
-  (Empezará en Junio 2025)
-</section>
+<!-- ENERO 2026 (orden tipo redes sociales) -->
 
-<section>
-  <a href="index.html" class="back">Volver</a>
-</section>
+<div class="section-mes">ENERO 2026</div>
 
-</body>
-</html>
+<div class="evento-fecha">
+  <h4>25 ENERO 2026 — HYDE CLUB BARCELONA</h4>
+  <div class="btns">
+    <button class="btn btn-proximamente">CONTENIDO PRÓXIMAMENTE</button>
+  </div>
+</div>
+
+<div class="evento-fecha">
+  <h4>18 ENERO 2026 — HYDE CLUB BARCELONA</h4>
+  <div class="btns">
+    <button class="btn btn-proximamente">CONTENIDO PRÓXIMAMENTE</button>
+  </div>
+</div>
+
+<div class="evento-fecha">
+  <h4>11 ENERO 2026 — HYDE CLUB BARCELONA</h4>
+  <div class="btns">
+    <button class="btn btn-wetransfer" onclick="window.open('LINK_WETRANSFER_11_ENE', '_blank')">VER VÍDEOS (WeTransfer)</button>
+  </div>
+</div>
+
+<div class="evento-fecha">
+  <h4>04 ENERO 2026 — HYDE CLUB BARCELONA</h4>
+  <div class="btns">
+    <button class="btn btn-drive" onclick="window.open('https://drive.google.com/drive/folders/1VtooR6hNh3slwVmT2u3ZsY660ddS_8Bz',
