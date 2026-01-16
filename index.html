@@ -45,7 +45,6 @@
     margin: auto;
   }
 
-  /* HERO VIDEO */
   .hero-video {
     max-width: 1000px;
     margin: 10px auto 30px auto;
@@ -59,7 +58,6 @@
     border: none;
   }
 
-  /* FOTOS */
   .photos {
     display: grid;
     gap: 10px;
@@ -73,17 +71,19 @@
     object-fit: cover;
   }
 
-  /* EVENTOS / HORARIOS */
   .events {
     display: grid;
     gap: 35px;
   }
 
+  /* Tarjetas clicables */
   .event-card {
     background: #111;
     padding: 22px;
     border: 1px solid #333;
     border-radius: 8px;
+    text-decoration: none;
+    display: block;
   }
 
   .event-card p {
@@ -107,27 +107,6 @@
     font-size: 15px;
   }
 
-  /* BOTONES HISTÓRICO */
-  .big-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 40px;
-    flex-wrap: wrap;
-  }
-
-  .big-btn {
-    padding: 14px 20px;
-    background: #d4af37;
-    color: #000;
-    font-weight: 900;
-    font-size: 18px;
-    border-radius: 6px;
-    text-decoration: none;
-    min-width: 150px;
-    text-align: center;
-  }
-
   footer {
     text-align: center;
     padding: 25px;
@@ -141,12 +120,10 @@
 
 <h1>Bachata Barcelona</h1>
 
-<!-- HERO VIDEO -->
 <section class="hero-video">
   <iframe src="https://www.youtube.com/embed/2XkQdL-SyqE" allowfullscreen></iframe>
 </section>
 
-<!-- FOTOS -->
 <section>
   <h2>FOTOS</h2>
   <div class="photos">
@@ -157,32 +134,29 @@
   </div>
 </section>
 
-<!-- HORARIOS -->
 <section>
   <h2>HORARIOS</h2>
   <div class="events">
-    <div class="event-card">
+
+    <!-- Tarjeta miércoles (clic a histórico) -->
+    <a href="historico-miercoles.html" class="event-card">
       <h3>MIÉRCOLES — BACHATA PARTY’S</h3>
       <p>22:00 — 03:00</p>
       <p>En Sala Vivaldi</p>
-      <a class="btn" href="https://share.google/40ePxd7SLmIvk48gW" target="_blank">VER UBICACIÓN</a>
-    </div>
+      <span style="pointer-events: none;"></span>
+      <span></span>
+      <span></span>
+      <a class="btn" href="https://share.google/40ePxd7SLmIvk48gW" target="_blank" style="pointer-events:auto;">VER UBICACIÓN</a>
+    </a>
 
-    <div class="event-card">
+    <!-- Tarjeta domingo (clic a histórico) -->
+    <a href="historico-domingos.html" class="event-card">
       <h3>DOMINGO — BACHASTATION</h3>
       <p>19:30 — 02:00</p>
       <p>En Hyde Club Barcelona</p>
-      <a class="btn" href="https://share.google/xIyNLGc8Uux1TplxU" target="_blank">VER UBICACIÓN</a>
-    </div>
-  </div>
-</section>
+      <a class="btn" href="https://share.google/xIyNLGc8Uux1TplxU" target="_blank" style="pointer-events:auto;">VER UBICACIÓN</a>
+    </a>
 
-<!-- HISTÓRICO -->
-<section>
-  <h2>HISTÓRICO</h2>
-  <div class="big-buttons">
-    <a class="big-btn" href="historico-miercoles.html">MIÉRCOLES</a>
-    <a class="big-btn" href="historico-domingos.html">DOMINGOS</a>
   </div>
 </section>
 
