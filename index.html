@@ -1,144 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bachata Barcelona — FINAL BONITO</title>
-
-<style>
-:root {
-  --bg:#0b0b0b;
-  --text:#f6f6f6;
-  --gold:#d4af37;
-}
-body {
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial, sans-serif;
-}
-
-/* HEADER */
-header {
-  text-align:center;
-  padding:24px 8px;
-  font-size:28px;
-  font-weight:700;
-  color:var(--gold);
-}
-
-/* SECTIONS */
-.section {
-  padding:16px;
-}
-
-/* PORTADA */
-.thumb {
-  width:100%;
-  height:200px;
-  background:#222;
-  border-radius:8px;
-  margin-bottom:8px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:14px;
-  color:#999;
-  border:1px solid #333;
-}
-.logo {
-  max-width:200px;
-  display:block;
-  margin:0 auto 8px;
-}
-
-/* HISTÓRICO */
-.card {
-  border:1px solid #222;
-  padding:12px;
-  border-radius:8px;
-  margin-bottom:12px;
-}
-.card h3 {
-  margin:0 0 4px;
-  font-size:18px;
-  color:var(--gold);
-}
-a {
-  color:var(--gold);
-  text-decoration:none;
-}
-
-/* FOOTER */
-footer {
-  padding:16px;
-  text-align:center;
-  font-size:12px;
-  opacity:0.6;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bachata Barcelona</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<header>Bachata Barcelona</header>
+<header>
+  <h1>Bachata Barcelona</h1>
+</header>
 
-<!-- PORTADA (evento más reciente) -->
-<section class="section" id="portada">
-  <h2 style="color:var(--gold);margin:0 0 8px;">Último Evento</h2>
-
-  <!-- LOGO del evento más reciente -->
-  <img class="logo" src="bachastation.png" alt="Bachastation">
-
-  <!-- VÍDEO destacado (placeholder) -->
-  <a href="#" target="_blank">
-    <div class="thumb">Vídeo destacado — click</div>
-  </a>
-
-  <!-- FOTO destacada (placeholder) -->
-  <a href="#" target="_blank">
-    <div class="thumb">Foto destacada — click</div>
-  </a>
-</section>
-
-<!-- HISTÓRICO DOMINGO -->
-<section class="section" id="historico-domingo">
-  <h2 style="color:var(--gold);margin:0 0 8px;">Domingo — Histórico Enero 2026 (Descendente)</h2>
-
-  <div class="card">
-    <h3>Bachastation — Domingo 25 enero 2026 — Hyde Club BARCELONA</h3>
-    <a href="#" target="_blank">Ver vídeos</a>
+<section class="labels">
+  <div class="card miercoles" onclick="location.href='historico-miercoles.html'">
+    <img src="bachata-party.png" alt="Bachata Party" class="logo-label">
+    <span>Miércoles</span>
+    <button class="ubicacion" onclick="event.stopPropagation(); window.open('https://maps.app.goo.gl/...', '_blank')">Ver ubicación</button>
   </div>
 
-  <div class="card">
-    <h3>Bachastation — Domingo 18 enero 2026 — Hyde Club BARCELONA</h3>
-    <a href="#" target="_blank">Ver vídeos</a>
-  </div>
-
-  <div class="card">
-    <h3>Bachastation — Domingo 11 enero 2026 — Hyde Club BARCELONA</h3>
-    <a href="#" target="_blank">Ver vídeos</a>
-  </div>
-
-  <div class="card">
-    <h3>Bachastation — Domingo 04 enero 2026 — Hyde Club BARCELONA</h3>
-    <a href="#" target="_blank">Ver vídeos</a>
+  <div class="card domingo" onclick="location.href='historico-domingo.html'">
+    <img src="bachastation.png" alt="Bachastation" class="logo-label">
+    <span>Domingo</span>
+    <button class="ubicacion" onclick="event.stopPropagation(); window.open('https://maps.app.goo.gl/...', '_blank')">Ver ubicación</button>
   </div>
 </section>
-
-<!-- HISTÓRICO MIÉRCOLES -->
-<section class="section" id="historico-miercoles">
-  <h2 style="color:var(--gold);margin:0 0 8px;">Miércoles — Histórico Enero 2026 (Descendente)</h2>
-
-  <div class="card">
-    <h3>Bachata Party’s — Miércoles 14 enero 2026 — Sala Vivaldi</h3>
-    <a href="#" target="_blank">Ver vídeos</a>
-  </div>
-</section>
-
-<footer>
-  Web Bachata Barcelona — Enero 2026
-</footer>
 
 </body>
 </html>
