@@ -1,132 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Histórico Domingo — Bachastation</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff;
-  color: #000;
-}
-
-header {
-  text-align: center;
-  padding: 22px 8px;
-  font-size: 26px;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
-
-.section-mes {
-  width: 92%;
-  margin: 20px auto 10px;
-  font-size: 18px;
-  font-weight: bold;
-  border-bottom: 2px solid #000;
-  padding-bottom: 4px;
-}
-
-.evento-fecha {
-  width: 92%;
-  margin: 10px auto;
-  padding: 14px;
-  border-radius: 8px;
-  background: #f2f2f2;
-}
-
-.evento-fecha h4 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.btns {
-  margin-top: 10px;
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 6px 10px;
-  font-size: 12px;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.btn-drive {
-  background: #ffd600;
-  color: #000;
-}
-
-.btn-wetransfer {
-  background: #6db1ff;
-  color: #000;
-}
-
-.btn-proximamente {
-  background: #d6d6d6;
-  color: #5a5a5a;
-  cursor: default;
-}
-
-footer {
-  text-align: center;
-  padding: 20px 0;
-  font-size: 14px;
-  opacity: 0.6;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico Miércoles — Bachata Barcelona</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <header>
-  Histórico Domingo — Bachastation
-  <img class="logo" src="logo-bachastation.png" alt="Bachastation">
+  <h1>Miércoles — Bachata Party</h1>
 </header>
 
-<!-- ENERO 2026 (orden tipo redes sociales) -->
+<section class="historico">
 
-<div class="section-mes">ENERO 2026</div>
+  <div class="evento">
+    <h3>04 enero 2026 — Hyde Club Barcelona</h3>
+    <a class="btn" href="https://drive.google.com/..." target="_blank">Ver vídeos</a>
 
-<div class="evento-fecha">
-  <h4>25 ENERO 2026 — HYDE CLUB BARCELONA</h4>
-  <div class="btns">
-    <button class="btn btn-proximamente">CONTENIDO PRÓXIMAMENTE</button>
+    <div class="fotos">
+      <!-- mete fotos aquí si hay -->
+      <!-- ejemplo -->
+      <!-- <img src="fotos/2026-01-04-1.jpg"> -->
+    </div>
   </div>
-</div>
 
-<div class="evento-fecha">
-  <h4>18 ENERO 2026 — HYDE CLUB BARCELONA</h4>
-  <div class="btns">
-    <button class="btn btn-proximamente">CONTENIDO PRÓXIMAMENTE</button>
+  <div class="evento">
+    <h3>11 enero 2026 — Hyde Club Barcelona</h3>
+    <a class="btn" href="https://drive.google.com/..." target="_blank">Ver vídeos</a>
+    <div class="fotos"></div>
   </div>
-</div>
 
-<div class="evento-fecha">
-  <h4>11 ENERO 2026 — HYDE CLUB BARCELONA</h4>
-  <div class="btns">
-    <button class="btn btn-wetransfer" onclick="window.open('LINK_WETRANSFER_11_ENE', '_blank')">VER VÍDEOS (WeTransfer)</button>
-  </div>
-</div>
+</section>
 
-<div class="evento-fecha">
-  <h4>04 ENERO 2026 — HYDE CLUB BARCELONA</h4>
-  <div class="btns">
-    <button class="btn btn-drive" onclick="window.open('https://drive.google.com/drive/folders/1VtooR6hNh3slwVmT2u3ZsY660ddS_8Bz',
+<a class="volver" href="index.html">⬅ Volver</a>
+
+</body>
+</html>
