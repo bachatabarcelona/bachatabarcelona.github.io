@@ -2,113 +2,79 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Bachata Barcelona</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bachata Barcelona — FINAL BONITO</title>
 
 <style>
+:root {
+  --bg:#0b0b0b;
+  --text:#f6f6f6;
+  --gold:#d4af37;
+}
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff;
-  color: #000;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial, sans-serif;
 }
 
+/* HEADER */
 header {
-  text-align: center;
-  padding: 24px 8px;
-  font-size: 28px;
-  font-weight: bold;
+  text-align:center;
+  padding:24px 8px;
+  font-size:28px;
+  font-weight:700;
+  color:var(--gold);
 }
 
-.section-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 20px 0 10px;
-  text-align: center;
+/* SECTIONS */
+.section {
+  padding:16px;
 }
 
-.evento {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #000;
-  color: #fff;
-  padding: 14px;
-  margin: 10px auto;
-  width: 92%;
-  border-radius: 8px;
-  cursor: pointer;
+/* PORTADA */
+.thumb {
+  width:100%;
+  height:200px;
+  background:#222;
+  border-radius:8px;
+  margin-bottom:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  color:#999;
+  border:1px solid #333;
+}
+.logo {
+  max-width:200px;
+  display:block;
+  margin:0 auto 8px;
 }
 
-.evento:hover {
-  opacity: 0.9;
+/* HISTÓRICO */
+.card {
+  border:1px solid #222;
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:12px;
+}
+.card h3 {
+  margin:0 0 4px;
+  font-size:18px;
+  color:var(--gold);
+}
+a {
+  color:var(--gold);
+  text-decoration:none;
 }
 
-.evento-info {
-  flex: 1;
-  margin-left: 10px;
-}
-
-.evento-info h3 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.evento-info p {
-  margin: 4px 0 0;
-  font-size: 14px;
-}
-
-.logo-evento {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
-
-.botones-ubicacion {
-  display: flex;
-  gap: 6px;
-}
-
-.btn {
-  padding: 6px 10px;
-  font-size: 12px;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.btn-drive {
-  background: #ffd600;
-  color: #000;
-}
-
-.btn-maps {
-  background: #ff6b00;
-  color: #fff;
-}
-
-.evento .btn {
-  pointer-events: auto;
-}
-
+/* FOOTER */
 footer {
-  text-align: center;
-  padding: 20px 0;
-  font-size: 14px;
-  opacity: 0.6;
-}
-
-@media (max-width: 600px) {
-  .evento {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .botones-ubicacion {
-    margin-top: 10px;
-  }
+  padding:16px;
+  text-align:center;
+  font-size:12px;
+  opacity:0.6;
 }
 </style>
 </head>
@@ -117,39 +83,62 @@ footer {
 
 <header>Bachata Barcelona</header>
 
-<div class="section-title">HORARIOS</div>
+<!-- PORTADA (evento más reciente) -->
+<section class="section" id="portada">
+  <h2 style="color:var(--gold);margin:0 0 8px;">Último Evento</h2>
 
-<!-- MIÉRCOLES -->
-<div class="evento" onclick="window.location.href='historico-miercoles.html'">
-  <img src="logo-bachata-party.png" alt="Bachata Party" class="logo-evento">
+  <!-- LOGO del evento más reciente -->
+  <img class="logo" src="bachastation.png" alt="Bachastation">
 
-  <div class="evento-info">
-    <h3>MIÉRCOLES — BACHATA PARTY</h3>
-    <p>22:00 — 03:00 · SALA VIVALDI</p>
+  <!-- VÍDEO destacado (placeholder) -->
+  <a href="#" target="_blank">
+    <div class="thumb">Vídeo destacado — click</div>
+  </a>
+
+  <!-- FOTO destacada (placeholder) -->
+  <a href="#" target="_blank">
+    <div class="thumb">Foto destacada — click</div>
+  </a>
+</section>
+
+<!-- HISTÓRICO DOMINGO -->
+<section class="section" id="historico-domingo">
+  <h2 style="color:var(--gold);margin:0 0 8px;">Domingo — Histórico Enero 2026 (Descendente)</h2>
+
+  <div class="card">
+    <h3>Bachastation — Domingo 25 enero 2026 — Hyde Club BARCELONA</h3>
+    <a href="#" target="_blank">Ver vídeos</a>
   </div>
 
-  <div class="botones-ubicacion" onclick="event.stopPropagation();">
-    <button class="btn btn-drive" onclick="window.open('https://drive.google.com/drive/folders/...', '_blank')">DRIVE</button>
-    <button class="btn btn-maps" onclick="window.open('https://maps.app.goo.gl/...', '_blank')">MAPS</button>
-  </div>
-</div>
-
-<!-- DOMINGO -->
-<div class="evento" onclick="window.location.href='historico-domingo.html'">
-  <img src="logo-bachastation.png" alt="Bachastation" class="logo-evento">
-
-  <div class="evento-info">
-    <h3>DOMINGO — BACHASTATION</h3>
-    <p>19:30 — 02:00 · HYDE CLUB BARCELONA</p>
+  <div class="card">
+    <h3>Bachastation — Domingo 18 enero 2026 — Hyde Club BARCELONA</h3>
+    <a href="#" target="_blank">Ver vídeos</a>
   </div>
 
-  <div class="botones-ubicacion" onclick="event.stopPropagation();">
-    <button class="btn btn-drive" onclick="window.open('https://drive.google.com/drive/folders/...', '_blank')">DRIVE</button>
-    <button class="btn btn-maps" onclick="window.open('https://maps.app.goo.gl/...', '_blank')">MAPS</button>
+  <div class="card">
+    <h3>Bachastation — Domingo 11 enero 2026 — Hyde Club BARCELONA</h3>
+    <a href="#" target="_blank">Ver vídeos</a>
   </div>
-</div>
 
-<footer>Bachata Barcelona — © 2026</footer>
+  <div class="card">
+    <h3>Bachastation — Domingo 04 enero 2026 — Hyde Club BARCELONA</h3>
+    <a href="#" target="_blank">Ver vídeos</a>
+  </div>
+</section>
+
+<!-- HISTÓRICO MIÉRCOLES -->
+<section class="section" id="historico-miercoles">
+  <h2 style="color:var(--gold);margin:0 0 8px;">Miércoles — Histórico Enero 2026 (Descendente)</h2>
+
+  <div class="card">
+    <h3>Bachata Party’s — Miércoles 14 enero 2026 — Sala Vivaldi</h3>
+    <a href="#" target="_blank">Ver vídeos</a>
+  </div>
+</section>
+
+<footer>
+  Web Bachata Barcelona — Enero 2026
+</footer>
 
 </body>
 </html>
