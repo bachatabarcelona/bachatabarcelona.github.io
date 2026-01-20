@@ -1,50 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Bachata Barcelona</title>
-<link rel="stylesheet" href="styles.css">
+
+<style>
+body {
+  margin: 0;
+  background: #0d0d0d;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+header {
+  text-align: center;
+  padding: 22px 10px 12px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.section {
+  padding: 18px 14px 26px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.section-title {
+  font-size: 1.10rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section-title span.logo-text {
+  opacity: .9;
+  font-weight: 600;
+  font-size: .90rem;
+}
+.media-buttons {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+.media-buttons button {
+  flex: 1;
+  padding: 8px 8px;
+  font-size: .85rem;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: #fff;
+}
+.media-buttons button.active {
+  background: #4f4f4f;
+}
+.feed-grid {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.feed-item {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #111;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .75rem;
+  opacity: .7;
+}
+.location {
+  margin-top: 14px;
+  font-size: .83rem;
+  opacity: .8;
+}
+.location a {
+  color: #9ac7ff;
+  text-decoration: none;
+}
+footer {
+  padding: 16px;
+  text-align: center;
+  font-size: .75rem;
+  opacity: .5;
+}
+</style>
+
 </head>
 <body>
 
-<h1>BACHATA BARCELONA</h1>
-
-<!-- DOMINGO -->
-<section>
-  <h2>DOMINGO</h2>
-  <h3>BACHASTATION</h3>
-  <p><strong>Domingo 4 Enero — Hyde Club BARCELONA</strong></p>
-
-  <!-- Enlaces funcionales, cámbialos cuando tengas -->
-  <p><a href="https://www.google.com/maps">Ver ubicación</a></p>
-  <p><a href="https://drive.google.com">Ver vídeos</a></p>
-  <p><a href="https://drive.google.com">Ver fotos</a></p>
-</section>
-
-<hr>
+<header>
+  Bachata Barcelona
+</header>
 
 <!-- MIÉRCOLES -->
-<section>
-  <h2>MIÉRCOLES</h2>
-  <h3>BACHATA PARTY'S</h3>
-  <p><strong>Miércoles 7 Enero — Sala Vivaldi BARCELONA</strong></p>
+<section class="section">
+  <div class="section-title">
+    <span>Miércoles</span>
+    <span class="logo-text">Bachata Party’s</span>
+  </div>
 
-  <!-- Enlaces funcionales -->
-  <p><a href="https://www.google.com/maps">Ver ubicación</a></p>
-  <p><a href="https://drive.google.com">Ver vídeos</a></p>
-  <p><a href="https://drive.google.com">Ver fotos</a></p>
+  <!-- botones fotos / vídeos / ubicación -->
+  <div class="media-buttons">
+    <button class="active">Fotos</button>
+    <button>Vídeos</button>
+    <button>Ubicación</button>
+  </div>
+
+  <!-- feed de miércoles (placeholder a la espera de tus vídeos/fotos reales) -->
+  <div class="feed-grid">
+    <div class="feed-item">foto</div>
+    <div class="feed-item">foto</div>
+    <div class="feed-item">foto</div>
+    <div class="feed-item">foto</div>
+    <div class="feed-item">foto</div>
+    <div class="feed-item">foto</div>
+  </div>
+
+  <!-- ubicación miércoles -->
+  <div class="location">
+    📍 <a target="_blank" href="https://maps.app.goo.gl/xxxxx">Vivaldi — Barcelona</a>
+  </div>
 </section>
 
-<hr>
+<!-- DOMINGO -->
+<section class="section">
+  <div class="section-title">
+    <span>Domingo</span>
+    <span class="logo-text">Bachastation</span>
+  </div>
 
-<!-- HISTÓRICO -->
-<section>
-  <h2>HISTÓRICO</h2>
-  <ul>
-    <li>Domingo 4 Enero — Hyde Club BARCELONA</li>
-    <li>Miércoles 7 Enero — Sala Vivaldi BARCELONA</li>
-  </ul>
+  <div class="media-buttons">
+    <button class="active">Fotos</button>
+    <button>Vídeos</button>
+    <button>Ubicación</button>
+  </div>
+
+  <div class="feed-grid">
+    <div class="feed-item">foto</div>
+    <div class="feed-item">foto</div>
+    <div class="feed-item">foto</div>
+    <div class="feed-item">foto</div>
+    <div class="feed-item">foto</div>
+    <div class="feed-item">foto</div>
+  </div>
+
+  <div class="location">
+    📍 <a target="_blank" href="https://maps.app.goo.gl/yyyyy">High Club — Barcelona</a>
+  </div>
 </section>
+
+<footer>
+  Bachata Barcelona — 2026
+</footer>
+
+<script>
+// botones (no cargan video aún, placeholders)
+console.log("ready");
+</script>
 
 </body>
 </html>
