@@ -1,167 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Bachata Barcelona</title>
 
 <style>
-body {
-  margin: 0;
-  background: #0d0d0d;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-header {
-  text-align: center;
-  padding: 22px 10px 12px;
-  font-size: 1.35rem;
-  font-weight: 700;
-  border-bottom: 1px solid rgba(255,255,255,.1);
-}
-.section {
-  padding: 18px 14px 26px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-.section-title {
-  font-size: 1.10rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-  letter-spacing: .7px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.section-title span.logo-text {
-  opacity: .9;
-  font-weight: 600;
-  font-size: .90rem;
-}
-.media-buttons {
-  display: flex;
-  gap: 8px;
-  margin: 10px 0 14px;
-}
-.media-buttons button {
-  flex: 1;
-  padding: 8px 8px;
-  font-size: .85rem;
-  border: none;
-  border-radius: 6px;
-  background: #222;
-  color: #fff;
-}
-.media-buttons button.active {
-  background: #4f4f4f;
-}
-.feed-grid {
-  display: grid;
-  gap: 6px;
-  grid-template-columns: repeat(3, 1fr);
-}
-.feed-item {
-  width: 100%;
-  aspect-ratio: 1/1;
-  background: #111;
-  border-radius: 6px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: .75rem;
-  opacity: .7;
-}
-.location {
-  margin-top: 14px;
-  font-size: .83rem;
-  opacity: .8;
-}
-.location a {
-  color: #9ac7ff;
-  text-decoration: none;
-}
-footer {
-  padding: 16px;
-  text-align: center;
-  font-size: .75rem;
-  opacity: .5;
-}
-</style>
+  body {
+    margin: 0;
+    background: #0c0c0c;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
 
+  header {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+
+  /* LOGO MARCA MADRE (placeholder) */
+  .brand-logo {
+    width: 120px;
+    height: 50px;
+    margin: 6px auto 10px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    opacity: .6;
+  }
+
+  section.event {
+    padding: 18px 16px 32px;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+
+  .event-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: .6px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .event-sub {
+    font-size: .85rem;
+    font-weight: 600;
+    opacity: .85;
+    margin-bottom: 10px;
+  }
+
+  /* LOGO SUB-MARCA (placeholder) */
+  .event-logo {
+    width: 110px;
+    height: 42px;
+    background: #222;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    opacity:.7;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 14px;
+  }
+
+  .buttons button {
+    flex:1;
+    padding: 8px 6px;
+    border:none;
+    border-radius:8px;
+    background:#1e1e1e;
+    color:#fff;
+    font-size:.85rem;
+    font-weight:600;
+  }
+
+  .buttons button.active {
+    background:#555;
+  }
+
+  /* gallery / feed */
+  .feed-grid {
+    display:grid;
+    gap:6px;
+    grid-template-columns:repeat(3,1fr);
+    margin-bottom:10px;
+  }
+
+  .feed-item {
+    width:100%;
+    aspect-ratio:1/1;
+    background:#111;
+    border-radius:6px;
+    opacity:.7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:.72rem;
+  }
+
+  /* maps */
+  .maps {
+    font-size:.85rem;
+    margin-top:8px;
+  }
+
+  .maps a {
+    color:#8ccaff;
+    text-decoration:none;
+  }
+
+  /* HISTORICO */
+  .historico-title {
+    margin-top:10px;
+    font-size:.9rem;
+    font-weight:700;
+    opacity:.9;
+  }
+
+  .mes-block {
+    margin-top:8px;
+    opacity:.8;
+    font-size:.8rem;
+  }
+
+  footer {
+    text-align:center;
+    opacity:.4;
+    font-size:.7rem;
+    padding:16px;
+    margin-top:16px;
+  }
+</style>
 </head>
+
 <body>
 
 <header>
   Bachata Barcelona
+  <div class="brand-logo"></div>
 </header>
 
 <!-- MIÉRCOLES -->
-<section class="section">
-  <div class="section-title">
-    <span>Miércoles</span>
-    <span class="logo-text">Bachata Party’s</span>
-  </div>
+<section class="event">
+  <div class="event-title">MIÉRCOLES</div>
+  <div class="event-sub">BACHATA PARTY'S — Sala Vivaldi Barcelona</div>
+  <div class="event-logo"></div>
 
-  <!-- botones fotos / vídeos / ubicación -->
-  <div class="media-buttons">
+  <div class="buttons">
     <button class="active">Fotos</button>
     <button>Vídeos</button>
-    <button>Ubicación</button>
+    <button>Galería</button>
   </div>
 
-  <!-- feed de miércoles (placeholder a la espera de tus vídeos/fotos reales) -->
-  <div class="feed-grid">
-    <div class="feed-item">foto</div>
-    <div class="feed-item">foto</div>
-    <div class="feed-item">foto</div>
+  <div class="feed-grid" id="feed-mi">
     <div class="feed-item">foto</div>
     <div class="feed-item">foto</div>
     <div class="feed-item">foto</div>
   </div>
 
-  <!-- ubicación miércoles -->
-  <div class="location">
-    📍 <a target="_blank" href="https://maps.app.goo.gl/xxxxx">Vivaldi — Barcelona</a>
-  </div>
-</section>
-
-<!-- DOMINGO -->
-<section class="section">
-  <div class="section-title">
-    <span>Domingo</span>
-    <span class="logo-text">Bachastation</span>
+  <div class="maps">
+    📍 <a target="_blank" href="https://share.google/7UGko19iAAHJwWzEE">Abrir en Google Maps</a>
   </div>
 
-  <div class="media-buttons">
-    <button class="active">Fotos</button>
-    <button>Vídeos</button>
-    <button>Ubicación</button>
-  </div>
-
-  <div class="feed-grid">
-    <div class="feed-item">foto</div>
-    <div class="feed-item">foto</div>
-    <div class="feed-item">foto</div>
-    <div class="feed-item">foto</div>
-    <div class="feed-item">foto</div>
-    <div class="feed-item">foto</div>
-  </div>
-
-  <div class="location">
-    📍 <a target="_blank" href="https://maps.app.goo.gl/yyyyy">High Club — Barcelona</a>
-  </div>
-</section>
-
-<footer>
-  Bachata Barcelona — 2026
-</footer>
-
-<script>
-// botones (no cargan video aún, placeholders)
-console.log("ready");
-</script>
-
-</body>
-</html>
+  <div class="historico-title">Histórico</div>
+  <div class="mes-block">Enero 2026 — (Galería listo para añadir)</div>
+  <div class="mes-block">Diciembre 2025 — (Galería)</div>
+  <div class="mes-block">
