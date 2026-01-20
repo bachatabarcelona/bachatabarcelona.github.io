@@ -3,146 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bachata Barcelona — Sessions</title>
-
-<!-- LIGHTBOX -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-
-<style>
-body{margin:0;font-family:Montserrat,Arial,Helvetica,sans-serif;background:#000;color:#fff;overflow-x:hidden}
-header{text-align:center;padding:20px 10px}
-.main-logo{width:140px;display:block;margin:0 auto}
-.event{margin:20px auto;max-width:900px;padding:10px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #333}
-.event-title{font-size:22px;font-weight:600}
-.event-logo{width:80px}
-.event-buttons{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
-button{padding:6px 14px;background:#9d0aff;border:none;color:#fff;border-radius:4px;cursor:pointer;font-size:14px}
-button:hover{opacity:.8}
-.gallery{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-.gallery img{width:110px;height:110px;object-fit:cover;border-radius:6px;cursor:pointer}
-footer{text-align:center;padding:40px 10px;color:#777;font-size:12px}
-
-/* MENU / IDIOMAS */
-.menu{display:flex;justify-content:flex-end;padding:10px 20px}
-.lang-selector button{background:#333}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-.event{flex-direction:column;align-items:center}
-.event-logo{margin-top:6px}
-.event-title{text-align:center}
-.main-logo{width:120px}
-}
-</style>
+<title>Bachata Barcelona — Eventos</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="menu">
- <div class="lang-selector">
-  <button onclick="setLang('es')">ES</button>
-  <button onclick="setLang('en')">EN</button>
- </div>
-</div>
-
-<header>
- <img class="main-logo" src="logo-madre.png" alt="Bachata Barcelona">
- <h1 id="mainTitle">Bachata Barcelona — Sessions</h1>
+<header class="header">
+  <img src="img/bachata-barcelona.png" class="logo-main" alt="Bachata Barcelona">
 </header>
 
-<div id="eventsContainer"></div>
+<main>
 
-<footer>© Bachata Barcelona — Sessions</footer>
+  <!-- ===== DOMINGO ACTUAL ===== -->
+  <section class="event">
+    <div class="event-header">
+      <img src="img/bachastation.png" class="event-logo" alt="Bachastation">
+      <h2>Domingo 11 Enero 2026</h2>
+    </div>
+    <div class="event-row">
+      <a class="event-btn" href="FOTOS_DOMINGO_11_ENERO" target="_blank">FOTOS</a>
+      <a class="event-btn" href="VIDEOS_DOMINGO_11_ENERO" target="_blank">VIDEOS</a>
+      <a class="event-btn" href="https://maps.google.com?q=High+Club+Barcelona" target="_blank">UBICACIÓN</a>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <!-- ===== MIÉRCOLES (EJEMPLO TODOS) ===== -->
+  <section class="event">
+    <div class="event-header">
+      <img src="img/bachata-party.png" class="event-logo" alt="Bachata Party">
+      <h2>Miércoles 14 Enero 2026</h2>
+    </div>
+    <div class="event-row">
+      <a class="event-btn" href="FOTOS" target="_blank">FOTOS</a>
+      <a class="event-btn" href="VIDEOS" target="_blank">VIDEOS</a>
+      <a class="event-btn" href="https://maps.google.com?q=Vivaldi+Barcelona" target="_blank">UBICACIÓN</a>
+    </div>
+  </section>
 
-<script>
-const langData={
- es:{
-  photos:"Fotos",
-  videos:"Vídeos",
-  gallery:"Galería",
-  download:"Descargar",
-  sunday:"Domingo",
-  wednesday:"Miércoles",
-  months:["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
- },
- en:{
-  photos:"Photos",
-  videos:"Videos",
-  gallery:"Gallery",
-  download:"Download",
-  sunday:"Sunday",
-  wednesday:"Wednesday",
-  months:["January","February","March","April","May","June","July","August","September","October","November","December"],
- }
-};
+  <section class="event">
+    <div class="event-header">
+      <img src="img/bachata-party.png" class="event-logo" alt="Bachata Party">
+      <h2>Miércoles 21 Enero 2026</h2>
+    </div>
+    <div class="event-row">
+      <a class="event-btn" href="FOTOS" target="_blank">FOTOS</a>
+      <a class="event-btn" href="VIDEOS" target="_blank">VIDEOS</a>
+      <a class="event-btn" href="https://maps.google.com?q=Vivaldi+Barcelona" target="_blank">UBICACIÓN</a>
+    </div>
+  </section>
 
-let currentLang='es';
+  <!-- ===== HISTÓRICO ===== -->
+  <h3 class="historico-title">Histórico de eventos</h3>
 
-function setLang(l){currentLang=l;render()}
+  <section class="event historico">
+    <div class="event-header">
+      <img src="img/bachastation.png" class="event-logo" alt="Bachastation">
+      <h2>Domingo 4 Enero 2026</h2>
+    </div>
+    <div class="event-row">
+      <a class="event-btn" href="FOTOS" target="_blank">FOTOS</a>
+      <a class="event-btn" href="VIDEOS" target="_blank">VIDEOS</a>
+      <a class="event-btn" href="https://maps.google.com?q=High+Club+Barcelona" target="_blank">UBICACIÓN</a>
+    </div>
+  </section>
 
-const demoVideo={folder:"11-01-2026-domingo",videos:["demo-video.mp4"]};
+</main>
 
-const dummyPhotos=["2799_6.jpg","2869_6.jpg","2914_6.jpg","2920_6.jpg","2944_6.jpg"]; // ejemplo Domingo 11
+<footer class="footer">
+  © Bachata Barcelona — 2026
+</footer>
 
-function parseEventName(ev){
- let [d,m,y,day]=ev.split('-');
- return {d,m,y,day};
-}
-
-// Orden dinámico (última subida arriba)
-const events=[ "11-01-2026-domingo" ];
-
-function render(){
-const container=document.getElementById('eventsContainer');
-container.innerHTML="";
-const l=langData[currentLang];
-
-events.forEach(ev=>{
- const {d,m,y,day}=parseEventName(ev);
- const dateTxt=`${l[day]||day} ${d} ${l.months[parseInt(m)-1]} ${y}`;
- let eventEl=document.createElement('div');
- eventEl.className='event';
- eventEl.innerHTML=`
-  <div>
-   <div class="event-title">${dateTxt}</div>
-   <div class="event-buttons">
-     <button onclick="openPhotos('${ev}')">${l.photos}</button>
-     <button onclick="openVideos('${ev}')">${l.videos}</button>
-     <button onclick="openGallery('${ev}')">${l.gallery}</button>
-   </div>
-  </div>
-  <img src="logo-evento.png" class="event-logo" alt="">
- `;
- container.appendChild(eventEl);
-});
-}
-
-function openPhotos(ev){
-const gl=GLightbox({});
-const imgs=dummyPhotos.map(p=>({
- href:`/fotos/${ev}/${p}`,
- type:'image',
- download:true,
-}));
-gl.setElements(imgs);
-gl.open();
-}
-function openVideos(ev){
-const gl=GLightbox({});
-const vids=demoVideo.folder===ev?demoVideo.videos.map(v=>({
- href:`/videos/${ev}/${v}`,
- type:'video',
- download:true,
-})):[];
-gl.setElements(vids);
-gl.open();
-}
-function openGallery(ev){
-openPhotos(ev);
-}
-
-render();
-</script>
 </body>
 </html>
