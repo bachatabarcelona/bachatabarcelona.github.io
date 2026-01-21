@@ -5,80 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bachata Barcelona</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+body {background:#0a0a0a;color:white;margin:0;font-family:Arial;}
+.container{padding:20px;text-align:center;}
+.logo-madre{width:190px;margin:auto;margin-bottom:25px;}
+.section{margin-bottom:35px;}
+.section-title{font-weight:bold;font-size:20px;margin-bottom:12px;text-transform:uppercase;}
+.daybox{background:#111;border-radius:14px;padding:18px;margin-bottom:22px;}
+.logo-dia{width:90%;margin:auto;margin-bottom:10px;}
+.info{font-size:14px;opacity:.75;margin-bottom:10px;}
+.actions{display:flex;justify-content:center;gap:12px;margin-top:10px;}
+.actions a{color:white;font-size:14px;text-decoration:none;background:#222;padding:6px 10px;border-radius:10px;}
+.instagram{opacity:0.8;font-size:12px;margin-top:6px;}
+.share{font-size:12px;margin-top:4px;opacity:.6;}
+</style>
 </head>
-
 <body>
 
-<div class="logo-container">
-  <img src="img/logo-madre.png" class="logo-madre">
+<div class="container">
+
+<img class="logo-madre" src="img/logo-madre.png">
+
+<div class="section-title">Miércoles</div>
+
+<div class="daybox">
+<img class="logo-dia" src="img/bachata-party.png">
+<div class="info">Bachata Party’s — Vivaldi BCN</div>
+<div class="info">22:00 — 03:00</div>
+<div class="instagram">@bachataparty.bcn</div>
+<div class="actions">
+<a href="GALERIA-MIERCOLES-FOTOS.html">Fotos</a>
+<a href="GALERIA-MIERCOLES-VIDEOS.html">Vídeos</a>
+<a href="https://maps.app.goo.gl/xxxxxx" target="_blank">Ubicación</a>
+</div>
 </div>
 
-<!-- MIÉRCOLES -->
-<div class="card">
-  <div class="card-header">
-    <h2>MIÉRCOLES</h2>
-    <img src="img/logo-miercoles.png" class="logo-sesion">
-  </div>
+<div class="section-title">Domingo</div>
 
-  <p>Bachata Party’s — Sala Vivaldi Barcelona</p>
-  <p class="horario">22:00 — 03:00</p>
-
-  <a href="https://maps.app.goo.gl/3TosNnuhEHq2wNkz7" class="maps-link" target="_blank">
-    📍 Abrir en Maps
-  </a>
-
-  <div class="extra-mini">
-    <a href="https://www.instagram.com/bachataparty.bcn" target="_blank">@bachataparty.bcn</a>
-  </div>
-
-  <button class="share-btn" onclick="share('Miércoles — Bachata Party’s — Sala Vivaldi BCN')">Compartir</button>
-
-  <div class="btn-group">
-    <a class="btn" href="GALERIA-MIERCOLES-FOTOS.html">FOTOS</a>
-    <a class="btn" href="GALERIA-MIERCOLES-VIDEOS.html">VÍDEOS</a>
-  </div>
+<div class="daybox">
+<img class="logo-dia" src="img/bachastation.png">
+<div class="info">Bachastation — Hyde Club BCN</div>
+<div class="info">19:30 — 02:00</div>
+<div class="instagram">@bachastation</div>
+<div class="actions">
+<a href="GALERIA-DOMINGO-FOTOS.html">Fotos</a>
+<a href="GALERIA-DOMINGO-VIDEOS.html">Vídeos</a>
+<a href="https://maps.app.goo.gl/yyyyyy" target="_blank">Ubicación</a>
+</div>
 </div>
 
-<!-- DOMINGO -->
-<div class="card">
-  <div class="card-header">
-    <h2>DOMINGO</h2>
-    <img src="img/logo-domingo.png" class="logo-sesion">
-  </div>
-
-  <p>Bachastation — Hyde Club Barcelona</p>
-  <p class="horario">19:30 — 02:00</p>
-
-  <a href="https://maps.app.goo.gl/nMegUVk8c8yRy26a9" class="maps-link" target="_blank">
-    📍 Abrir en Maps
-  </a>
-
-  <div class="extra-mini">
-    <a href="https://www.instagram.com/bachastation" target="_blank">@bachastation</a>
-  </div>
-
-  <button class="share-btn" onclick="share('Domingo — Bachastation — Hyde Club BCN')">Compartir</button>
-
-  <div class="btn-group">
-    <a class="btn" href="GALERIA-DOMINGO-FOTOS.html">FOTOS</a>
-    <a class="btn" href="GALERIA-DOMINGO-VIDEOS.html">VÍDEOS</a>
-  </div>
 </div>
-
-<script>
-function share(txt){
-  if(navigator.share){
-    navigator.share({
-      title:'Bachata Barcelona',
-      text:txt,
-      url:location.href
-    });
-  } else {
-    navigator.clipboard.writeText(location.href);
-    alert("Enlace copiado");
-  }
-}
-</script>
 
 </body>
 </html>
