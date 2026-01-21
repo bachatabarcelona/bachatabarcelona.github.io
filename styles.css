@@ -1,110 +1,142 @@
-/* RESET */
+/* ===============================
+   RESET BÁSICO
+================================ */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* BASE */
 html, body {
+  width: 100%;
   height: 100%;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: radial-gradient(circle at top, #1a1a1a 0%, #000 70%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top, #1a1a1a 0%, #000 60%);
   color: #fff;
-  text-align: center;
-  overflow-y: auto; /* por defecto */
 }
 
-/* ===== HOME FIJO ===== */
+/* ===============================
+   CONTENEDOR PRINCIPAL HOME
+================================ */
 body.home {
-  height: 100svh;              /* altura REAL del móvil */
-  overflow: hidden;            /* sin scroll */
-  display: flex;
-  flex-direction: column;
+  overflow: hidden; /* ❌ sin scroll en home */
 }
 
-/* CONTENEDOR HOME */
-.home main {
-  flex: 1;
+main {
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
   padding: 10px 0;
 }
 
-/* HEADER */
-header img {
-  max-width: 240px;
-  margin: 0 auto;
+/* ===============================
+   LOGO MADRE
+================================ */
+.logo-madre {
+  width: 260px;
+  max-width: 90%;
+  margin: 10px auto;
   display: block;
 }
 
-/* TITULOS */
-h2 {
-  font-size: 16px;
-  letter-spacing: 2px;
-  margin: 8px 0 6px;
+/* ===============================
+   TÍTULOS MIÉRCOLES / DOMINGO
+================================ */
+.titulo-dia {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin: 10px 0;
 }
 
-/* CARDS */
+/* ===============================
+   CARD GENERAL (MISMO TAMAÑO)
+================================ */
 .card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 16px;
-  max-width: 380px;
-  margin: 0 auto;
-  padding: 12px 14px 14px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-}
-
-/* LOGOS */
-.logo-miercoles {
-  max-width: 168px;
-  margin: 0 auto 8px;
-  display: block;
-}
-
-.logo-domingo {
-  max-width: 204px;
-  margin: -2px auto 8px;
-  display: block;
-}
-
-/* INFO */
-.info {
-  font-size: 13px;
-  line-height: 1.25;
-  margin-bottom: 8px;
-  opacity: 0.9;
-}
-
-/* BOTONES */
-.buttons {
+  width: 92%;
+  max-width: 420px;
+  background: linear-gradient(180deg, #2a2a2a, #141414);
+  border-radius: 22px;
+  padding: 18px 14px;
   display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.buttons a {
+/* ===============================
+   LOGOS DENTRO DE LAS CARDS
+================================ */
+.card-logo img {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* miércoles: +1 punto */
+.card.miercoles .card-logo img {
+  width: 150px;
+}
+
+/* domingo: +3 puntos */
+.card.domingo .card-logo img {
+  width: 165px;
+}
+
+/* ===============================
+   TEXTO CARD
+================================ */
+.card-info {
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+.card-info strong {
+  font-weight: 600;
+}
+
+.card-info .insta {
+  margin-top: 4px;
+  opacity: 0.8;
+}
+
+/* ===============================
+   BOTONES
+================================ */
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.card-buttons a {
   text-decoration: none;
   color: #fff;
-  border: 1px solid #fff;
-  padding: 5px 14px;
-  border-radius: 30px;
-  font-size: 12px;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
-/* FOOTER */
+/* ===============================
+   FOOTER (VACÍO / CONTROLADO)
+================================ */
 footer {
-  font-size: 11px;
-  opacity: 0.5;
-  margin-bottom: 6px;
+  display: none;
 }
 
-/* ===== RESTO DE PÁGINAS ===== */
-body:not(.home) {
-  overflow-y: auto;
+/* ===============================
+   AJUSTE FINO SOLO EN MÓVIL
+   (CLAVE PARA QUE ENTRE TODO)
+================================ */
+@media (max-width: 420px) {
+  body.home main {
+    transform: scale(0.92);
+    transform-origin: top center;
+  }
 }
