@@ -8,35 +8,55 @@
 </head>
 
 <body>
+
 <div class="logo-container">
-    <img src="img/logo-madre.png" class="logo-madre">
+  <img src="img/logo-madre.png" class="logo-madre">
 </div>
 
 <div class="card">
-    <div class="card-header">
-        <h2>MIÉRCOLES</h2>
-        <img src="img/logo-miercoles.png" class="logo-sesion">
-    </div>
-    <p>Bachata Party’s — Sala Vivaldi Barcelona</p>
-    <a href="https://maps.app.goo.gl/3TosNnuhEHq2wNkz7" target="_blank" class="maps-link">Abrir en Maps</a>
+  <div class="card-header">
+    <h2>MIÉRCOLES</h2>
+    <img src="img/logo-miercoles.png" class="logo-sesion">
+  </div>
+  <p>Bachata Party’s — Sala Vivaldi Barcelona</p>
+  <a href="https://maps.app.goo.gl/3TosNnuhEHq2wNkz7" class="maps-link" target="_blank">📍 Abrir en Maps</a>
 
-    <div class="btn-group">
-        <a class="btn" href="galeria.html?tipo=miercoles">Galería</a>
-    </div>
+  <div class="extra-mini"><a href="https://www.instagram.com/bachataparty.bcn" target="_blank">@bachataparty.bcn</a></div>
+  <button class="share-btn" onclick="share('Miércoles Bachata Party’s — Sala Vivaldi')">Compartir</button>
+
+  <div class="btn-group">
+    <a class="btn" href="galeria.html?tipo=fotos&mes=2026-01">Fotos</a>
+    <a class="btn" href="galeria.html?tipo=videos&mes=2026-01">Vídeos</a>
+  </div>
 </div>
 
 <div class="card">
-    <div class="card-header">
-        <h2>DOMINGO</h2>
-        <img src="img/logo-domingo.png" class="logo-sesion">
-    </div>
-    <p>Bachastation — Hyde Club Barcelona</p>
-    <a href="https://maps.app.goo.gl/nMegUVk8c8yRy26a9" target="_blank" class="maps-link">Abrir en Maps</a>
+  <div class="card-header">
+    <h2>DOMINGO</h2>
+    <img src="img/logo-domingo.png" class="logo-sesion">
+  </div>
+  <p>Bachastation — Hyde Club Barcelona</p>
+  <a href="https://maps.app.goo.gl/nMegUVk8c8yRy26a9" class="maps-link" target="_blank">📍 Abrir en Maps</a>
 
-    <div class="btn-group">
-        <a class="btn" href="galeria.html?tipo=domingo">Galería</a>
-    </div>
+  <div class="extra-mini"><a href="https://www.instagram.com/bachastation" target="_blank">@bachastation</a></div>
+  <button class="share-btn" onclick="share('Domingo Bachastation — Hyde Club')">Compartir</button>
+
+  <div class="btn-group">
+    <a class="btn" href="galeria.html?tipo=fotos&mes=2026-01">Fotos</a>
+    <a class="btn" href="galeria.html?tipo=videos&mes=2026-01">Vídeos</a>
+  </div>
 </div>
+
+<script>
+function share(txt){
+  if(navigator.share){
+    navigator.share({title:'Bachata Barcelona', text:txt, url:location.href});
+  } else {
+    navigator.clipboard.writeText(location.href);
+    alert("Enlace copiado");
+  }
+}
+</script>
 
 </body>
 </html>
