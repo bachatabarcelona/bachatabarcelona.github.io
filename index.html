@@ -1,57 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bachata Barcelona</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bachata Barcelona</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- LOGO MADRE -->
-    <div class="logo-madre">
-        <img src="img/logo-madre.png" alt="Bachata Barcelona">
-    </div>
+<div class="logo-madre">
+  <img src="img/logo-madre.png" alt="Bachata Barcelona">
+</div>
 
-    <!-- MIÉRCOLES -->
-    <h2 class="titulo-subdia">MIÉRCOLES</h2>
-    <div class="card">
-        <div class="card-logo">
-            <img src="img/logo-miercoles.png" alt="Bachata Party’s">
-        </div>
-        <div class="card-info">
-            <p>Bachata Party’s — Sala Vivaldi Barcelona</p>
-            <p>22:00 — 03:00</p>
-            <p>@bachataparty.bcn</p>
-        </div>
+<h2 class="titulo-subdia">MIÉRCOLES</h2>
+<div class="card">
+  <div class="card-logo">
+    <img src="img/logo-miercoles.png" alt="Bachata Party’s">
+  </div>
+  <div class="card-info">
+    <p>Bachata Party’s — Sala Vivaldi Barcelona</p>
+    <p>22:00 — 03:00</p>
+    <p>
+      <a class="ig-link" href="https://www.instagram.com/bachataparty.bcn" target="_blank">
+        @bachataparty.bcn
+      </a>
+    </p>
+  </div>
+  <div class="card-buttons">
+    <a class="btn-share" href="#" onclick="compartir('Miércoles — Bachata Party’s en Sala Vivaldi BCN')">Compartir</a>
+    <a class="btn" href="GALERIA-MIERCOLES-FOTOS.html">Fotos</a>
+    <a class="btn" href="GALERIA-MIERCOLES-VIDEOS.html">Vídeos</a>
+    <a class="btn" href="https://maps.app.goo.gl/3TosNnuhEHq2wNkz7" target="_blank">Ubicación</a>
+  </div>
+</div>
 
-        <div class="card-buttons">
-            <a class="btn-share" href="https://www.instagram.com/bachataparty.bcn">Compartir</a>
-            <a class="btn" href="GALERIA-MIERCOLES-FOTOS.html">Fotos</a>
-            <a class="btn" href="GALERIA-MIERCOLES-VIDEOS.html">Vídeos</a>
-            <a class="btn" href="https://maps.google.com/?q=Sala+Vivaldi+Barcelona" target="_blank">Ubicación</a>
-        </div>
-    </div>
+<h2 class="titulo-subdia">DOMINGO</h2>
+<div class="card">
+  <div class="card-logo">
+    <img src="img/logo-domingo.png" alt="Bachastation">
+  </div>
+  <div class="card-info">
+    <p>Bachastation — Hyde Club Barcelona</p>
+    <p>19:30 — 02:00</p>
+    <p>
+      <a class="ig-link" href="https://www.instagram.com/bachastation" target="_blank">
+        @bachastation
+      </a>
+    </p>
+  </div>
+  <div class="card-buttons">
+    <a class="btn-share" href="#" onclick="compartir('Domingo — Bachastation en Hyde Club BCN')">Compartir</a>
+    <a class="btn" href="GALERIA-DOMINGO-FOTOS.html">Fotos</a>
+    <a class="btn" href="GALERIA-DOMINGO-VIDEOS.html">Vídeos</a>
+    <a class="btn" href="https://maps.app.goo.gl/nMegUVk8c8yRy26a9" target="_blank">Ubicación</a>
+  </div>
+</div>
 
-    <!-- DOMINGO -->
-    <h2 class="titulo-subdia">DOMINGO</h2>
-    <div class="card">
-        <div class="card-logo">
-            <img src="img/logo-domingo.png" alt="Bachastation">
-        </div>
-        <div class="card-info">
-            <p>Bachastation — Hyde Club Barcelona</p>
-            <p>19:30 — 02:00</p>
-            <p>@bachastation</p>
-        </div>
-
-        <div class="card-buttons">
-            <a class="btn-share" href="https://www.instagram.com/bachastation">Compartir</a>
-            <a class="btn" href="GALERIA-DOMINGO-FOTOS.html">Fotos</a>
-            <a class="btn" href="GALERIA-DOMINGO-VIDEOS.html">Vídeos</a>
-            <a class="btn" href="https://maps.google.com/?q=Hyde+Club+Barcelona" target="_blank">Ubicación</a>
-        </div>
-    </div>
+<script>
+function compartir(texto) {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Bachata Barcelona',
+      text: texto,
+      url: window.location.href
+    });
+  } else {
+    window.open(
+      'https://wa.me/?text=' + encodeURIComponent(texto + ' ' + window.location.href),
+      '_blank'
+    );
+  }
+}
+</script>
 
 </body>
 </html>
