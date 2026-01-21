@@ -30,24 +30,24 @@ body {
   border-radius: 14px;
   box-shadow: 0 0 12px rgba(255,255,255,0.1);
 
-  height: 190px; /* tamaño fijo e igual */
+  height: 190px;                /* altura fija */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* CONTENEDOR DE LOGO (CLAVE) */
+/* CONTENEDOR DE LOGO */
 .card-logo {
-  height: 48px;                 /* zona fija para el logo */
+  height: 44px;                 /* zona de logo más compacta */
   display: flex;
-  align-items: center;          /* centra verticalmente */
+  align-items: flex-start;      /* SUBE el logo */
   justify-content: center;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 /* LOGOS EVENTO */
 .card-logo img {
-  max-height: 42px;             /* normaliza PNG con márgenes */
+  max-height: 38px;             /* un poco más pequeño */
   width: auto;
   display: block;
 }
@@ -73,19 +73,20 @@ body {
 .nav-fv {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;                     /* más compacto */
   flex-wrap: wrap;
-  margin-top: 6px;
+  margin-top: 4px;              /* SUBE los botones */
 }
 
+/* BOTONES ESTILO */
 .btn,
 .btn-share {
   border: 1px solid #fff;
   background: #000;
   color: #fff;
-  padding: 6px 14px;
+  padding: 5px 12px;            /* botones un poco más bajos */
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 12px;
   text-decoration: none;
 }
 
@@ -98,7 +99,7 @@ body {
 /* MENSAJES */
 .msg {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 8px;
   opacity: 0.65;
 }
 
