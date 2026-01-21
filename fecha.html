@@ -3,113 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bachastation — Hyde Club BCN — 11 enero 2026</title>
-<link rel="stylesheet" href="style.css">
+<title>Evento</title>
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-
-<header class="home-header">
-  <img src="img/logo-madre.png" class="logo-main" alt="Bachata Barcelona">
-</header>
-
-<section class="fecha-header">
-  <div class="fecha-dia">DOMINGO</div>
-  <div class="fecha-evento">Bachastation — Hyde Club BCN</div>
-  <div class="fecha-fecha">11 enero 2026</div>
-</section>
-
-<section class="fecha-tabs">
-  <button class="tab-btn active" onclick="openTab('fotos')">FOTOS</button>
-  <button class="tab-btn" onclick="openTab('videos')">VÍDEOS</button>
-</section>
-
-<section id="fotos" class="tab-content active">
-  <div class="grid">
-    <!-- Aquí se insertan las miniaturas de fotos -->
-    <!-- Ejemplo placeholder -->
-    <img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/mini1.jpg" class="foto-thumb" onclick="openViewer(this.src)">
-    <img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/mini2.jpg" class="foto-thumb" onclick="openViewer(this.src)">
-  </div>
-</section>
-
-<section id="videos" class="tab-content">
-  <div class="grid">
-    <!-- Miniaturas de vídeos (con icono play) -->
-    <div class="video-thumb" onclick="openViewerVideo('videos/ENERO-2026/DOMINGOS/2026-01-11-domingo/video1.mp4')">
-      <span class="play-icon">▶</span>
-    </div>
-  </div>
-</section>
-
-<!-- VIEWER FULLSCREEN -->
-<div id="viewer" class="viewer">
-  <span class="viewer-close" onclick="closeViewer()">✕</span>
-  <img id="viewer-img" class="viewer-media">
-  <video id="viewer-video" class="viewer-media" controls></video>
-
-  <div class="viewer-actions">
-    <button onclick="shareMedia()">Compartir</button>
-    <button onclick="downloadMedia()">Descargar</button>
-  </div>
+<div class="container-fecha">
+    <h2 id="tituloFecha"></h2>
+    <p>Galería próximamente…</p>
 </div>
 
-<!-- NAVEGACIÓN INFERIOR -->
-<section class="fecha-nav">
-  <a href="galeria.html">⟵ Volver al Mes</a>
-  <a href="fecha-2026-01-25-domingo.html">Último Evento ⟳</a>
-  <a href="index.html">Home 🏠</a>
-</section>
-
 <script>
-let currentMedia = '';
-let currentType = '';
-
-function openTab(tab) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-  document.querySelector(`[onclick="openTab('${tab}')"]`).classList.add('active');
-  document.getElementById(tab).classList.add('active');
-}
-
-function openViewer(src){
-  currentMedia = src;
-  currentType = 'foto';
-  document.getElementById('viewer-img').src = src;
-  document.getElementById('viewer-img').style.display='block';
-  document.getElementById('viewer-video').style.display='none';
-  document.getElementById('viewer').style.display='flex';
-}
-
-function openViewerVideo(src){
-  currentMedia = src;
-  currentType = 'video';
-  document.getElementById('viewer-video').src = src;
-  document.getElementById('viewer-img').style.display='none';
-  document.getElementById('viewer-video').style.display='block';
-  document.getElementById('viewer').style.display='flex';
-}
-
-function closeViewer(){
-  document.getElementById('viewer').style.display='none';
-  document.getElementById('viewer-video').pause();
-}
-
-/* Compartir completo (G) */
-function shareMedia(){
-  const texto = `📸 Bachastation — Hyde Club BCN\nDomingo — 11 enero 2026\n\nMira las fotos y vídeos:\n${window.location.href}`;
-  if(navigator.share){
-    navigator.share({title:'Bachastation',text:text,url:window.location.href});
-  } else {
-    alert("Texto para compartir:\n\n"+texto);
-  }
-}
-
-function downloadMedia(){
-  const link=document.createElement('a');
-  link.href=currentMedia;
-  link.download = currentMedia.split('/').pop();
-  link.click();
-}
+const p = new URLSearchParams(window.location.search).get("d");
+document.getElementById("tituloFecha").innerText = p.replace(/-/g,' ');
 </script>
 
 </body>
