@@ -13,14 +13,14 @@ body {
   width: 200px;
 }
 
-/* TITULOS */
+/* TÍTULOS */
 .titulo-subdia {
   text-align: center;
   font-size: 18px;
   margin: 18px 0 10px 0;
 }
 
-/* TARJETAS (IGUALES) */
+/* TARJETAS */
 .card {
   background: #111;
   width: 88%;
@@ -30,26 +30,23 @@ body {
   border-radius: 14px;
   box-shadow: 0 0 12px rgba(255,255,255,0.1);
 
-  height: 190px;                /* altura fija */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* CONTENEDOR DE LOGO */
+/* LOGO EVENTO */
 .card-logo {
-  height: 44px;                 /* zona de logo más compacta */
+  height: 44px;
   display: flex;
-  align-items: flex-start;      /* SUBE el logo */
   justify-content: center;
-  margin-bottom: 2px;
+  align-items: flex-start;
+  margin-bottom: 4px;
 }
 
-/* LOGOS EVENTO */
 .card-logo img {
-  max-height: 38px;             /* un poco más pequeño */
+  max-height: 38px;
   width: auto;
-  display: block;
 }
 
 /* INFO */
@@ -59,7 +56,7 @@ body {
 }
 
 .card-info p {
-  margin: 2px 0;
+  margin: 3px 0;
 }
 
 /* INSTAGRAM */
@@ -69,31 +66,25 @@ body {
 }
 
 /* BOTONES */
-.card-buttons,
-.nav-fv {
+.card-buttons {
   display: flex;
   justify-content: center;
-  gap: 6px;                     /* más compacto */
+  gap: 6px;
   flex-wrap: wrap;
-  margin-top: 4px;              /* SUBE los botones */
+  margin-top: 6px;
 }
 
-/* BOTONES ESTILO */
+/* BOTÓN */
 .btn,
 .btn-share {
   border: 1px solid #fff;
   background: #000;
   color: #fff;
-  padding: 5px 12px;            /* botones un poco más bajos */
+  padding: 6px 12px;
   border-radius: 10px;
   font-size: 12px;
   text-decoration: none;
-}
-
-/* ACTIVO */
-.nav-active {
-  background: #fff;
-  color: #000;
+  white-space: nowrap;
 }
 
 /* MENSAJES */
@@ -101,17 +92,6 @@ body {
   text-align: center;
   margin-top: 8px;
   opacity: 0.65;
-}
-
-/* VOLVER */
-.volver-container {
-  text-align: center;
-  margin-top: 18px;
-}
-
-.volver {
-  color: #fff;
-  text-decoration: underline;
 }
 
 /* TEXTO FINAL */
@@ -122,6 +102,30 @@ body {
   opacity: 0.6;
 }
 
+/* ❌ ELIMINAMOS ICONOS INFERIORES DEL HOME */
+.home-icons,
+.social-icons,
+.footer-icons {
+  display: none !important;
+}
+
+/* 📱 AJUSTES SOLO MÓVIL */
+@media (max-width: 480px) {
+  .card {
+    padding-bottom: 18px;     /* MÁS AIRE PARA BOTONES */
+  }
+
+  .card-buttons {
+    gap: 8px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+}
+
+/* 🖥️ DESKTOP */
 @media (min-width: 600px) {
   .logo-madre img {
     width: 220px;
