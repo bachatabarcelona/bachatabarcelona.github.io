@@ -1,171 +1,125 @@
-/* === RESET === */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+/* === GALERÍA === */
 
-/* === BASE === */
-body{
-  background:#0b0b0b;
-  color:white;
-  font-family:Arial, sans-serif;
-  padding-bottom:40px;
-}
-
-/* === LOGO PRINCIPAL === */
-.logo-main{
-  width:220px;
-  display:block;
-  margin:15px auto 10px auto;
-}
-
-/* === EVENTO (HOME) === */
-.evento{
-  background:#111;
-  margin:14px;
-  padding:16px;
-  border-radius:12px;
-  border:1px solid #222;
-  box-shadow:0 0 8px rgba(0,0,0,0.4);
-}
-
-.evento-header{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-.evento h2{
-  font-size:22px;
-  font-weight:bold;
-}
-
-.desc{
-  font-size:14px;
-  opacity:0.85;
-}
-
-.evento-logo{
-  width:160px;
-  margin:10px 0;
-}
-
-/* === BOTONES EVENTO === */
-.evento-botones{
-  display:flex;
-  gap:10px;
-  margin-top:12px;
-}
-
-.btn{
-  flex:1;
-  text-align:center;
-  background:#2b2b2b;
-  border-radius:8px;
-  padding:10px 0;
-  text-decoration:none;
-  color:white;
-  font-weight:600;
-  font-size:15px;
-}
-
-.btn:hover{
-  background:#3e3e3e;
-}
-
-/* === MAPS === */
-.btn-maps{
-  color:#ff4141;
-  font-size:14px;
-  text-decoration:none;
-  margin-top:4px;
-}
-
-/* === NAV (FOTOS / VIDEOS / GALERÍA) === */
-.menu{
-  display:flex;
-  gap:10px;
-  padding:12px;
-  border-bottom:1px solid #222;
-}
-.menu a{
-  color:white;
-  text-decoration:none;
-  opacity:0.85;
-  font-size:15px;
-}
-
-/* === FEED (LISTADO HISTÓRICO) === */
-.feed{
-  padding:14px;
+.galeria-wrapper{
+  padding:10px;
   display:flex;
   flex-direction:column;
   gap:18px;
 }
 
-.card{
-  background:#111;
-  padding:15px;
-  border-radius:12px;
-  border:1px solid #222;
-}
-
-/* === PLACEHOLDER "PRONTO" === */
-.coming{
-  background:#1a1a1a;
-  border-radius:8px;
-  padding:18px;
-  font-size:14px;
-  text-align:center;
-  opacity:0.85;
-  border:1px solid #333;
-}
-
-/* === TABS (GALERÍA) === */
-.tabs{
+.galeria-columns{
   display:flex;
-  gap:8px;
-  padding:10px 12px;
+  justify-content:space-between;
+  gap:18px;
 }
 
-.tab{
+.col{
   flex:1;
-  text-align:center;
-  background:#1b1b1b;
-  padding:10px 0;
-  border-radius:8px;
-  font-size:14px;
-  text-decoration:none;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
   color:white;
-  opacity:0.85;
 }
 
-.tab.active{
-  background:#3b3b3b;
-  opacity:1;
+.col-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.col-title{
+  font-size:16px;
   font-weight:bold;
 }
 
-/* === GRID PARA FOTOS / VIDEOS === */
-.grid{
+.col-logo{
+  width:42px;
+  height:auto;
+  opacity:0.9;
+}
+
+.col-fechas{
   display:flex;
-  flex-wrap:wrap;
+  flex-direction:column;
   gap:6px;
+}
+
+.col-fechas a{
+  color:white;
+  text-decoration:none;
+  font-size:15px;
+  opacity:0.9;
+}
+
+.col-fechas a:hover{
+  opacity:1;
+}
+
+.col-venue{
+  font-size:13px;
+  opacity:0.8;
+}
+
+/* === CALENDARIO === */
+
+.calendar-box{
   margin-top:10px;
+  background:#111;
+  border:1px solid #222;
+  border-radius:10px;
+  padding:12px;
 }
 
-.grid img,
-.grid video{
-  width:32%;
-  border-radius:6px;
+.calendar-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.cal-btn{
   background:#222;
+  color:white;
+  border:none;
+  padding:4px 8px;
+  border-radius:6px;
+  font-size:14px;
 }
 
-/* === FOOTER === */
-.footer{
+.cal-title{
+  font-size:15px;
+  font-weight:bold;
+}
+
+.calendar-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:6px;
   text-align:center;
-  opacity:0.4;
-  font-size:12px;
-  padding:25px 0;
+}
+
+.calendar-grid span{
+  font-size:13px;
+  opacity:0.85;
+}
+
+.cal-x{
+  color:#4BD3FF; /* mié */
+}
+
+.cal-d{
+  color:#FF4B4B; /* dom */
+}
+
+/* RESPONSIVE */
+@media(max-width:430px){
+  .col-venue{
+    font-size:12px;
+  }
+  .col-title{
+    font-size:15px;
+  }
+  .col-fechas a{
+    font-size:14px;
+  }
 }
