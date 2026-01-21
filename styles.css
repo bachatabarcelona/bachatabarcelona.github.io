@@ -18,6 +18,7 @@ body {
   margin: 18px 0 10px 0;
 }
 
+/* TARJETAS IGUALES */
 .card {
   background: #111;
   width: 88%;
@@ -26,15 +27,15 @@ body {
   padding: 14px;
   border-radius: 14px;
   box-shadow: 0 0 12px rgba(255,255,255,0.1);
+  height: 190px; /* tamaño pequeño e igual */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 200px;
 }
 
 .card-logo img {
   display: block;
-  margin: 0 auto 8px auto;
+  margin: 0 auto 6px auto;
   width: 120px;
 }
 
@@ -44,7 +45,7 @@ body {
 }
 
 .card-info p {
-  margin: 3px 0;
+  margin: 2px 0;
 }
 
 .ig-link {
@@ -52,12 +53,13 @@ body {
   text-decoration: none;
 }
 
-.card-buttons {
+.card-buttons,
+.nav-fv {
   display: flex;
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .btn,
@@ -71,13 +73,6 @@ body {
   text-decoration: none;
 }
 
-.nav-fv {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 12px;
-}
-
 .nav-active {
   background: #fff;
   color: #000;
@@ -85,16 +80,41 @@ body {
 
 .msg {
   text-align: center;
-  margin-top: 14px;
+  margin-top: 10px;
   opacity: 0.65;
 }
 
 .volver-container {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .volver {
   color: #fff;
   text-decoration: underline;
+}
+
+/* BARRA DE ICONOS INFERIOR */
+.social-bar {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 24px 0 30px 0;
+  font-size: 22px;
+}
+
+.social-bar a {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.social-bar a:hover {
+  opacity: 1;
+}
+
+@media (min-width: 600px) {
+  .logo-madre img {
+    width: 220px;
+  }
 }
