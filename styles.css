@@ -26,13 +26,12 @@ body {
   width: 88%;
   max-width: 420px;
   margin: 0 auto 22px auto;
-  padding: 14px;
+  padding: 16px 14px 18px 14px; /* MÁS CONTROL */
   border-radius: 14px;
   box-shadow: 0 0 12px rgba(255,255,255,0.1);
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 /* LOGO EVENTO */
@@ -71,7 +70,9 @@ body {
   justify-content: center;
   gap: 6px;
   flex-wrap: wrap;
-  margin-top: 6px;
+
+  margin-top: 6px;   /* ⬆️ SUBIMOS BOTONES */
+  padding-bottom: 0; /* ❌ EVITA QUE SALGAN */
 }
 
 /* BOTÓN */
@@ -102,7 +103,7 @@ body {
   opacity: 0.6;
 }
 
-/* ❌ ELIMINAMOS ICONOS INFERIORES DEL HOME */
+/* ❌ ICONOS INFERIORES FUERA DEL HOME */
 .home-icons,
 .social-icons,
 .footer-icons {
@@ -111,12 +112,14 @@ body {
 
 /* 📱 AJUSTES SOLO MÓVIL */
 @media (max-width: 480px) {
+
   .card {
-    padding-bottom: 18px;     /* MÁS AIRE PARA BOTONES */
+    padding-top: 14px;
+    padding-bottom: 18px; /* CONTIENE BOTONES */
   }
 
   .card-buttons {
-    gap: 8px;
+    margin-top: 4px; /* ⬆️ MÁS ARRIBA */
   }
 
   .btn {
