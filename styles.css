@@ -1,115 +1,100 @@
-/* BASE */
 body {
-    margin: 0;
-    padding: 0;
-    background: #000;
-    font-family: Arial, sans-serif;
-    color: #fff;
-    -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
 
-/* LOGO MADRE */
 .logo-madre img {
-    width: 200px;
-    margin: 20px auto 10px auto;
-    display: block;
+  display: block;
+  margin: 20px auto 10px auto;
+  width: 200px;
 }
 
-/* TITULOS */
 .titulo-subdia {
-    text-align: center;
-    font-weight: 600;
-    font-size: 18px;
-    margin: 18px 0 10px 0;
+  text-align: center;
+  font-size: 18px;
+  margin: 18px 0 10px 0;
 }
 
-/* TARJETAS */
 .card {
-    background: #111;
-    border-radius: 14px;  /* redondeado suave */
-    margin: 0 auto 22px auto;
-    padding: 14px;
-    width: 88%;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+  background: #111;
+  width: 88%;
+  max-width: 420px;
+  margin: 0 auto 22px auto;
+  padding: 14px;
+  border-radius: 14px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
 }
 
-/* LOGO PEQUEÑO EN TARJETA */
 .card-logo img {
-    width: 120px;
-    display: block;
-    margin: 0 auto 8px auto;
+  display: block;
+  margin: 0 auto 8px auto;
+  width: 120px;
 }
 
-/* INFO */
 .card-info {
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.9;
+  text-align: center;
+  font-size: 14px;
 }
 
-/* BOTONES PRINCIPALES */
-.card-buttons, .nav-fv {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 12px;
-    flex-wrap: wrap;
+.card-info p {
+  margin: 3px 0;
 }
 
-/* BOTON */
-.btn {
-    border: 1px solid #fff;
-    background: #000;
-    color: #fff;
-    padding: 6px 14px;
-    border-radius: 10px;
-    font-size: 13px;
-    text-decoration: none;
+.ig-link {
+  color: #fff;
+  text-decoration: none;
 }
 
-/* BOTON SHARE */
+.card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.btn,
 .btn-share {
-    border: 1px solid #fff;
-    background: #000;
-    color: #fff;
-    padding: 6px 14px;
-    border-radius: 10px;
-    font-size: 13px;
-    text-decoration: none;
+  border: 1px solid #fff;
+  background: #000;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  text-decoration: none;
 }
 
-/* BOTON ACTIVO (FOTOS / VIDEOS) */
+.nav-fv {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
 .nav-active {
-    background: #fff;
-    color: #000;
-    border: 1px solid #fff;
+  background: #fff;
+  color: #000;
 }
 
-/* MENSAJE SIN CONTENIDO */
 .msg {
-    text-align: center;
-    margin-top: 14px;
-    opacity: 0.65;
-    font-size: 14px;
+  text-align: center;
+  margin-top: 14px;
+  opacity: 0.65;
 }
 
-/* VOLVER */
 .volver-container {
-    text-align: center;
-    margin-top: 20px;
-}
-.volver {
-    color: #fff;
-    text-decoration: underline;
-    font-size: 14px;
+  text-align: center;
+  margin-top: 20px;
 }
 
-/* RESPONSIVE */
-@media (min-width: 600px) {
-    .card {
-        width: 420px;
-    }
-    .logo-madre img {
-        width: 220px;
-    }
+.volver {
+  color: #fff;
+  text-decoration: underline;
 }
