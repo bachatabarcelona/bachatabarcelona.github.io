@@ -8,13 +8,14 @@
 </head>
 
 <body>
+
 <div class="container-fecha">
-    <h2 id="tituloFecha"></h2>
-    <p>Galería próximamente…</p>
+  <h2 id="tituloFecha"></h2>
+  <p>Galería próximamente…</p>
 </div>
 
 <script>
-const p = new URLSearchParams(window.location.search).get("d");
+const p = new URLSearchParams(location.search).get("d");
 document.getElementById("tituloFecha").innerText = p.replace(/-/g,' ');
 </script>
 
