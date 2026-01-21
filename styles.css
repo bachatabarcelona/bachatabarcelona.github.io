@@ -1,19 +1,115 @@
-.galeria-buttons .btn {
-    background:#222;
-    padding:10px 20px;
-    margin:8px;
-    border-radius:14px;
-    color:white;
-    text-decoration:none;
-    display:inline-block;
+/* BASE */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
 }
 
-.galeria-container .ig {
-    opacity:.8;
-    margin:6px 0 18px 0;
+/* LOGO MADRE */
+.logo-madre img {
+    width: 200px;
+    margin: 20px auto 10px auto;
+    display: block;
 }
 
+/* TITULOS */
+.titulo-subdia {
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 18px 0 10px 0;
+}
+
+/* TARJETAS */
+.card {
+    background: #111;
+    border-radius: 14px;  /* redondeado suave */
+    margin: 0 auto 22px auto;
+    padding: 14px;
+    width: 88%;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+/* LOGO PEQUEÑO EN TARJETA */
+.card-logo img {
+    width: 120px;
+    display: block;
+    margin: 0 auto 8px auto;
+}
+
+/* INFO */
+.card-info {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* BOTONES PRINCIPALES */
+.card-buttons, .nav-fv {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+/* BOTON */
+.btn {
+    border: 1px solid #fff;
+    background: #000;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* BOTON SHARE */
+.btn-share {
+    border: 1px solid #fff;
+    background: #000;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* BOTON ACTIVO (FOTOS / VIDEOS) */
+.nav-active {
+    background: #fff;
+    color: #000;
+    border: 1px solid #fff;
+}
+
+/* MENSAJE SIN CONTENIDO */
 .msg {
-    opacity:.6;
-    margin-top:30px;
+    text-align: center;
+    margin-top: 14px;
+    opacity: 0.65;
+    font-size: 14px;
+}
+
+/* VOLVER */
+.volver-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.volver {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (min-width: 600px) {
+    .card {
+        width: 420px;
+    }
+    .logo-madre img {
+        width: 220px;
+    }
 }
