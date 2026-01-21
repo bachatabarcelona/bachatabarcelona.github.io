@@ -6,19 +6,21 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* LOGO MADRE */
 .logo-madre img {
   display: block;
   margin: 20px auto 10px auto;
   width: 200px;
 }
 
+/* TITULOS */
 .titulo-subdia {
   text-align: center;
   font-size: 18px;
   margin: 18px 0 10px 0;
 }
 
-/* TARJETAS IGUALES */
+/* TARJETAS (IGUALES) */
 .card {
   background: #111;
   width: 88%;
@@ -27,18 +29,30 @@ body {
   padding: 14px;
   border-radius: 14px;
   box-shadow: 0 0 12px rgba(255,255,255,0.1);
-  height: 190px; /* tamaño pequeño e igual */
+
+  height: 190px; /* tamaño fijo e igual */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.card-logo img {
-  display: block;
-  margin: 0 auto 6px auto;
-  width: 120px;
+/* CONTENEDOR DE LOGO (CLAVE) */
+.card-logo {
+  height: 48px;                 /* zona fija para el logo */
+  display: flex;
+  align-items: center;          /* centra verticalmente */
+  justify-content: center;
+  margin-bottom: 4px;
 }
 
+/* LOGOS EVENTO */
+.card-logo img {
+  max-height: 42px;             /* normaliza PNG con márgenes */
+  width: auto;
+  display: block;
+}
+
+/* INFO */
 .card-info {
   text-align: center;
   font-size: 14px;
@@ -48,18 +62,20 @@ body {
   margin: 2px 0;
 }
 
+/* INSTAGRAM */
 .ig-link {
   color: #fff;
   text-decoration: none;
 }
 
+/* BOTONES */
 .card-buttons,
 .nav-fv {
   display: flex;
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .btn,
@@ -73,17 +89,20 @@ body {
   text-decoration: none;
 }
 
+/* ACTIVO */
 .nav-active {
   background: #fff;
   color: #000;
 }
 
+/* MENSAJES */
 .msg {
   text-align: center;
   margin-top: 10px;
   opacity: 0.65;
 }
 
+/* VOLVER */
 .volver-container {
   text-align: center;
   margin-top: 18px;
@@ -94,23 +113,12 @@ body {
   text-decoration: underline;
 }
 
-/* BARRA DE ICONOS INFERIOR */
-.social-bar {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin: 24px 0 30px 0;
-  font-size: 22px;
-}
-
-.social-bar a {
-  text-decoration: none;
-  color: #fff;
-  opacity: 0.9;
-}
-
-.social-bar a:hover {
-  opacity: 1;
+/* TEXTO FINAL */
+.footer-text {
+  text-align: center;
+  margin: 26px 0 30px 0;
+  font-size: 13px;
+  opacity: 0.6;
 }
 
 @media (min-width: 600px) {
