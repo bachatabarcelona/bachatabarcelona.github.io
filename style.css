@@ -1,125 +1,98 @@
-/* === GALERÍA === */
+/* == HOME == */
 
-.galeria-wrapper{
-  padding:10px;
+.home-header{
+  display:flex;
+  justify-content:center;
+  padding:10px 0 0 0;
+}
+
+.logo-main{
+  width:180px;
+  height:auto;
+  opacity:0.95;
+}
+
+.home-events{
   display:flex;
   flex-direction:column;
-  gap:18px;
+  gap:14px;
+  padding:8px 12px;
 }
 
-.galeria-columns{
-  display:flex;
-  justify-content:space-between;
-  gap:18px;
-}
-
-.col{
-  flex:1;
+.event-box{
+  background:#111;
+  border:1px solid #222;
+  border-radius:12px;
+  padding:12px;
   display:flex;
   flex-direction:column;
   gap:8px;
-  color:white;
 }
 
-.col-header{
+.event-header{
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
-.col-title{
-  font-size:16px;
+.event-title{
+  font-size:17px;
   font-weight:bold;
+  color:white;
 }
 
-.col-logo{
-  width:42px;
-  height:auto;
+.event-logo{
+  width:60px;
   opacity:0.9;
 }
 
-.col-fechas{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-.col-fechas a{
-  color:white;
-  text-decoration:none;
-  font-size:15px;
-  opacity:0.9;
-}
-
-.col-fechas a:hover{
-  opacity:1;
-}
-
-.col-venue{
+.event-venue{
   font-size:13px;
-  opacity:0.8;
-}
-
-/* === CALENDARIO === */
-
-.calendar-box{
-  margin-top:10px;
-  background:#111;
-  border:1px solid #222;
-  border-radius:10px;
-  padding:12px;
-}
-
-.calendar-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:10px;
-}
-
-.cal-btn{
-  background:#222;
   color:white;
-  border:none;
-  padding:4px 8px;
-  border-radius:6px;
-  font-size:14px;
-}
-
-.cal-title{
-  font-size:15px;
-  font-weight:bold;
-}
-
-.calendar-grid{
-  display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:6px;
-  text-align:center;
-}
-
-.calendar-grid span{
-  font-size:13px;
   opacity:0.85;
 }
 
-.cal-x{
-  color:#4BD3FF; /* mié */
+.event-actions{
+  display:flex;
+  gap:8px;
+  justify-content:space-between;
 }
 
-.cal-d{
-  color:#FF4B4B; /* dom */
+.btn{
+  flex:1;
+  background:#222;
+  border:1px solid #333;
+  color:white;
+  padding:8px 0;
+  text-align:center;
+  border-radius:8px;
+  font-size:14px;
+  text-decoration:none;
+  opacity:0.9;
 }
 
-/* RESPONSIVE */
-@media(max-width:430px){
-  .col-venue{
-    font-size:12px;
-  }
-  .col-title{
-    font-size:15px;
-  }
-  .col-fechas a{
-    font-size:14px;
-  }
+.btn:hover{
+  opacity:1;
+}
+
+.maps-link{
+  font-size:13px;
+  color:#FF5252;
+  text-decoration:none;
+  align-self:flex-start;
+}
+
+.footer{
+  text-align:center;
+  font-size:12px;
+  opacity:0.5;
+  padding-bottom:14px;
+}
+
+/* Ajustes S25 Ultra + iPhone */
+@media(max-height:780px){
+  .event-logo{width:52px;}
+  .event-title{font-size:16px;}
+  .logo-main{width:160px;}
+  .event-actions .btn{font-size:13px; padding:6px 0;}
 }
