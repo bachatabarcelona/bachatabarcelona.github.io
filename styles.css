@@ -15,111 +15,96 @@ body {
   background: radial-gradient(circle at top, #1a1a1a 0%, #000 70%);
   color: #fff;
   text-align: center;
-  overflow: hidden; /* 🚫 NO SCROLL EN HOME */
+  overflow-y: auto; /* por defecto */
+}
+
+/* ===== HOME FIJO ===== */
+body.home {
+  height: 100svh;              /* altura REAL del móvil */
+  overflow: hidden;            /* sin scroll */
+  display: flex;
+  flex-direction: column;
+}
+
+/* CONTENEDOR HOME */
+.home main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px 0;
 }
 
 /* HEADER */
 header img {
-  max-width: 260px;
-  margin: 20px auto 12px;
+  max-width: 240px;
+  margin: 0 auto;
   display: block;
 }
 
 /* TITULOS */
 h2 {
-  margin: 18px 0 10px;
+  font-size: 16px;
   letter-spacing: 2px;
-  font-size: 18px;
-}
-
-/* CONTENEDOR GENERAL */
-main {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  margin: 8px 0 6px;
 }
 
 /* CARDS */
 .card {
   background: rgba(255,255,255,0.08);
-  border-radius: 18px;
-  max-width: 420px;
-  margin: 0 auto 18px;
-  padding: 16px 18px 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border-radius: 16px;
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 12px 14px 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
 }
 
 /* LOGOS */
 .logo-miercoles {
-  max-width: 172px; /* +1 punto */
-  margin: 0 auto 10px;
+  max-width: 168px;
+  margin: 0 auto 8px;
   display: block;
 }
 
 .logo-domingo {
-  max-width: 206px; /* +3 puntos */
-  margin: -4px auto 10px;
+  max-width: 204px;
+  margin: -2px auto 8px;
   display: block;
 }
 
 /* INFO */
 .info {
-  font-size: 14px;
-  line-height: 1.3;
-  margin-bottom: 10px;
-}
-
-.info span {
-  display: block;
-  opacity: 0.85;
+  font-size: 13px;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  opacity: 0.9;
 }
 
 /* BOTONES */
 .buttons {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .buttons a {
   text-decoration: none;
   color: #fff;
   border: 1px solid #fff;
-  padding: 6px 16px;
+  padding: 5px 14px;
   border-radius: 30px;
-  font-size: 13px;
-  transition: background 0.2s, color 0.2s;
-}
-
-.buttons a:hover {
-  background: #fff;
-  color: #000;
+  font-size: 12px;
 }
 
 /* FOOTER */
 footer {
-  margin: 10px 0 14px;
-  font-size: 12px;
-  opacity: 0.55;
-  letter-spacing: 1px;
+  font-size: 11px;
+  opacity: 0.5;
+  margin-bottom: 6px;
 }
 
-/* MOBILE FINO */
-@media (max-height: 700px) {
-  header img {
-    max-width: 230px;
-    margin: 16px auto 10px;
-  }
-
-  .card {
-    padding: 14px 16px;
-    margin-bottom: 14px;
-  }
-
-  h2 {
-    font-size: 17px;
-    margin: 14px 0 8px;
-  }
+/* ===== RESTO DE PÁGINAS ===== */
+body:not(.home) {
+  overflow-y: auto;
 }
