@@ -1,98 +1,129 @@
-/* == HOME == */
-
-.home-header{
-  display:flex;
-  justify-content:center;
-  padding:10px 0 0 0;
+.fecha-header{
+  text-align:center;
+  color:white;
+  margin-top:6px;
+  margin-bottom:6px;
 }
 
-.logo-main{
-  width:180px;
-  height:auto;
-  opacity:0.95;
-}
-
-.home-events{
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  padding:8px 12px;
-}
-
-.event-box{
-  background:#111;
-  border:1px solid #222;
-  border-radius:12px;
-  padding:12px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-.event-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.event-title{
+.fecha-dia{
   font-size:17px;
   font-weight:bold;
-  color:white;
 }
 
-.event-logo{
-  width:60px;
+.fecha-evento{
+  font-size:14px;
   opacity:0.9;
 }
 
-.event-venue{
+.fecha-fecha{
   font-size:13px;
-  color:white;
-  opacity:0.85;
+  opacity:0.8;
 }
 
-.event-actions{
+.fecha-tabs{
   display:flex;
-  gap:8px;
-  justify-content:space-between;
+  justify-content:center;
+  gap:6px;
+  margin-bottom:6px;
 }
 
-.btn{
-  flex:1;
+.tab-btn{
+  padding:6px 12px;
   background:#222;
   border:1px solid #333;
-  color:white;
-  padding:8px 0;
-  text-align:center;
   border-radius:8px;
+  color:white;
   font-size:14px;
-  text-decoration:none;
-  opacity:0.9;
 }
 
-.btn:hover{
-  opacity:1;
+.tab-btn.active{
+  background:#444;
 }
 
-.maps-link{
+.tab-content{
+  display:none;
+}
+
+.tab-content.active{
+  display:block;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
+  padding:0 12px;
+}
+
+.foto-thumb{
+  width:100%;
+  border-radius:6px;
+}
+
+.video-thumb{
+  background:#000;
+  border-radius:6px;
+  aspect-ratio:1;
+  position:relative;
+}
+
+.play-icon{
+  position:absolute;
+  font-size:24px;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+
+.viewer{
+  position:fixed;
+  display:none;
+  left:0;top:0;
+  width:100%;height:100%;
+  background:#0a0a0a;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:1000;
+}
+
+.viewer-media{
+  max-width:90%;
+  max-height:80%;
+}
+
+.viewer-close{
+  color:white;
+  font-size:24px;
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
+.viewer-actions{
+  margin-top:10px;
+  display:flex;
+  gap:10px;
+}
+
+.viewer-actions button{
+  padding:6px 12px;
+  background:#222;
+  border:1px solid #333;
+  border-radius:8px;
+  color:white;
   font-size:13px;
-  color:#FF5252;
+}
+
+.fecha-nav{
+  display:flex;
+  justify-content:space-around;
+  margin-top:6px;
+  font-size:13px;
+}
+
+.fecha-nav a{
   text-decoration:none;
-  align-self:flex-start;
-}
-
-.footer{
-  text-align:center;
-  font-size:12px;
-  opacity:0.5;
-  padding-bottom:14px;
-}
-
-/* Ajustes S25 Ultra + iPhone */
-@media(max-height:780px){
-  .event-logo{width:52px;}
-  .event-title{font-size:16px;}
-  .logo-main{width:160px;}
-  .event-actions .btn{font-size:13px; padding:6px 0;}
+  color:white;
+  opacity:0.9;
 }
