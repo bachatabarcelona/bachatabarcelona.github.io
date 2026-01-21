@@ -2,21 +2,45 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Evento</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
 </head>
+<body class="galeria-page">
 
-<body>
+<h2 id="tituloFecha"></h2>
+<p id="subInfo"></p>
 
-<div class="container-fecha">
-  <h2 id="tituloFecha"></h2>
-  <p>Galería próximamente…</p>
+<div class="tabs-row" id="tabs">
+  <a class="tab-pro active" id="tab-fotos">FOTOS</a>
+  <a class="tab-pro" id="tab-videos">VÍDEOS</a>
 </div>
 
+<div id="contenido"></div>
+
+<button onclick="history.back()" class="btn">VOLVER</button>
+
 <script>
-const p = new URLSearchParams(location.search).get("d");
-document.getElementById("tituloFecha").innerText = p.replace(/-/g,' ');
+const params = new URLSearchParams(location.search);
+const f = params.get("f");
+
+let fecha = f.replace(/-/g,' ').replace('miercoles','MIÉRCOLES').replace('domingo','DOMINGO');
+document.getElementById("tituloFecha").innerText = fecha;
+
+// Datos básicos
+let sesion = f.includes('miercoles') ? 'MIÉRCOLES' : 'DOMINGO';
+let sala = sesion === 'MIÉRCOLES'
+  ? 'Bachata Party’s — Sala Vivaldi BCN'
+  : 'Bachastation — Hyde Club BCN';
+
+let horario = sesion === 'MIÉRCOLES'
+  ? '22:00 — 03:00'
+  : '19:30 — 02:00';
+
+document.getElementById("subInfo").innerText = sala + ' • ' + horario;
+
+// Contenido
+document.getElementById("contenido").innerHTML = "<p>Pronto subiremos las fotos y vídeos de esta fecha.</p>";
 </script>
 
 </body>
