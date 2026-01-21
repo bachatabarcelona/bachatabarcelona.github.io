@@ -1,62 +1,19 @@
-/* ===== GALERIA PRO ===== */
-.galeria-page{
-  padding:18px;
+.galeria-buttons .btn {
+    background:#222;
+    padding:10px 20px;
+    margin:8px;
+    border-radius:14px;
+    color:white;
+    text-decoration:none;
+    display:inline-block;
 }
 
-.tabs-row{
-  display:flex;
-  gap:12px;
-  margin-bottom:12px;
+.galeria-container .ig {
+    opacity:.8;
+    margin:6px 0 18px 0;
 }
 
-.tab-pro{
-  background:#2b2b2b;
-  padding:6px 10px;
-  border-radius:10px;
-  color:white;
-  text-decoration:none;
-  font-size:14px;
+.msg {
+    opacity:.6;
+    margin-top:30px;
 }
-
-.tab-pro.active{
-  background:#3b3b3b;
-  font-weight:bold;
-}
-
-.lista-fechas{
-  list-style:none;
-  padding:0;
-  margin-bottom:18px;
-}
-
-.lista-fechas li{
-  margin:6px 0;
-}
-
-.lista-fechas a{
-  text-decoration:none;
-  color:white;
-  font-size:15px;
-}
-
-/* ===== CALENDARIO ===== */
-.calendario{
-  margin-top:22px;
-}
-
-.cal-grid{
-  display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:4px;
-  text-align:center;
-  font-size:13px;
-}
-
-.c-dia{
-  padding:6px 0;
-  border-radius:6px;
-}
-
-.c-domingo{background:#364caa;}
-.c-miercoles{background:#a47300;}
-.c-evento{background:#0bb44f;font-weight:bold;}
