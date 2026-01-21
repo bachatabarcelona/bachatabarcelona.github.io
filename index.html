@@ -1,85 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bachata Barcelona</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bachata Barcelona 2026</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top, #1a1a1a 0%, #000 70%);
+      color: #fff;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 280px;
+      margin: 30px auto 10px;
+      display: block;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 30px;
+      font-weight: normal;
+      opacity: 0.85;
+    }
+
+    h2 {
+      margin: 40px 0 15px;
+      letter-spacing: 2px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      max-width: 420px;
+      margin: 0 auto 35px;
+      padding: 25px 20px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    .logo-miercoles {
+      max-width: 170px; /* +1 punto */
+      margin: 0 auto 15px;
+      display: block;
+    }
+
+    .logo-domingo {
+      max-width: 200px; /* +3 puntos */
+      margin: 0 auto 15px;
+      display: block;
+    }
+
+    .info {
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .info span {
+      display: block;
+      opacity: 0.85;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 14px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .buttons a:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    @media (max-width: 480px) {
+      header img {
+        max-width: 240px;
+      }
+
+      .card {
+        margin: 0 15px 30px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="logo-madre">
-  <img src="img/logo-madre.png" alt="Bachata Barcelona">
-</div>
+  <header>
+    <img src="img/logo-madre.png" alt="Bachata Barcelona">
+    <h1>Bachata Barcelona 2026</h1>
+  </header>
 
-<h2 class="titulo-subdia">MIÉRCOLES</h2>
-<div class="card">
-  <div class="card-logo">
-    <img src="img/logo-miercoles.png" alt="Bachata Party’s">
-  </div>
-  <div class="card-info">
-    <p>Bachata Party’s — Sala Vivaldi Barcelona</p>
-    <p>22:00 — 03:00</p>
-    <p>
-      <a class="ig-link" href="https://www.instagram.com/bachataparty.bcn" target="_blank">
-        @bachataparty.bcn
-      </a>
-    </p>
-  </div>
-  <div class="card-buttons">
-    <a class="btn-share" href="#" onclick="compartir('Miércoles — Bachata Party’s en Sala Vivaldi BCN')">Compartir</a>
-    <a class="btn" href="GALERIA-MIERCOLES-FOTOS.html">Fotos</a>
-    <a class="btn" href="GALERIA-MIERCOLES-VIDEOS.html">Vídeos</a>
-    <a class="btn" href="https://maps.app.goo.gl/3TosNnuhEHq2wNkz7" target="_blank">Ubicación</a>
-  </div>
-</div>
+  <h2>MIÉRCOLES</h2>
 
-<h2 class="titulo-subdia">DOMINGO</h2>
-<div class="card">
-  <div class="card-logo">
-    <img src="img/logo-domingo.png" alt="Bachastation">
-  </div>
-  <div class="card-info">
-    <p>Bachastation — Hyde Club Barcelona</p>
-    <p>19:30 — 02:00</p>
-    <p>
-      <a class="ig-link" href="https://www.instagram.com/bachastation" target="_blank">
-        @bachastation
-      </a>
-    </p>
-  </div>
-  <div class="card-buttons">
-    <a class="btn-share" href="#" onclick="compartir('Domingo — Bachastation en Hyde Club BCN')">Compartir</a>
-    <a class="btn" href="GALERIA-DOMINGO-FOTOS.html">Fotos</a>
-    <a class="btn" href="GALERIA-DOMINGO-VIDEOS.html">Vídeos</a>
-    <a class="btn" href="https://maps.app.goo.gl/nMegUVk8c8yRy26a9" target="_blank">Ubicación</a>
-  </div>
-</div>
+  <div class="card">
+    <img src="img/logo-miercoles.png" alt="Bachata Party’s" class="logo-miercoles">
 
-<!-- BARRA DE ICONOS INFERIOR -->
-<div class="social-bar">
-  <a href="https://wa.me/?text=Bachata%20Barcelona" target="_blank" aria-label="WhatsApp">🟢</a>
-  <a href="https://www.instagram.com/bachastation" target="_blank" aria-label="Instagram">📸</a>
-  <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube">▶️</a>
-  <a href="#" onclick="compartir('Bachata Barcelona')" aria-label="Compartir">🔗</a>
-</div>
+    <div class="info">
+      Bachata Party’s — Sala Vivaldi Barcelona
+      <span>22:00 – 03:00</span>
+      <span>@bachataparty.bcn</span>
+    </div>
 
-<script>
-function compartir(texto) {
-  if (navigator.share) {
-    navigator.share({
-      title: 'Bachata Barcelona',
-      text: texto,
-      url: window.location.href
-    });
-  } else {
-    window.open(
-      'https://wa.me/?text=' + encodeURIComponent(texto + ' ' + window.location.href),
-      '_blank'
-    );
-  }
-}
-</script>
+    <div class="buttons">
+      <a href="GALERIA-MIERCOLES-FOTOS.html">Fotos</a>
+      <a href="GALERIA-MIERCOLES-VIDEOS.html">Vídeos</a>
+      <a href="https://maps.google.com/?q=Sala+Vivaldi+Barcelona" target="_blank">Ubicación</a>
+    </div>
+  </div>
+
+  <h2>DOMINGO</h2>
+
+  <div class="card">
+    <img src="img/logo-domingo.png" alt="Bachastation" class="logo-domingo">
+
+    <div class="info">
+      Bachastation — Hyde Club Barcelona
+      <span>19:30 – 02:00</span>
+      <span>@bachastation</span>
+    </div>
+
+    <div class="buttons">
+      <a href="GALERIA-DOMINGO-FOTOS.html">Fotos</a>
+      <a href="GALERIA-DOMINGO-VIDEOS.html">Vídeos</a>
+      <a href="https://maps.google.com/?q=Hyde+Club+Barcelona" target="_blank">Ubicación</a>
+    </div>
+  </div>
 
 </body>
 </html>
