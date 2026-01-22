@@ -29,22 +29,36 @@ html,body{
   padding:9px 14px;border-radius:999px;font-size:14px
 }
 .galeria{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:6px;margin-top:16px
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
+  margin-top:16px
 }
-.galeria img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px}
+.galeria img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer
+}
 .calendar-container{
   margin-top:22px;padding:16px;
   background:linear-gradient(180deg,#222,#1a1a1a);
   border-radius:18px
 }
-.calendar-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.calendar-header{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:10px
+}
 .calendar-header button{
   background:none;border:1px solid rgba(255,255,255,.4);
   color:#fff;border-radius:50%;
   width:34px;height:34px;font-size:18px
 }
-.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.calendar-grid{
+  display:grid;grid-template-columns:repeat(7,1fr);
+  gap:6px;text-align:center
+}
 .calendar-day{padding:8px 0;border-radius:8px;font-size:13px}
 .today{background:rgba(255,255,255,.15)}
 .volver{text-align:center;margin:22px 0}
@@ -58,7 +72,7 @@ html,body{
 
 <div class="card">
   <div class="card-logo">
-    <img src="img/logo-domingo.png">
+    <img src="img/logo-domingo.png" alt="Bachastation">
   </div>
 
   <p><strong>Bachastation – Hyde Club Barcelona</strong></p>
@@ -75,12 +89,10 @@ html,body{
     <a href="GALERIA-DOMINGO-VIDEOS.html">Vídeos</a>
   </div>
 
-  <div class="galeria">
-    <img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/3.722_2.jpg">
-    <img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/3.842_2.jpg">
-    <img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/4.148_1.jpg">
-  </div>
+  <!-- GALERÍA DINÁMICA -->
+  <div class="galeria" id="galeria"></div>
 
+  <!-- CALENDARIO -->
   <div class="calendar-container">
     <div class="calendar-header">
       <button id="prevMonth">‹</button>
@@ -95,11 +107,27 @@ html,body{
   <a href="index.html">Volver al home</a>
 </div>
 
+<!-- JS DE FOTOS -->
+<script src="fotos-2026-01-11-domingo.js"></script>
+
 <script>
+/* GALERÍA */
+const galeria = document.getElementById("galeria");
+const basePath = "fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/";
+
+fotos.forEach(nombre => {
+  const img = document.createElement("img");
+  img.src = basePath + nombre;
+  img.loading = "lazy";
+  galeria.appendChild(img);
+});
+
+/* CALENDARIO */
 const monthNames=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 let d=new Date();
 const mY=document.getElementById("monthYear");
 const cD=document.getElementById("calendarDays");
+
 function render(){
   cD.innerHTML="";
   mY.textContent=`${monthNames[d.getMonth()]} ${d.getFullYear()}`;
