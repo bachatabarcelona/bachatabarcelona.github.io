@@ -1,141 +1,150 @@
-/* ===============================
-   RESET BÁSICO
-================================ */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* =========================
+   BASE GLOBAL
+========================= */
 html, body {
   width: 100%;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: radial-gradient(circle at top, #1a1a1a 0%, #000 60%);
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
   color: #fff;
 }
 
-/* ===============================
-   CONTENEDOR PRINCIPAL HOME
-================================ */
+/* =========================
+   HOME (PANTALLA ÚNICA)
+========================= */
 body.home {
-  overflow: hidden; /* ❌ sin scroll en home */
+  overflow: hidden;            /* ❌ sin scroll */
 }
 
-main {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 10px 0;
-}
-
-/* ===============================
-   LOGO MADRE
-================================ */
-.logo-madre {
-  width: 260px;
-  max-width: 90%;
-  margin: 10px auto;
-  display: block;
-}
-
-/* ===============================
-   TÍTULOS MIÉRCOLES / DOMINGO
-================================ */
-.titulo-dia {
-  text-align: center;
-  font-size: 22px;
-  letter-spacing: 3px;
-  margin: 10px 0;
-}
-
-/* ===============================
-   CARD GENERAL (MISMO TAMAÑO)
-================================ */
-.card {
-  width: 92%;
+/* =========================
+   CONTENEDOR HOME
+========================= */
+.container {
+  height: 100vh;               /* 1 pantalla exacta */
   max-width: 420px;
-  background: linear-gradient(180deg, #2a2a2a, #141414);
-  border-radius: 22px;
-  padding: 18px 14px;
+  margin: 0 auto;
+  padding: 10px 14px 12px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
 }
 
-/* ===============================
-   LOGOS DENTRO DE LAS CARDS
-================================ */
-.card-logo img {
+/* =========================
+   LOGO MADRE
+========================= */
+.logo-madre {
+  max-width: 260px;
+  margin: 6px auto 4px;
   display: block;
-  margin: 0 auto 10px;
 }
 
-/* miércoles: +1 punto */
-.card.miercoles .card-logo img {
-  width: 150px;
+/* =========================
+   TITULOS
+========================= */
+.section-title {
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 6px 0;
 }
 
-/* domingo: +3 puntos */
-.card.domingo .card-logo img {
-  width: 165px;
+/* =========================
+   TARJETAS (IGUALES)
+========================= */
+.card {
+  background: #161616;
+  border-radius: 20px;
+  height: 300px;               /* 🔒 MISMO TAMAÑO */
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* ===============================
+/* =========================
+   LOGOS DENTRO CARD
+========================= */
+.card-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-miercoles {
+  max-width: 145px;            /* +1 */
+  margin-top: 6px;
+}
+
+.logo-domingo {
+  max-width: 165px;            /* +3 */
+  margin-top: 2px;
+}
+
+/* =========================
    TEXTO CARD
-================================ */
-.card-info {
+========================= */
+.card-text {
   text-align: center;
   font-size: 15px;
-  line-height: 1.4;
-  opacity: 0.95;
+  line-height: 1.35;
 }
 
-.card-info strong {
-  font-weight: 600;
-}
-
-.card-info .insta {
+.card-instagram {
   margin-top: 4px;
-  opacity: 0.8;
+  font-size: 14px;
+  opacity: 0.85;
 }
 
-/* ===============================
+/* =========================
    BOTONES
-================================ */
+========================= */
 .card-buttons {
   display: flex;
-  gap: 10px;
-  margin-top: 12px;
+  gap: 8px;
 }
 
 .card-buttons a {
+  flex: 1;
+  text-align: center;
   text-decoration: none;
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.6);
-  border-radius: 20px;
-  padding: 8px 14px;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  padding: 8px 0;
   font-size: 14px;
-  white-space: nowrap;
 }
 
-/* ===============================
-   FOOTER (VACÍO / CONTROLADO)
-================================ */
-footer {
-  display: none;
+/* =========================
+   PÁGINAS SECUNDARIAS
+========================= */
+body:not(.home) {
+  height: auto;
+  overflow: auto;
+  padding: 20px 14px;
 }
 
-/* ===============================
-   AJUSTE FINO SOLO EN MÓVIL
-   (CLAVE PARA QUE ENTRE TODO)
-================================ */
+/* =========================
+   ELIMINAR EXTRAS ABAJO
+========================= */
+.extra-icons,
+.footer-icons,
+.social-icons {
+  display: none !important;
+}
+
+/* =========================
+   AJUSTE FINO MÓVIL
+========================= */
 @media (max-width: 420px) {
-  body.home main {
+  body.home .container {
     transform: scale(0.92);
     transform-origin: top center;
   }
