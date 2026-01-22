@@ -1,4 +1,4 @@
-name: Generar galerías automáticamente (Domingos y Miércoles)
+name: Generar galerías automáticamente (Fotos y Vídeos)
 
 on:
   push:
@@ -15,46 +15,72 @@ jobs:
         uses: actions/checkout@v4
 
       # =========================
-      # DOMINGOS - FOTOS
+      # FOTOS - DOMINGOS
       # =========================
-      - name: Generar fotos.js para DOMINGOS
+      - name: Fotos DOMINGOS
         run: |
           find fotos -type d -path "*DOMINGOS/*" | while read dir; do
             if ls "$dir"/*.jpg 1> /dev/null 2>&1; then
-              echo "Generando fotos.js en $dir"
               echo "const fotos = [" > "$dir/fotos.js"
               for file in "$dir"/*.jpg; do
-                name=$(basename "$file")
-                echo "  \"$name\"," >> "$dir/fotos.js"
+                echo "  \"$(basename "$file")\"," >> "$dir/fotos.js"
               done
               echo "];" >> "$dir/fotos.js"
             fi
           done
 
       # =========================
-      # MIÉRCOLES - FOTOS
+      # FOTOS - MIERCOLES
       # =========================
-      - name: Generar fotos.js para MIERCOLES
+      - name: Fotos MIERCOLES
         run: |
           find fotos -type d -path "*MIERCOLES/*" | while read dir; do
             if ls "$dir"/*.jpg 1> /dev/null 2>&1; then
-              echo "Generando fotos.js en $dir"
               echo "const fotos = [" > "$dir/fotos.js"
               for file in "$dir"/*.jpg; do
-                name=$(basename "$file")
-                echo "  \"$name\"," >> "$dir/fotos.js"
+                echo "  \"$(basename "$file")\"," >> "$dir/fotos.js"
               done
               echo "];" >> "$dir/fotos.js"
             fi
           done
 
       # =========================
-      # COMMIT AUTOMÁTICO
+      # VIDEOS - DOMINGOS
+      # =========================
+      - name: Videos DOMINGOS
+        run: |
+          find videos -type d -path "*DOMINGOS/*" | while read dir; do
+            if ls "$dir"/*.mp4 1> /dev/null 2>&1; then
+              echo "const videos = [" > "$dir/videos.js"
+              for file in "$dir"/*.mp4; do
+                echo "  \"$(basename "$file")\"," >> "$dir/videos.js"
+              done
+              echo "];" >> "$dir/videos.js"
+            fi
+          done
+
+      # =========================
+      # VIDEOS - MIERCOLES
+      # =========================
+      - name: Videos MIERCOLES
+        run: |
+          find videos -type d -path "*MIERCOLES/*" | while read dir; do
+            if ls "$dir"/*.mp4 1> /dev/null 2>&1; then
+              echo "const videos = [" > "$dir/videos.js"
+              for file in "$dir"/*.mp4; do
+                echo "  \"$(basename "$file")\"," >> "$dir/videos.js"
+              done
+              echo "];" >> "$dir/videos.js"
+            fi
+          done
+
+      # =========================
+      # COMMIT
       # =========================
       - name: Commit automático
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add fotos/**/fotos.js
-          git commit -m "Actualizar galerías automáticamente" || echo "Sin cambios"
+          git add fotos/**/fotos.js videos/**/videos.js
+          git commit -m "Actualizar galerías fotos y vídeos" || echo "Sin cambios"
           git push
