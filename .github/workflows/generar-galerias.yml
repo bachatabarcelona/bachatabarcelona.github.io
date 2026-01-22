@@ -1,0 +1,31 @@
+name: Generar galerías automáticamente
+
+on:
+  push:
+    paths:
+      - "fotos/**"
+
+jobs:
+  generar-galeria:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Generar JS de fotos Domingo 11 Enero
+        run: |
+          echo "const fotos = [" > fotos-2026-01-11-domingo.js
+          for file in fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/*.jpg; do
+            name=$(basename "$file")
+            echo "  \"$name\"," >> fotos-2026-01-11-domingo.js
+          done
+          echo "];" >> fotos-2026-01-11-domingo.js
+
+      - name: Commit automático
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add fotos-2026-01-11-domingo.js
+          git commit -m "Actualizar galería domingo 11 enero"
+          git push
