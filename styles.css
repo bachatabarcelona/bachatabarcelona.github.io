@@ -16,7 +16,7 @@ html, body {
 }
 
 /* ===============================
-   LOGO PRINCIPAL
+   LOGO PRINCIPAL (HOME)
 ================================ */
 .logo-principal {
   display: block;
@@ -36,7 +36,7 @@ html, body {
 }
 
 /* ===============================
-   TARJETAS (MIÉRCOLES / DOMINGO)
+   TARJETAS (HOME)
 ================================ */
 .card {
   background: linear-gradient(180deg, #222 0%, #1a1a1a 100%);
@@ -50,7 +50,7 @@ html, body {
 }
 
 /* ===============================
-   LOGOS DENTRO DE TARJETA
+   LOGOS DENTRO DE TARJETA (HOME)
 ================================ */
 .card-logo img {
   display: block;
@@ -78,7 +78,7 @@ html, body {
 }
 
 /* ===============================
-   BOTONES
+   BOTONES (HOME)
 ================================ */
 .botones {
   display: flex;
@@ -113,10 +113,21 @@ html, body {
   justify-content: center;
 }
 
+/* tarjeta en galería */
 .galeria .card {
   margin-top: 40px;
 }
 
+/* LOGOS CORREGIDOS SOLO EN GALERÍA */
+.galeria .card-logo img {
+  max-width: 150px;
+  width: 60%;
+  margin-bottom: 16px;
+}
+
+/* ===============================
+   VOLVER
+================================ */
 .volver {
   display: block;
   margin-top: 25px;
@@ -151,5 +162,10 @@ footer {
   .botones a {
     font-size: 13px;
     padding: 9px 14px;
+  }
+
+  /* galería aún más ajustada en móviles pequeños */
+  .galeria .card-logo img {
+    max-width: 130px;
   }
 }
