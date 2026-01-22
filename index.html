@@ -1,55 +1,52 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Bachata Barcelona</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-</head>
+/* ===============================
+   AJUSTE SOLO PARA HOME
+   (no afecta a galerías)
+================================ */
 
-<body>
+/* Reducir logo principal */
+.logo-principal {
+  max-width: 240px;
+  margin: 16px auto 12px;
+}
 
-  <header class="header">
-    <img src="img/logo-madre.png" alt="Bachata Barcelona" class="logo-madre">
-  </header>
+/* Compactar tarjetas del HOME */
+.card {
+  max-width: 360px;
+  padding: 16px 14px 18px;
+  margin-bottom: 18px;
+}
 
-  <!-- MIÉRCOLES -->
-  <h2 class="dia">MIÉRCOLES</h2>
+/* Logos dentro de tarjetas (HOME) */
+.card-logo img {
+  max-width: 140px;
+  width: 60%;
+  margin-bottom: 12px;
+}
 
-  <div class="card">
-    <img src="img/logo-miercoles.png" alt="Bachata Party's" class="logo-evento">
+/* Textos más compactos */
+.card p {
+  font-size: 14px;
+  line-height: 1.3;
+}
 
-    <p class="info">
-      Bachata Party’s – Sala Vivaldi Barcelona<br>
-      22:00 – 03:00<br>
-      @bachataparty.bcn
-    </p>
+/* Botones más pequeños para que entren */
+.botones a {
+  padding: 7px 12px;
+  font-size: 13px;
+  min-width: 78px;
+}
 
-    <div class="botones">
-      <a href="GALERIA-MIERCOLES-FOTOS.html" class="btn">Fotos</a>
-      <a href="GALERIA-MIERCOLES-VIDEOS.html" class="btn">Vídeos</a>
-      <a href="https://maps.google.com/?q=Sala+Vivaldi+Barcelona" target="_blank" class="btn">Ubicación</a>
-    </div>
-  </div>
+/* Ajuste móvil para que TODO entre en una pantalla */
+@media (max-height: 700px) {
+  .logo-principal {
+    max-width: 220px;
+  }
 
-  <!-- DOMINGO -->
-  <h2 class="dia">DOMINGO</h2>
+  .card-logo img {
+    max-width: 130px;
+  }
 
-  <div class="card">
-    <img src="img/logo-domingo.png" alt="Bachastation" class="logo-evento">
-
-    <p class="info">
-      Bachastation – Hyde Club Barcelona<br>
-      19:30 – 02:00<br>
-      @bachastation
-    </p>
-
-    <div class="botones">
-      <a href="GALERIA-DOMINGO-FOTOS.html" class="btn">Fotos</a>
-      <a href="GALERIA-DOMINGO-VIDEOS.html" class="btn">Vídeos</a>
-      <a href="https://maps.google.com/?q=Hyde+Club+Barcelona" target="_blank" class="btn">Ubicación</a>
-    </div>
-  </div>
-
-</body>
-</html>
+  .titulo-dia {
+    margin: 14px 0 10px;
+  }
+}
