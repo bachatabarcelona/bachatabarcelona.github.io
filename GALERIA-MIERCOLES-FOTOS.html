@@ -7,98 +7,137 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{
-  width:100%;
-  min-height:100%;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:radial-gradient(circle at top,#1a1a1a 0%,#000 60%);
-  color:#fff;
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+background:radial-gradient(circle at top,#1a1a1a 0%,#000 60%);
+color:#fff;
+min-height:100vh
 }
-.titulo-dia{
-  text-align:center;
-  font-weight:700;
-  letter-spacing:2px;
-  margin:24px 0 14px;
-}
+h1{text-align:center;letter-spacing:2px;margin:24px 0}
 .card{
-  background:linear-gradient(180deg,#222 0%,#1a1a1a 100%);
-  border-radius:22px;
-  padding:20px;
-  margin:0 auto 22px;
-  width:92%;
-  max-width:420px;
-  text-align:center;
-  box-shadow:0 20px 50px rgba(0,0,0,.7);
+background:linear-gradient(180deg,#222,#1a1a1a);
+border-radius:22px;
+padding:20px;
+width:92%;
+max-width:420px;
+margin:0 auto;
+text-align:center;
+box-shadow:0 20px 50px rgba(0,0,0,.7)
 }
-.card-logo img{
-  display:block;
-  margin:0 auto 14px;
-  max-width:170px;
-  width:70%;
-}
-.card p{
-  margin-bottom:8px;
-  line-height:1.4;
-}
-.instagram a{
-  color:#7aa2ff;
-  text-decoration:none;
-}
-.botones{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:14px;
-  flex-wrap:wrap;
-}
+.card img{max-width:180px;margin-bottom:14px}
+.instagram a{color:#7aa2ff;text-decoration:none}
+.botones{display:flex;gap:10px;justify-content:center;margin:16px 0}
 .botones a{
-  color:#fff;
-  text-decoration:none;
-  border:1px solid rgba(255,255,255,.6);
-  padding:9px 14px;
-  border-radius:999px;
-  font-size:14px;
-  min-width:90px;
+border:1px solid rgba(255,255,255,.5);
+padding:10px 16px;
+border-radius:999px;
+color:#fff;
+text-decoration:none
 }
-.volver{
-  text-align:center;
-  margin:22px 0;
+.galeria{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+margin-top:16px
 }
-.volver a{
-  color:#aaa;
-  text-decoration:none;
-  font-size:14px;
+.galeria img{
+width:100%;
+border-radius:10px
 }
+.volver{text-align:center;margin:20px 0;opacity:.6}
+.calendar-container{
+margin-top:22px;
+padding:16px;
+background:linear-gradient(180deg,#222,#1a1a1a);
+border-radius:18px
+}
+.calendar-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px
+}
+.calendar-header button{
+background:none;
+border:1px solid rgba(255,255,255,.4);
+color:#fff;
+border-radius:50%;
+width:34px;
+height:34px;
+font-size:18px
+}
+.calendar-grid{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:6px;
+text-align:center
+}
+.calendar-day{padding:8px 0;border-radius:8px;font-size:13px}
+.today{background:rgba(255,255,255,.15)}
 </style>
 </head>
 
 <body>
 
-<h2 class="titulo-dia">MIÉRCOLES</h2>
+<h1>MIÉRCOLES</h1>
 
 <div class="card">
-  <div class="card-logo">
-    <img src="img/logo-miercoles.png" alt="Bachata Party’s">
-  </div>
+<img src="img/logo-miercoles.png" alt="Bachata Party’s">
 
-  <p><strong>Bachata Party’s – Sala Vivaldi Barcelona</strong></p>
-  <p>📸 Contenido en preparación</p>
+<p><strong>Bachata Party’s – Sala Vivaldi Barcelona</strong></p>
+<p>📸 Contenido en preparación</p>
+<p class="instagram">
+<a href="https://instagram.com/bachataparty.bcn" target="_blank">
+@bachataparty.bcn
+</a>
+</p>
 
-  <p class="instagram">
-    <a href="https://www.instagram.com/bachataparty.bcn" target="_blank">
-      @bachataparty.bcn
-    </a>
-  </p>
+<div class="botones">
+<a href="GALERIA-MIERCOLES-FOTOS.html">Fotos</a>
+<a href="GALERIA-MIERCOLES-VIDEOS.html">Vídeos</a>
+</div>
 
-  <div class="botones">
-    <a href="GALERIA-MIERCOLES-FOTOS.html">Fotos</a>
-    <a href="GALERIA-MIERCOLES-VIDEOS.html">Vídeos</a>
-  </div>
+<div class="galeria">
+<img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/3.722_2.jpg">
+<img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/3.842_2.jpg">
+<img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/4.148_1.jpg">
+</div>
+
+<!-- CALENDARIO -->
+<div class="calendar-container">
+<div class="calendar-header">
+<button id="prevMonth">‹</button>
+<span id="monthYear"></span>
+<button id="nextMonth">›</button>
+</div>
+<div class="calendar-grid" id="calendarDays"></div>
+</div>
+
 </div>
 
 <div class="volver">
-  <a href="index.html">Volver al home</a>
+<a href="index.html" style="color:#aaa">Volver al home</a>
 </div>
+
+<script>
+const monthNames=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+let d=new Date();
+const mY=document.getElementById("monthYear");
+const cD=document.getElementById("calendarDays");
+function render(){
+cD.innerHTML="";
+mY.textContent=`${monthNames[d.getMonth()]} ${d.getFullYear()}`;
+let f=new Date(d.getFullYear(),d.getMonth(),1).getDay()||7;
+let days=new Date(d.getFullYear(),d.getMonth()+1,0).getDate();
+for(let i=1;i<f;i++)cD.innerHTML+="<div></div>";
+for(let i=1;i<=days;i++){
+let t=i===new Date().getDate()&&d.getMonth()===new Date().getMonth();
+cD.innerHTML+=`<div class="calendar-day ${t?"today":""}">${i}</div>`;
+}}
+document.getElementById("prevMonth").onclick=()=>{d.setMonth(d.getMonth()-1);render()}
+document.getElementById("nextMonth").onclick=()=>{d.setMonth(d.getMonth()+1);render()}
+render();
+</script>
 
 </body>
 </html>
