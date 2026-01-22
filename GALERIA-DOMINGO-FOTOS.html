@@ -45,22 +45,32 @@
       width: 70%;
     }
 
-    .card p {
-      margin-bottom: 6px;
-      line-height: 1.4;
-    }
-
     .instagram a {
       color: #7aa2ff;
       text-decoration: none;
     }
 
-    /* GALERÍA */
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 16px 0 6px;
+    }
+
+    .botones a {
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.6);
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
     .galeria {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 6px;
-      margin-top: 16px;
+      margin-top: 14px;
     }
 
     .galeria img {
@@ -71,7 +81,6 @@
       cursor: pointer;
     }
 
-    /* MODAL */
     .modal {
       position: fixed;
       inset: 0;
@@ -139,11 +148,17 @@
       </a>
     </p>
 
+    <!-- BOTONES -->
+    <div class="botones">
+      <a href="GALERIA-DOMINGO-FOTOS.html">Fotos</a>
+      <a href="GALERIA-DOMINGO-VIDEOS.html">Vídeos</a>
+    </div>
+
     <!-- GALERÍA -->
     <div class="galeria">
-      <img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/3.722_2.jpg" alt="">
-      <img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/3.842_2.jpg" alt="">
-      <img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/4.148_1.jpg" alt="">
+      <img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/3.722_2.jpg">
+      <img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/3.842_2.jpg">
+      <img src="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/4.148_1.jpg">
     </div>
   </div>
 
@@ -154,9 +169,9 @@
   <!-- MODAL -->
   <div class="modal" id="modal">
     <div>
-      <img id="modal-img" src="" alt="">
+      <img id="modal-img">
       <div class="modal-botones">
-        <a id="download" href="#" download>Descargar</a>
+        <a id="download" download>Descargar</a>
         <button onclick="shareImage()">Compartir</button>
         <button onclick="closeModal()">Cerrar</button>
       </div>
@@ -169,26 +184,23 @@
     const downloadLink = document.getElementById("download");
 
     document.querySelectorAll(".galeria img").forEach(img => {
-      img.addEventListener("click", () => {
+      img.onclick = () => {
         modal.style.display = "flex";
         modalImg.src = img.src;
         downloadLink.href = img.src;
-      });
+      };
     });
 
     function closeModal() {
       modal.style.display = "none";
-      modalImg.src = "";
     }
 
-    async function shareImage() {
+    function shareImage() {
       if (navigator.share) {
-        await navigator.share({
+        navigator.share({
           title: "Bachata Barcelona",
           url: modalImg.src
         });
-      } else {
-        alert("Compartir no disponible en este dispositivo");
       }
     }
   </script>
