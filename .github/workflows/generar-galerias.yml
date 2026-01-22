@@ -1,4 +1,4 @@
-name: Generar galerías automáticamente (Fotos y Vídeos)
+name: Generar galerías y calendario automáticamente
 
 on:
   push:
@@ -7,72 +7,66 @@ on:
       - "videos/**"
 
 jobs:
-  generar-galerias:
+  generar:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar repositorio
+      - name: Checkout
         uses: actions/checkout@v4
 
       # =========================
-      # FOTOS - DOMINGOS
+      # FOTOS (DOMINGOS + MIERCOLES)
       # =========================
-      - name: Fotos DOMINGOS
+      - name: Generar fotos.js
         run: |
-          find fotos -type d -path "*DOMINGOS/*" | while read dir; do
+          find fotos -type d \( -path "*DOMINGOS/*" -o -path "*MIERCOLES/*" \) | while read dir; do
             if ls "$dir"/*.jpg 1> /dev/null 2>&1; then
               echo "const fotos = [" > "$dir/fotos.js"
-              for file in "$dir"/*.jpg; do
-                echo "  \"$(basename "$file")\"," >> "$dir/fotos.js"
+              for f in "$dir"/*.jpg; do
+                echo "  \"$(basename "$f")\"," >> "$dir/fotos.js"
               done
               echo "];" >> "$dir/fotos.js"
             fi
           done
 
       # =========================
-      # FOTOS - MIERCOLES
+      # VIDEOS (DOMINGOS + MIERCOLES)
       # =========================
-      - name: Fotos MIERCOLES
+      - name: Generar videos.js
         run: |
-          find fotos -type d -path "*MIERCOLES/*" | while read dir; do
-            if ls "$dir"/*.jpg 1> /dev/null 2>&1; then
-              echo "const fotos = [" > "$dir/fotos.js"
-              for file in "$dir"/*.jpg; do
-                echo "  \"$(basename "$file")\"," >> "$dir/fotos.js"
-              done
-              echo "];" >> "$dir/fotos.js"
-            fi
-          done
-
-      # =========================
-      # VIDEOS - DOMINGOS
-      # =========================
-      - name: Videos DOMINGOS
-        run: |
-          find videos -type d -path "*DOMINGOS/*" | while read dir; do
+          find videos -type d \( -path "*DOMINGOS/*" -o -path "*MIERCOLES/*" \) | while read dir; do
             if ls "$dir"/*.mp4 1> /dev/null 2>&1; then
               echo "const videos = [" > "$dir/videos.js"
-              for file in "$dir"/*.mp4; do
-                echo "  \"$(basename "$file")\"," >> "$dir/videos.js"
+              for v in "$dir"/*.mp4; do
+                echo "  \"$(basename "$v")\"," >> "$dir/videos.js"
               done
               echo "];" >> "$dir/videos.js"
             fi
           done
 
       # =========================
-      # VIDEOS - MIERCOLES
+      # EVENTOS DOMINGOS
       # =========================
-      - name: Videos MIERCOLES
+      - name: Generar eventos-domingos.js
         run: |
-          find videos -type d -path "*MIERCOLES/*" | while read dir; do
-            if ls "$dir"/*.mp4 1> /dev/null 2>&1; then
-              echo "const videos = [" > "$dir/videos.js"
-              for file in "$dir"/*.mp4; do
-                echo "  \"$(basename "$file")\"," >> "$dir/videos.js"
-              done
-              echo "];" >> "$dir/videos.js"
-            fi
+          echo "window.EVENTOS_DOMINGO = [" > eventos-domingos.js
+          find fotos -type d -path "*DOMINGOS/2026-*" | sort | while read dir; do
+            name=$(basename "$dir")
+            echo "  \"$name\"," >> eventos-domingos.js
           done
+          echo "];" >> eventos-domingos.js
+
+      # =========================
+      # EVENTOS MIERCOLES
+      # =========================
+      - name: Generar eventos-miercoles.js
+        run: |
+          echo "window.EVENTOS_MIERCOLES = [" > eventos-miercoles.js
+          find fotos -type d -path "*MIERCOLES/2026-*" | sort | while read dir; do
+            name=$(basename "$dir")
+            echo "  \"$name\"," >> eventos-miercoles.js
+          done
+          echo "];" >> eventos-miercoles.js
 
       # =========================
       # COMMIT
@@ -81,6 +75,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add fotos/**/fotos.js videos/**/videos.js
-          git commit -m "Actualizar galerías fotos y vídeos" || echo "Sin cambios"
+          git add fotos/**/fotos.js videos/**/videos.js eventos-*.js
+          git commit -m "Actualizar galerías y calendario automáticamente" || echo "Sin cambios"
           git push
