@@ -3,19 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bachata Barcelona</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Bachata Barcelona 2026®</title>
+
+  <style>
+    /* ===============================
+       RESET
+    ================================ */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top, #1a1a1a 0%, #000 60%);
+      color: #fff;
+    }
+
+    /* ===============================
+       LOGO PRINCIPAL
+    ================================ */
+    .logo-principal {
+      display: block;
+      max-width: 260px;
+      width: 70%;
+      margin: 24px auto 18px;
+    }
+
+    /* ===============================
+       TÍTULOS
+    ================================ */
+    .titulo-dia {
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin: 22px 0 12px;
+    }
+
+    /* ===============================
+       TARJETAS
+    ================================ */
+    .card {
+      background: linear-gradient(180deg, #222 0%, #1a1a1a 100%);
+      border-radius: 22px;
+      padding: 20px 18px 24px;
+      margin: 0 auto 24px;
+      width: 92%;
+      max-width: 420px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+      text-align: center;
+    }
+
+    /* ===============================
+       LOGOS EN TARJETAS
+    ================================ */
+    .card-logo img {
+      display: block;
+      margin: 0 auto 16px;
+      width: 65%;
+      max-width: 180px;
+      height: auto;
+    }
+
+    /* ===============================
+       TEXTO
+    ================================ */
+    .card p {
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .horario {
+      opacity: 0.85;
+    }
+
+    .instagram {
+      opacity: 0.9;
+      margin-bottom: 14px;
+    }
+
+    /* ===============================
+       BOTONES
+    ================================ */
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .botones a {
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.6);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      min-width: 92px;
+      transition: all 0.25s ease;
+    }
+
+    .botones a:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ===============================
+       FOOTER
+    ================================ */
+    footer {
+      text-align: center;
+      opacity: 0.5;
+      font-size: 13px;
+      margin: 26px 0 18px;
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- LOGO PRINCIPAL -->
-  <img src="img/bachata-barcelona.png" alt="Bachata Barcelona" class="logo-principal">
+  <img src="img/logo-madre.png" alt="Bachata Barcelona" class="logo-principal">
 
   <!-- MIÉRCOLES -->
   <h2 class="titulo-dia">MIÉRCOLES</h2>
+
   <div class="card">
     <div class="card-logo">
-      <img src="img/bachata-party.png" alt="Bachata Party’s">
+      <img src="img/logo-miercoles.png" alt="Bachata Party’s">
     </div>
 
     <p>Bachata Party’s – Sala Vivaldi Barcelona</p>
@@ -31,9 +148,10 @@
 
   <!-- DOMINGO -->
   <h2 class="titulo-dia">DOMINGO</h2>
+
   <div class="card">
     <div class="card-logo">
-      <img src="img/bachastation.png" alt="Bachastation">
+      <img src="img/logo-domingo.png" alt="Bachastation">
     </div>
 
     <p>Bachastation – Hyde Club Barcelona</p>
@@ -46,6 +164,10 @@
       <a href="https://maps.google.com/?q=Hyde+Club+Barcelona" target="_blank">Ubicación</a>
     </div>
   </div>
+
+  <footer>
+    © Bachata Barcelona 2026®
+  </footer>
 
 </body>
 </html>
