@@ -1,5 +1,5 @@
 /* ===============================
-   RESET
+   RESET BÁSICO
 ================================ */
 * {
   box-sizing: border-box;
@@ -13,76 +13,77 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   background: radial-gradient(circle at top, #1a1a1a 0%, #000 60%);
   color: #fff;
-  overflow-x: hidden;
 }
 
 /* ===============================
-   LOGO PRINCIPAL (HOME)
+   LOGO PRINCIPAL
 ================================ */
 .logo-principal {
   display: block;
-  max-width: 260px;
-  width: 70%;
-  margin: 20px auto 16px;
+  max-width: 320px;
+  width: 80%;
+  margin: 30px auto 20px auto;
 }
 
 /* ===============================
-   TÍTULOS
+   TÍTULOS DE DÍA
 ================================ */
 .titulo-dia {
   text-align: center;
   font-weight: 700;
   letter-spacing: 2px;
-  margin: 18px 0 12px;
-  font-size: 15px;
+  margin: 30px 0 15px 0;
 }
 
 /* ===============================
-   TARJETAS (HOME)
+   TARJETAS (MIÉRCOLES / DOMINGO)
 ================================ */
 .card {
   background: linear-gradient(180deg, #222 0%, #1a1a1a 100%);
   border-radius: 22px;
-  padding: 18px 16px 20px;
-  margin: 0 auto 22px;
+  padding: 22px 20px 26px;
+  margin: 0 auto 30px;
   width: 92%;
-  max-width: 380px;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.7);
+  max-width: 420px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
   text-align: center;
 }
 
 /* ===============================
-   LOGOS DENTRO DE TARJETA (HOME)
-   🔑 AQUÍ SE ARREGLA LO GIGANTE
+   LOGOS DENTRO DE TARJETA
 ================================ */
 .card-logo img {
   display: block;
-  margin: 0 auto 14px;
-  max-width: 150px;
-  width: 65%;
+  margin: 0 auto 18px;
+  max-width: 200px;
+  width: 70%;
 }
 
 /* ===============================
-   TEXTO
+   TEXTO TARJETA
 ================================ */
 .card p {
-  margin-bottom: 6px;
-  line-height: 1.35;
-  font-size: 14px;
+  margin-bottom: 8px;
+  line-height: 1.4;
 }
 
-.instagram {
-  margin-bottom: 12px;
+.card .horario {
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.card .instagram {
   opacity: 0.9;
+  margin-bottom: 18px;
 }
 
 /* ===============================
-   BOTONES (HOME Y GALERÍA)
+   BOTONES
 ================================ */
 .botones {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -90,51 +91,39 @@ html, body {
   text-decoration: none;
   color: #fff;
   border: 1px solid rgba(255,255,255,0.6);
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 999px;
-  font-size: 13px;
-  min-width: 80px;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  min-width: 90px;
   text-align: center;
 }
 
+.botones a:hover {
+  background: rgba(255,255,255,0.12);
+}
+
 /* ===============================
-   GALERÍA / SEGUNDA PÁGINA
-   (AISLADA DEL HOME)
+   PÁGINAS FOTOS / VÍDEOS
 ================================ */
 .galeria {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-/* tarjeta galería */
 .galeria .card {
   margin-top: 40px;
 }
 
-/* logos más pequeños SOLO en galería */
-.galeria .card-logo img {
-  max-width: 130px;
-  width: 60%;
-}
-
-/* botones visibles en galería */
-.galeria .botones {
-  margin-top: 14px;
-}
-
-/* ===============================
-   VOLVER
-================================ */
 .volver {
   display: block;
-  margin-top: 18px;
+  margin-top: 25px;
   text-align: center;
   color: #fff;
   opacity: 0.8;
   text-decoration: underline;
-  font-size: 14px;
 }
 
 /* ===============================
@@ -143,19 +132,24 @@ html, body {
 footer {
   text-align: center;
   opacity: 0.5;
-  font-size: 12px;
-  margin: 20px 0 12px;
+  font-size: 13px;
+  margin: 40px 0 20px;
 }
 
 /* ===============================
-   AJUSTE MÓVILES PEQUEÑOS
+   RESPONSIVE
 ================================ */
-@media (max-height: 700px) {
-  .logo-principal {
-    max-width: 230px;
+@media (max-width: 360px) {
+  .card {
+    padding: 20px 16px 24px;
   }
 
   .card-logo img {
-    max-width: 140px;
+    max-width: 180px;
+  }
+
+  .botones a {
+    font-size: 13px;
+    padding: 9px 14px;
   }
 }
