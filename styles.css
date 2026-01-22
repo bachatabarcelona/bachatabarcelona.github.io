@@ -9,7 +9,7 @@
 
 html, body {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   background: radial-gradient(circle at top, #1a1a1a 0%, #000 60%);
   color: #fff;
@@ -23,7 +23,7 @@ html, body {
   display: block;
   max-width: 260px;
   width: 70%;
-  margin: 20px auto 14px;
+  margin: 20px auto 16px;
 }
 
 /* ===============================
@@ -44,7 +44,7 @@ html, body {
   background: linear-gradient(180deg, #222 0%, #1a1a1a 100%);
   border-radius: 22px;
   padding: 18px 16px 20px;
-  margin: 0 auto 20px;
+  margin: 0 auto 22px;
   width: 92%;
   max-width: 380px;
   box-shadow: 0 18px 45px rgba(0,0,0,0.7);
@@ -52,12 +52,13 @@ html, body {
 }
 
 /* ===============================
-   LOGOS HOME (CONTROLADOS)
+   LOGOS DENTRO DE TARJETA (HOME)
+   🔑 AQUÍ SE ARREGLA LO GIGANTE
 ================================ */
 .card-logo img {
   display: block;
   margin: 0 auto 14px;
-  max-width: 150px;   /* 🔒 CLAVE */
+  max-width: 150px;
   width: 65%;
 }
 
@@ -76,7 +77,7 @@ html, body {
 }
 
 /* ===============================
-   BOTONES (HOME + GALERÍA)
+   BOTONES (HOME Y GALERÍA)
 ================================ */
 .botones {
   display: flex;
@@ -97,7 +98,8 @@ html, body {
 }
 
 /* ===============================
-   GALERÍAS (2ª PÁGINA)
+   GALERÍA / SEGUNDA PÁGINA
+   (AISLADA DEL HOME)
 ================================ */
 .galeria {
   min-height: 100vh;
@@ -106,14 +108,20 @@ html, body {
   align-items: center;
 }
 
+/* tarjeta galería */
 .galeria .card {
   margin-top: 40px;
 }
 
-/* LOGOS SOLO EN GALERÍA (MÁS PEQUEÑOS) */
+/* logos más pequeños SOLO en galería */
 .galeria .card-logo img {
   max-width: 130px;
   width: 60%;
+}
+
+/* botones visibles en galería */
+.galeria .botones {
+  margin-top: 14px;
 }
 
 /* ===============================
