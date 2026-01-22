@@ -1,57 +1,85 @@
+/* ===============================
+   RESET BÁSICO
+================================ */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-body {
-  background: #000;
+html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top, #1a1a1a 0%, #000 60%);
   color: #fff;
+}
+
+/* ===============================
+   LOGO PRINCIPAL
+================================ */
+.logo-principal {
+  display: block;
+  max-width: 320px;
+  width: 80%;
+  margin: 30px auto 20px auto;
+}
+
+/* ===============================
+   TÍTULOS DE DÍA
+================================ */
+.titulo-dia {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 30px 0 15px 0;
+}
+
+/* ===============================
+   TARJETAS (MIÉRCOLES / DOMINGO)
+================================ */
+.card {
+  background: linear-gradient(180deg, #222 0%, #1a1a1a 100%);
+  border-radius: 22px;
+  padding: 22px 20px 26px;
+  margin: 0 auto 30px;
+  width: 92%;
+  max-width: 420px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
   text-align: center;
 }
 
-/* HEADER */
-.header {
-  padding: 20px 10px;
-}
-
-.logo-madre {
-  max-width: 280px;
-  width: 90%;
-}
-
-/* TITULOS */
-.dia {
-  margin: 25px 0 15px;
-  letter-spacing: 2px;
-}
-
-/* CARD */
-.card {
-  background: #1a1a1a;
-  border-radius: 20px;
-  padding: 25px 15px;
-  margin: 0 auto 30px;
-  width: 90%;
-  max-width: 420px;
-}
-
-/* LOGOS EVENTO */
-.logo-evento {
+/* ===============================
+   LOGOS DENTRO DE TARJETA
+================================ */
+.card-logo img {
+  display: block;
+  margin: 0 auto 18px;
   max-width: 200px;
-  margin-bottom: 15px;
+  width: 70%;
 }
 
-/* INFO */
-.info {
-  font-size: 15px;
-  line-height: 1.5;
-  margin-bottom: 20px;
-  color: #ddd;
+/* ===============================
+   TEXTO TARJETA
+================================ */
+.card p {
+  margin-bottom: 8px;
+  line-height: 1.4;
 }
 
-/* BOTONES */
+.card .horario {
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.card .instagram {
+  opacity: 0.9;
+  margin-bottom: 18px;
+}
+
+/* ===============================
+   BOTONES
+================================ */
 .botones {
   display: flex;
   justify-content: center;
@@ -59,17 +87,69 @@ body {
   flex-wrap: wrap;
 }
 
-.btn {
+.botones a {
   text-decoration: none;
   color: #fff;
-  border: 1px solid #fff;
-  padding: 8px 18px;
-  border-radius: 25px;
+  border: 1px solid rgba(255,255,255,0.6);
+  padding: 10px 16px;
+  border-radius: 999px;
   font-size: 14px;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  min-width: 90px;
+  text-align: center;
 }
 
-.btn:hover {
-  background: #fff;
-  color: #000;
+.botones a:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* ===============================
+   PÁGINAS FOTOS / VÍDEOS
+================================ */
+.galeria {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.galeria .card {
+  margin-top: 40px;
+}
+
+.volver {
+  display: block;
+  margin-top: 25px;
+  text-align: center;
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  text-align: center;
+  opacity: 0.5;
+  font-size: 13px;
+  margin: 40px 0 20px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 360px) {
+  .card {
+    padding: 20px 16px 24px;
+  }
+
+  .card-logo img {
+    max-width: 180px;
+  }
+
+  .botones a {
+    font-size: 13px;
+    padding: 9px 14px;
+  }
 }
