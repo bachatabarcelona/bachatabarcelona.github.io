@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Galería · Bachata Barcelona</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:radial-gradient(circle at top,#1a1a1a 0%,#000 65%);
+  color:#fff;
+}
+
+/* CABECERA */
+.header{
+  max-width:460px;
+  margin:24px auto 12px;
+  padding:0 14px;
+}
+.selector{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:14px;
+}
+.selector button{
+  border:1px solid rgba(255,255,255,.6);
+  background:none;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:999px;
+  font-size:14px;
+}
+.selector .active{
+  background:rgba(255,255,255,.15);
+}
+
+.card{
+  max-width:460px;
+  margin:0 auto 26px;
+  background:linear-gradient(180deg,#222,#141414);
+  border-radius:24px;
+  padding:18px;
+  box-shadow:0 20px 50px rgba(0,0,0,.7);
+}
+.logo img{
+  display:block;
+  margin:0 auto 12px;
+  max-width:180px;
+}
+.center{text-align:center}
+.center a{color:#7aa2ff;text-decoration:none}
+
+/* CARRUSEL 6 EN 6 */
+.carousel-wrap{
+  overflow:hidden;
+  margin-top:16px;
+}
+.carousel{
+  display:flex;
+  gap:10px;
+  transition:transform .3s ease;
+}
+.item{
+  flex:0 0 calc(100%/2.2);
+}
+.item img,.item video{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:14px;
+  cursor:pointer;
+}
+
+/* CONTROLES CARRUSEL */
+.carousel-controls{
+  display:flex;
+  justify-content:space-between;
+  margin:10px 0 6px;
+}
+.carousel-controls button{
+  background:none;
+  border:1px solid rgba(255,255,255,.4);
+  color:#fff;
+  width:40px;height:40px;
+  border-radius:50%;
+  font-size:20px;
+}
+
+/* CALENDARIO */
+.calendar{
+  margin-top:16px;
+  background:linear-gradient(180deg,#222,#1a1a1a);
+  border-radius:18px;
+  padding:14px;
+}
+.calendar-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+.calendar-header button{
+  background:none;
+  border:1px solid rgba(255,255,255,.4);
+  color:#fff;
+  width:36px;height:36px;
+  border-radius:50%;
+}
+.calendar-days{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+.calendar-days button{
+  width:42px;height:42px;
+  border-radius:12px;
+  border:none;
+  background:#333;
+  color:#fff;
+}
+.calendar-days .active{background:#666}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:1000;
+}
+.modal img,.modal video{
+  max-width:90%;
+  max-height:70vh;
+  border-radius:16px;
+}
+.modal-actions{
+  display:flex;
+  gap:14px;
+  margin-top:16px;
+}
+.modal-actions a,.modal-actions button{
+  background:#222;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.4);
+  padding:10px 14px;
+  border-radius:999px;
+  text-decoration:none;
+}
+
+/* VOLVER */
+.volver{
+  text-align:center;
+  margin:20px 0 30px;
+}
+.volver a{color:#aaa;text-decoration:none}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="selector">
+    <button id="btnDom" class="active" onclick="setModo('domingo')">DOMINGO</button>
+    <button id="btnMie" onclick="setModo('miercoles')">MIÉRCOLES</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="logo">
+    <img id="logo" src="img/logo-domingo.png" alt="">
+  </div>
+
+  <div class="center">
+    <strong id="titulo">Bachastation – Hyde Club Barcelona</strong><br>
+    <a id="ig" href="https://instagram.com/bachastation" target="_blank">@bachastation</a>
+  </div>
+
+  <!-- CARRUSEL -->
+  <div class="carousel-wrap">
+    <div class="carousel" id="carousel"></div>
+  </div>
+
+  <div class="carousel-controls">
+    <button onclick="prev()">‹</button>
+    <button onclick="next()">›</button>
+  </div>
+
+  <!-- CALENDARIO -->
+  <div class="calendar">
+    <div class="calendar-header">
+      <button onclick="prevFecha()">‹</button>
+      <strong id="fechaTxt"></strong>
+      <button onclick="nextFecha()">›</button>
+    </div>
+    <div class="calendar-days" id="days"></div>
+  </div>
+</div>
+
+<div class="volver">
+  <a href="index.html">Volver al home</a>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="closeModal()">
+  <div id="modalContent"></div>
+  <div class="modal-actions">
+    <a id="download" download>⬇ Descargar</a>
+    <button onclick="share(event)">↗ Compartir</button>
+    <a id="igModal" href="#" target="_blank">Instagram</a>
+  </div>
+</div>
+
+<script>
+/* ====== CONFIG ====== */
+let modo = "domingo"; // domingo | miercoles
+
+const config = {
+  domingo: {
+    logo: "img/logo-domingo.png",
+    titulo: "Bachastation – Hyde Club Barcelona",
+    ig: "https://instagram.com/bachastation",
+    igText: "@bachastation",
+    fechas: ["2026-01-04","2026-01-11","2026-01-18","2026-01-25"],
+    carpeta: "DOMINGOS"
+  },
+  miercoles: {
+    logo: "img/logo-miercoles.png",
+    titulo: "Bachata Party’s – Sala Vivaldi Barcelona",
+    ig: "https://instagram.com/bachataparty.bcn",
+    igText: "@bachataparty.bcn",
+    fechas: ["2026-01-07","2026-01-14","2026-01-21","2026-01-28"],
+    carpeta: "MIERCOLES"
+  }
+};
+
+let idxFecha = 1; // por defecto 2ª fecha
+let page = 0; // paginación 6-en-6
+const PAGE_SIZE = 6;
+
+/* ====== UI ====== */
+function setModo(m){
+  modo = m;
+  idxFecha = 1;
+  page = 0;
+  document.getElementById("btnDom").classList.toggle("active", m==="domingo");
+  document.getElementById("btnMie").classList.toggle("active", m==="miercoles");
+  renderHeader();
+  renderCalendar();
+  loadMedia();
+}
+
+function renderHeader(){
+  const c = config[modo];
+  document.getElementById("logo").src = c.logo;
+  document.getElementById("titulo").textContent = c.titulo;
+  const ig = document.getElementById("ig");
+  ig.href = c.ig;
+  ig.textContent = c.igText;
+  document.getElementById("igModal").href = c.ig;
+}
+
+function renderCalendar(){
+  const c = config[modo];
+  const d = new Date(c.fechas[idxFecha]);
+  const dias = document.getElementById("days");
+  document.getElementById("fechaTxt").textContent =
+    `${modo==="domingo"?"Domingo":"Miércoles"} ${d.getDate()} de enero`;
+  dias.innerHTML = "";
+  c.fechas.forEach((f,i)=>{
+    const b = document.createElement("button");
+    b.textContent = new Date(f).getDate();
+    if(i===idxFecha) b.classList.add("active");
+    b.onclick = ()=>{ idxFecha=i; page=0; loadMedia(); renderCalendar(); };
+    dias.appendChild(b);
+  });
+}
+
+/* ====== MEDIA ====== */
+let MEDIA = []; // {type:"img"|"video", src:"..."}
+
+function loadMedia(){
+  const c = config[modo];
+  const fecha = c.fechas[idxFecha];
+  const js = `media-${fecha}-${modo}.js`; // generado por workflow
+  fetch(js).then(r=>r.text()).then(t=>{
+    eval(t); // debe definir: const media = [...]
+    MEDIA = media || [];
+    renderCarousel();
+  }).catch(()=>{
+    MEDIA = [];
+    renderCarousel();
+  });
+}
+
+function renderCarousel(){
+  const car = document.getElementById("carousel");
+  car.innerHTML = "";
+  const start = page*PAGE_SIZE;
+  const slice = MEDIA.slice(start, start+PAGE_SIZE);
+  slice.forEach(m=>{
+    const d = document.createElement("div");
+    d.className = "item";
+    if(m.type==="img"){
+      d.innerHTML = `<img src="${m.src}" onclick="openModal('${m.src}','img')">`;
+    }else{
+      d.innerHTML = `<video src="${m.src}" muted onclick="openModal('${m.src}','video')"></video>`;
+    }
+    car.appendChild(d);
+  });
+}
+
+function next(){
+  if((page+1)*PAGE_SIZE < MEDIA.length){ page++; renderCarousel(); }
+}
+function prev(){
+  if(page>0){ page--; renderCarousel(); }
+}
+
+function nextFecha(){
+  const c = config[modo];
+  if(idxFecha < c.fechas.length-1){ idxFecha++; page=0; loadMedia(); renderCalendar(); }
+}
+function prevFecha(){
+  if(idxFecha>0){ idxFecha--; page=0; loadMedia(); renderCalendar(); }
+}
+
+/* ====== MODAL ====== */
+function openModal(src,type){
+  const mc = document.getElementById("modalContent");
+  mc.innerHTML = type==="img"
+    ? `<img src="${src}">`
+    : `<video src="${src}" controls autoplay></video>`;
+  document.getElementById("download").href = src;
+  document.getElementById("modal").style.display = "flex";
+}
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+function share(e){
+  e.stopPropagation();
+  if(navigator.share){
+    navigator.share({url: document.getElementById("download").href});
+  }
+}
+
+/* INIT */
+renderHeader();
+renderCalendar();
+loadMedia();
+</script>
+
+</body>
+</html>
