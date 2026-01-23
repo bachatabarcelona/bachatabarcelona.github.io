@@ -19,14 +19,14 @@ body{
   padding:12px;
 }
 
-/* LOGO MADRE */
+/* LOGO MADRE – un poco más pequeño */
 .logo-madre{
   display:block;
   margin:8px auto 14px;
-  max-width:185px; /* ⬅️ más pequeño */
+  max-width:185px;
   filter:
-    drop-shadow(0 0 8px rgba(255,200,90,.6))
-    drop-shadow(0 0 18px rgba(255,180,60,.5));
+    drop-shadow(0 0 6px rgba(255,200,90,.6))
+    drop-shadow(0 0 14px rgba(255,180,60,.5));
 }
 
 /* TARJETAS */
@@ -39,7 +39,7 @@ body{
   text-align:center;
 }
 
-/* SOLO MIÉRCOLES */
+/* MIÉRCOLES – ajuste fino */
 .card.miercoles{
   padding-bottom:6px;
 }
@@ -50,16 +50,16 @@ body{
   flex-direction:column;
 }
 
-/* LOGOS EVENTO */
+/* LOGOS EVENTO – más pequeños */
 .logo-evento{
-  max-width:170px; /* ⬅️ todos un poco más pequeños */
+  max-width:165px;
   margin:0 auto 6px;
   display:block;
 }
 
-/* LOGO MIÉRCOLES AÚN MÁS PEQUEÑO */
+/* LOGO MIÉRCOLES aún un pelín más pequeño */
 .card.miercoles .logo-evento{
-  max-width:155px;
+  max-width:150px;
 }
 
 /* TÍTULOS */
@@ -102,7 +102,6 @@ body{
   align-items:center;
   gap:8px;
   opacity:.85;
-  transform: translateX(-18px);
 }
 
 .flecha{
@@ -169,12 +168,12 @@ footer{
 <!-- MIÉRCOLES -->
 <div class="card miercoles">
   <div class="card-inner">
-    <img src="img/logo-miercoles.png" class="logo-evento" alt="Miércoles">
+    <img src="img/logo-miercoles.png" class="logo-evento">
     <h2>MIÉRCOLES</h2>
 
     <div class="desc">
       Bachata Party’s – Sala Vivaldi Barcelona
-      <a href="https://maps.google.com" target="_blank">📍 Maps</a>
+      <a href="https://www.google.com/maps?q=Sala+Vivaldi+Barcelona" target="_blank">📍 Maps</a>
     </div>
 
     <div class="top-row">
@@ -191,8 +190,8 @@ footer{
 
     <div class="actions">
       <div class="actions-left">
-        <a href="galeria/miercoles/">Fotos</a>
-        <a href="videos/miercoles/">Vídeos</a>
+        <a id="fotos-miercoles">Fotos</a>
+        <a id="videos-miercoles">Vídeos</a>
       </div>
       <div class="actions-right" id="dias-miercoles"></div>
     </div>
@@ -202,12 +201,12 @@ footer{
 <!-- DOMINGO -->
 <div class="card">
   <div class="card-inner">
-    <img src="img/logo-domingo.png" class="logo-evento" alt="Domingo">
+    <img src="img/logo-domingo.png" class="logo-evento">
     <h2>DOMINGO</h2>
 
     <div class="desc">
       Bachastation – Hyde Club Barcelona
-      <a href="https://maps.google.com" target="_blank">📍 Maps</a>
+      <a href="https://www.google.com/maps?q=Hyde+Club+Barcelona" target="_blank">📍 Maps</a>
     </div>
 
     <div class="top-row">
@@ -224,8 +223,8 @@ footer{
 
     <div class="actions">
       <div class="actions-left">
-        <a href="galeria/domingo/">Fotos</a>
-        <a href="videos/domingo/">Vídeos</a>
+        <a id="fotos-domingo">Fotos</a>
+        <a id="videos-domingo">Vídeos</a>
       </div>
       <div class="actions-right" id="dias-domingo"></div>
     </div>
@@ -241,15 +240,15 @@ const data={
   miercoles:{
     index:0,
     meses:[
-      {m:"ENERO 2026", d:[7,14,21,28]},
-      {m:"FEBRERO 2026", d:[4,11,18,25]}
+      {m:"2026-01", d:[7,14,21,28]},
+      {m:"2026-02", d:[4,11,18,25]}
     ]
   },
   domingo:{
     index:0,
     meses:[
-      {m:"ENERO 2026", d:[4,11,18,25]},
-      {m:"FEBRERO 2026", d:[1,8,15,22]}
+      {m:"2026-01", d:[4,11,18,25]},
+      {m:"2026-02", d:[1,8,15,22]}
     ]
   }
 };
@@ -257,28 +256,25 @@ const data={
 function render(tipo){
   const obj=data[tipo];
   const mes=obj.meses[obj.index];
-  document.getElementById("mes-"+tipo).innerText=mes.m;
+  const label=mes.m.replace("-", " ");
+  document.getElementById("mes-"+tipo).innerText=label.toUpperCase();
+
+  document.getElementById("fotos-"+tipo).href=`galeria/${tipo}/${mes.m}/`;
+  document.getElementById("videos-"+tipo).href=`videos/${tipo}/${mes.m}/`;
 
   const cont=document.getElementById("dias-"+tipo);
   cont.innerHTML="";
   mes.d.forEach(d=>{
     const a=document.createElement("a");
-    a.href=`galeria/${tipo}/${mes.m.replace(" ","-")}-${d}.html`;
+    a.href=`galeria/${tipo}/${mes.m}-${String(d).padStart(2,'0')}/`;
     a.innerText=d;
     a.className="dia";
     cont.appendChild(a);
   });
 }
 
-function nextMes(t){
-  data[t].index=(data[t].index+1)%data[t].meses.length;
-  render(t);
-}
-
-function prevMes(t){
-  data[t].index=(data[t].index-1+data[t].meses.length)%data[t].meses.length;
-  render(t);
-}
+function nextMes(t){data[t].index=(data[t].index+1)%data[t].meses.length;render(t);}
+function prevMes(t){data[t].index=(data[t].index-1+data[t].meses.length)%data[t].meses.length;render(t);}
 
 render("miercoles");
 render("domingo");
