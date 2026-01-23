@@ -1,54 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Bachata Barcelona</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Bachata Barcelona</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
-  background:#000;
-  color:#fff;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.container{
-  text-align:center;
-}
-h1{
-  margin-bottom:30px;
-  letter-spacing:6px;
-}
-.links{
-  display:flex;
-  gap:20px;
-  justify-content:center;
-}
-.links a{
-  padding:14px 28px;
-  border-radius:40px;
-  border:1px solid #444;
-  color:#fff;
-  text-decoration:none;
-  font-size:18px;
-}
-</style>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
+      background:radial-gradient(circle at top,#111,#000);
+      color:#fff;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+    }
+    .container{
+      max-width:420px;
+      width:100%;
+    }
+    h1{
+      letter-spacing:6px;
+      margin-bottom:22px;
+    }
+    .subtitle{
+      opacity:.75;
+      margin-bottom:32px;
+    }
+    .buttons{
+      display:flex;
+      gap:18px;
+      justify-content:center;
+      margin-bottom:40px;
+    }
+    .buttons a{
+      padding:14px 26px;
+      border-radius:26px;
+      border:1px solid #777;
+      color:#fff;
+      text-decoration:none;
+      font-size:16px;
+    }
+    .buttons a:hover{
+      background:#fff;
+      color:#000;
+    }
+    footer{
+      opacity:.5;
+      font-size:13px;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>BACHATA BARCELONA</h1>
+  <div class="container">
+    <h1>BACHATA<br>BARCELONA</h1>
 
-  <div class="links">
-    <a href="miercoles.html">Miércoles</a>
-    <a href="domingo.html">Domingo</a>
+    <div class="subtitle">
+      Galerías oficiales · Fotos y vídeos<br>
+      Miércoles y Domingos
+    </div>
+
+    <div class="buttons">
+      <a href="miercoles.html">Miércoles</a>
+      <a href="domingo.html">Domingo</a>
+    </div>
+
+    <footer>
+      © Bachata Barcelona
+    </footer>
   </div>
-</div>
 
 </body>
 </html>
