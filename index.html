@@ -13,49 +13,57 @@ body{
   color:#ffffff;
 }
 
-/* CONTENEDOR */
+/* CONTENEDOR GENERAL */
 .home{
   max-width:900px;
   margin:auto;
-  padding:20px;
+  padding:14px;
+}
+
+/* LOGO MADRE */
+.logo-madre{
+  display:block;
+  margin:10px auto 18px;
+  max-width:260px;
 }
 
 /* TARJETAS */
 .card{
   background:#151515;
-  border-radius:22px;
-  padding:22px;
-  margin-bottom:26px;
-  box-shadow:0 0 28px rgba(0,0,0,0.6);
+  border-radius:20px;
+  padding:18px;
+  margin-bottom:20px;
+  box-shadow:0 0 24px rgba(0,0,0,0.6);
   text-align:center;
 }
 
-/* LOGO */
+/* LOGOS EVENTO */
 .logo{
   display:block;
-  margin:0 auto 10px;
-  max-width:200px;
+  margin:0 auto 6px;
+  max-width:160px;
 }
 
 /* TITULO */
 .card h2{
-  margin:0 0 12px;
+  margin:6px 0 10px;
   letter-spacing:4px;
-  font-size:20px;
+  font-size:18px;
 }
 
 /* DESCRIPCIÓN */
 .descripcion{
   opacity:0.9;
-  margin-bottom:12px;
+  margin-bottom:8px;
+  font-size:14px;
 }
 
 /* INFO */
 .info{
   display:flex;
   justify-content:space-between;
-  font-size:14px;
-  margin-bottom:14px;
+  font-size:13px;
+  margin-bottom:10px;
 }
 
 .info a{
@@ -67,43 +75,43 @@ body{
 .actions{
   display:flex;
   justify-content:center;
-  gap:12px;
+  gap:10px;
   margin-bottom:6px;
 }
 
 .actions a{
-  padding:8px 16px;
-  border-radius:20px;
+  padding:7px 14px;
+  border-radius:18px;
   background:#222;
   color:white;
   text-decoration:none;
-  font-size:14px;
+  font-size:13px;
 }
 
-/* CALENDARIO COMO BOTÓN */
+/* CALENDARIO */
 .calendario{
-  margin-top:8px;
-  font-size:13px;
+  font-size:12px;
+  margin-top:6px;
 }
 
 .cal-header{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:10px;
+  gap:8px;
   opacity:0.8;
 }
 
 .flecha{
   cursor:pointer;
-  font-size:18px;
+  font-size:16px;
 }
 
 .cal-numeros{
   display:flex;
   justify-content:center;
-  gap:14px;
-  margin-top:4px;
+  gap:12px;
+  margin-top:3px;
 }
 
 .cal-numeros a{
@@ -116,7 +124,8 @@ body{
 footer{
   text-align:center;
   opacity:0.5;
-  margin:40px 0 10px;
+  margin:18px 0 6px;
+  font-size:12px;
 }
 </style>
 </head>
@@ -124,6 +133,9 @@ footer{
 <body>
 
 <div class="home">
+
+<!-- LOGO MADRE -->
+<img src="img/bachata-barcelona.png" class="logo-madre" alt="Bachata Barcelona">
 
 <!-- MIÉRCOLES -->
 <div class="card">
@@ -144,7 +156,6 @@ footer{
     <a href="videos/miercoles/">Vídeos</a>
   </div>
 
-  <!-- CALENDARIO -->
   <div class="calendario">
     <div class="cal-header">
       <span class="flecha" onclick="prevMes('miercoles')">‹</span>
@@ -174,7 +185,6 @@ footer{
     <a href="videos/domingo/">Vídeos</a>
   </div>
 
-  <!-- CALENDARIO -->
   <div class="calendario">
     <div class="cal-header">
       <span class="flecha" onclick="prevMes('domingo')">‹</span>
