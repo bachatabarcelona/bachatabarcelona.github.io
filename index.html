@@ -37,18 +37,14 @@ body{
   margin-bottom:20px;
   box-shadow:0 0 30px rgba(0,0,0,.7);
   text-align:center;
-  display:flex;
-  flex-direction:column;
 }
 
-/* CONTENIDO INTERNO */
-.card-inner{
-  display:flex;
-  flex-direction:column;
+/* AJUSTE MIÉRCOLES */
+.card.miercoles{
+  padding-top:0;
 }
 
-/* AJUSTE VISUAL MIÉRCOLES */
-.card-inner.miercoles-ajuste{
+.card.miercoles .card-inner{
   transform: translateY(-24px);
 }
 
@@ -99,39 +95,55 @@ body{
   align-items:center;
   gap:8px;
   opacity:.85;
-  transform: translateX(-18px); /* 👈 AJUSTE A LA IZQUIERDA */
+  transform: translateX(-18px);
 }
 
 .flecha{
   cursor:pointer;
 }
 
-/* BOTONES */
+/* FILA DE ACCIONES – DISEÑO PROFESIONAL */
 .actions{
-  display:flex;
-  gap:8px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
   align-items:center;
-  height:44px;
-  overflow:hidden;
+  margin-top:6px;
 }
 
+/* BLOQUE IZQUIERDO */
+.actions-left{
+  display:flex;
+  gap:8px;
+  justify-content:flex-end;
+}
+
+/* BLOQUE DERECHO */
+.actions-right{
+  display:flex;
+  gap:6px;
+  justify-content:flex-start;
+}
+
+/* BOTONES */
 .actions a{
   background:#1f1f1f;
   border-radius:18px;
-  padding:8px 14px;
-  font-size:14px;
+  padding:9px 16px;
+  font-size:15px;
   color:#fff;
   text-decoration:none;
   font-weight:500;
   flex-shrink:0;
 }
 
+/* DÍAS */
 .actions a.dia{
-  padding:6px 0;
-  font-size:13px;
-  min-width:34px;
+  padding:7px 0;
+  font-size:14px;
+  min-width:38px;
   text-align:center;
-  border-radius:14px;
+  border-radius:15px;
 }
 
 /* FOOTER */
@@ -148,11 +160,11 @@ footer{
 
 <div class="app">
 
-<img src="img/logo-madre.png" class="logo-madre" alt="Bachata Barcelona">
+<img src="img/logo-madre.png" class="logo-madre">
 
 <!-- MIÉRCOLES -->
-<div class="card">
-  <div class="card-inner miercoles-ajuste">
+<div class="card miercoles">
+  <div class="card-inner">
     <img src="img/logo-miercoles.png" class="logo-evento">
     <h2>MIÉRCOLES</h2>
 
@@ -173,7 +185,13 @@ footer{
       </div>
     </div>
 
-    <div class="actions" id="dias-miercoles"></div>
+    <div class="actions">
+      <div class="actions-left">
+        <a href="galeria/miercoles/">Fotos</a>
+        <a href="videos/miercoles/">Vídeos</a>
+      </div>
+      <div class="actions-right" id="dias-miercoles"></div>
+    </div>
   </div>
 </div>
 
@@ -200,7 +218,13 @@ footer{
       </div>
     </div>
 
-    <div class="actions" id="dias-domingo"></div>
+    <div class="actions">
+      <div class="actions-left">
+        <a href="galeria/domingo/">Fotos</a>
+        <a href="videos/domingo/">Vídeos</a>
+      </div>
+      <div class="actions-right" id="dias-domingo"></div>
+    </div>
   </div>
 </div>
 
@@ -210,41 +234,23 @@ footer{
 
 <script>
 const data={
-  miercoles:{
-    index:0,
-    meses:[
-      {m:"ENERO 2026", d:[7,14,21,28]},
-      {m:"FEBRERO 2026", d:[4,11,18,25]}
-    ]
-  },
-  domingo:{
-    index:0,
-    meses:[
-      {m:"ENERO 2026", d:[4,11,18,25]},
-      {m:"FEBRERO 2026", d:[1,8,15,22]}
-    ]
-  }
+  miercoles:{index:0,meses:[
+    {m:"ENERO 2026", d:[7,14,21,28]},
+    {m:"FEBRERO 2026", d:[4,11,18,25]}
+  ]},
+  domingo:{index:0,meses:[
+    {m:"ENERO 2026", d:[4,11,18,25]},
+    {m:"FEBRERO 2026", d:[1,8,15,22]}
+  ]}
 };
 
 function render(tipo){
   const obj=data[tipo];
   const mes=obj.meses[obj.index];
-
   document.getElementById("mes-"+tipo).innerText=mes.m;
 
   const cont=document.getElementById("dias-"+tipo);
   cont.innerHTML="";
-
-  const fotos=document.createElement("a");
-  fotos.href=`galeria/${tipo}/`;
-  fotos.innerText="Fotos";
-  cont.appendChild(fotos);
-
-  const videos=document.createElement("a");
-  videos.href=`videos/${tipo}/`;
-  videos.innerText="Vídeos";
-  cont.appendChild(videos);
-
   mes.d.forEach(d=>{
     const a=document.createElement("a");
     a.href=`galeria/${tipo}/${mes.m.replace(" ","-")}-${d}.html`;
