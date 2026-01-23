@@ -20,67 +20,72 @@ body{
   margin:0 auto;
 }
 
-/* 🔥 LOGO MADRE COMPACTO */
+/* 🔥 LOGO MADRE: 65%, SUBIDO, LUZ SUAVE */
 .logo-wrapper{
   display:flex;
   justify-content:center;
-  margin:6px 0 22px; /* más junto */
+  margin:6px 0 18px; /* todo más junto */
 }
 .logo-main{
   max-width:170px;
   filter:
-    drop-shadow(0 0 6px rgba(255,215,120,.7))
-    drop-shadow(0 0 13px rgba(255,200,100,.35));
+    drop-shadow(0 0 5px rgba(255,80,200,.6))
+    drop-shadow(0 0 10px rgba(255,80,200,.35));
 }
 
-/* CARDS */
+/* TARJETAS */
 .card{
   background:#1c1c1c;
   border-radius:20px;
-  padding:18px;          /* menos padding */
-  margin-bottom:22px;    /* menos separación */
-  box-shadow:0 18px 34px rgba(0,0,0,.6);
+  padding:18px;
+  margin-bottom:20px; /* más compacto */
+  box-shadow:0 16px 32px rgba(0,0,0,.6);
 }
 
+/* CABECERA */
 .card-header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:8px;     /* más compacto */
+  margin-bottom:6px;
 }
 
-.card-header img{
-  max-height:46px;
-}
-
-/* LOGO DOMINGO */
-.logo-domingo{
-  max-height:46px;
-  max-width:120px;
-  transform:scale(2);
-  transform-origin:right center;
-}
-
-.card h2{
+.card-header h2{
   letter-spacing:3px;
   font-size:18px;
 }
 
+/* LOGOS DE TARJETA */
+.card-header img{
+  max-height:42px;
+}
+
+/* 🔥 LOGO DOMINGO MUCHO MÁS GRANDE */
+.logo-domingo{
+  max-height:42px;
+  max-width:120px;
+  transform:scale(4); /* DOBLE de lo que había */
+  transform-origin:right center;
+}
+
+/* TEXTOS */
 .card p{
-  opacity:.85;
-  margin:5px 0;          /* menos aire */
+  margin:4px 0;
+  opacity:.9;
   font-size:14px;
 }
 
+/* LINKS FUCSIA DISCOTECA */
 .card a{
-  color:#ff4d4d;
+  color:#ff3fd8;
   text-decoration:none;
+  font-weight:500;
 }
 .card a:hover{
   text-decoration:underline;
 }
 
-/* BOTONES COMPACTOS */
+/* BOTONES */
 .buttons{
   display:flex;
   gap:10px;
@@ -89,14 +94,13 @@ body{
 }
 
 .buttons a{
-  padding:8px 16px;      /* botones más finos */
+  padding:8px 14px;
   border-radius:18px;
   background:#2a2a2a;
   color:#fff;
   text-decoration:none;
   font-size:13px;
 }
-
 .buttons a:hover{
   background:#fff;
   color:#000;
@@ -106,7 +110,7 @@ footer{
   text-align:center;
   opacity:.45;
   font-size:12px;
-  margin-top:14px;
+  margin-top:12px;
 }
 </style>
 </head>
