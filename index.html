@@ -59,7 +59,7 @@ body{
 .desc{
   font-size:14px;
   opacity:.9;
-  margin-bottom:4px;
+  margin-bottom:6px;
 }
 
 .desc a{
@@ -68,25 +68,25 @@ body{
   margin-left:4px;
 }
 
-/* INSTAGRAM */
-.info{
+/* FILA SUPERIOR INFO */
+.top-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   font-size:14px;
   margin-bottom:8px;
 }
 
-.info a{
+.top-row a{
   color:#ff4da6;
   text-decoration:none;
 }
 
-/* MES */
+/* CALENDARIO CABECERA */
 .mes{
   display:flex;
-  justify-content:center;
   align-items:center;
-  gap:10px;
-  margin:6px 0 6px;
-  font-size:14px;
+  gap:8px;
   opacity:.85;
 }
 
@@ -94,16 +94,15 @@ body{
   cursor:pointer;
 }
 
-/* ACCIONES FIJAS */
+/* BOTONES */
 .actions{
   display:flex;
-  gap:6px;
+  gap:8px;
   align-items:center;
   height:44px;
   overflow:hidden;
 }
 
-/* BOTONES NORMALES (Fotos / Vídeos) */
 .actions a{
   background:#1f1f1f;
   border-radius:18px;
@@ -115,11 +114,11 @@ body{
   flex-shrink:0;
 }
 
-/* 🔢 BOTONES DE DÍAS (AJUSTADOS) */
+/* DÍAS */
 .actions a.dia{
-  padding:6px 0;          /* más estrechos */
-  font-size:13px;         /* un poco más pequeños */
-  min-width:34px;         /* ancho fijo para todos */
+  padding:6px 0;
+  font-size:13px;
+  min-width:34px;
   text-align:center;
   border-radius:14px;
   opacity:.95;
@@ -151,16 +150,16 @@ footer{
     <a href="https://maps.google.com" target="_blank">📍 Maps</a>
   </div>
 
-  <div class="info">
+  <div class="top-row">
     <a href="https://instagram.com/bachataparty.bcn" target="_blank">
       📸 @bachataparty.bcn
     </a>
-  </div>
 
-  <div class="mes">
-    <span class="flecha" onclick="prevMes('miercoles')">‹</span>
-    <span id="mes-miercoles">ENERO 2026</span>
-    <span class="flecha" onclick="nextMes('miercoles')">›</span>
+    <div class="mes">
+      <span class="flecha" onclick="prevMes('miercoles')">‹</span>
+      <span id="mes-miercoles">ENERO 2026</span>
+      <span class="flecha" onclick="nextMes('miercoles')">›</span>
+    </div>
   </div>
 
   <div class="actions" id="dias-miercoles"></div>
@@ -176,16 +175,16 @@ footer{
     <a href="https://maps.google.com" target="_blank">📍 Maps</a>
   </div>
 
-  <div class="info">
+  <div class="top-row">
     <a href="https://instagram.com/bachastation" target="_blank">
       📸 @bachastation
     </a>
-  </div>
 
-  <div class="mes">
-    <span class="flecha" onclick="prevMes('domingo')">‹</span>
-    <span id="mes-domingo">ENERO 2026</span>
-    <span class="flecha" onclick="nextMes('domingo')">›</span>
+    <div class="mes">
+      <span class="flecha" onclick="prevMes('domingo')">‹</span>
+      <span id="mes-domingo">ENERO 2026</span>
+      <span class="flecha" onclick="nextMes('domingo')">›</span>
+    </div>
   </div>
 
   <div class="actions" id="dias-domingo"></div>
@@ -236,7 +235,7 @@ function render(tipo){
     const a=document.createElement("a");
     a.href=`galeria/${tipo}/${mes.m.replace(" ","-")}-${d}.html`;
     a.innerText=d;
-    a.className="dia";     // 👈 clave
+    a.className="dia";
     cont.appendChild(a);
   });
 }
