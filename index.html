@@ -97,14 +97,13 @@ body{
 /* ACCIONES FIJAS */
 .actions{
   display:flex;
-  gap:8px;
-  justify-content:flex-start;
+  gap:6px;
   align-items:center;
-  height:44px;              /* 🔒 ALTURA FIJA */
-  overflow:hidden;          /* 🔒 NO EMPUJA */
+  height:44px;
+  overflow:hidden;
 }
 
-/* BOTONES */
+/* BOTONES NORMALES (Fotos / Vídeos) */
 .actions a{
   background:#1f1f1f;
   border-radius:18px;
@@ -113,9 +112,17 @@ body{
   color:#fff;
   text-decoration:none;
   font-weight:500;
-  flex-shrink:0;            /* 🔒 NO SE ENCOGEN */
-  min-width:56px;           /* 🔒 MISMO ANCHO */
+  flex-shrink:0;
+}
+
+/* 🔢 BOTONES DE DÍAS (AJUSTADOS) */
+.actions a.dia{
+  padding:6px 0;          /* más estrechos */
+  font-size:13px;         /* un poco más pequeños */
+  min-width:34px;         /* ancho fijo para todos */
   text-align:center;
+  border-radius:14px;
+  opacity:.95;
 }
 
 /* FOOTER */
@@ -229,6 +236,7 @@ function render(tipo){
     const a=document.createElement("a");
     a.href=`galeria/${tipo}/${mes.m.replace(" ","-")}-${d}.html`;
     a.innerText=d;
+    a.className="dia";     // 👈 clave
     cont.appendChild(a);
   });
 }
