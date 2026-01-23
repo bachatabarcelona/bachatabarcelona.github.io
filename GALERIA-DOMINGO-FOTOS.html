@@ -7,57 +7,10 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{
-  width:100%;min-height:100%;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:radial-gradient(circle at top,#1a1a1a 0%,#000 60%);
+body{
+  background:#000;
   color:#fff;
-}
-
-.titulo-dia{
-  text-align:center;
-  font-weight:700;
-  letter-spacing:2px;
-  margin:24px 0 14px;
-}
-
-.card{
-  background:linear-gradient(180deg,#222 0%,#1a1a1a 100%);
-  border-radius:22px;
-  padding:20px;
-  margin:0 auto 22px;
-  width:92%;
-  max-width:420px;
-  text-align:center;
-  box-shadow:0 20px 50px rgba(0,0,0,.7);
-}
-
-.card-logo img{
-  display:block;
-  margin:0 auto 14px;
-  max-width:170px;
-  width:70%;
-}
-
-.instagram a{
-  color:#7aa2ff;
-  text-decoration:none;
-}
-
-.botones{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:14px;
-}
-
-.botones a{
-  color:#fff;
-  text-decoration:none;
-  border:1px solid rgba(255,255,255,.6);
-  padding:9px 14px;
-  border-radius:999px;
-  font-size:14px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
 }
 
 /* GALERÍA */
@@ -65,163 +18,143 @@ html,body{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:6px;
-  margin-top:18px;
+  padding:16px;
 }
-
 .galeria img{
   width:100%;
   aspect-ratio:1/1;
   object-fit:cover;
   border-radius:10px;
-}
-
-/* CALENDARIO */
-.calendar-container{
-  margin-top:24px;
-  padding:16px;
-  background:linear-gradient(180deg,#222,#1a1a1a);
-  border-radius:18px;
-}
-
-.calendar-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:12px;
-}
-
-.calendar-header button{
-  background:none;
-  border:1px solid rgba(255,255,255,.4);
-  color:#fff;
-  border-radius:50%;
-  width:34px;
-  height:34px;
-  font-size:18px;
-}
-
-.calendar-grid{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.calendar-day{
-  padding:10px 14px;
-  border-radius:12px;
-  font-size:14px;
-  background:rgba(255,255,255,.12);
   cursor:pointer;
 }
 
-.calendar-day:hover{
-  background:rgba(255,255,255,.22);
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.95);
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
 }
 
-.volver{
-  text-align:center;
-  margin:22px 0;
+.lightbox.active{display:flex}
+
+.lightbox img{
+  max-width:90%;
+  max-height:70vh;
+  border-radius:12px;
 }
 
-.volver a{
-  color:#aaa;
+/* CONTROLES */
+.controls{
+  margin-top:14px;
+  display:flex;
+  gap:14px;
+}
+
+.controls button,
+.controls a{
+  background:rgba(255,255,255,.15);
+  border:none;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:999px;
+  font-size:14px;
   text-decoration:none;
 }
+
+.nav{
+  position:absolute;
+  top:50%;
+  font-size:40px;
+  padding:10px;
+  cursor:pointer;
+}
+.prev{left:10px}
+.next{right:10px}
 </style>
 </head>
 
 <body>
 
-<h2 class="titulo-dia">DOMINGO</h2>
+<div class="galeria" id="galeria"></div>
 
-<div class="card">
+<div class="lightbox" id="lightbox">
+  <div class="nav prev" onclick="prev()">‹</div>
+  <img id="lightImg">
+  <div class="nav next" onclick="next()">›</div>
 
-  <div class="card-logo">
-    <img src="img/logo-domingo.png" alt="Bachastation">
+  <div class="controls">
+    <a id="download" download>⬇️ Descargar</a>
+    <button onclick="share()">📤 Compartir</button>
+    <a href="https://www.instagram.com/bachastation" target="_blank">📸 Instagram</a>
+    <button onclick="closeBox()">✖️ Cerrar</button>
   </div>
-
-  <p><strong>Bachastation – Hyde Club Barcelona</strong></p>
-  <p>📸 Galería de fotos</p>
-
-  <p class="instagram">
-    <a href="https://www.instagram.com/bachastation" target="_blank">
-      @bachastation
-    </a>
-  </p>
-
-  <div class="botones">
-    <a href="GALERIA-DOMINGO-FOTOS.html">Fotos</a>
-    <a href="GALERIA-DOMINGO-VIDEOS.html">Vídeos</a>
-  </div>
-
-  <!-- GALERÍA -->
-  <div class="galeria" id="galeria"></div>
-
-  <!-- CALENDARIO -->
-  <div class="calendar-container">
-    <div class="calendar-header">
-      <button id="prevMonth">‹</button>
-      <span id="monthYear"></span>
-      <button id="nextMonth">›</button>
-    </div>
-    <div class="calendar-grid" id="calendarDays"></div>
-  </div>
-
-</div>
-
-<div class="volver">
-  <a href="index.html">Volver al home</a>
 </div>
 
 <!-- JS GENERADO AUTOMÁTICAMENTE -->
 <script src="fotos-2026-01-11-domingo.js"></script>
 
 <script>
-/* GALERÍA AUTOMÁTICA */
-const galeria = document.getElementById("galeria");
-const basePath = "fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/";
+const basePath="fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/";
+const galeria=document.getElementById("galeria");
+const lightbox=document.getElementById("lightbox");
+const imgBox=document.getElementById("lightImg");
+const download=document.getElementById("download");
 
-fotos.forEach(nombre=>{
-  const a=document.createElement("a");
-  a.href=basePath+nombre;
-  a.target="_blank";
+let index=0;
 
+fotos.forEach((f,i)=>{
   const img=document.createElement("img");
-  img.src=basePath+nombre;
-  img.loading="lazy";
-
-  a.appendChild(img);
-  galeria.appendChild(a);
+  img.src=basePath+f;
+  img.onclick=()=>openBox(i);
+  galeria.appendChild(img);
 });
 
-/* CALENDARIO SOLO DOMINGOS */
-const monthNames=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-let d=new Date();
-const mY=document.getElementById("monthYear");
-const cD=document.getElementById("calendarDays");
+function openBox(i){
+  index=i;
+  update();
+  lightbox.classList.add("active");
+}
 
-function render(){
-  cD.innerHTML="";
-  mY.textContent=`${monthNames[d.getMonth()]} ${d.getFullYear()}`;
+function closeBox(){
+  lightbox.classList.remove("active");
+}
 
-  let days=new Date(d.getFullYear(),d.getMonth()+1,0).getDate();
+function update(){
+  imgBox.src=basePath+fotos[index];
+  download.href=imgBox.src;
+}
 
-  for(let day=1;day<=days;day++){
-    let date=new Date(d.getFullYear(),d.getMonth(),day);
-    if(date.getDay()===0){
-      cD.innerHTML+=
-        `<div class="calendar-day"
-          onclick="alert('Aquí irá la galería del domingo '+${day})">
-          ${day}
-        </div>`;
-    }
+function next(){
+  index=(index+1)%fotos.length;
+  update();
+}
+
+function prev(){
+  index=(index-1+fotos.length)%fotos.length;
+  update();
+}
+
+function share(){
+  if(navigator.share){
+    navigator.share({url:imgBox.src});
+  }else{
+    alert("Compartir no disponible en este navegador");
   }
 }
 
-document.getElementById("prevMonth").onclick=()=>{d.setMonth(d.getMonth()-1);render()}
-document.getElementById("nextMonth").onclick=()=>{d.setMonth(d.getMonth()+1);render()}
-render();
+/* SWIPE */
+let startX=0;
+lightbox.addEventListener("touchstart",e=>startX=e.touches[0].clientX);
+lightbox.addEventListener("touchend",e=>{
+  let dx=e.changedTouches[0].clientX-startX;
+  if(dx>50)prev();
+  if(dx<-50)next();
+});
 </script>
 
 </body>
