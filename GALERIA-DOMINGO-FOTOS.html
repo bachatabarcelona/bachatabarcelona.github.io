@@ -89,7 +89,7 @@ html,body{
     <a href="GALERIA-DOMINGO-VIDEOS.html">Vídeos</a>
   </div>
 
-  <!-- GALERÍA DINÁMICA -->
+  <!-- GALERÍA -->
   <div class="galeria" id="galeria"></div>
 
   <!-- CALENDARIO -->
@@ -107,22 +107,31 @@ html,body{
   <a href="index.html">Volver al home</a>
 </div>
 
-<!-- JS DE FOTOS -->
+<!-- JS AUTO-GENERADO -->
 <script src="fotos-2026-01-11-domingo.js"></script>
 
 <script>
-/* GALERÍA */
+/* =====================
+   GALERÍA AUTOMÁTICA
+===================== */
 const galeria = document.getElementById("galeria");
 const basePath = "fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/";
 
-fotos.forEach(nombre => {
-  const img = document.createElement("img");
-  img.src = basePath + nombre;
-  img.loading = "lazy";
-  galeria.appendChild(img);
-});
+/* seguridad por si el JS aún no existe */
+if (typeof fotos !== "undefined" && fotos.length) {
+  fotos.forEach(nombre => {
+    const img = document.createElement("img");
+    img.src = basePath + nombre;
+    img.loading = "lazy";
+    galeria.appendChild(img);
+  });
+} else {
+  galeria.innerHTML = "<p style='opacity:.6'>Galería en preparación…</p>";
+}
 
-/* CALENDARIO */
+/* =====================
+   CALENDARIO
+===================== */
 const monthNames=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 let d=new Date();
 const mY=document.getElementById("monthYear");
