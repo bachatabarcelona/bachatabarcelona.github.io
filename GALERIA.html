@@ -1,111 +1,54 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galería · Bachata Barcelona</title>
-
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto;
-  background:radial-gradient(circle at top,#222,#000);
-  color:#fff;
-}
-.header{
-  max-width:460px;
-  margin:24px auto 12px;
-  text-align:center;
-}
-.header h1{font-size:20px;margin-bottom:6px}
-.menu{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin-bottom:16px;
-}
-.menu button{
-  background:#111;
-  color:#fff;
-  border:1px solid #333;
-  padding:8px 14px;
-  border-radius:8px;
-}
-.menu button.active{
-  background:#fff;
-  color:#000;
-}
-#galeria{
-  max-width:460px;
-  margin:0 auto 40px;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-}
-#galeria img{
-  width:100%;
-  border-radius:10px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="header">
-  <h1>Galería</h1>
-</div>
-
-<div class="menu">
-  <button id="btn-miercoles" class="active">Miércoles</button>
-  <button id="btn-domingo">Domingo</button>
-</div>
-
-<div id="galeria"></div>
-
 <script>
-const carpetas = {
-  miercoles: [
-    "img/miercoles/1.jpg",
-    "img/miercoles/2.jpg",
-    "img/miercoles/3.jpg"
-  ],
-  domingo: [
-    "img/domingo/1.jpg",
-    "img/domingo/2.jpg",
-    "img/domingo/3.jpg"
-  ]
+const datos = {
+  miercoles: {
+    "1": "img/miercoles/2026-01-07/",
+    "2": "img/miercoles/2026-01-14/",
+    "3": "img/miercoles/2026-01-21/",
+    "4": "img/miercoles/2026-01-28/"
+  },
+  domingo: {
+    "1": "img/domingo/2026-01-11/",
+    "2": "img/domingo/2026-01-18/",
+    "3": "img/domingo/2026-01-25/"
+  }
 };
+
+let diaActivo = "miercoles";
 
 const galeria = document.getElementById("galeria");
 const btnM = document.getElementById("btn-miercoles");
 const btnD = document.getElementById("btn-domingo");
 
-function cargar(dia){
+function cargarFotos(ruta){
   galeria.innerHTML = "";
-  carpetas[dia].forEach(src=>{
+  for(let i=1;i<=30;i++){
     const img = document.createElement("img");
-    img.src = src;
+    img.src = ruta + i + ".jpg";
     img.loading = "lazy";
-    img.onerror = () => img.remove(); // 🔒 evita pantalla blanca
+    img.onerror = ()=>img.remove(); // 🔒 blindaje
     galeria.appendChild(img);
-  });
+  }
+}
+
+function cargarFecha(num){
+  const ruta = datos[diaActivo][num];
+  if(ruta) cargarFotos(ruta);
 }
 
 btnM.onclick = ()=>{
+  diaActivo = "miercoles";
   btnM.classList.add("active");
   btnD.classList.remove("active");
-  cargar("miercoles");
+  cargarFecha("1");
 };
 
 btnD.onclick = ()=>{
+  diaActivo = "domingo";
   btnD.classList.add("active");
   btnM.classList.remove("active");
-  cargar("domingo");
+  cargarFecha("1");
 };
 
-// Carga inicial segura
-cargar("miercoles");
+// Carga inicial
+cargarFecha("1");
 </script>
-
-</body>
-</html>
