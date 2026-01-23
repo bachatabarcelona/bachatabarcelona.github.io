@@ -33,43 +33,43 @@ body{
 .card{
   background:#141414;
   border-radius:26px;
-  padding:16px 16px 12px; /* 👈 cierre limpio abajo */
+  padding:16px 16px 12px;
   margin-bottom:20px;
   box-shadow:0 0 30px rgba(0,0,0,.7);
   text-align:center;
 }
 
-/* CONTENIDO INTERNO */
+/* CONTENIDO */
 .card-inner{
   display:flex;
   flex-direction:column;
 }
 
-/* AJUSTE VISUAL MIÉRCOLES (solo posición) */
+/* 🔧 AJUSTE FINAL MIÉRCOLES */
 .card.miercoles .card-inner{
-  transform: translateY(-24px);
+  transform: translateY(-32px); /* 👈 iguala el fondo con Domingo */
 }
 
-/* LOGOS EVENTO */
+/* LOGOS */
 .logo-evento{
   max-width:190px;
   margin:0 auto 6px;
   display:block;
 }
 
-/* LOGO MIÉRCOLES MÁS PEQUEÑO */
+/* LOGO MIÉRCOLES */
 .card.miercoles .logo-evento{
   max-width:170px;
 }
 
-/* TITULO */
+/* TITULOS */
 .card h2{
   margin:6px 0;
   letter-spacing:4px;
   font-size:18px;
 }
 
-/* DESCRIPCIÓN */
+/* TEXTO */
 .desc{
   font-size:14px;
   opacity:.9;
@@ -105,9 +105,7 @@ body{
   transform: translateX(-18px);
 }
 
-.flecha{
-  cursor:pointer;
-}
+.flecha{ cursor:pointer; }
 
 /* ACCIONES */
 .actions{
@@ -118,21 +116,18 @@ body{
   margin-top:6px;
 }
 
-/* IZQ */
 .actions-left{
   display:flex;
   gap:8px;
   justify-content:flex-end;
 }
 
-/* DER */
 .actions-right{
   display:flex;
   gap:6px;
   justify-content:flex-start;
 }
 
-/* BOTONES */
 .actions a{
   background:#1f1f1f;
   border-radius:18px;
@@ -143,7 +138,6 @@ body{
   font-weight:500;
 }
 
-/* DÍAS */
 .actions a.dia{
   padding:7px 0;
   font-size:14px;
@@ -183,7 +177,6 @@ footer{
       <a href="https://instagram.com/bachataparty.bcn" target="_blank">
         📸 @bachataparty.bcn
       </a>
-
       <div class="mes">
         <span class="flecha" onclick="prevMes('miercoles')">‹</span>
         <span id="mes-miercoles">ENERO 2026</span>
@@ -216,7 +209,6 @@ footer{
       <a href="https://instagram.com/bachastation" target="_blank">
         📸 @bachastation
       </a>
-
       <div class="mes">
         <span class="flecha" onclick="prevMes('domingo')">‹</span>
         <span id="mes-domingo">ENERO 2026</span>
