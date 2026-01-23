@@ -15,7 +15,7 @@ html,body{
 }
 .titulo-dia{text-align:center;font-weight:700;letter-spacing:2px;margin:24px 0 14px}
 .card{
-  background:linear-gradient(180deg,#222 0%,#1a1a1a 100%);
+  background:linear-gradient(180deg,#222,#1a1a1a);
   border-radius:22px;padding:20px;
   margin:0 auto 22px;width:92%;max-width:420px;
   text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.7)
@@ -29,17 +29,12 @@ html,body{
   padding:9px 14px;border-radius:999px;font-size:14px
 }
 .galeria{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:6px;
-  margin-top:16px
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:6px;margin-top:16px
 }
 .galeria img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  border-radius:10px;
-  cursor:pointer
+  width:100%;aspect-ratio:1/1;
+  object-fit:cover;border-radius:10px
 }
 .calendar-container{
   margin-top:22px;padding:16px;
@@ -59,8 +54,16 @@ html,body{
   display:grid;grid-template-columns:repeat(7,1fr);
   gap:6px;text-align:center
 }
-.calendar-day{padding:8px 0;border-radius:8px;font-size:13px}
-.today{background:rgba(255,255,255,.15)}
+.calendar-day{
+  padding:8px 0;border-radius:8px;
+  font-size:13px;cursor:pointer
+}
+.calendar-day.active{
+  background:rgba(255,255,255,.2)
+}
+.calendar-day:hover{
+  background:rgba(255,255,255,.1)
+}
 .volver{text-align:center;margin:22px 0}
 .volver a{color:#aaa;text-decoration:none}
 </style>
@@ -76,7 +79,7 @@ html,body{
   </div>
 
   <p><strong>Bachastation – Hyde Club Barcelona</strong></p>
-  <p>📸 Contenido en preparación</p>
+  <p id="estado">📸 Contenido en preparación</p>
 
   <p class="instagram">
     <a href="https://www.instagram.com/bachastation" target="_blank">
@@ -89,10 +92,8 @@ html,body{
     <a href="GALERIA-DOMINGO-VIDEOS.html">Vídeos</a>
   </div>
 
-  <!-- GALERÍA -->
   <div class="galeria" id="galeria"></div>
 
-  <!-- CALENDARIO -->
   <div class="calendar-container">
     <div class="calendar-header">
       <button id="prevMonth">‹</button>
@@ -107,31 +108,30 @@ html,body{
   <a href="index.html">Volver al home</a>
 </div>
 
-<!-- JS AUTO-GENERADO -->
-<script src="fotos-2026-01-11-domingo.js"></script>
-
 <script>
-/* =====================
-   GALERÍA AUTOMÁTICA
-===================== */
-const galeria = document.getElementById("galeria");
-const basePath = "fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/";
+/* ===== FECHA DESDE URL ===== */
+const params = new URLSearchParams(window.location.search);
+const fecha = params.get("fecha");
 
-/* seguridad por si el JS aún no existe */
-if (typeof fotos !== "undefined" && fotos.length) {
-  fotos.forEach(nombre => {
-    const img = document.createElement("img");
-    img.src = basePath + nombre;
-    img.loading = "lazy";
-    galeria.appendChild(img);
-  });
-} else {
-  galeria.innerHTML = "<p style='opacity:.6'>Galería en preparación…</p>";
+/* ===== CARGA GALERÍA ===== */
+if (fecha) {
+  const script = document.createElement("script");
+  script.src = `fotos-${fecha}-domingo.js`;
+  script.onload = () => {
+    document.getElementById("estado").textContent = "📸 Galería disponible";
+    const galeria = document.getElementById("galeria");
+    const basePath = `fotos/ENERO-2026/DOMINGOS/${fecha}-domingo/`;
+    fotos.forEach(f => {
+      const img = document.createElement("img");
+      img.src = basePath + f;
+      img.loading = "lazy";
+      galeria.appendChild(img);
+    });
+  };
+  document.body.appendChild(script);
 }
 
-/* =====================
-   CALENDARIO
-===================== */
+/* ===== CALENDARIO SOLO DOMINGOS ===== */
 const monthNames=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 let d=new Date();
 const mY=document.getElementById("monthYear");
@@ -140,14 +140,23 @@ const cD=document.getElementById("calendarDays");
 function render(){
   cD.innerHTML="";
   mY.textContent=`${monthNames[d.getMonth()]} ${d.getFullYear()}`;
-  let f=new Date(d.getFullYear(),d.getMonth(),1).getDay()||7;
+  let first=new Date(d.getFullYear(),d.getMonth(),1);
+  let offset=(first.getDay()+6)%7;
   let days=new Date(d.getFullYear(),d.getMonth()+1,0).getDate();
-  for(let i=1;i<f;i++)cD.innerHTML+="<div></div>";
-  for(let i=1;i<=days;i++){
-    let t=i===new Date().getDate()&&d.getMonth()===new Date().getMonth();
-    cD.innerHTML+=`<div class="calendar-day ${t?"today":""}">${i}</div>`;
+
+  for(let i=0;i<offset;i++) cD.innerHTML+="<div></div>";
+
+  for(let day=1;day<=days;day++){
+    let date=new Date(d.getFullYear(),d.getMonth(),day);
+    if(date.getDay()===0){
+      let iso=date.toISOString().split("T")[0];
+      cD.innerHTML+=`<div class="calendar-day active" onclick="location.href='?fecha=${iso}'">${day}</div>`;
+    } else {
+      cD.innerHTML+="<div></div>";
+    }
   }
 }
+
 document.getElementById("prevMonth").onclick=()=>{d.setMonth(d.getMonth()-1);render()}
 document.getElementById("nextMonth").onclick=()=>{d.setMonth(d.getMonth()+1);render()}
 render();
