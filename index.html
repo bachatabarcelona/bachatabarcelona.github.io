@@ -20,7 +20,7 @@ body{
   margin:0 auto;
 }
 
-/* 🔥 LOGO MADRE · 65% · NEÓN DORADO */
+/* 🔥 LOGO MADRE · NEÓN DORADO */
 .logo-wrapper{
   display:flex;
   justify-content:center;
@@ -60,19 +60,25 @@ body{
   max-height:42px;
 }
 
-/* 🔼 LOGO MIÉRCOLES UN POCO MÁS GRANDE */
+/* ✨ NEÓN DORADO PARA LOGOS DE TARJETA (50%) */
+.logo-glow{
+  filter:
+    drop-shadow(0 0 3px rgba(255,215,120,.45))
+    drop-shadow(0 0 7px rgba(255,200,100,.25));
+}
+
+/* AJUSTES INDIVIDUALES */
 .logo-miercoles{
   transform:scale(1.25);
   transform-origin:right center;
 }
 
-/* 👉 LOGO DOMINGO MÁS A LA DERECHA */
 .logo-domingo{
   max-height:42px;
   max-width:120px;
   transform:scale(4);
   transform-origin:right center;
-  margin-left:20px; /* ⬅️ DESPLAZAMIENTO A LA DERECHA */
+  margin-left:20px;
 }
 
 /* TEXTOS */
@@ -135,7 +141,9 @@ footer{
   <div class="card">
     <div class="card-header">
       <h2>MIÉRCOLES</h2>
-      <img src="img/logo-miercoles.png" class="logo-miercoles" alt="Bachata Party’s">
+      <img src="img/logo-miercoles.png"
+           class="logo-miercoles logo-glow"
+           alt="Bachata Party’s">
     </div>
 
     <p><strong>Bachata Party’s – Sala Vivaldi Barcelona</strong></p>
@@ -158,7 +166,9 @@ footer{
   <div class="card">
     <div class="card-header">
       <h2>DOMINGO</h2>
-      <img src="img/logo-domingo.png" class="logo-domingo" alt="Bachastation">
+      <img src="img/logo-domingo.png"
+           class="logo-domingo logo-glow"
+           alt="Bachastation">
     </div>
 
     <p><strong>Bachastation – Hyde Club Barcelona</strong></p>
