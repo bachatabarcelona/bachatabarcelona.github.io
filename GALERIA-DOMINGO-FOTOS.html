@@ -13,59 +13,121 @@ html,body{
   background:radial-gradient(circle at top,#1a1a1a 0%,#000 60%);
   color:#fff;
 }
-.titulo-dia{text-align:center;font-weight:700;letter-spacing:2px;margin:24px 0 14px}
+
+.titulo-dia{
+  text-align:center;
+  font-weight:700;
+  letter-spacing:2px;
+  margin:24px 0 14px;
+}
+
 .card{
-  background:linear-gradient(180deg,#222,#1a1a1a);
-  border-radius:22px;padding:20px;
-  margin:0 auto 22px;width:92%;max-width:420px;
-  text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.7)
+  background:linear-gradient(180deg,#222 0%,#1a1a1a 100%);
+  border-radius:22px;
+  padding:20px;
+  margin:0 auto 22px;
+  width:92%;
+  max-width:420px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.7);
 }
-.card-logo img{display:block;margin:0 auto 14px;max-width:170px;width:70%}
-.instagram a{color:#7aa2ff;text-decoration:none}
-.botones{display:flex;justify-content:center;gap:10px;margin-top:14px}
+
+.card-logo img{
+  display:block;
+  margin:0 auto 14px;
+  max-width:170px;
+  width:70%;
+}
+
+.instagram a{
+  color:#7aa2ff;
+  text-decoration:none;
+}
+
+.botones{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:14px;
+}
+
 .botones a{
-  color:#fff;text-decoration:none;
+  color:#fff;
+  text-decoration:none;
   border:1px solid rgba(255,255,255,.6);
-  padding:9px 14px;border-radius:999px;font-size:14px
+  padding:9px 14px;
+  border-radius:999px;
+  font-size:14px;
 }
+
+/* GALERÍA */
 .galeria{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:6px;margin-top:16px
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
+  margin-top:18px;
 }
+
 .galeria img{
-  width:100%;aspect-ratio:1/1;
-  object-fit:cover;border-radius:10px
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:10px;
 }
+
+/* CALENDARIO */
 .calendar-container{
-  margin-top:22px;padding:16px;
+  margin-top:24px;
+  padding:16px;
   background:linear-gradient(180deg,#222,#1a1a1a);
-  border-radius:18px
+  border-radius:18px;
 }
+
 .calendar-header{
-  display:flex;justify-content:space-between;align-items:center;
-  margin-bottom:10px
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
 }
+
 .calendar-header button{
-  background:none;border:1px solid rgba(255,255,255,.4);
-  color:#fff;border-radius:50%;
-  width:34px;height:34px;font-size:18px
+  background:none;
+  border:1px solid rgba(255,255,255,.4);
+  color:#fff;
+  border-radius:50%;
+  width:34px;
+  height:34px;
+  font-size:18px;
 }
+
 .calendar-grid{
-  display:grid;grid-template-columns:repeat(7,1fr);
-  gap:6px;text-align:center
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
 }
+
 .calendar-day{
-  padding:8px 0;border-radius:8px;
-  font-size:13px;cursor:pointer
+  padding:10px 14px;
+  border-radius:12px;
+  font-size:14px;
+  background:rgba(255,255,255,.12);
+  cursor:pointer;
 }
-.calendar-day.active{
-  background:rgba(255,255,255,.2)
-}
+
 .calendar-day:hover{
-  background:rgba(255,255,255,.1)
+  background:rgba(255,255,255,.22);
 }
-.volver{text-align:center;margin:22px 0}
-.volver a{color:#aaa;text-decoration:none}
+
+.volver{
+  text-align:center;
+  margin:22px 0;
+}
+
+.volver a{
+  color:#aaa;
+  text-decoration:none;
+}
 </style>
 </head>
 
@@ -74,12 +136,13 @@ html,body{
 <h2 class="titulo-dia">DOMINGO</h2>
 
 <div class="card">
+
   <div class="card-logo">
     <img src="img/logo-domingo.png" alt="Bachastation">
   </div>
 
   <p><strong>Bachastation – Hyde Club Barcelona</strong></p>
-  <p id="estado">📸 Contenido en preparación</p>
+  <p>📸 Galería de fotos</p>
 
   <p class="instagram">
     <a href="https://www.instagram.com/bachastation" target="_blank">
@@ -92,8 +155,10 @@ html,body{
     <a href="GALERIA-DOMINGO-VIDEOS.html">Vídeos</a>
   </div>
 
+  <!-- GALERÍA -->
   <div class="galeria" id="galeria"></div>
 
+  <!-- CALENDARIO -->
   <div class="calendar-container">
     <div class="calendar-header">
       <button id="prevMonth">‹</button>
@@ -102,36 +167,35 @@ html,body{
     </div>
     <div class="calendar-grid" id="calendarDays"></div>
   </div>
+
 </div>
 
 <div class="volver">
   <a href="index.html">Volver al home</a>
 </div>
 
+<!-- JS GENERADO AUTOMÁTICAMENTE -->
+<script src="fotos-2026-01-11-domingo.js"></script>
+
 <script>
-/* ===== FECHA DESDE URL ===== */
-const params = new URLSearchParams(window.location.search);
-const fecha = params.get("fecha");
+/* GALERÍA AUTOMÁTICA */
+const galeria = document.getElementById("galeria");
+const basePath = "fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/";
 
-/* ===== CARGA GALERÍA ===== */
-if (fecha) {
-  const script = document.createElement("script");
-  script.src = `fotos-${fecha}-domingo.js`;
-  script.onload = () => {
-    document.getElementById("estado").textContent = "📸 Galería disponible";
-    const galeria = document.getElementById("galeria");
-    const basePath = `fotos/ENERO-2026/DOMINGOS/${fecha}-domingo/`;
-    fotos.forEach(f => {
-      const img = document.createElement("img");
-      img.src = basePath + f;
-      img.loading = "lazy";
-      galeria.appendChild(img);
-    });
-  };
-  document.body.appendChild(script);
-}
+fotos.forEach(nombre=>{
+  const a=document.createElement("a");
+  a.href=basePath+nombre;
+  a.target="_blank";
 
-/* ===== CALENDARIO SOLO DOMINGOS ===== */
+  const img=document.createElement("img");
+  img.src=basePath+nombre;
+  img.loading="lazy";
+
+  a.appendChild(img);
+  galeria.appendChild(a);
+});
+
+/* CALENDARIO SOLO DOMINGOS */
 const monthNames=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 let d=new Date();
 const mY=document.getElementById("monthYear");
@@ -140,19 +204,17 @@ const cD=document.getElementById("calendarDays");
 function render(){
   cD.innerHTML="";
   mY.textContent=`${monthNames[d.getMonth()]} ${d.getFullYear()}`;
-  let first=new Date(d.getFullYear(),d.getMonth(),1);
-  let offset=(first.getDay()+6)%7;
-  let days=new Date(d.getFullYear(),d.getMonth()+1,0).getDate();
 
-  for(let i=0;i<offset;i++) cD.innerHTML+="<div></div>";
+  let days=new Date(d.getFullYear(),d.getMonth()+1,0).getDate();
 
   for(let day=1;day<=days;day++){
     let date=new Date(d.getFullYear(),d.getMonth(),day);
     if(date.getDay()===0){
-      let iso=date.toISOString().split("T")[0];
-      cD.innerHTML+=`<div class="calendar-day active" onclick="location.href='?fecha=${iso}'">${day}</div>`;
-    } else {
-      cD.innerHTML+="<div></div>";
+      cD.innerHTML+=
+        `<div class="calendar-day"
+          onclick="alert('Aquí irá la galería del domingo '+${day})">
+          ${day}
+        </div>`;
     }
   }
 }
