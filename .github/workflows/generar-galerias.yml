@@ -1,4 +1,4 @@
-name: Generar galerías y calendario automáticamente
+name: Generar galerías automáticamente
 
 on:
   push:
@@ -11,70 +11,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # =========================
-      # FOTOS (DOMINGOS + MIERCOLES)
-      # =========================
-      - name: Generar fotos.js
+      - name: Generar JS de todas las galerías
         run: |
-          find fotos -type d \( -path "*DOMINGOS/*" -o -path "*MIERCOLES/*" \) | while read dir; do
-            if ls "$dir"/*.jpg 1> /dev/null 2>&1; then
-              echo "const fotos = [" > "$dir/fotos.js"
-              for f in "$dir"/*.jpg; do
-                echo "  \"$(basename "$f")\"," >> "$dir/fotos.js"
-              done
-              echo "];" >> "$dir/fotos.js"
-            fi
+          rm -f galeria-*.js
+
+          for dir in fotos/2026/*/*; do
+            fecha=$(basename "$dir")
+            tipo=$(basename $(dirname "$dir"))
+            dia=$(basename $(dirname $(dirname "$dir")))
+
+            js="galeria-${dia}-${tipo}-${fecha}.js"
+
+            echo "const archivos = [" > $js
+            for f in "$dir"/*; do
+              name=$(basename "$f")
+              echo "  \"$name\"," >> $js
+            done
+            echo "];" >> $js
           done
 
-      # =========================
-      # VIDEOS (DOMINGOS + MIERCOLES)
-      # =========================
-      - name: Generar videos.js
-        run: |
-          find videos -type d \( -path "*DOMINGOS/*" -o -path "*MIERCOLES/*" \) | while read dir; do
-            if ls "$dir"/*.mp4 1> /dev/null 2>&1; then
-              echo "const videos = [" > "$dir/videos.js"
-              for v in "$dir"/*.mp4; do
-                echo "  \"$(basename "$v")\"," >> "$dir/videos.js"
-              done
-              echo "];" >> "$dir/videos.js"
-            fi
-          done
-
-      # =========================
-      # EVENTOS DOMINGOS
-      # =========================
-      - name: Generar eventos-domingos.js
-        run: |
-          echo "window.EVENTOS_DOMINGO = [" > eventos-domingos.js
-          find fotos -type d -path "*DOMINGOS/2026-*" | sort | while read dir; do
-            name=$(basename "$dir")
-            echo "  \"$name\"," >> eventos-domingos.js
-          done
-          echo "];" >> eventos-domingos.js
-
-      # =========================
-      # EVENTOS MIERCOLES
-      # =========================
-      - name: Generar eventos-miercoles.js
-        run: |
-          echo "window.EVENTOS_MIERCOLES = [" > eventos-miercoles.js
-          find fotos -type d -path "*MIERCOLES/2026-*" | sort | while read dir; do
-            name=$(basename "$dir")
-            echo "  \"$name\"," >> eventos-miercoles.js
-          done
-          echo "];" >> eventos-miercoles.js
-
-      # =========================
-      # COMMIT
-      # =========================
       - name: Commit automático
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add fotos/**/fotos.js videos/**/videos.js eventos-*.js
-          git commit -m "Actualizar galerías y calendario automáticamente" || echo "Sin cambios"
+          git add galeria-*.js
+          git commit -m "Actualizar galerías automáticas" || echo "Sin cambios"
           git push
