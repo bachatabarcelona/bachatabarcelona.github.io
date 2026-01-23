@@ -33,11 +33,10 @@ body{
 .card{
   background:#141414;
   border-radius:26px;
-  padding:16px;
+  padding:16px 16px 12px; /* 👈 cierre limpio abajo */
   margin-bottom:20px;
   box-shadow:0 0 30px rgba(0,0,0,.7);
   text-align:center;
-  min-height:420px; /* 👈 MISMO TAMAÑO PARA AMBAS */
 }
 
 /* CONTENIDO INTERNO */
@@ -46,16 +45,21 @@ body{
   flex-direction:column;
 }
 
-/* AJUSTE VISUAL SOLO MIÉRCOLES (NO AFECTA AL TAMAÑO) */
+/* AJUSTE VISUAL MIÉRCOLES (solo posición) */
 .card.miercoles .card-inner{
   transform: translateY(-24px);
 }
 
-/* LOGOS */
+/* LOGOS EVENTO */
 .logo-evento{
   max-width:190px;
   margin:0 auto 6px;
   display:block;
+}
+
+/* LOGO MIÉRCOLES MÁS PEQUEÑO */
+.card.miercoles .logo-evento{
+  max-width:170px;
 }
 
 /* TITULO */
@@ -114,12 +118,14 @@ body{
   margin-top:6px;
 }
 
+/* IZQ */
 .actions-left{
   display:flex;
   gap:8px;
   justify-content:flex-end;
 }
 
+/* DER */
 .actions-right{
   display:flex;
   gap:6px;
