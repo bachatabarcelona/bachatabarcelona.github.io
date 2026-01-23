@@ -3,163 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galería · Bachata Barcelona</title>
+<title>Fotos · Miércoles 7 Enero 2026</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
 body{
+  margin:0;
   font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto;
-  background:radial-gradient(circle at top,#222,#000);
+  background:#000;
   color:#fff;
 }
-.header{
-  max-width:460px;
-  margin:24px auto 12px;
+h1{
   text-align:center;
+  padding:18px 0;
+  letter-spacing:2px;
 }
-.header h1{font-size:20px;margin-bottom:6px}
-.menu{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-bottom:12px;
-  flex-wrap:wrap;
-}
-.menu button{
-  background:#111;
-  color:#fff;
-  border:1px solid #333;
-  padding:8px 12px;
-  border-radius:8px;
-  cursor:pointer;
-}
-.menu button.active{
-  background:#fff;
-  color:#000;
-}
-#galeria{
-  max-width:460px;
-  margin:0 auto 40px;
+.gallery{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
   gap:10px;
+  padding:10px;
 }
-#galeria img{
+.gallery img{
   width:100%;
-  border-radius:10px;
+  border-radius:12px;
 }
-.titulo-fecha{
+.back{
   text-align:center;
-  font-size:14px;
-  opacity:.85;
-  margin-bottom:10px;
+  margin:20px;
+}
+.back a{
+  color:#7db7ff;
+  text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-  <h1>Galería · Enero 2026</h1>
+<h1>MIÉRCOLES · 7 ENERO 2026</h1>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="back">
+  <a href="miercoles.html">← Volver a Miércoles</a>
 </div>
-
-<div class="menu">
-  <button id="btn-miercoles" class="active">Miércoles</button>
-  <button id="btn-domingo">Domingos</button>
-</div>
-
-<div class="menu">
-  <button onclick="cargarFecha('1')">7 Ene</button>
-  <button onclick="cargarFecha('2')">14 Ene</button>
-  <button onclick="cargarFecha('3')">21 Ene</button>
-  <button onclick="cargarFecha('4')">28 Ene</button>
-</div>
-
-<div class="titulo-fecha" id="tituloFecha"></div>
-
-<div id="galeria"></div>
 
 <script>
-const datos = {
-  miercoles: {
-    "1": {
-      ruta: "fotos/ENERO-2026/MIERCOLES/2026-01-07-miercoles/",
-      titulo: "Miércoles · 7 Enero 2026"
-    },
-    "2": {
-      ruta: "fotos/ENERO-2026/MIERCOLES/2026-01-14-Miercoles/",
-      titulo: "Miércoles · 14 Enero 2026"
-    },
-    "3": {
-      ruta: "fotos/ENERO-2026/MIERCOLES/2026-01-21-Miercoles/",
-      titulo: "Miércoles · 21 Enero 2026"
-    },
-    "4": {
-      ruta: "fotos/ENERO-2026/MIERCOLES/2026-01-28-Miercoles/",
-      titulo: "Miércoles · 28 Enero 2026"
-    }
-  },
-  domingo: {
-    "1": {
-      ruta: "fotos/ENERO-2026/DOMINGOS/2026-01-04-domingo/",
-      titulo: "Domingo · 4 Enero 2026"
-    },
-    "2": {
-      ruta: "fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/",
-      titulo: "Domingo · 11 Enero 2026"
-    },
-    "3": {
-      ruta: "fotos/ENERO-2026/DOMINGOS/2026-01-18-domingo/",
-      titulo: "Domingo · 18 Enero 2026"
-    },
-    "4": {
-      ruta: "fotos/ENERO-2026/DOMINGOS/2026-01-25-domingo/",
-      titulo: "Domingo · 25 Enero 2026"
-    }
-  }
-};
+const repo = "bachatabarcelona/bachatabarcelona.github.io";
+const path = "fotos/ENERO-2026/MIERCOLES/2026-01-07-miercoles";
 
-let diaActivo = "miercoles";
-let fechaActiva = "1";
-
-const galeria = document.getElementById("galeria");
-const tituloFecha = document.getElementById("tituloFecha");
-
-function cargarGaleria(){
-  galeria.innerHTML = "";
-  const data = datos[diaActivo][fechaActiva];
-  if(!data) return;
-
-  tituloFecha.textContent = data.titulo;
-
-  for(let i=1;i<=60;i++){
-    const img = document.createElement("img");
-    img.src = data.ruta + i + ".jpg";
-    img.loading = "lazy";
-    img.onerror = ()=>img.remove();
-    galeria.appendChild(img);
-  }
-}
-
-document.getElementById("btn-miercoles").onclick = ()=>{
-  diaActivo = "miercoles";
-  fechaActiva = "1";
-  cargarGaleria();
-};
-
-document.getElementById("btn-domingo").onclick = ()=>{
-  diaActivo = "domingo";
-  fechaActiva = "1";
-  cargarGaleria();
-};
-
-function cargarFecha(num){
-  fechaActiva = num;
-  cargarGaleria();
-}
-
-// Carga inicial
-cargarGaleria();
+fetch(`https://api.github.com/repos/${repo}/contents/${path}`)
+  .then(res => res.json())
+  .then(files => {
+    const gallery = document.getElementById("gallery");
+    files
+      .filter(f => f.name.toLowerCase().endsWith(".jpg"))
+      .forEach(f => {
+        const img = document.createElement("img");
+        img.src = f.download_url;
+        gallery.appendChild(img);
+      });
+  });
 </script>
 
 </body>
