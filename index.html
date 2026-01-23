@@ -1,189 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Bachata Barcelona</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Bachata Barcelona</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0e0e0e;
+      color: #ffffff;
+    }
 
-body{
-  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
-  background:radial-gradient(circle at top,#111,#000);
-  color:#fff;
-  padding:16px;
-}
+    .home {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.container{
-  max-width:480px;
-  margin:0 auto;
-}
+    .home-tags {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-/* LOGO MADRE */
-.logo-wrapper{
-  display:flex;
-  justify-content:center;
-  margin:10px 0 20px;
-}
-.logo-main{
-  max-width:170px;
-  filter:
-    drop-shadow(0 0 6px rgba(255,215,120,.8))
-    drop-shadow(0 0 14px rgba(255,200,100,.45));
-}
+    .tag {
+      background: #111;
+      padding: 20px;
+      border-radius: 18px;
+      min-width: 260px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
 
-/* TARJETAS */
-.card{
-  background:#1c1c1c;
-  border-radius:20px;
-  padding:20px;
-  margin-bottom:22px;
-  box-shadow:0 16px 32px rgba(0,0,0,.6);
-  text-align:center;
-}
+    .tag-title {
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
 
-/* LOGOS TARJETA */
-.card img{
-  margin-bottom:10px;
-}
+    .calendario {
+      text-align: center;
+    }
 
-/* NEÓN FUCSIA */
-.logo-glow-fuchsia{
-  filter:
-    drop-shadow(0 0 5px rgba(255,60,200,.6))
-    drop-shadow(0 0 10px rgba(255,60,200,.35));
-}
+    .cal-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
 
-/* TÍTULOS */
-.card h2{
-  letter-spacing:3px;
-  font-size:18px;
-  margin-bottom:6px;
-}
+    .cal-titulo {
+      font-size: 13px;
+      letter-spacing: 1px;
+      opacity: 0.85;
+    }
 
-/* TEXTO */
-.card p{
-  font-size:14px;
-  opacity:.9;
-  margin:4px 0;
-}
+    .flecha {
+      font-size: 22px;
+      cursor: pointer;
+      user-select: none;
+      opacity: 0.7;
+    }
 
-/* LINKS EN LÍNEA */
-.links-row{
-  display:flex;
-  justify-content:space-between;
-  margin:10px 0 6px;
-}
+    .flecha:hover {
+      opacity: 1;
+    }
 
-.links-row a{
-  color:#ff3fd8;
-  text-decoration:none;
-  font-weight:500;
-}
-.links-row a:hover{
-  text-decoration:underline;
-}
+    .cal-numeros {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
 
-/* BOTONES */
-.buttons{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  margin-top:12px;
-  flex-wrap:wrap;
-}
-
-.buttons a{
-  padding:8px 16px;
-  border-radius:18px;
-  background:#2a2a2a;
-  color:#fff;
-  text-decoration:none;
-  font-size:13px;
-}
-.buttons a:hover{
-  background:#fff;
-  color:#000;
-}
-
-footer{
-  text-align:center;
-  opacity:.45;
-  font-size:12px;
-  margin-top:14px;
-}
-</style>
+    .cal-numeros span {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <section class="home">
+    <div class="home-tags">
 
-  <!-- LOGO PRINCIPAL -->
-  <div class="logo-wrapper">
-    <img src="img/logo-madre.png" class="logo-main" alt="Bachata Barcelona">
-  </div>
+      <!-- MIÉRCOLES -->
+      <div class="tag">
+        <div class="tag-title">MIÉRCOLES</div>
 
-  <!-- MIÉRCOLES -->
-  <div class="card">
-    <img src="img/logo-miercoles.png"
-         class="logo-glow-fuchsia"
-         style="max-height:48px"
-         alt="Bachata Party’s">
+        <div class="calendario">
+          <div class="cal-header">
+            <span class="flecha" onclick="prevMes('miercoles')">‹</span>
+            <span class="cal-titulo" id="titulo-miercoles">ENERO 2026</span>
+            <span class="flecha" onclick="nextMes('miercoles')">›</span>
+          </div>
 
-    <h2>MIÉRCOLES</h2>
+          <div class="cal-numeros" id="numeros-miercoles">
+            <span>7</span><span>14</span><span>21</span><span>28</span>
+          </div>
+        </div>
+      </div>
 
-    <p><strong>Bachata Party’s – Sala Vivaldi Barcelona</strong></p>
+      <!-- DOMINGO -->
+      <div class="tag">
+        <div class="tag-title">DOMINGO</div>
 
-    <div class="links-row">
-      <a href="https://maps.google.com?q=Sala+Vivaldi+Barcelona" target="_blank">
-        📍 Abrir en Maps
-      </a>
-      <a href="https://instagram.com/bachataparty.bcn" target="_blank">
-        📸 @bachataparty.bcn
-      </a>
+        <div class="calendario">
+          <div class="cal-header">
+            <span class="flecha" onclick="prevMes('domingo')">‹</span>
+            <span class="cal-titulo" id="titulo-domingo">ENERO 2026</span>
+            <span class="flecha" onclick="nextMes('domingo')">›</span>
+          </div>
+
+          <div class="cal-numeros" id="numeros-domingo">
+            <span>4</span><span>11</span><span>18</span><span>25</span>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <div class="buttons">
-      <a href="miercoles.html">Fotos</a>
-      <a href="miercoles.html#videos">Vídeos</a>
-      <a href="miercoles.html">Entrar</a>
-    </div>
-  </div>
+  <script>
+    const calendarios = {
+      miercoles: {
+        index: 0,
+        meses: [
+          { titulo: "ENERO 2026", dias: [7, 14, 21, 28] },
+          { titulo: "FEBRERO 2026", dias: [4, 11, 18, 25] }
+        ]
+      },
+      domingo: {
+        index: 0,
+        meses: [
+          { titulo: "ENERO 2026", dias: [4, 11, 18, 25] },
+          { titulo: "FEBRERO 2026", dias: [1, 8, 15, 22] }
+        ]
+      }
+    };
 
-  <!-- DOMINGO -->
-  <div class="card">
-    <img src="img/logo-domingo.png"
-         class="logo-glow-fuchsia"
-         style="max-height:52px"
-         alt="Bachastation">
+    function render(dia) {
+      const cal = calendarios[dia];
+      const mes = cal.meses[cal.index];
 
-    <h2>DOMINGO</h2>
+      document.getElementById("titulo-" + dia).innerText = mes.titulo;
 
-    <p><strong>Bachastation – Hyde Club Barcelona</strong></p>
+      const cont = document.getElementById("numeros-" + dia);
+      cont.innerHTML = "";
 
-    <div class="links-row">
-      <a href="https://maps.google.com?q=Hyde+Club+Barcelona" target="_blank">
-        📍 Abrir en Maps
-      </a>
-      <a href="https://instagram.com/bachastation" target="_blank">
-        📸 @bachastation
-      </a>
-    </div>
+      mes.dias.forEach(d => {
+        const s = document.createElement("span");
+        s.innerText = d;
+        cont.appendChild(s);
+      });
+    }
 
-    <div class="buttons">
-      <a href="domingo.html">Fotos</a>
-      <a href="domingo.html#videos">Vídeos</a>
-      <a href="domingo.html">Entrar</a>
-    </div>
-  </div>
+    function nextMes(dia) {
+      const cal = calendarios[dia];
+      cal.index = (cal.index + 1) % cal.meses.length;
+      render(dia);
+    }
 
-  <footer>
-    © Bachata Barcelona
-  </footer>
-
-</div>
+    function prevMes(dia) {
+      const cal = calendarios[dia];
+      cal.index = (cal.index - 1 + cal.meses.length) % cal.meses.length;
+      render(dia);
+    }
+  </script>
 
 </body>
 </html>
