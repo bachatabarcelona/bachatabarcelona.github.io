@@ -1,177 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Bachata Barcelona</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Bachata Barcelona</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0e0e0e;
-      color: #ffffff;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#0b0b0b;
+  color:#fff;
+}
 
-    .home {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+/* CONTENEDOR HOME */
+.home{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
 
-    .home-tags {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+/* TARJETAS */
+.card{
+  background:#151515;
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:25px;
+  box-shadow:0 0 30px rgba(0,0,0,0.6);
+}
 
-    .tag {
-      background: #111;
-      padding: 20px;
-      border-radius: 18px;
-      min-width: 260px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    }
+/* CABECERA */
+.card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .tag-title {
-      text-align: center;
-      font-size: 20px;
-      letter-spacing: 3px;
-      margin-bottom: 14px;
-    }
+.card-header h2{
+  letter-spacing:4px;
+  font-size:20px;
+}
 
-    .calendario {
-      text-align: center;
-    }
+/* LOGOS */
+.logo-miercoles{
+  height:60px;
+}
 
-    .cal-header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 10px;
-    }
+.logo-domingo{
+  height:120px; /* DOBLE */
+}
 
-    .cal-titulo {
-      font-size: 13px;
-      letter-spacing: 1px;
-      opacity: 0.85;
-    }
+/* TEXTO */
+.card p{
+  margin:6px 0;
+  opacity:0.9;
+}
 
-    .flecha {
-      font-size: 22px;
-      cursor: pointer;
-      user-select: none;
-      opacity: 0.7;
-    }
+/* BOTONES */
+.actions{
+  display:flex;
+  gap:10px;
+  margin:14px 0;
+}
 
-    .flecha:hover {
-      opacity: 1;
-    }
+.actions a{
+  padding:8px 14px;
+  border-radius:20px;
+  background:#222;
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
 
-    .cal-numeros {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-    }
+/* CALENDARIO */
+.calendario{
+  text-align:center;
+  margin-top:10px;
+  font-size:13px;
+}
 
-    .cal-numeros span {
-      font-size: 16px;
-      font-weight: bold;
-    }
-  </style>
+.cal-header{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  opacity:0.8;
+}
+
+.flecha{
+  cursor:pointer;
+  font-size:18px;
+}
+
+.cal-numeros{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:4px;
+}
+
+.cal-numeros a{
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  opacity:0.5;
+  margin:40px 0 10px;
+}
+</style>
 </head>
 
 <body>
 
-  <section class="home">
-    <div class="home-tags">
+<div class="home">
 
-      <!-- MIÉRCOLES -->
-      <div class="tag">
-        <div class="tag-title">MIÉRCOLES</div>
+<!-- MIÉRCOLES -->
+<div class="card">
+  <div class="card-header">
+    <h2>MIÉRCOLES</h2>
+    <img src="img/bachata-party.png" class="logo-miercoles">
+  </div>
 
-        <div class="calendario">
-          <div class="cal-header">
-            <span class="flecha" onclick="prevMes('miercoles')">‹</span>
-            <span class="cal-titulo" id="titulo-miercoles">ENERO 2026</span>
-            <span class="flecha" onclick="nextMes('miercoles')">›</span>
-          </div>
+  <p>Bachata Party’s – Sala Vivaldi Barcelona</p>
+  <p>📍 <a href="#" style="color:#ff4da6">Abrir en Maps</a></p>
+  <p>📸 @bachataparty.bcn</p>
 
-          <div class="cal-numeros" id="numeros-miercoles">
-            <span>7</span><span>14</span><span>21</span><span>28</span>
-          </div>
-        </div>
-      </div>
+  <div class="actions">
+    <a href="#">Fotos</a>
+    <a href="#">Vídeos</a>
+    <a href="#">Entrar</a>
+  </div>
 
-      <!-- DOMINGO -->
-      <div class="tag">
-        <div class="tag-title">DOMINGO</div>
-
-        <div class="calendario">
-          <div class="cal-header">
-            <span class="flecha" onclick="prevMes('domingo')">‹</span>
-            <span class="cal-titulo" id="titulo-domingo">ENERO 2026</span>
-            <span class="flecha" onclick="nextMes('domingo')">›</span>
-          </div>
-
-          <div class="cal-numeros" id="numeros-domingo">
-            <span>4</span><span>11</span><span>18</span><span>25</span>
-          </div>
-        </div>
-      </div>
-
+  <!-- CALENDARIO -->
+  <div class="calendario">
+    <div class="cal-header">
+      <span class="flecha" onclick="prevMes('miercoles')">‹</span>
+      <span id="titulo-miercoles">ENERO 2026</span>
+      <span class="flecha" onclick="nextMes('miercoles')">›</span>
     </div>
-  </section>
+    <div class="cal-numeros" id="dias-miercoles"></div>
+  </div>
+</div>
 
-  <script>
-    const calendarios = {
-      miercoles: {
-        index: 0,
-        meses: [
-          { titulo: "ENERO 2026", dias: [7, 14, 21, 28] },
-          { titulo: "FEBRERO 2026", dias: [4, 11, 18, 25] }
-        ]
-      },
-      domingo: {
-        index: 0,
-        meses: [
-          { titulo: "ENERO 2026", dias: [4, 11, 18, 25] },
-          { titulo: "FEBRERO 2026", dias: [1, 8, 15, 22] }
-        ]
-      }
-    };
+<!-- DOMINGO -->
+<div class="card">
+  <div class="card-header">
+    <h2>DOMINGO</h2>
+    <img src="img/bachastation.png" class="logo-domingo">
+  </div>
 
-    function render(dia) {
-      const cal = calendarios[dia];
-      const mes = cal.meses[cal.index];
+  <p>Bachastation – Hyde Club Barcelona</p>
+  <p>📍 <a href="#" style="color:#ff4da6">Abrir en Maps</a></p>
+  <p>📸 @bachastation</p>
 
-      document.getElementById("titulo-" + dia).innerText = mes.titulo;
+  <div class="actions">
+    <a href="#">Fotos</a>
+    <a href="#">Vídeos</a>
+    <a href="#">Entrar</a>
+  </div>
 
-      const cont = document.getElementById("numeros-" + dia);
-      cont.innerHTML = "";
+  <!-- CALENDARIO -->
+  <div class="calendario">
+    <div class="cal-header">
+      <span class="flecha" onclick="prevMes('domingo')">‹</span>
+      <span id="titulo-domingo">ENERO 2026</span>
+      <span class="flecha" onclick="nextMes('domingo')">›</span>
+    </div>
+    <div class="cal-numeros" id="dias-domingo"></div>
+  </div>
+</div>
 
-      mes.dias.forEach(d => {
-        const s = document.createElement("span");
-        s.innerText = d;
-        cont.appendChild(s);
-      });
-    }
+<footer>© Bachata Barcelona</footer>
 
-    function nextMes(dia) {
-      const cal = calendarios[dia];
-      cal.index = (cal.index + 1) % cal.meses.length;
-      render(dia);
-    }
+</div>
 
-    function prevMes(dia) {
-      const cal = calendarios[dia];
-      cal.index = (cal.index - 1 + cal.meses.length) % cal.meses.length;
-      render(dia);
-    }
-  </script>
+<script>
+const data = {
+  miercoles:{
+    index:0,
+    meses:[
+      {t:"ENERO 2026", d:[7,14,21,28]},
+      {t:"FEBRERO 2026", d:[4,11,18,25]}
+    ]
+  },
+  domingo:{
+    index:0,
+    meses:[
+      {t:"ENERO 2026", d:[4,11,18,25]},
+      {t:"FEBRERO 2026", d:[1,8,15,22]}
+    ]
+  }
+};
+
+function render(tipo){
+  const c=data[tipo];
+  const m=c.meses[c.index];
+  document.getElementById("titulo-"+tipo).innerText=m.t;
+
+  const cont=document.getElementById("dias-"+tipo);
+  cont.innerHTML="";
+  m.d.forEach(d=>{
+    const a=document.createElement("a");
+    a.href=`galeria/${tipo}/${m.t.replace(" ","-")}-${d}.html`;
+    a.innerText=d;
+    cont.appendChild(a);
+  });
+}
+
+function nextMes(t){ data[t].index=(data[t].index+1)%data[t].meses.length; render(t); }
+function prevMes(t){ data[t].index=(data[t].index-1+data[t].meses.length)%data[t].meses.length; render(t); }
+
+render("miercoles");
+render("domingo");
+</script>
 
 </body>
 </html>
