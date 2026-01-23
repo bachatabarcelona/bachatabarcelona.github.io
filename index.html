@@ -20,17 +20,17 @@ body{
   margin:0 auto;
 }
 
-/* 🔥 LOGO MADRE: 65%, SUBIDO, LUZ SUAVE */
+/* 🔥 LOGO MADRE · 65% · NEÓN DORADO */
 .logo-wrapper{
   display:flex;
   justify-content:center;
-  margin:6px 0 18px; /* todo más junto */
+  margin:6px 0 18px;
 }
 .logo-main{
   max-width:170px;
   filter:
-    drop-shadow(0 0 5px rgba(255,80,200,.6))
-    drop-shadow(0 0 10px rgba(255,80,200,.35));
+    drop-shadow(0 0 6px rgba(255,215,120,.8))
+    drop-shadow(0 0 14px rgba(255,200,100,.45));
 }
 
 /* TARJETAS */
@@ -38,7 +38,7 @@ body{
   background:#1c1c1c;
   border-radius:20px;
   padding:18px;
-  margin-bottom:20px; /* más compacto */
+  margin-bottom:20px;
   box-shadow:0 16px 32px rgba(0,0,0,.6);
 }
 
@@ -55,16 +55,22 @@ body{
   font-size:18px;
 }
 
-/* LOGOS DE TARJETA */
+/* LOGOS */
 .card-header img{
   max-height:42px;
 }
 
-/* 🔥 LOGO DOMINGO MUCHO MÁS GRANDE */
+/* 🔼 LOGO MIÉRCOLES UN POCO MÁS GRANDE */
+.logo-miercoles{
+  transform:scale(1.25);
+  transform-origin:right center;
+}
+
+/* 🔥 LOGO DOMINGO MUY GRANDE */
 .logo-domingo{
   max-height:42px;
   max-width:120px;
-  transform:scale(4); /* DOBLE de lo que había */
+  transform:scale(4);
   transform-origin:right center;
 }
 
@@ -128,7 +134,7 @@ footer{
   <div class="card">
     <div class="card-header">
       <h2>MIÉRCOLES</h2>
-      <img src="img/logo-miercoles.png" alt="Bachata Party’s">
+      <img src="img/logo-miercoles.png" class="logo-miercoles" alt="Bachata Party’s">
     </div>
 
     <p><strong>Bachata Party’s – Sala Vivaldi Barcelona</strong></p>
