@@ -13,7 +13,6 @@ body{
   color:#fff;
 }
 
-/* APP */
 .app{
   max-width:420px;
   margin:auto;
@@ -24,7 +23,7 @@ body{
 .logo-madre{
   display:block;
   margin:8px auto 14px;
-  max-width:210px; /* MÁS PEQUEÑO */
+  max-width:210px;
   filter:
     drop-shadow(0 0 8px rgba(255,200,90,.6))
     drop-shadow(0 0 18px rgba(255,180,60,.5));
@@ -40,7 +39,6 @@ body{
   text-align:center;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
 }
 
 /* LOGOS EVENTO */
@@ -50,33 +48,28 @@ body{
   display:block;
 }
 
-/* BLOQUE SUPERIOR (para igualar alturas) */
-.top{
-  min-height:170px; /* IGUALA MIÉRCOLES Y DOMINGO */
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-}
-
 /* TITULO */
 .card h2{
-  margin:6px 0 6px;
+  margin:6px 0;
   letter-spacing:4px;
   font-size:18px;
 }
 
-/* DESCRIPCIÓN */
+/* DESCRIPCIÓN + MAPS */
 .desc{
   font-size:14px;
   opacity:.9;
   margin-bottom:6px;
 }
 
-/* INFO */
+.desc a{
+  color:#ff4da6;
+  text-decoration:none;
+  margin-left:4px;
+}
+
+/* INSTAGRAM */
 .info{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
   font-size:14px;
   margin-bottom:10px;
 }
@@ -86,7 +79,22 @@ body{
   text-decoration:none;
 }
 
-/* FILA BOTONES + CALENDARIO */
+/* MES */
+.mes{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin:8px 0 6px;
+  font-size:14px;
+  opacity:.85;
+}
+
+.flecha{
+  cursor:pointer;
+}
+
+/* BOTONES + DÍAS */
 .actions{
   display:flex;
   gap:8px;
@@ -103,21 +111,6 @@ body{
   color:#fff;
   text-decoration:none;
   font-weight:500;
-}
-
-/* MES */
-.mes{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  margin:8px 0 6px;
-  font-size:14px;
-  opacity:.85;
-}
-
-.flecha{
-  cursor:pointer;
 }
 
 /* FOOTER */
@@ -138,18 +131,18 @@ footer{
 
 <!-- MIÉRCOLES -->
 <div class="card">
-  <div class="top">
-    <img src="img/logo-miercoles.png" class="logo-evento">
-    <h2>MIÉRCOLES</h2>
+  <img src="img/logo-miercoles.png" class="logo-evento">
+  <h2>MIÉRCOLES</h2>
 
-    <div class="desc">
-      Bachata Party’s – Sala Vivaldi Barcelona
-    </div>
+  <div class="desc">
+    Bachata Party’s – Sala Vivaldi Barcelona
+    <a href="https://maps.google.com" target="_blank">📍 Maps</a>
+  </div>
 
-    <div class="info">
-      <a href="https://instagram.com/bachataparty.bcn" target="_blank">📸 @bachataparty.bcn</a>
-      <a href="https://maps.google.com" target="_blank">📍 Maps</a>
-    </div>
+  <div class="info">
+    <a href="https://instagram.com/bachataparty.bcn" target="_blank">
+      📸 @bachataparty.bcn
+    </a>
   </div>
 
   <div class="mes">
@@ -163,18 +156,18 @@ footer{
 
 <!-- DOMINGO -->
 <div class="card">
-  <div class="top">
-    <img src="img/logo-domingo.png" class="logo-evento">
-    <h2>DOMINGO</h2>
+  <img src="img/logo-domingo.png" class="logo-evento">
+  <h2>DOMINGO</h2>
 
-    <div class="desc">
-      Bachastation – Hyde Club Barcelona
-    </div>
+  <div class="desc">
+    Bachastation – Hyde Club Barcelona
+    <a href="https://maps.google.com" target="_blank">📍 Maps</a>
+  </div>
 
-    <div class="info">
-      <a href="https://instagram.com/bachastation" target="_blank">📸 @bachastation</a>
-      <a href="https://maps.google.com" target="_blank">📍 Maps</a>
-    </div>
+  <div class="info">
+    <a href="https://instagram.com/bachastation" target="_blank">
+      📸 @bachastation
+    </a>
   </div>
 
   <div class="mes">
