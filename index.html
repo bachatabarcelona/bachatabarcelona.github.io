@@ -9,47 +9,50 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto;
-  background:radial-gradient(circle at top,#1a1a1a,#000);
+  background:radial-gradient(circle at top,#111,#000);
   color:#fff;
 }
 h1{
   text-align:center;
-  margin:24px 0 16px;
-  letter-spacing:3px;
+  margin:24px 0 18px;
+  letter-spacing:4px;
 }
 .card{
-  max-width:420px;
+  max-width:440px;
   margin:0 auto 24px;
-  background:#1f1f1f;
-  border-radius:20px;
-  padding:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
+  background:#1c1c1c;
+  border-radius:22px;
+  padding:22px;
+  box-shadow:0 20px 40px rgba(0,0,0,.45);
 }
 .logo{
   display:block;
   width:100%;
-  max-width:260px;
-  margin:0 auto 14px;
+  max-width:280px;
+  margin:0 auto 16px;
 }
 .subtitle{
   text-align:center;
-  font-size:15px;
+  font-size:16px;
   margin-bottom:6px;
 }
 .subinfo{
   text-align:center;
   font-size:14px;
-  opacity:.8;
+  opacity:.85;
 }
-.subinfo a{color:#7db7ff;text-decoration:none}
+.subinfo a{
+  color:#7db7ff;
+  text-decoration:none;
+}
 .buttons{
   display:flex;
   justify-content:center;
-  gap:12px;
-  margin:18px 0;
+  gap:14px;
+  margin:20px 0;
 }
 .buttons a{
-  padding:10px 18px;
+  padding:10px 22px;
   border:1px solid #555;
   border-radius:30px;
   color:#fff;
@@ -58,38 +61,37 @@ h1{
 .gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:10px;
+  gap:12px;
 }
 .gallery img{
   width:100%;
-  border-radius:14px;
+  border-radius:16px;
 }
 .month{
   display:flex;
   justify-content:space-between;
   align-items:center;
   margin:18px auto 0;
-  max-width:420px;
-  opacity:.9;
+  max-width:440px;
 }
 .month span{
-  font-size:14px;
+  font-size:15px;
 }
 .month button{
   background:none;
   border:1px solid #444;
   color:#fff;
   border-radius:50%;
-  width:32px;
-  height:32px;
+  width:34px;
+  height:34px;
 }
 .dates{
   text-align:center;
-  margin:10px 0 24px;
+  margin:12px 0 26px;
 }
 .dates span{
-  margin:0 8px;
-  opacity:.6;
+  margin:0 10px;
+  opacity:.7;
 }
 </style>
 </head>
@@ -99,7 +101,7 @@ h1{
 <h1>MIÉRCOLES</h1>
 
 <div class="card">
-  <img src="img/bachata-party.png" class="logo" alt="Bachata Party's">
+  <img src="img/bachata-party.png" class="logo" alt="Bachata Party’s">
 
   <div class="subtitle">
     Bachata Party’s – Sala Vivaldi Barcelona
@@ -137,13 +139,6 @@ h1{
   <span>4</span>
 </div>
 
-<!-- SCRIPT PROTEGIDO: NO ROMPE NUNCA -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Esta página NO ejecuta lógica de galería
-  // Está aislada y protegida
-});
-</script>
-
+<!-- SIN JS DE GALERÍA: IMPOSIBLE QUE QUEDE EN BLANCO -->
 </body>
 </html>
