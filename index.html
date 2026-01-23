@@ -1,262 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Bachata Barcelona</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Bachata Barcelona</title>
 
-<style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#0b0b0b;
-  color:#fff;
-}
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
 
-.app{
-  max-width:420px;
-  margin:auto;
-  padding:12px;
-}
+    .instagram {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: white;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
 
-/* LOGO MADRE */
-.logo-madre{
-  display:block;
-  margin:8px auto 14px;
-  max-width:185px;
-  filter:
-    drop-shadow(0 0 6px rgba(255,200,90,.6))
-    drop-shadow(0 0 14px rgba(255,180,60,.5));
-}
-
-/* TARJETAS */
-.card{
-  background:#141414;
-  border-radius:26px;
-  padding:16px 16px 12px;
-  margin-bottom:20px;
-  box-shadow:0 0 30px rgba(0,0,0,.7);
-  text-align:center;
-}
-
-/* MIÉRCOLES */
-.card.miercoles{ padding-bottom:6px; }
-
-/* CONTENIDO */
-.card-inner{ display:flex; flex-direction:column; }
-
-/* LOGOS */
-.logo-evento{ max-width:165px; margin:0 auto 6px; display:block; }
-.card.miercoles .logo-evento{ max-width:150px; }
-
-/* TÍTULOS */
-.card h2{
-  margin:6px 0;
-  letter-spacing:4px;
-  font-size:18px;
-}
-
-/* TEXTO */
-.desc{
-  font-size:14px;
-  opacity:.9;
-  margin-bottom:6px;
-}
-
-.desc a{
-  color:#ff4da6;
-  text-decoration:none;
-  margin-left:4px;
-}
-
-/* FILA SUPERIOR */
-.top-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-size:14px;
-  margin-bottom:6px;
-}
-
-.top-row a{ color:#ff4da6; text-decoration:none; }
-
-/* MES */
-.mes{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  opacity:.85;
-  margin:6px 0;
-}
-
-.flecha{ cursor:pointer; }
-
-/* ACCIONES */
-.actions{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  align-items:center;
-}
-
-.actions-left{
-  display:flex;
-  gap:8px;
-  justify-content:flex-end;
-}
-
-.actions-right{
-  display:flex;
-  gap:6px;
-  justify-content:flex-start;
-}
-
-/* BOTONES */
-.actions a{
-  background:#1f1f1f;
-  border-radius:18px;
-  padding:9px 16px;
-  font-size:15px;
-  color:#fff;
-  text-decoration:none;
-  font-weight:500;
-}
-
-/* DÍAS */
-.actions a.dia{
-  padding:7px 0;
-  font-size:14px;
-  min-width:38px;
-  text-align:center;
-  border-radius:15px;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  opacity:.5;
-  font-size:12px;
-  margin-top:6px;
-}
-</style>
+    .instagram img {
+      width: 16px;
+      height: 16px;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="app">
+  <!-- INSTAGRAM MIÉRCOLES -->
+  <a class="instagram"
+     href="https://www.instagram.com/bachata_wednesday"
+     target="_blank">
+    <img src="img/instagram.png" alt="Instagram">
+    @bachata_wednesday
+  </a>
 
-<img src="img/logo-madre.png" class="logo-madre">
-
-<!-- MIÉRCOLES -->
-<div class="card miercoles">
-<div class="card-inner">
-
-<img src="img/logo-miercoles.png" class="logo-evento">
-<h2>MIÉRCOLES</h2>
-
-<div class="desc">
-Bachata Party’s – Sala Vivaldi Barcelona
-<a href="https://www.google.com/maps?q=Sala+Vivaldi+Barcelona" target="_blank">📍 Maps</a>
-</div>
-
-<div class="top-row">
-<a href="https://instagram.com/bachataparty.bcn" target="_blank">📸 @bachataparty.bcn</a>
-</div>
-
-<div class="mes">
-<span class="flecha" onclick="prevMes('miercoles')">‹</span>
-<span id="mes-miercoles">ENERO 2026</span>
-<span class="flecha" onclick="nextMes('miercoles')">›</span>
-</div>
-
-<div class="actions">
-<div class="actions-left">
-<a id="fotos-miercoles">Fotos</a>
-<a id="videos-miercoles">Vídeos</a>
-</div>
-<div class="actions-right" id="dias-miercoles"></div>
-</div>
-
-</div>
-</div>
-
-<!-- DOMINGO -->
-<div class="card">
-<div class="card-inner">
-
-<img src="img/logo-domingo.png" class="logo-evento">
-<h2>DOMINGO</h2>
-
-<div class="desc">
-Bachastation – Hyde Club Barcelona
-<a href="https://www.google.com/maps?q=Hyde+Club+Barcelona" target="_blank">📍 Maps</a>
-</div>
-
-<div class="top-row">
-<a href="https://instagram.com/bachastation" target="_blank">📸 @bachastation</a>
-</div>
-
-<div class="mes">
-<span class="flecha" onclick="prevMes('domingo')">‹</span>
-<span id="mes-domingo">ENERO 2026</span>
-<span class="flecha" onclick="nextMes('domingo')">›</span>
-</div>
-
-<div class="actions">
-<div class="actions-left">
-<a id="fotos-domingo">Fotos</a>
-<a id="videos-domingo">Vídeos</a>
-</div>
-<div class="actions-right" id="dias-domingo"></div>
-</div>
-
-</div>
-</div>
-
-<footer>© Bachata Barcelona</footer>
-</div>
-
-<script>
-const mesesTexto=["ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE"];
-
-const data={
-  miercoles:{y:2026,m:0,d:[7,14,21,28]},
-  domingo:{y:2026,m:0,d:[4,11,18,25]}
-};
-
-function render(tipo){
-  const o=data[tipo];
-  document.getElementById("mes-"+tipo).innerText=`${mesesTexto[o.m]} ${o.y}`;
-
-  document.getElementById("fotos-"+tipo).href=`galeria/${tipo}/${o.y}-${String(o.m+1).padStart(2,'0')}/`;
-  document.getElementById("videos-"+tipo).href=`videos/${tipo}/${o.y}-${String(o.m+1).padStart(2,'0')}/`;
-
-  const cont=document.getElementById("dias-"+tipo);
-  cont.innerHTML="";
-  o.d.forEach(d=>{
-    const a=document.createElement("a");
-    a.href=`galeria/${tipo}/${o.y}-${String(o.m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}/`;
-    a.className="dia";
-    a.innerText=d;
-    cont.appendChild(a);
-  });
-}
-
-function nextMes(t){
-  data[t].m++;
-  if(data[t].m>11){data[t].m=0;data[t].y++;}
-  render(t);
-}
-function prevMes(t){
-  data[t].m--;
-  if(data[t].m<0){data[t].m=11;data[t].y--;}
-  render(t);
-}
-
-render("miercoles");
-render("domingo");
-</script>
+  <!-- INSTAGRAM DOMINGO -->
+  <a class="instagram"
+     href="https://www.instagram.com/bachastation"
+     target="_blank">
+    <img src="img/instagram.png" alt="Instagram">
+    @bachastation
+  </a>
 
 </body>
 </html>
