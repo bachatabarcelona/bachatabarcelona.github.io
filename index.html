@@ -34,14 +34,14 @@ body{
   background:#141414;
   border-radius:26px;
   padding:16px;
-  margin-bottom:22px;
+  margin-bottom:20px;
   box-shadow:0 0 30px rgba(0,0,0,.7);
   text-align:center;
   display:flex;
   flex-direction:column;
 }
 
-/* LOGOS EVENTO */
+/* LOGOS */
 .logo-evento{
   max-width:190px;
   margin:0 auto 6px;
@@ -55,11 +55,11 @@ body{
   font-size:18px;
 }
 
-/* DESCRIPCIÓN + MAPS */
+/* DESCRIPCIÓN */
 .desc{
   font-size:14px;
   opacity:.9;
-  margin-bottom:6px;
+  margin-bottom:4px;
 }
 
 .desc a{
@@ -71,7 +71,7 @@ body{
 /* INSTAGRAM */
 .info{
   font-size:14px;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
 .info a{
@@ -85,7 +85,7 @@ body{
   justify-content:center;
   align-items:center;
   gap:10px;
-  margin:8px 0 6px;
+  margin:6px 0 6px;
   font-size:14px;
   opacity:.85;
 }
@@ -94,23 +94,28 @@ body{
   cursor:pointer;
 }
 
-/* BOTONES + DÍAS */
+/* ACCIONES FIJAS */
 .actions{
   display:flex;
   gap:8px;
-  overflow-x:auto;
-  padding-bottom:2px;
+  justify-content:flex-start;
+  align-items:center;
+  height:44px;              /* 🔒 ALTURA FIJA */
+  overflow:hidden;          /* 🔒 NO EMPUJA */
 }
 
+/* BOTONES */
 .actions a{
   background:#1f1f1f;
   border-radius:18px;
   padding:8px 14px;
   font-size:14px;
-  white-space:nowrap;
   color:#fff;
   text-decoration:none;
   font-weight:500;
+  flex-shrink:0;            /* 🔒 NO SE ENCOGEN */
+  min-width:56px;           /* 🔒 MISMO ANCHO */
+  text-align:center;
 }
 
 /* FOOTER */
