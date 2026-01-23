@@ -10,10 +10,10 @@ body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
   background:#0b0b0b;
-  color:#fff;
+  color:#ffffff;
 }
 
-/* CONTENEDOR HOME */
+/* CONTENEDOR GENERAL */
 .home{
   max-width:900px;
   margin:auto;
@@ -23,48 +23,64 @@ body{
 /* TARJETAS */
 .card{
   background:#151515;
-  border-radius:20px;
-  padding:20px;
-  margin-bottom:25px;
-  box-shadow:0 0 30px rgba(0,0,0,0.6);
+  border-radius:22px;
+  padding:22px;
+  margin-bottom:26px;
+  box-shadow:0 0 28px rgba(0,0,0,0.6);
+  text-align:center;
 }
 
-/* CABECERA */
-.card-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.card-header h2{
+/* TITULO */
+.card h2{
+  margin:0 0 12px;
   letter-spacing:4px;
   font-size:20px;
 }
 
 /* LOGOS */
+.logo{
+  display:block;
+  margin:0 auto 14px;
+}
+
 .logo-miercoles{
   height:60px;
 }
 
 .logo-domingo{
-  height:120px; /* DOBLE */
+  height:120px;
 }
 
-/* TEXTO */
-.card p{
-  margin:6px 0;
+/* INFO */
+.info{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:14px;
+  margin-bottom:12px;
+}
+
+.info a{
+  color:#ff4da6;
+  text-decoration:none;
+}
+
+/* TEXTO CENTRAL */
+.descripcion{
   opacity:0.9;
+  margin-bottom:10px;
 }
 
 /* BOTONES */
 .actions{
   display:flex;
-  gap:10px;
-  margin:14px 0;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:10px;
 }
 
 .actions a{
-  padding:8px 14px;
+  padding:8px 16px;
   border-radius:20px;
   background:#222;
   color:white;
@@ -74,9 +90,8 @@ body{
 
 /* CALENDARIO */
 .calendario{
-  text-align:center;
-  margin-top:10px;
   font-size:13px;
+  margin-top:8px;
 }
 
 .cal-header{
@@ -95,7 +110,7 @@ body{
 .cal-numeros{
   display:flex;
   justify-content:center;
-  gap:12px;
+  gap:14px;
   margin-top:4px;
 }
 
@@ -111,6 +126,13 @@ footer{
   opacity:0.5;
   margin:40px 0 10px;
 }
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .info{
+    font-size:13px;
+  }
+}
 </style>
 </head>
 
@@ -120,14 +142,17 @@ footer{
 
 <!-- MIÉRCOLES -->
 <div class="card">
-  <div class="card-header">
-    <h2>MIÉRCOLES</h2>
-    <img src="img/bachata-party.png" class="logo-miercoles">
+  <h2>MIÉRCOLES</h2>
+  <img src="img/bachata-party.png" class="logo logo-miercoles">
+
+  <div class="descripcion">
+    Bachata Party’s – Sala Vivaldi Barcelona
   </div>
 
-  <p>Bachata Party’s – Sala Vivaldi Barcelona</p>
-  <p>📍 <a href="#" style="color:#ff4da6">Abrir en Maps</a></p>
-  <p>📸 @bachataparty.bcn</p>
+  <div class="info">
+    <a href="#">📍 Abrir en Maps</a>
+    <a href="#">📸 @bachataparty.bcn</a>
+  </div>
 
   <div class="actions">
     <a href="#">Fotos</a>
@@ -135,7 +160,6 @@ footer{
     <a href="#">Entrar</a>
   </div>
 
-  <!-- CALENDARIO -->
   <div class="calendario">
     <div class="cal-header">
       <span class="flecha" onclick="prevMes('miercoles')">‹</span>
@@ -148,14 +172,17 @@ footer{
 
 <!-- DOMINGO -->
 <div class="card">
-  <div class="card-header">
-    <h2>DOMINGO</h2>
-    <img src="img/bachastation.png" class="logo-domingo">
+  <h2>DOMINGO</h2>
+  <img src="img/bachastation.png" class="logo logo-domingo">
+
+  <div class="descripcion">
+    Bachastation – Hyde Club Barcelona
   </div>
 
-  <p>Bachastation – Hyde Club Barcelona</p>
-  <p>📍 <a href="#" style="color:#ff4da6">Abrir en Maps</a></p>
-  <p>📸 @bachastation</p>
+  <div class="info">
+    <a href="#">📍 Abrir en Maps</a>
+    <a href="#">📸 @bachastation</a>
+  </div>
 
   <div class="actions">
     <a href="#">Fotos</a>
@@ -163,7 +190,6 @@ footer{
     <a href="#">Entrar</a>
   </div>
 
-  <!-- CALENDARIO -->
   <div class="calendario">
     <div class="cal-header">
       <span class="flecha" onclick="prevMes('domingo')">‹</span>
@@ -179,7 +205,7 @@ footer{
 </div>
 
 <script>
-const data = {
+const data={
   miercoles:{
     index:0,
     meses:[
@@ -200,7 +226,6 @@ function render(tipo){
   const c=data[tipo];
   const m=c.meses[c.index];
   document.getElementById("titulo-"+tipo).innerText=m.t;
-
   const cont=document.getElementById("dias-"+tipo);
   cont.innerHTML="";
   m.d.forEach(d=>{
@@ -211,8 +236,8 @@ function render(tipo){
   });
 }
 
-function nextMes(t){ data[t].index=(data[t].index+1)%data[t].meses.length; render(t); }
-function prevMes(t){ data[t].index=(data[t].index-1+data[t].meses.length)%data[t].meses.length; render(t); }
+function nextMes(t){data[t].index=(data[t].index+1)%data[t].meses.length;render(t);}
+function prevMes(t){data[t].index=(data[t].index-1+data[t].meses.length)%data[t].meses.length;render(t);}
 
 render("miercoles");
 render("domingo");
