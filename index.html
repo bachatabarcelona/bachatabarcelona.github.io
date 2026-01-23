@@ -1,79 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Bachata Barcelona</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Bachata Barcelona</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
-      background:radial-gradient(circle at top,#111,#000);
-      color:#fff;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:20px;
-    }
-    .container{
-      max-width:420px;
-      width:100%;
-    }
-    h1{
-      letter-spacing:6px;
-      margin-bottom:22px;
-    }
-    .subtitle{
-      opacity:.75;
-      margin-bottom:32px;
-    }
-    .buttons{
-      display:flex;
-      gap:18px;
-      justify-content:center;
-      margin-bottom:40px;
-    }
-    .buttons a{
-      padding:14px 26px;
-      border-radius:26px;
-      border:1px solid #777;
-      color:#fff;
-      text-decoration:none;
-      font-size:16px;
-    }
-    .buttons a:hover{
-      background:#fff;
-      color:#000;
-    }
-    footer{
-      opacity:.5;
-      font-size:13px;
-    }
-  </style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
+  background:radial-gradient(circle at top,#111,#000);
+  color:#fff;
+  padding:20px;
+}
+.container{
+  max-width:480px;
+  margin:0 auto;
+}
+.logo-main{
+  display:block;
+  max-width:260px;
+  margin:20px auto 30px;
+}
+.card{
+  background:#1c1c1c;
+  border-radius:22px;
+  padding:22px;
+  margin-bottom:28px;
+  box-shadow:0 20px 40px rgba(0,0,0,.5);
+}
+.card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
+}
+.card-header img{
+  max-height:44px;
+}
+.card h2{
+  letter-spacing:3px;
+}
+.card p{
+  opacity:.8;
+  margin:8px 0;
+}
+.card a{
+  color:#ff4d4d;
+  text-decoration:none;
+}
+.buttons{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+  flex-wrap:wrap;
+}
+.buttons a{
+  padding:10px 18px;
+  border-radius:20px;
+  background:#2a2a2a;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+.buttons a:hover{
+  background:#fff;
+  color:#000;
+}
+footer{
+  text-align:center;
+  opacity:.4;
+  font-size:13px;
+  margin-top:20px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>BACHATA<br>BARCELONA</h1>
+<div class="container">
 
-    <div class="subtitle">
-      Galerías oficiales · Fotos y vídeos<br>
-      Miércoles y Domingos
+  <!-- LOGO PRINCIPAL -->
+  <img src="img/logo-madre.png" class="logo-main" alt="Bachata Barcelona">
+
+  <!-- MIÉRCOLES -->
+  <div class="card">
+    <div class="card-header">
+      <h2>MIÉRCOLES</h2>
+      <img src="img/logo-miercoles.png" alt="Bachata Party’s">
     </div>
+    <p><strong>Bachata Party’s – Sala Vivaldi Barcelona</strong></p>
+    <p>📍 <a href="https://maps.google.com?q=Sala+Vivaldi+Barcelona" target="_blank">Abrir en Maps</a></p>
+    <p>@bachataparty.bcn</p>
 
     <div class="buttons">
-      <a href="miercoles.html">Miércoles</a>
-      <a href="domingo.html">Domingo</a>
+      <a href="miercoles.html">Fotos</a>
+      <a href="miercoles.html#videos">Vídeos</a>
+      <a href="miercoles.html">Entrar</a>
     </div>
-
-    <footer>
-      © Bachata Barcelona
-    </footer>
   </div>
+
+  <!-- DOMINGO -->
+  <div class="card">
+    <div class="card-header">
+      <h2>DOMINGO</h2>
+      <img src="img/logo-domingo.png" alt="Bachastation">
+    </div>
+    <p><strong>Bachastation – Hyde Club Barcelona</strong></p>
+    <p>📍 <a href="https://maps.google.com?q=Hyde+Club+Barcelona" target="_blank">Abrir en Maps</a></p>
+    <p>@bachastation</p>
+
+    <div class="buttons">
+      <a href="domingo.html">Fotos</a>
+      <a href="domingo.html#videos">Vídeos</a>
+      <a href="domingo.html">Entrar</a>
+    </div>
+  </div>
+
+  <footer>
+    © Bachata Barcelona
+  </footer>
+
+</div>
 
 </body>
 </html>
