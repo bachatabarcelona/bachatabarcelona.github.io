@@ -13,7 +13,7 @@ body{
   color:#ffffff;
 }
 
-/* CONTENEDOR */
+/* CONTENEDOR GENERAL */
 .home{
   max-width:900px;
   margin:auto;
@@ -24,17 +24,28 @@ body{
 .logo-madre{
   display:block;
   margin:10px auto 18px;
-  max-width:260px;
+  max-width:220px; /* un poco más pequeño */
+  filter: drop-shadow(0 0 10px rgba(255,200,80,0.6))
+          drop-shadow(0 0 22px rgba(255,180,40,0.45));
 }
 
 /* TARJETAS */
+.cards{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
 .card{
   background:#151515;
   border-radius:20px;
   padding:18px;
-  margin-bottom:20px;
   box-shadow:0 0 24px rgba(0,0,0,0.6);
   text-align:center;
+  min-height:420px; /* MISMO TAMAÑO */
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
 /* LOGOS EVENTO */
@@ -137,23 +148,27 @@ footer{
 <!-- LOGO MADRE -->
 <img src="img/logo-madre.png" class="logo-madre" alt="Bachata Barcelona">
 
+<div class="cards">
+
 <!-- MIÉRCOLES -->
 <div class="card">
-  <img src="img/logo-miercoles.png" class="logo" alt="Bachata Party Miércoles">
-  <h2>MIÉRCOLES</h2>
+  <div>
+    <img src="img/logo-miercoles.png" class="logo" alt="Bachata Party Miércoles">
+    <h2>MIÉRCOLES</h2>
 
-  <div class="descripcion">
-    Bachata Party’s – Sala Vivaldi Barcelona
-  </div>
+    <div class="descripcion">
+      Bachata Party’s – Sala Vivaldi Barcelona
+    </div>
 
-  <div class="info">
-    <a href="https://instagram.com/bachataparty.bcn" target="_blank">📸 @bachataparty.bcn</a>
-    <a href="https://maps.google.com" target="_blank">📍 Abrir en Maps</a>
-  </div>
+    <div class="info">
+      <a href="https://instagram.com/bachataparty.bcn" target="_blank">📸 @bachataparty.bcn</a>
+      <a href="https://maps.google.com" target="_blank">📍 Abrir en Maps</a>
+    </div>
 
-  <div class="actions">
-    <a href="galeria/miercoles/">Fotos</a>
-    <a href="videos/miercoles/">Vídeos</a>
+    <div class="actions">
+      <a href="galeria/miercoles/">Fotos</a>
+      <a href="videos/miercoles/">Vídeos</a>
+    </div>
   </div>
 
   <div class="calendario">
@@ -168,21 +183,23 @@ footer{
 
 <!-- DOMINGO -->
 <div class="card">
-  <img src="img/logo-domingo.png" class="logo" alt="Bachastation Domingo">
-  <h2>DOMINGO</h2>
+  <div>
+    <img src="img/logo-domingo.png" class="logo" alt="Bachastation Domingo">
+    <h2>DOMINGO</h2>
 
-  <div class="descripcion">
-    Bachastation – Hyde Club Barcelona
-  </div>
+    <div class="descripcion">
+      Bachastation – Hyde Club Barcelona
+    </div>
 
-  <div class="info">
-    <a href="https://instagram.com/bachastation" target="_blank">📸 @bachastation</a>
-    <a href="https://maps.google.com" target="_blank">📍 Abrir en Maps</a>
-  </div>
+    <div class="info">
+      <a href="https://instagram.com/bachastation" target="_blank">📸 @bachastation</a>
+      <a href="https://maps.google.com" target="_blank">📍 Abrir en Maps</a>
+    </div>
 
-  <div class="actions">
-    <a href="galeria/domingo/">Fotos</a>
-    <a href="videos/domingo/">Vídeos</a>
+    <div class="actions">
+      <a href="galeria/domingo/">Fotos</a>
+      <a href="videos/domingo/">Vídeos</a>
+    </div>
   </div>
 
   <div class="calendario">
@@ -193,6 +210,8 @@ footer{
     </div>
     <div class="cal-numeros" id="dias-domingo"></div>
   </div>
+</div>
+
 </div>
 
 <footer>© Bachata Barcelona</footer>
