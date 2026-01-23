@@ -1,17 +1,107 @@
-.instagram-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: inherit;
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.instagram-link img {
-  width: 18px;
-  height: 18px;
+/* BODY GENERAL */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+/* CONTENEDOR GENERAL */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* TÍTULOS */
+h1, h2, h3 {
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+
+/* LINKS GENERALES */
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* SECCIONES */
+.section {
+  margin-bottom: 30px;
+}
+
+/* IMÁGENES GENERALES */
+img {
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
-.instagram-link span {
+/* ========================= */
+/* INSTAGRAM */
+/* ========================= */
+
+.instagram {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.instagram img {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================= */
+/* BOTONES (si los usas) */
+/* ========================= */
+
+.button {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid #fff;
+  font-size: 13px;
+}
+
+.button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ========================= */
+/* GALERÍA BÁSICA */
+/* ========================= */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+  margin-top: 40px;
+  font-size: 12px;
+  opacity: 0.6;
 }
