@@ -41,6 +41,17 @@ body{
   flex-direction:column;
 }
 
+/* CONTENIDO INTERNO */
+.card-inner{
+  display:flex;
+  flex-direction:column;
+}
+
+/* ⚠️ AJUSTE VISUAL SOLO PARA MIÉRCOLES */
+.card-inner.miercoles-ajuste{
+  transform: translateY(-24px); /* 👈 DOS GOLPES */
+}
+
 /* LOGOS */
 .logo-evento{
   max-width:190px;
@@ -68,13 +79,13 @@ body{
   margin-left:4px;
 }
 
-/* FILA SUPERIOR INFO */
+/* FILA SUPERIOR */
 .top-row{
   display:flex;
   justify-content:space-between;
   align-items:center;
   font-size:14px;
-  margin-bottom:8px;
+  margin-bottom:6px;
 }
 
 .top-row a{
@@ -82,7 +93,7 @@ body{
   text-decoration:none;
 }
 
-/* CALENDARIO CABECERA */
+/* MES */
 .mes{
   display:flex;
   align-items:center;
@@ -114,14 +125,12 @@ body{
   flex-shrink:0;
 }
 
-/* DÍAS */
 .actions a.dia{
   padding:6px 0;
   font-size:13px;
   min-width:34px;
   text-align:center;
   border-radius:14px;
-  opacity:.95;
 }
 
 /* FOOTER */
@@ -142,52 +151,56 @@ footer{
 
 <!-- MIÉRCOLES -->
 <div class="card">
-  <img src="img/logo-miercoles.png" class="logo-evento">
-  <h2>MIÉRCOLES</h2>
+  <div class="card-inner miercoles-ajuste">
+    <img src="img/logo-miercoles.png" class="logo-evento">
+    <h2>MIÉRCOLES</h2>
 
-  <div class="desc">
-    Bachata Party’s – Sala Vivaldi Barcelona
-    <a href="https://maps.google.com" target="_blank">📍 Maps</a>
-  </div>
-
-  <div class="top-row">
-    <a href="https://instagram.com/bachataparty.bcn" target="_blank">
-      📸 @bachataparty.bcn
-    </a>
-
-    <div class="mes">
-      <span class="flecha" onclick="prevMes('miercoles')">‹</span>
-      <span id="mes-miercoles">ENERO 2026</span>
-      <span class="flecha" onclick="nextMes('miercoles')">›</span>
+    <div class="desc">
+      Bachata Party’s – Sala Vivaldi Barcelona
+      <a href="https://maps.google.com" target="_blank">📍 Maps</a>
     </div>
-  </div>
 
-  <div class="actions" id="dias-miercoles"></div>
+    <div class="top-row">
+      <a href="https://instagram.com/bachataparty.bcn" target="_blank">
+        📸 @bachataparty.bcn
+      </a>
+
+      <div class="mes">
+        <span class="flecha" onclick="prevMes('miercoles')">‹</span>
+        <span id="mes-miercoles">ENERO 2026</span>
+        <span class="flecha" onclick="nextMes('miercoles')">›</span>
+      </div>
+    </div>
+
+    <div class="actions" id="dias-miercoles"></div>
+  </div>
 </div>
 
 <!-- DOMINGO -->
 <div class="card">
-  <img src="img/logo-domingo.png" class="logo-evento">
-  <h2>DOMINGO</h2>
+  <div class="card-inner">
+    <img src="img/logo-domingo.png" class="logo-evento">
+    <h2>DOMINGO</h2>
 
-  <div class="desc">
-    Bachastation – Hyde Club Barcelona
-    <a href="https://maps.google.com" target="_blank">📍 Maps</a>
-  </div>
-
-  <div class="top-row">
-    <a href="https://instagram.com/bachastation" target="_blank">
-      📸 @bachastation
-    </a>
-
-    <div class="mes">
-      <span class="flecha" onclick="prevMes('domingo')">‹</span>
-      <span id="mes-domingo">ENERO 2026</span>
-      <span class="flecha" onclick="nextMes('domingo')">›</span>
+    <div class="desc">
+      Bachastation – Hyde Club Barcelona
+      <a href="https://maps.google.com" target="_blank">📍 Maps</a>
     </div>
-  </div>
 
-  <div class="actions" id="dias-domingo"></div>
+    <div class="top-row">
+      <a href="https://instagram.com/bachastation" target="_blank">
+        📸 @bachastation
+      </a>
+
+      <div class="mes">
+        <span class="flecha" onclick="prevMes('domingo')">‹</span>
+        <span id="mes-domingo">ENERO 2026</span>
+        <span class="flecha" onclick="nextMes('domingo')">›</span>
+      </div>
+    </div>
+
+    <div class="actions" id="dias-domingo"></div>
+  </div>
 </div>
 
 <footer>© Bachata Barcelona</footer>
