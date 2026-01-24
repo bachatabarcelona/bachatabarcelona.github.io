@@ -1,107 +1,136 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BODY */
 body {
-  background: radial-gradient(circle at top, #222, #000 75%);
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #222 0%, #000 70%);
   color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   text-align: center;
 }
 
 /* HEADER */
-.header img {
-  width: 90%;
-  max-width: 420px;
-  margin: 24px auto;
+.top-header {
+  padding: 14px 0 6px;
+}
+
+.logo-madre {
+  max-width: 240px;
+  width: 80%;
+  margin: 0 auto;
   display: block;
-  filter: drop-shadow(0 0 22px rgba(255,215,120,0.45));
+  filter: drop-shadow(0 0 10px rgba(212,175,55,0.45));
 }
 
-/* HOME */
-.home {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  padding: 0 14px;
+/* EVENT CARD */
+.event-card {
+  max-width: 360px;
+  margin: 12px auto;
+  padding: 14px 14px 16px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 22px;
 }
 
-/* CARD */
-.card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 26px;
-  padding: 26px 18px 30px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.8);
+/* EVENT LOGOS */
+.event-logo {
+  max-width: 180px;
+  width: 70%;
+  margin: 0 auto 8px;
+  display: block;
 }
 
-/* LOGO CARD */
-.logo-card {
-  width: 72%;
-  max-width: 260px;
-  margin-bottom: 14px;
+/* 🔥 ÚNICO CAMBIO DE LA COPIA */
+.event-logo.domingo-grande {
+  max-width: 200px;
 }
 
 /* TITLES */
-.card h2 {
+.event-card h2 {
+  font-size: 16px;
   letter-spacing: 4px;
-  margin: 12px 0;
+  margin-bottom: 6px;
 }
 
-/* VENUE */
-.venue {
-  font-size: 14px;
-  opacity: 0.9;
-  margin-bottom: 8px;
+.subtitle {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 6px;
+  line-height: 1.4;
 }
 
-/* SOCIAL */
-.social {
+/* MAP INLINE */
+.inline-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 6px;
+  color: #ff6fb5;
+}
+
+/* INSTAGRAM CENTER */
+.instagram-center {
   display: flex;
   justify-content: center;
-  gap: 18px;
-  font-size: 14px;
-  margin-bottom: 10px;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0;
+  color: #ff6fb5;
 }
 
-.social img {
-  width: 16px;
-  vertical-align: middle;
-  margin-right: 4px;
+/* ICONOS PNG */
+.icon-img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  display: inline-block;
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(66%)
+    sepia(24%)
+    saturate(1120%)
+    hue-rotate(295deg)
+    brightness(102%)
+    contrast(101%);
 }
 
 /* MONTH */
 .month {
-  margin: 12px 0 18px;
+  font-size: 12px;
   letter-spacing: 2px;
-  font-size: 13px;
-  opacity: 0.85;
+  margin: 6px 0 10px;
+  opacity: 0.7;
 }
 
-/* PILLS */
-.pills {
+/* BUTTONS */
+.buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
-.pill {
-  background: rgba(0,0,0,0.45);
-  border-radius: 999px;
-  padding: 8px 14px;
-  font-size: 14px;
+.buttons span {
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  font-size: 13px;
 }
 
-.pill.action {
-  background: rgba(255,79,163,0.18);
-  color: #ff4fa3;
+.btn-main {
+  background: rgba(255,111,181,0.22);
+  color: #ff6fb5;
+  font-weight: 600;
 }
 
 /* FOOTER */
 footer {
-  margin: 30px 0;
-  font-size: 13px;
-  opacity: 0.6;
+  margin: 10px 0 12px;
+  font-size: 12px;
+  opacity: 0.5;
 }
