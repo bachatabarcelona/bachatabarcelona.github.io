@@ -69,7 +69,6 @@ body {
   gap: 4px;
   margin-left: 6px;
   color: #ff6fb5;
-  font-size: 13px;
 }
 
 /* INSTAGRAM CENTER */
@@ -80,14 +79,16 @@ body {
   gap: 6px;
   margin: 6px 0;
   color: #ff6fb5;
-  font-size: 13px;
 }
 
-/* ICONS PNG */
+/* ICONOS PNG */
 .icon-img {
   width: 14px;
   height: 14px;
   object-fit: contain;
+  display: inline-block;
+
+  /* FUCSIA CLARO */
   filter:
     brightness(0)
     saturate(100%)
