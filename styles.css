@@ -20,14 +20,14 @@ body {
 }
 
 .logo-madre {
-  max-width: 210px;      /* MÁS PEQUEÑO */
+  max-width: 210px;
   width: 75%;
   margin: 0 auto;
   display: block;
   filter: drop-shadow(0 0 10px rgba(212,175,55,0.45));
 }
 
-/* ===== EVENT CARD ===== */
+/* ===== EVENT CARD (BASE) ===== */
 .event-card {
   max-width: 360px;
   margin: 10px auto;
@@ -36,11 +36,17 @@ body {
   border-radius: 22px;
 }
 
+/* ===== AJUSTE SOLO MIÉRCOLES ===== */
+.event-card:first-of-type {
+  padding-top: 10px;      /* sube todo el contenido */
+  padding-bottom: 14px;   /* recorta el hueco inferior */
+}
+
 /* LOGOS EVENTO */
 .event-logo {
   max-width: 180px;
   width: 70%;
-  margin: 0 auto 6px;
+  margin: 0 auto 4px;     /* un poco más arriba */
   display: block;
 }
 
@@ -55,10 +61,18 @@ body {
   margin-bottom: 4px;
 }
 
+.event-card:first-of-type h2 {
+  margin-bottom: 2px;     /* miércoles más compacto */
+}
+
 .subtitle {
   font-size: 13px;
   opacity: 0.85;
   margin-bottom: 6px;
+}
+
+.event-card:first-of-type .subtitle {
+  margin-bottom: 4px;
 }
 
 /* META (MAPS + INSTAGRAM) */
@@ -70,6 +84,10 @@ body {
   font-size: 13px;
 }
 
+.event-card:first-of-type .meta {
+  margin-bottom: 4px;
+}
+
 .meta-item {
   display: flex;
   align-items: center;
@@ -77,7 +95,7 @@ body {
   color: #ff4da6;
 }
 
-/* ICONOS (PNG LOCAL) */
+/* ICONOS */
 .icon {
   width: 14px;
   height: 14px;
@@ -102,6 +120,10 @@ body {
   opacity: 0.7;
 }
 
+.event-card:first-of-type .month {
+  margin: 4px 0 8px;
+}
+
 /* BOTONES */
 .buttons {
   display: flex;
@@ -115,6 +137,11 @@ body {
   background: rgba(255,255,255,0.08);
   border-radius: 18px;
   font-size: 13px;
+}
+
+/* ajustamos miércoles para que acabe justo en botones */
+.event-card:first-of-type .buttons {
+  margin-bottom: 0;
 }
 
 .btn-main {
