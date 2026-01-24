@@ -11,19 +11,27 @@ body {
   text-align: center;
 }
 
-/* LOGO PRINCIPAL */
+/* =========================
+   LOGO PRINCIPAL
+========================= */
 .main-header {
-  padding: 40px 20px;
+  padding: 30px 20px 10px;
 }
 
 .main-header img {
-  max-width: 320px;
+  width: 100%;
+  max-width: 300px;     /* CLAVE */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px; /* AIRE ABAJO */
 }
 
-/* TARJETAS */
+/* =========================
+   TARJETAS EVENTO
+========================= */
 .event-card {
   background: rgba(255,255,255,0.06);
-  margin: 30px auto;
+  margin: 25px auto;
   padding: 30px 20px;
   border-radius: 30px;
   max-width: 420px;
@@ -31,8 +39,10 @@ body {
 
 /* LOGOS EVENTO */
 .event-logo {
+  width: 100%;
   max-width: 220px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+  display: block;
 }
 
 /* TEXTOS */
@@ -76,10 +86,19 @@ h2 {
   border-radius: 20px;
   font-size: 14px;
 }
-  
+
 /* FOOTER */
 footer {
   padding: 30px;
   font-size: 12px;
   opacity: 0.5;
+}
+
+/* =========================
+   MOBILE FINO
+========================= */
+@media (max-width: 400px) {
+  .main-header img {
+    max-width: 260px;
+  }
 }
