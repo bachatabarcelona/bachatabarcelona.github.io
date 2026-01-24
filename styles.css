@@ -14,7 +14,7 @@ body {
   text-align: center;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .top-header {
   padding: 12px 0 4px;
 }
@@ -27,7 +27,7 @@ body {
   filter: drop-shadow(0 0 10px rgba(212,175,55,0.45));
 }
 
-/* ===== EVENT CARD (BASE) ===== */
+/* EVENT CARD */
 .event-card {
   max-width: 360px;
   margin: 10px auto;
@@ -36,17 +36,17 @@ body {
   border-radius: 22px;
 }
 
-/* ===== AJUSTE SOLO MIÉRCOLES ===== */
+/* AJUSTE SOLO MIÉRCOLES */
 .event-card:first-of-type {
-  padding-top: 10px;      /* sube todo el contenido */
-  padding-bottom: 14px;   /* recorta el hueco inferior */
+  padding-top: 10px;
+  padding-bottom: 14px;
 }
 
-/* LOGOS EVENTO */
+/* LOGOS */
 .event-logo {
   max-width: 180px;
   width: 70%;
-  margin: 0 auto 4px;     /* un poco más arriba */
+  margin: 0 auto 4px;
   display: block;
 }
 
@@ -61,21 +61,13 @@ body {
   margin-bottom: 4px;
 }
 
-.event-card:first-of-type h2 {
-  margin-bottom: 2px;     /* miércoles más compacto */
-}
-
 .subtitle {
   font-size: 13px;
   opacity: 0.85;
   margin-bottom: 6px;
 }
 
-.event-card:first-of-type .subtitle {
-  margin-bottom: 4px;
-}
-
-/* META (MAPS + INSTAGRAM) */
+/* META LINKS */
 .meta {
   display: flex;
   justify-content: center;
@@ -84,18 +76,20 @@ body {
   font-size: 13px;
 }
 
-.event-card:first-of-type .meta {
-  margin-bottom: 4px;
-}
-
 .meta-item {
   display: flex;
   align-items: center;
   gap: 6px;
   color: #ff4da6;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-/* ICONOS */
+.meta-item:hover {
+  opacity: 0.85;
+}
+
+/* ICONOS PNG */
 .icon {
   width: 14px;
   height: 14px;
@@ -120,10 +114,6 @@ body {
   opacity: 0.7;
 }
 
-.event-card:first-of-type .month {
-  margin: 4px 0 8px;
-}
-
 /* BOTONES */
 .buttons {
   display: flex;
@@ -137,11 +127,6 @@ body {
   background: rgba(255,255,255,0.08);
   border-radius: 18px;
   font-size: 13px;
-}
-
-/* ajustamos miércoles para que acabe justo en botones */
-.event-card:first-of-type .buttons {
-  margin-bottom: 0;
 }
 
 .btn-main {
