@@ -1,110 +1,61 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bachata Barcelona</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-  <!-- =========================
-       HEADER / LOGOS
-  ========================== -->
-  <header>
-    <img class="logo-madre" src="img/logo-madre.png" alt="Bachata Barcelona">
-    <img class="logo-evento" src="img/logo-miercoles.png" alt="Bachata Party’s">
-    <img class="logo-evento" src="img/logo-domingo.png" alt="Bachastation">
+  <!-- LOGO PRINCIPAL -->
+  <header class="main-header">
+    <img src="img/logo-madre.png" alt="Bachata Barcelona">
   </header>
 
-  <div class="container">
+  <!-- TARJETA MIÉRCOLES -->
+  <section class="event-card">
+    <img class="event-logo" src="img/logo-miercoles.png" alt="Bachata Party’s">
 
-    <!-- =========================
-         BOTONES PRINCIPALES
-    ========================== -->
-    <div class="buttons main-buttons">
-      <a href="#fotos" class="button">Fotos</a>
-      <a href="#videos" class="button">Vídeos</a>
-      <a href="#ubicacion" class="button">Ubicación</a>
+    <h2>MIÉRCOLES</h2>
+    <p class="subtitle">Bachata Party’s · Sala Vivaldi Barcelona</p>
+
+    <a class="maps" href="#" target="_blank">📍 Maps</a>
+    <p class="instagram">📸 @bachataparty.bcn</p>
+
+    <p class="month">‹ ENERO 2026 ›</p>
+
+    <div class="event-buttons">
+      <span>Fotos</span>
+      <span>Vídeos</span>
+      <span>7</span>
+      <span>14</span>
+      <span>21</span>
+      <span>28</span>
     </div>
+  </section>
 
-    <!-- =========================
-         GALERÍA FOTOS
-    ========================== -->
-    <section id="fotos" class="section">
-      <h2>Galeria · Fotos</h2>
+  <!-- TARJETA DOMINGO -->
+  <section class="event-card">
+    <img class="event-logo" src="img/logo-domingo.png" alt="Bachastation">
 
-      <div class="gallery">
-        <img src="img/foto1.jpg" alt="Bachata Barcelona">
-        <img src="img/foto2.jpg" alt="Bachata Barcelona">
-        <img src="img/foto3.jpg" alt="Bachata Barcelona">
-      </div>
-    </section>
+    <h2>DOMINGO</h2>
+    <p class="subtitle">Bachastation · Hyde Club Barcelona</p>
 
-    <!-- =========================
-         GALERÍA VÍDEOS
-    ========================== -->
-    <section id="videos" class="section">
-      <h2>Galeria · Vídeos</h2>
+    <a class="maps" href="#" target="_blank">📍 Maps</a>
+    <p class="instagram">📸 @bachastation</p>
 
-      <div class="gallery">
-        <video controls>
-          <source src="videos/video1.mp4" type="video/mp4">
-        </video>
+    <p class="month">‹ ENERO 2026 ›</p>
 
-        <video controls>
-          <source src="videos/video2.mp4" type="video/mp4">
-        </video>
-      </div>
-    </section>
-
-    <!-- =========================
-         MIÉRCOLES
-    ========================== -->
-    <section class="section card">
-      <h2>Miércoles</h2>
-      <h3>Bachata Party’s · Sala Vivaldi</h3>
-
-      <div class="buttons">
-        <a href="#fotos" class="button">Fotos</a>
-        <a href="#videos" class="button">Vídeos</a>
-      </div>
-    </section>
-
-    <!-- =========================
-         DOMINGO
-    ========================== -->
-    <section class="section card">
-      <h2>Domingo</h2>
-      <h3>Bachastation · Hyde Club</h3>
-
-      <div class="buttons">
-        <a href="#fotos" class="button">Fotos</a>
-        <a href="#videos" class="button">Vídeos</a>
-      </div>
-    </section>
-
-    <!-- =========================
-         UBICACIÓN
-    ========================== -->
-    <section id="ubicacion" class="section location card">
-      <h2>Ubicación</h2>
-
-      <p>Miércoles · Sala Vivaldi</p>
-      <a href="https://maps.google.com/?q=Sala+Vivaldi+Barcelona" target="_blank">
-        Abrir en Google Maps
-      </a>
-
-      <br><br>
-
-      <p>Domingo · Hyde Club</p>
-      <a href="https://maps.google.com/?q=Hyde+Club+Barcelona" target="_blank">
-        Abrir en Google Maps
-      </a>
-    </section>
-
-  </div>
+    <div class="event-buttons">
+      <span>Fotos</span>
+      <span>Vídeos</span>
+      <span>4</span>
+      <span>11</span>
+      <span>18</span>
+      <span>25</span>
+    </div>
+  </section>
 
   <footer>
     © Bachata Barcelona
