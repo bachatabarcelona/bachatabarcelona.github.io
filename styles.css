@@ -36,17 +36,11 @@ body {
   border-radius: 22px;
 }
 
-/* AJUSTE SOLO MIÉRCOLES */
-.event-card:first-of-type {
-  padding-top: 10px;
-  padding-bottom: 14px;
-}
-
-/* LOGOS */
+/* LOGOS EVENTO */
 .event-logo {
   max-width: 180px;
   width: 70%;
-  margin: 0 auto 4px;
+  margin: 0 auto 6px;
   display: block;
 }
 
@@ -67,43 +61,58 @@ body {
   margin-bottom: 6px;
 }
 
-/* META LINKS */
+/* META */
 .meta {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  margin-bottom: 6px;
+  gap: 6px;
   font-size: 13px;
+}
+
+.meta-column {
+  flex-direction: column;
+  gap: 6px;
 }
 
 .meta-item {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   color: #ff4da6;
   text-decoration: none;
-  font-weight: 500;
 }
 
-.meta-item:hover {
-  opacity: 0.85;
-}
-
-/* ICONOS PNG */
-.icon {
+/* ICONOS MINI (TODOS IGUALES) */
+.icon,
+.venue-logo {
   width: 14px;
   height: 14px;
-  display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
+  min-width: 14px;
+  object-fit: contain;
 }
 
 .maps-icon {
   background-image: url("img/maps.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .insta-icon {
   background-image: url("img/instagram.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icon {
+  display: inline-block;
+}
+
+/* TEXTO SALA */
+.venue-text {
+  font-size: 13px;
+  opacity: 0.9;
+  white-space: nowrap;
 }
 
 /* MES */
