@@ -16,7 +16,7 @@ body {
 
 /* HEADER */
 .top-header {
-  padding: 14px 0 6px;
+  padding: 12px 0 4px;
 }
 
 .logo-madre {
@@ -30,73 +30,68 @@ body {
 /* EVENT CARD */
 .event-card {
   max-width: 360px;
-  margin: 12px auto;
+  margin: 10px auto;
   padding: 14px 14px 16px;
   background: rgba(255,255,255,0.05);
   border-radius: 22px;
 }
 
-/* EVENT LOGOS */
+/* LOGOS */
 .event-logo {
   max-width: 180px;
   width: 70%;
-  margin: 0 auto 8px;
+  margin: 0 auto 6px;
   display: block;
 }
 
-/* 🔥 ÚNICO CAMBIO DE LA COPIA */
-.event-logo.domingo-grande {
-  max-width: 200px;
+.event-logo.small {
+  max-width: 150px;
 }
 
 /* TITLES */
 .event-card h2 {
   font-size: 16px;
   letter-spacing: 4px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .subtitle {
   font-size: 13px;
   opacity: 0.85;
   margin-bottom: 6px;
-  line-height: 1.4;
 }
 
-/* MAP INLINE */
-.inline-map {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-left: 6px;
-  color: #ff6fb5;
-}
-
-/* INSTAGRAM CENTER */
-.instagram-center {
+/* META */
+.meta {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 6px;
-  margin: 6px 0;
-  color: #ff6fb5;
+  gap: 14px;
+  margin-bottom: 6px;
+  font-size: 13px;
 }
 
-/* ICONOS PNG */
-.icon-img {
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ff4da6;
+}
+
+/* ICONS (PNG LOCAL) */
+.icon {
   width: 14px;
   height: 14px;
-  object-fit: contain;
   display: inline-block;
-  filter:
-    brightness(0)
-    saturate(100%)
-    invert(66%)
-    sepia(24%)
-    saturate(1120%)
-    hue-rotate(295deg)
-    brightness(102%)
-    contrast(101%);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.maps-icon {
+  background-image: url("img/maps.png");
+}
+
+.insta-icon {
+  background-image: url("img/instagram.png");
 }
 
 /* MONTH */
@@ -123,8 +118,8 @@ body {
 }
 
 .btn-main {
-  background: rgba(255,111,181,0.22);
-  color: #ff6fb5;
+  background: rgba(255,77,166,0.2);
+  color: #ff4da6;
   font-weight: 600;
 }
 
