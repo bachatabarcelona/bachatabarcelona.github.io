@@ -1,136 +1,88 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bachata Barcelona</title>
+  <link rel="stylesheet" href="styles.css?v=home-intocable">
+</head>
 
-/* BODY */
-body {
-  min-height: 100vh;
-  background: radial-gradient(circle at top, #222 0%, #000 70%);
-  color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  text-align: center;
-}
+<body>
 
-/* HEADER */
-.top-header {
-  padding: 14px 0 6px;
-}
+  <!-- LOGO MADRE -->
+  <header class="top-header">
+    <img src="img/logo-madre.png" alt="Bachata Barcelona" class="logo-madre">
+  </header>
 
-.logo-madre {
-  max-width: 240px;
-  width: 80%;
-  margin: 0 auto;
-  display: block;
-  filter: drop-shadow(0 0 10px rgba(212,175,55,0.45));
-}
+  <!-- ===== MIÉRCOLES ===== -->
+  <section class="event-card">
+    <img src="img/logo-miercoles.png" alt="Bachata Party’s" class="event-logo">
 
-/* EVENT CARD */
-.event-card {
-  max-width: 360px;
-  margin: 12px auto;
-  padding: 14px 14px 16px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 22px;
-}
+    <h2>MIÉRCOLES</h2>
 
-/* EVENT LOGOS */
-.event-logo {
-  max-width: 180px;
-  width: 70%;
-  margin: 0 auto 8px;
-  display: block;
-}
+    <p class="subtitle">
+      Bachata Party’s – Sala Vivaldi Barcelona
+    </p>
 
-/* 🔥 DOMINGO UN POCO MÁS GRANDE */
-.event-logo.domingo-plus {
-  max-width: 200px;
-}
+    <div class="meta">
+      <span class="meta-item">
+        <span class="icon maps-icon"></span>
+        Maps
+      </span>
+      <span class="meta-item">
+        <span class="icon insta-icon"></span>
+        @bachataparty.bcn
+      </span>
+    </div>
 
-/* TITLES */
-.event-card h2 {
-  font-size: 16px;
-  letter-spacing: 4px;
-  margin-bottom: 6px;
-}
+    <p class="month">‹ ENERO 2026 ›</p>
 
-.subtitle {
-  font-size: 13px;
-  opacity: 0.85;
-  margin-bottom: 6px;
-  line-height: 1.4;
-}
+    <div class="buttons">
+      <span class="btn-main">Fotos</span>
+      <span class="btn-main">Vídeos</span>
+      <span>7</span>
+      <span>14</span>
+      <span>21</span>
+      <span>28</span>
+    </div>
+  </section>
 
-/* MAP INLINE */
-.inline-map {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-left: 6px;
-  color: #ff6fb5;
-}
+  <!-- ===== DOMINGO ===== -->
+  <section class="event-card">
+    <img src="img/logo-domingo.png" alt="Bachastation" class="event-logo small">
 
-/* INSTAGRAM CENTER */
-.instagram-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  margin: 6px 0;
-  color: #ff6fb5;
-}
+    <h2>DOMINGO</h2>
 
-/* ICONOS PNG */
-.icon-img {
-  width: 14px;
-  height: 14px;
-  object-fit: contain;
-  display: inline-block;
-  filter:
-    brightness(0)
-    saturate(100%)
-    invert(66%)
-    sepia(24%)
-    saturate(1120%)
-    hue-rotate(295deg)
-    brightness(102%)
-    contrast(101%);
-}
+    <p class="subtitle">
+      Bachastation – Hyde Club Barcelona
+    </p>
 
-/* MONTH */
-.month {
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin: 6px 0 10px;
-  opacity: 0.7;
-}
+    <div class="meta">
+      <span class="meta-item">
+        <span class="icon maps-icon"></span>
+        Maps
+      </span>
+      <span class="meta-item">
+        <span class="icon insta-icon"></span>
+        @bachastation
+      </span>
+    </div>
 
-/* BUTTONS */
-.buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
+    <p class="month">‹ ENERO 2026 ›</p>
 
-.buttons span {
-  padding: 6px 12px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 18px;
-  font-size: 13px;
-}
+    <div class="buttons">
+      <span class="btn-main">Fotos</span>
+      <span class="btn-main">Vídeos</span>
+      <span>4</span>
+      <span>11</span>
+      <span>18</span>
+      <span>25</span>
+    </div>
+  </section>
 
-.btn-main {
-  background: rgba(255,111,181,0.22);
-  color: #ff6fb5;
-  font-weight: 600;
-}
+  <footer>
+    © Bachata Barcelona
+  </footer>
 
-/* FOOTER */
-footer {
-  margin: 10px 0 12px;
-  font-size: 12px;
-  opacity: 0.5;
-}
+</body>
+</html>
