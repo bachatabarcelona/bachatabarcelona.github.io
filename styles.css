@@ -6,8 +6,8 @@
 
 /* BASE */
 html, body {
-  height: 100%;
-  overflow: hidden;
+  height: auto;
+  overflow-x: hidden;
 }
 
 body {
@@ -18,90 +18,133 @@ body {
 
 /* HEADER */
 .top-header {
-  padding: 20px 14px 12px;
+  padding: 32px 20px 24px;
   display: flex;
   justify-content: center;
 }
 
-/* 🔥 LOGO MADRE — MUY GRANDE + NEÓN DORADO EVIDENTE */
+/* LOGO MADRE — COMO ANTES, PROTAGONISTA */
 .logo-madre {
-  max-width: 320px; /* CAMBIO GRANDE */
+  max-width: 300px;
   width: 100%;
   filter:
-    drop-shadow(0 0 12px rgba(255, 200, 90, 1))
-    drop-shadow(0 0 28px rgba(255, 200, 90, 0.9))
-    drop-shadow(0 0 50px rgba(255, 200, 90, 0.6));
+    drop-shadow(0 0 8px rgba(212,175,55,0.85))
+    drop-shadow(0 0 16px rgba(212,175,55,0.45));
 }
 
 /* EVENT CARD */
 .event {
-  max-width: 360px;
-  margin: 8px auto;
+  max-width: 440px;            /* MÁS ANCHO → MÁS A LO LARGO */
+  margin: 22px auto;
   background: rgba(255,255,255,0.06);
-  border-radius: 22px;
+  border-radius: 26px;
   overflow: hidden;
 }
 
-/* 🔽 LOGOS MIÉRCOLES / DOMINGO — DRÁSTICAMENTE MÁS PEQUEÑOS */
+/* LOGOS MIÉRCOLES / DOMINGO (TAMAÑO BUENO, NO MICRO) */
 .event-banner {
   display: block;
-  margin: 6px auto 0;
-  max-width: 120px;   /* CLAVE */
-  max-height: 40px;   /* CLAVE */
-  width: auto;
+  margin: 12px auto 0;
+  max-width: 200px;
+  max-height: 90px;
   object-fit: contain;
 }
 
 .small-banner {
-  max-width: 110px;
-  max-height: 36px;
+  max-width: 180px;
+  max-height: 80px;
 }
 
 /* INFO */
 .event-info {
-  padding: 10px 10px 12px;
+  padding: 20px 20px 26px;
   text-align: center;
 }
 
 h2 {
-  font-size: 13px;
-  letter-spacing: 2px;
+  font-size: 17px;            /* TEXTO MÁS GRANDE */
+  letter-spacing: 4px;
+  margin-bottom: 6px;
 }
 
 .subtitle {
-  font-size: 10px;
-  opacity: 0.8;
+  font-size: 14px;            /* MÁS LEGIBLE */
+  opacity: 0.85;
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
 
 /* META */
 .meta {
   display: flex;
   justify-content: center;
-  gap: 6px;
-  font-size: 9px;
+  gap: 14px;
+  font-size: 13px;            /* SUBE TAMAÑO */
+  margin-bottom: 14px;
 }
 
 .meta-item {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   color: #ff4da6;
+  white-space: nowrap;
 }
 
 /* ICONOS */
 .icon {
-  width: 9px;
-  height: 9px;
+  width: 14px;
+  height: 14px;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* MAPS */
 .maps-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff4da6' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff4da6' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z'/%3E%3C/svg%3E");
 }
 
-/* INSTAGRAM */
+/* INSTAGRAM — OUTLINE COMO ANTES */
 .insta-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff4da6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='5' ry='5'/%3E%3Cpath d='M16 11.37a4 4 0 11-7.94 1.18 4 4.0 0 017.94-1.18z'/%3E%3Cline x1='17.5' y1='6.5' x2='17.51' y2='6.5'/%3E%3C/svg%3E");
+}
+
+/* MES */
+.month {
+  font-size: 13px;            /* MÁS CLARO */
+  opacity: 0.6;
+  margin-bottom: 16px;
+}
+
+/* BOTONES */
+.event-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.event-buttons span {
+  padding: 8px 14px;
+  border-radius: 18px;
+  font-size: 13px;            /* MÁS LEGIBLE */
+  background: rgba(255,255,255,0.08);
+  white-space: nowrap;
+}
+
+/* BOTONES PRINCIPALES */
+.btn-main {
+  background: #ff4da6;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 26px;
+  font-size: 12px;
+  opacity: 0.5;
 }
