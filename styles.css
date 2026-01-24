@@ -55,10 +55,13 @@ body {
   margin-bottom: 8px;
 }
 
-/* SUBTITLE + MAPS */
+/* SUBTITLE INLINE */
 .subtitle {
   font-size: 13px;
   opacity: 0.9;
+}
+
+.subtitle-inline {
   line-height: 1.4;
 }
 
@@ -70,11 +73,12 @@ body {
   margin: 0 4px;
 }
 
-/* MAPS INLINE LINK */
+/* INLINE MAPS LINK */
 .inline-link {
   color: #ff4da6;
   text-decoration: none;
   margin-left: 4px;
+  white-space: nowrap;
 }
 
 /* INSTAGRAM */
