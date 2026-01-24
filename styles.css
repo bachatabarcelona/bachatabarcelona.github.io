@@ -1,91 +1,172 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Bachata Barcelona</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <link rel="stylesheet" href="style.css">
-</head>
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0f0f0f; /* negro carbón */
+  color: #ffffff;
+  line-height: 1.5;
+}
 
-<body>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  <div class="container">
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-    <!-- LOGO MADRE -->
-    <section class="section logo-madre">
-      <img src="img/logo-madre.png" alt="Bachata Barcelona">
-    </section>
+/* =========================
+   HEADER / LOGOS
+========================= */
+header {
+  text-align: center;
+  padding: 30px 20px;
+}
 
-    <!-- ================= MIÉRCOLES ================= -->
-    <section class="section card">
+header img {
+  max-width: 220px;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+}
 
-      <img src="img/logo-miercoles.png" alt="Bachata Party’s" class="logo-evento">
+/* =========================
+   TÍTULOS
+========================= */
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
 
-      <h2>MIÉRCOLES</h2>
+h1 {
+  font-size: 32px;
+}
 
-      <p>
-        Bachata Party’s – Sala Vivaldi Barcelona
-        · <a href="https://maps.google.com/?q=Sala+Vivaldi+Barcelona" target="_blank">📍 Maps</a>
-      </p>
+h2 {
+  font-size: 24px;
+  margin-top: 40px;
+}
 
-      <a class="instagram"
-         href="https://www.instagram.com/bachataparty.bcn"
-         target="_blank">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.2A4.8 4.8 0 1 0 16.8 12 4.8 4.8 0 0 0 12 7.2zm0 7.8A3 3 0 1 1 15 12a3 3 0 0 1-3 3zm4.9-7.9a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1z"/>
-        </svg>
-        @bachataparty.bcn
-      </a>
+h3 {
+  font-size: 18px;
+  opacity: 0.85;
+}
 
-      <div class="botones">
-        <a class="button" href="#">Fotos</a>
-        <a class="button" href="#">Vídeos</a>
-        <span class="button">7</span>
-        <span class="button">14</span>
-        <span class="button">21</span>
-        <span class="button">28</span>
-      </div>
+/* =========================
+   BOTONES / LINKS
+========================= */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
 
-    </section>
+.button {
+  border: 1px solid #ffffff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  cursor: pointer;
+}
 
-    <!-- ================= DOMINGO ================= -->
-    <section class="section card">
+.button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
 
-      <img src="img/logo-domingo.png" alt="Bachastation" class="logo-evento">
+/* =========================
+   GALERÍA
+========================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
 
-      <h2>DOMINGO</h2>
+.gallery img,
+.gallery video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background-color: #000;
+}
 
-      <p>
-        Bachastation – Hyde Club Barcelona
-        · <a href="https://maps.google.com/?q=Hyde+Club+Barcelona" target="_blank">📍 Maps</a>
-      </p>
+/* =========================
+   SECCIONES (MIÉRCOLES / DOMINGO)
+========================= */
+.section {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #222;
+}
 
-      <a class="instagram"
-         href="https://www.instagram.com/bachastation"
-         target="_blank">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.2A4.8 4.8 0 1 0 16.8 12 4.8 4.8 0 0 0 12 7.2zm0 7.8A3 3 0 1 1 15 12a3 3 0 0 1-3 3zm4.9-7.9a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1z"/>
-        </svg>
-        @bachastation
-      </a>
+/* =========================
+   UBICACIÓN
+========================= */
+.location {
+  text-align: center;
+  margin: 40px 0;
+}
 
-      <div class="botones">
-        <a class="button" href="#">Fotos</a>
-        <a class="button" href="#">Vídeos</a>
-        <span class="button">4</span>
-        <span class="button">11</span>
-        <span class="button">18</span>
-        <span class="button">25</span>
-      </div>
+.location a {
+  display: inline-block;
+  margin-top: 15px;
+  border: 1px solid #ffffff;
+  padding: 10px 18px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
 
-    </section>
+.location a:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
 
-    <footer>
-      © Bachata Barcelona
-    </footer>
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 12px;
+  opacity: 0.6;
+}
 
-  </div>
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 26px;
+  }
 
-</body>
-</html>
+  h2 {
+    font-size: 20px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+}
