@@ -24,7 +24,7 @@ body {
 .event {
   max-width: 480px;
   margin: 28px auto;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 30px;
   overflow: hidden;
 }
@@ -59,7 +59,7 @@ h2 {
   margin-bottom: 8px;
 }
 
-/* META */
+/* META (Maps + Instagram) */
 .meta {
   display: flex;
   justify-content: center;
@@ -76,7 +76,7 @@ h2 {
   white-space: nowrap;
 }
 
-/* ICONOS */
+/* ICONOS BASE */
 .icon {
   width: 14px;
   height: 14px;
@@ -86,14 +86,14 @@ h2 {
   flex-shrink: 0;
 }
 
-/* ✅ INSTAGRAM — ICONO CORRECTO (NO DEFORMADO) */
-.insta-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff4da6'%3E%3Cpath d='M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.3.5.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.5 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.3-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.3.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.3-.5-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.5-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.5C8.4 2.2 8.8 2.2 12 2.2zm0 2.2a7.6 7.6 0 100 15.2 7.6 7.6 0 000-15.2zm0 12.5a4.9 4.9 0 110-9.8 4.9 4.9 0 010 9.8zm5.4-11.4a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z'/%3E%3C/svg%3E");
-}
-
 /* MAPS */
 .maps-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff4da6' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z'/%3E%3C/svg%3E");
+}
+
+/* INSTAGRAM — ICONO OUTLINE (COMO ANTES) */
+.insta-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff4da6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='5' ry='5'/%3E%3Cpath d='M16 11.37a4 4 0 11-7.94 1.18 4 4 0 017.94-1.18z'/%3E%3Cline x1='17.5' y1='6.5' x2='17.51' y2='6.5'/%3E%3C/svg%3E");
 }
 
 /* MONTH */
@@ -116,11 +116,11 @@ h2 {
   padding: 8px 14px;
   border-radius: 18px;
   font-size: 13px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   white-space: nowrap;
 }
 
-/* MAIN BUTTONS */
+/* BOTONES PRINCIPALES */
 .btn-main {
   background: #ff4da6;
   color: #fff;
