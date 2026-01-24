@@ -5,6 +5,11 @@
 }
 
 /* BASE */
+html, body {
+  height: 100%;
+  overflow: hidden; /* NO SCROLL */
+}
+
 body {
   background: radial-gradient(circle at top, #1a1a1a, #000);
   color: #fff;
@@ -13,80 +18,79 @@ body {
 
 /* HEADER */
 .top-header {
-  padding: 28px 16px 20px;
+  padding: 20px 16px 14px;
   display: flex;
   justify-content: center;
 }
 
-/* LOGO MADRE — PROTAGONISTA PERO MÁS COMPACTO */
+/* LOGO MADRE */
 .logo-madre {
-  max-width: 300px; /* reducido */
+  max-width: 280px;
   width: 100%;
-  filter:
-    drop-shadow(0 0 10px rgba(212, 175, 55, 0.9));
+  filter: drop-shadow(0 0 10px rgba(212,175,55,0.9));
 }
 
 /* EVENT CARD */
 .event {
-  max-width: 420px;      /* más estrecho */
-  margin: 22px auto;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 26px;
+  max-width: 400px;
+  margin: 14px auto; /* MUY COMPACTO */
+  background: rgba(255,255,255,0.06);
+  border-radius: 24px;
   overflow: hidden;
 }
 
-/* LOGOS MIÉRCOLES / DOMINGO */
+/* LOGOS MIÉRCOLES / DOMINGO — 50% MÁS PEQUEÑOS */
 .event-banner {
   width: 100%;
-  max-height: 130px;     /* más pequeño */
+  max-height: 70px;   /* ANTES ~140px */
   object-fit: contain;
   display: block;
-  margin: 0 auto;
+  margin: 6px auto 0;
 }
 
 .small-banner {
-  max-height: 115px;
+  max-height: 60px;
 }
 
 /* INFO */
 .event-info {
-  padding: 18px 14px 22px;
+  padding: 12px 12px 14px;
   text-align: center;
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 3px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .subtitle {
-  font-size: 13px;
+  font-size: 11px;
   opacity: 0.85;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
-/* META (MAPS + INSTAGRAM) */
+/* META */
 .meta {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  font-size: 11px;
-  margin-bottom: 10px;
+  gap: 8px;
+  font-size: 10px;
+  margin-bottom: 6px;
 }
 
 .meta-item {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   color: #ff4da6;
   white-space: nowrap;
 }
 
 /* ICONOS */
 .icon {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -98,32 +102,31 @@ h2 {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff4da6' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z'/%3E%3C/svg%3E");
 }
 
-/* INSTAGRAM — OUTLINE */
+/* INSTAGRAM */
 .insta-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff4da6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='5' ry='5'/%3E%3Cpath d='M16 11.37a4 4 0 11-7.94 1.18 4 4 0 017.94-1.18z'/%3E%3Cline x1='17.5' y1='6.5' x2='17.51' y2='6.5'/%3E%3C/svg%3E");
 }
 
 /* MES */
 .month {
-  font-size: 11px;
+  font-size: 10px;
   opacity: 0.6;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 /* BOTONES */
 .event-buttons {
   display: flex;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
   flex-wrap: nowrap;
-  overflow-x: auto;
 }
 
 .event-buttons span {
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 12px;
-  background: rgba(255, 255, 255, 0.08);
+  padding: 4px 8px;
+  border-radius: 14px;
+  font-size: 10px;
+  background: rgba(255,255,255,0.08);
   white-space: nowrap;
 }
 
@@ -137,7 +140,7 @@ h2 {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 22px;
-  font-size: 11px;
-  opacity: 0.5;
+  padding: 10px;
+  font-size: 9px;
+  opacity: 0.4;
 }
