@@ -7,20 +7,9 @@
 
 /* BODY */
 body {
-  font-family: 'Montserrat', sans-serif;
-  background: #000;
+  background: radial-gradient(circle at top, #222, #000 70%);
+  font-family: Arial, sans-serif;
   color: #fff;
-  overflow-x: hidden;
-}
-
-/* FONDO */
-.background {
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 60%),
-    linear-gradient(180deg, #000 0%, #111 100%);
-  z-index: -1;
 }
 
 /* HOME */
@@ -29,54 +18,32 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: 20px;
+  justify-content: flex-start;
+  gap: 28px;
+  padding: 24px 16px;
   text-align: center;
 }
 
 /* LOGO */
 .logo-principal {
-  width: 85%;
-  max-width: 360px;
+  width: 90%;
+  max-width: 420px;
   height: auto;
-  filter: drop-shadow(0 0 18px rgba(255,215,120,0.45));
+  margin-top: 10px;
+  filter: drop-shadow(0 0 20px rgba(255,215,120,0.4));
 }
 
-/* BOTONES */
-.botones-home {
+/* ICONOS HOME */
+.home-links {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  width: 100%;
-  max-width: 320px;
-}
-
-.btn {
-  display: block;
-  padding: 14px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-.btn-fucsia {
-  background: #ff2fa4;
-  color: #fff;
-  box-shadow: 0 0 16px rgba(255,47,164,0.6);
-}
-
-/* ICONOS */
-.iconos-home {
-  display: flex;
-  gap: 22px;
+  gap: 26px;
   margin-top: 10px;
 }
 
-.iconos-home img {
-  width: 32px;
-  height: 32px;
+/* 👇 AQUÍ ESTÁ LA CLAVE */
+.home-link img {
+  width: 34px;        /* TAMAÑO REAL */
+  height: 34px;
+  object-fit: contain;
   filter: drop-shadow(0 0 6px rgba(255,47,164,0.6));
 }
