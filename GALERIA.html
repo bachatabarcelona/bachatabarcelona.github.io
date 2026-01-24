@@ -13,34 +13,48 @@
       color:#fff;
       min-height:100vh;
       padding:20px;
-    }
-    h1{
       text-align:center;
+    }
+
+    .logo-dia{
+      max-width:160px;
+      margin:10px auto 20px;
+      display:block;
+    }
+
+    h1{
       letter-spacing:4px;
       margin-bottom:20px;
+      font-size:22px;
     }
+
     .selector{
       display:flex;
       justify-content:center;
       gap:12px;
-      margin-bottom:30px;
+      margin-bottom:25px;
     }
+
     .selector a{
       padding:10px 18px;
       border-radius:20px;
       border:1px solid #666;
       color:#fff;
       text-decoration:none;
+      font-size:13px;
     }
+
     .selector a.active{
       background:#fff;
       color:#000;
     }
+
     .month{
-      text-align:center;
       margin-bottom:20px;
-      opacity:.8;
+      opacity:.7;
+      font-size:14px;
     }
+
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
@@ -48,6 +62,7 @@
       max-width:700px;
       margin:0 auto;
     }
+
     .day{
       background:#1c1c1c;
       border-radius:14px;
@@ -56,22 +71,28 @@
       text-decoration:none;
       color:#fff;
       box-shadow:0 10px 25px rgba(0,0,0,.4);
+      transition:.2s;
     }
+
     .day:hover{
       background:#2a2a2a;
+      transform:scale(1.03);
     }
+
     .back{
       display:block;
-      text-align:center;
       margin-top:40px;
       opacity:.7;
       text-decoration:none;
       color:#fff;
+      font-size:13px;
     }
   </style>
 </head>
 
 <body>
+
+<img id="logoDia" class="logo-dia" src="" alt="Logo día">
 
 <h1>GALERÍA</h1>
 
@@ -90,27 +111,36 @@
   const params = new URLSearchParams(window.location.search);
   const dia = params.get("dia") || "miercoles";
 
+  const grid = document.getElementById("grid");
+  const logo = document.getElementById("logoDia");
+
   document.getElementById("btn-miercoles").classList.toggle("active", dia==="miercoles");
   document.getElementById("btn-domingo").classList.toggle("active", dia==="domingo");
 
-  const grid = document.getElementById("grid");
-
   const data = {
-    miercoles: [
-      { txt:"Miércoles 7",  url:"fotos/ENERO-2026/MIERCOLES/2026-01-07-miercoles/" },
-      { txt:"Miércoles 14", url:"fotos/ENERO-2026/MIERCOLES/2026-01-14-Miercoles/" },
-      { txt:"Miércoles 21", url:"fotos/ENERO-2026/MIERCOLES/2026-01-21-Miercoles/" },
-      { txt:"Miércoles 28", url:"fotos/ENERO-2026/MIERCOLES/2026-01-28-Miercoles/" }
-    ],
-    domingo: [
-      { txt:"Domingo 4",  url:"fotos/ENERO-2026/DOMINGOS/2026-01-04-domingo/" },
-      { txt:"Domingo 11", url:"fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/" },
-      { txt:"Domingo 18", url:"fotos/ENERO-2026/DOMINGOS/2026-01-18-domingo/" },
-      { txt:"Domingo 25", url:"fotos/ENERO-2026/DOMINGOS/2026-01-25-domingo/" }
-    ]
+    miercoles: {
+      logo: "img/logo-miercoles.png",
+      dias: [
+        { txt:"Miércoles 7",  url:"fotos/ENERO-2026/MIERCOLES/2026-01-07-miercoles/" },
+        { txt:"Miércoles 14", url:"fotos/ENERO-2026/MIERCOLES/2026-01-14-Miercoles/" },
+        { txt:"Miércoles 21", url:"fotos/ENERO-2026/MIERCOLES/2026-01-21-Miercoles/" },
+        { txt:"Miércoles 28", url:"fotos/ENERO-2026/MIERCOLES/2026-01-28-Miercoles/" }
+      ]
+    },
+    domingo: {
+      logo: "img/logo-domingo.png",
+      dias: [
+        { txt:"Domingo 4",  url:"fotos/ENERO-2026/DOMINGOS/2026-01-04-domingo/" },
+        { txt:"Domingo 11", url:"fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/" },
+        { txt:"Domingo 18", url:"fotos/ENERO-2026/DOMINGOS/2026-01-18-domingo/" },
+        { txt:"Domingo 25", url:"fotos/ENERO-2026/DOMINGOS/2026-01-25-domingo/" }
+      ]
+    }
   };
 
-  data[dia].forEach(d=>{
+  logo.src = data[dia].logo;
+
+  data[dia].dias.forEach(d=>{
     const a=document.createElement("a");
     a.className="day";
     a.href=d.url;
