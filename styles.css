@@ -13,19 +13,19 @@ body {
 
 /* HEADER */
 .top-header {
-  padding: 28px;
+  padding: 30px;
 }
 
 .logo-madre {
-  max-width: 260px; /* MÁS GRANDE */
+  max-width: 280px;
 }
 
 /* EVENT CARD */
 .event {
   max-width: 480px;
-  margin: 26px auto;
+  margin: 28px auto;
   background: rgba(255,255,255,0.06);
-  border-radius: 28px;
+  border-radius: 30px;
   overflow: hidden;
 }
 
@@ -33,55 +33,53 @@ body {
 .event-banner {
   width: 100%;
   display: block;
-  max-height: 220px;
+  max-height: 230px;
   object-fit: contain;
 }
 
 .small-banner {
-  max-height: 190px; /* DOMINGO UN POCO MÁS PEQUEÑO */
+  max-height: 200px;
 }
 
 /* INFO */
 .event-info {
-  padding: 20px 16px 26px;
+  padding: 22px 18px 28px;
   text-align: center;
 }
 
 h2 {
+  font-size: 18px;
   letter-spacing: 4px;
-  font-size: 17px;
   margin-bottom: 6px;
 }
 
 .subtitle {
-  font-size: 13px;
-  opacity: 0.8;
+  font-size: 14px;
+  opacity: 0.85;
   margin-bottom: 8px;
 }
 
-/* META (MAPS + IG) */
+/* META */
 .meta {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  font-size: 11px;
-  margin-bottom: 12px;
-  flex-wrap: nowrap;
+  gap: 12px;
+  font-size: 12px;
+  margin-bottom: 14px;
 }
 
 .meta-item {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  color: #ff3b9d;
+  gap: 5px;
+  color: #ff4da6;
   white-space: nowrap;
 }
 
-/* ICONOS PERFECTOS */
+/* ICONOS */
 .icon {
-  width: 11px;
-  height: 11px;
-  display: inline-block;
+  width: 13px;
+  height: 13px;
   background-size: contain;
   background-repeat: no-repeat;
   flex-shrink: 0;
@@ -89,42 +87,41 @@ h2 {
 
 /* INSTAGRAM */
 .insta-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff3b9d' viewBox='0 0 24 24'%3E%3Cpath d='M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff4da6' viewBox='0 0 24 24'%3E%3Cpath d='M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10z'/%3E%3C/svg%3E");
 }
 
 /* MAPS */
 .maps-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff3b9d' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff4da6' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z'/%3E%3C/svg%3E");
 }
 
-/* MES */
+/* MONTH */
 .month {
-  font-size: 11px;
+  font-size: 12px;
   opacity: 0.6;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
-/* BOTONES */
+/* BUTTONS */
 .event-buttons {
   display: flex;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
   flex-wrap: nowrap;
   overflow-x: auto;
 }
 
 .event-buttons span {
-  padding: 7px 12px;
-  border-radius: 16px;
-  font-size: 12px;
-  white-space: nowrap;
+  padding: 8px 14px;
+  border-radius: 18px;
+  font-size: 13px;
   background: rgba(255,255,255,0.08);
-  color: #fff;
+  white-space: nowrap;
 }
 
-/* BOTONES PRINCIPALES (FOTOS / VÍDEOS) */
+/* MAIN BUTTONS */
 .btn-main {
-  background: #ff3b9d;
+  background: #ff4da6;
   color: #fff;
   font-weight: 500;
 }
@@ -132,7 +129,7 @@ h2 {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 26px;
+  padding: 30px;
   font-size: 12px;
   opacity: 0.5;
 }
