@@ -16,7 +16,7 @@ body {
 
 /* HEADER */
 .top-header {
-  padding: 12px 0 4px;
+  padding: 12px 0 6px;
 }
 
 .logo-madre {
@@ -30,17 +30,17 @@ body {
 /* EVENT CARD */
 .event-card {
   max-width: 360px;
-  margin: 10px auto;
-  padding: 14px 14px 16px;
+  margin: 12px auto;
+  padding: 16px 14px 18px;
   background: rgba(255,255,255,0.05);
   border-radius: 22px;
 }
 
-/* LOGOS EVENTO */
+/* EVENT LOGOS */
 .event-logo {
   max-width: 180px;
   width: 70%;
-  margin: 0 auto 6px;
+  margin: 0 auto 10px;
   display: block;
 }
 
@@ -48,82 +48,71 @@ body {
   max-width: 150px;
 }
 
-/* TITULOS */
+/* TITLES */
 .event-card h2 {
   font-size: 16px;
   letter-spacing: 4px;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
+/* SUBTITLE + MAPS */
 .subtitle {
   font-size: 13px;
-  opacity: 0.85;
-  margin-bottom: 6px;
+  opacity: 0.9;
+  line-height: 1.4;
 }
 
-/* META */
-.meta {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
+/* MINI LOGOS INLINE */
+.inline-logo {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin: 0 4px;
+}
+
+/* MAPS INLINE LINK */
+.inline-link {
+  color: #ff4da6;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+/* INSTAGRAM */
+.instagram-line {
+  display: block;
+  margin-top: 6px;
   font-size: 13px;
-}
-
-.meta-column {
-  flex-direction: column;
-  gap: 6px;
-}
-
-.meta-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
   color: #ff4da6;
   text-decoration: none;
 }
 
-/* ICONOS MINI (TODOS IGUALES) */
-.icon,
-.venue-logo {
+/* ICONS */
+.icon {
   width: 14px;
   height: 14px;
-  min-width: 14px;
-  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .maps-icon {
   background-image: url("img/maps.png");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .insta-icon {
   background-image: url("img/instagram.png");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
-.icon {
-  display: inline-block;
-}
-
-/* TEXTO SALA */
-.venue-text {
-  font-size: 13px;
-  opacity: 0.9;
-  white-space: nowrap;
-}
-
-/* MES */
+/* MONTH */
 .month {
   font-size: 12px;
   letter-spacing: 2px;
-  margin: 6px 0 10px;
+  margin: 10px 0 12px;
   opacity: 0.7;
 }
 
-/* BOTONES */
+/* BUTTONS */
 .buttons {
   display: flex;
   justify-content: center;
@@ -139,14 +128,14 @@ body {
 }
 
 .btn-main {
-  background: rgba(255,77,166,0.2);
+  background: rgba(255,77,166,0.25);
   color: #ff4da6;
   font-weight: 600;
 }
 
 /* FOOTER */
 footer {
-  margin: 10px 0 12px;
+  margin: 14px 0 16px;
   font-size: 12px;
   opacity: 0.5;
 }
