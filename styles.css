@@ -1,170 +1,85 @@
-/* =========================
-   RESET
-========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   BASE
-========================= */
 body {
-  font-family: Arial, Helvetica, sans-serif;
   background: radial-gradient(circle at top, #1a1a1a, #000);
   color: #fff;
-  line-height: 1.5;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* =========================
-   HEADER / LOGOS
-========================= */
-header {
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  padding: 40px 20px 20px;
 }
 
-.logo-madre {
-  max-width: 260px;
+/* LOGO PRINCIPAL */
+.main-header {
+  padding: 40px 20px;
+}
+
+.main-header img {
+  max-width: 320px;
+}
+
+/* TARJETAS */
+.event-card {
+  background: rgba(255,255,255,0.06);
+  margin: 30px auto;
+  padding: 30px 20px;
+  border-radius: 30px;
+  max-width: 420px;
+}
+
+/* LOGOS EVENTO */
+.event-logo {
+  max-width: 220px;
   margin-bottom: 20px;
 }
 
-.logo-evento {
-  max-width: 200px;
-  margin: 10px auto;
-  display: block;
-}
-
-/* =========================
-   CONTENEDOR
-========================= */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* =========================
-   TÍTULOS
-========================= */
+/* TEXTOS */
 h2 {
-  text-align: center;
-  font-size: 26px;
+  letter-spacing: 4px;
   margin-bottom: 10px;
 }
 
-h3 {
-  text-align: center;
-  font-size: 16px;
+.subtitle {
   opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.maps {
+  color: #ff4da6;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.instagram {
+  color: #ff4da6;
+  margin-bottom: 15px;
+}
+
+.month {
+  opacity: 0.6;
   margin-bottom: 20px;
 }
 
-/* =========================
-   BOTONES
-========================= */
-.buttons {
+/* BOTONES */
+.event-buttons {
   display: flex;
-  justify-content: center;
-  gap: 15px;
   flex-wrap: wrap;
-  margin: 20px 0;
+  justify-content: center;
+  gap: 10px;
 }
 
-.main-buttons {
-  margin-bottom: 40px;
-}
-
-.button {
-  padding: 12px 22px;
-  border-radius: 30px;
-  border: 1px solid #fff;
+.event-buttons span {
+  background: #1c1c1c;
+  padding: 10px 18px;
+  border-radius: 20px;
   font-size: 14px;
-  transition: all 0.3s ease;
 }
-
-.button:hover {
-  background: #fff;
-  color: #000;
-}
-
-/* =========================
-   SECCIONES
-========================= */
-.section {
-  margin-top: 50px;
-}
-
-.card {
-  background: rgba(255,255,255,0.04);
-  border-radius: 25px;
-  padding: 30px 20px;
-  margin-top: 40px;
-}
-
-/* =========================
-   GALERÍA
-========================= */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.gallery img,
-.gallery video {
-  width: 100%;
-  border-radius: 15px;
-  background: #000;
-}
-
-/* =========================
-   UBICACIÓN
-========================= */
-.location {
-  text-align: center;
-}
-
-.location a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: 1px solid #fff;
-  transition: all 0.3s ease;
-}
-
-.location a:hover {
-  background: #fff;
-  color: #000;
-}
-
-/* =========================
-   FOOTER
-========================= */
+  
+/* FOOTER */
 footer {
-  text-align: center;
-  padding: 40px 20px;
+  padding: 30px;
   font-size: 12px;
-  opacity: 0.6;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 600px) {
-  h2 {
-    font-size: 22px;
-  }
-
-  .logo-madre {
-    max-width: 220px;
-  }
+  opacity: 0.5;
 }
