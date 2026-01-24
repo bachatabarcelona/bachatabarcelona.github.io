@@ -6,66 +6,68 @@
   <title>Galería · Bachata Barcelona</title>
 
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
     body{
       font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
       background:radial-gradient(circle at top,#111,#000);
       color:#fff;
       min-height:100vh;
       padding:20px;
-      text-align:center;
-    }
-
-    .logo-dia{
-      max-width:160px;
-      margin:10px auto 20px;
-      display:block;
     }
 
     h1{
+      text-align:center;
       letter-spacing:4px;
-      margin-bottom:20px;
-      font-size:22px;
-    }
-
-    .selector{
-      display:flex;
-      justify-content:center;
-      gap:12px;
       margin-bottom:25px;
     }
 
+    /* selector miércoles / domingo */
+    .selector{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      margin-bottom:30px;
+    }
+
     .selector a{
-      padding:10px 18px;
+      padding:10px 20px;
       border-radius:20px;
       border:1px solid #666;
       color:#fff;
       text-decoration:none;
-      font-size:13px;
+      opacity:.7;
     }
 
     .selector a.active{
       background:#fff;
       color:#000;
+      opacity:1;
     }
 
     .month{
+      text-align:center;
       margin-bottom:20px;
-      opacity:.7;
-      font-size:14px;
+      opacity:.8;
+      letter-spacing:2px;
     }
 
+    /* grid de días */
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
       gap:14px;
-      max-width:700px;
+      max-width:720px;
       margin:0 auto;
     }
 
     .day{
       background:#1c1c1c;
-      border-radius:14px;
+      border-radius:16px;
       padding:18px;
       text-align:center;
       text-decoration:none;
@@ -76,23 +78,21 @@
 
     .day:hover{
       background:#2a2a2a;
-      transform:scale(1.03);
+      transform:translateY(-2px);
     }
 
     .back{
       display:block;
+      text-align:center;
       margin-top:40px;
       opacity:.7;
       text-decoration:none;
       color:#fff;
-      font-size:13px;
     }
   </style>
 </head>
 
 <body>
-
-<img id="logoDia" class="logo-dia" src="" alt="Logo día">
 
 <h1>GALERÍA</h1>
 
@@ -101,50 +101,37 @@
   <a href="GALERIA.html?dia=domingo" id="btn-domingo">DOMINGO</a>
 </div>
 
-<div class="month">Enero 2026</div>
+<div class="month">ENERO 2026</div>
 
 <div class="grid" id="grid"></div>
 
-<a class="back" href="index.html">← Volver al inicio</a>
+<a class="back" href="index.html">← Volver al Home</a>
 
 <script>
   const params = new URLSearchParams(window.location.search);
   const dia = params.get("dia") || "miercoles";
 
-  const grid = document.getElementById("grid");
-  const logo = document.getElementById("logoDia");
+  document.getElementById("btn-miercoles")
+    .classList.toggle("active", dia === "miercoles");
+  document.getElementById("btn-domingo")
+    .classList.toggle("active", dia === "domingo");
 
-  document.getElementById("btn-miercoles").classList.toggle("active", dia==="miercoles");
-  document.getElementById("btn-domingo").classList.toggle("active", dia==="domingo");
+  const grid = document.getElementById("grid");
 
   const data = {
-    miercoles: {
-      logo: "img/logo-miercoles.png",
-      dias: [
-        { txt:"Miércoles 7",  url:"fotos/ENERO-2026/MIERCOLES/2026-01-07-miercoles/" },
-        { txt:"Miércoles 14", url:"fotos/ENERO-2026/MIERCOLES/2026-01-14-Miercoles/" },
-        { txt:"Miércoles 21", url:"fotos/ENERO-2026/MIERCOLES/2026-01-21-Miercoles/" },
-        { txt:"Miércoles 28", url:"fotos/ENERO-2026/MIERCOLES/2026-01-28-Miercoles/" }
-      ]
-    },
-    domingo: {
-      logo: "img/logo-domingo.png",
-      dias: [
-        { txt:"Domingo 4",  url:"fotos/ENERO-2026/DOMINGOS/2026-01-04-domingo/" },
-        { txt:"Domingo 11", url:"fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/" },
-        { txt:"Domingo 18", url:"fotos/ENERO-2026/DOMINGOS/2026-01-18-domingo/" },
-        { txt:"Domingo 25", url:"fotos/ENERO-2026/DOMINGOS/2026-01-25-domingo/" }
-      ]
-    }
+    miercoles: [
+      { txt:"Miércoles 7",  url:"fotos/ENERO-2026/MIERCOLES/2026-01-07-miercoles/" }
+    ],
+    domingo: [
+      { txt:"Domingo 11", url:"fotos/ENERO-2026/DOMINGOS/2026-01-11-domingo/" }
+    ]
   };
 
-  logo.src = data[dia].logo;
-
-  data[dia].dias.forEach(d=>{
-    const a=document.createElement("a");
-    a.className="day";
-    a.href=d.url;
-    a.textContent=d.txt;
+  data[dia].forEach(d=>{
+    const a = document.createElement("a");
+    a.className = "day";
+    a.href = d.url;
+    a.textContent = d.txt;
     grid.appendChild(a);
   });
 </script>
