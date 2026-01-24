@@ -18,30 +18,30 @@ body {
 
 /* HEADER */
 .top-header {
-  padding: 32px 20px 24px;
+  padding: 28px 20px 22px;
   display: flex;
   justify-content: center;
 }
 
-/* LOGO MADRE — COMO ANTES, PROTAGONISTA */
+/* LOGO MADRE — MÁS PEQUEÑO, ELEGANTE */
 .logo-madre {
-  max-width: 300px;
+  max-width: 240px;   /* ⬅️ AQUÍ EL CAMBIO */
   width: 100%;
   filter:
-    drop-shadow(0 0 8px rgba(212,175,55,0.85))
-    drop-shadow(0 0 16px rgba(212,175,55,0.45));
+    drop-shadow(0 0 6px rgba(212,175,55,0.75))
+    drop-shadow(0 0 14px rgba(212,175,55,0.35));
 }
 
 /* EVENT CARD */
 .event {
-  max-width: 440px;            /* MÁS ANCHO → MÁS A LO LARGO */
+  max-width: 440px;
   margin: 22px auto;
   background: rgba(255,255,255,0.06);
   border-radius: 26px;
   overflow: hidden;
 }
 
-/* LOGOS MIÉRCOLES / DOMINGO (TAMAÑO BUENO, NO MICRO) */
+/* LOGOS MIÉRCOLES / DOMINGO */
 .event-banner {
   display: block;
   margin: 12px auto 0;
@@ -62,13 +62,13 @@ body {
 }
 
 h2 {
-  font-size: 17px;            /* TEXTO MÁS GRANDE */
+  font-size: 17px;
   letter-spacing: 4px;
   margin-bottom: 6px;
 }
 
 .subtitle {
-  font-size: 14px;            /* MÁS LEGIBLE */
+  font-size: 14px;
   opacity: 0.85;
   margin-bottom: 10px;
   line-height: 1.4;
@@ -79,7 +79,7 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 14px;
-  font-size: 13px;            /* SUBE TAMAÑO */
+  font-size: 13px;
   margin-bottom: 14px;
 }
 
@@ -105,14 +105,14 @@ h2 {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff4da6' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z'/%3E%3C/svg%3E");
 }
 
-/* INSTAGRAM — OUTLINE COMO ANTES */
+/* INSTAGRAM — OUTLINE */
 .insta-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff4da6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='5' ry='5'/%3E%3Cpath d='M16 11.37a4 4 0 11-7.94 1.18 4 4.0 0 017.94-1.18z'/%3E%3Cline x1='17.5' y1='6.5' x2='17.51' y2='6.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff4da6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='5' ry='5'/%3E%3Cpath d='M16 11.37a4 4.0 0 11-7.94 1.18 4.0 4.0 0 017.94-1.18z'/%3E%3Cline x1='17.5' y1='6.5' x2='17.51' y2='6.5'/%3E%3C/svg%3E");
 }
 
 /* MES */
 .month {
-  font-size: 13px;            /* MÁS CLARO */
+  font-size: 13px;
   opacity: 0.6;
   margin-bottom: 16px;
 }
@@ -129,7 +129,7 @@ h2 {
 .event-buttons span {
   padding: 8px 14px;
   border-radius: 18px;
-  font-size: 13px;            /* MÁS LEGIBLE */
+  font-size: 13px;
   background: rgba(255,255,255,0.08);
   white-space: nowrap;
 }
