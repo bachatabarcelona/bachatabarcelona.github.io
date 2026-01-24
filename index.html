@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -15,54 +14,52 @@
 
     body {
       background: #000;
-      color: #fff;
       font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
     }
 
     .container {
       max-width: 420px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 20px 16px 40px;
     }
 
-    .center {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
+    /* LOGO MADRE */
     .logo-main {
       width: 100%;
       max-width: 380px;
-      margin: 0 auto 30px;
+      margin: 10px auto 30px;
       display: block;
+      filter: drop-shadow(0 0 20px rgba(255,215,120,0.6));
     }
 
+    /* TARJETAS */
     .card {
-      background: radial-gradient(circle at top, #2a2a2a, #0b0b0b);
-      border-radius: 24px;
-      padding: 24px 20px;
+      background: radial-gradient(circle at top, #2b2b2b, #0b0b0b);
+      border-radius: 26px;
+      padding: 26px 18px 22px;
       margin-bottom: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.7);
       text-align: center;
     }
 
     .logo-event {
       width: 100%;
       max-width: 300px;
-      margin: 0 auto 16px;
+      margin: 0 auto 18px;
       display: block;
     }
 
     .day {
       letter-spacing: 4px;
       font-size: 20px;
-      margin: 14px 0 10px;
+      margin-bottom: 10px;
     }
 
     .place {
       font-size: 14px;
       opacity: 0.9;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .place a {
@@ -72,34 +69,35 @@
     }
 
     .instagram {
+      margin: 10px 0 16px;
       display: block;
-      margin: 10px 0 14px;
+      font-size: 15px;
       color: #ff4fa3;
       text-decoration: none;
-      font-size: 14px;
     }
 
+    /* BOTONES */
     .buttons {
       display: flex;
-      gap: 8px;
       justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 10px;
+      flex-wrap: nowrap;
+      gap: 8px;
     }
 
     .btn {
-      background: #1a1a1a;
+      background: #1c1c1c;
       padding: 8px 14px;
       border-radius: 999px;
       font-size: 13px;
-      min-width: 54px;
+      min-width: 56px;
+      text-align: center;
     }
 
     footer {
       text-align: center;
+      margin-top: 36px;
       font-size: 12px;
-      opacity: 0.5;
-      margin: 40px 0 10px;
+      opacity: 0.6;
     }
   </style>
 </head>
@@ -109,9 +107,7 @@
   <div class="container">
 
     <!-- LOGO PRINCIPAL -->
-    <div class="center">
-      <img src="img/logo-madre.png" alt="Bachata Barcelona" class="logo-main">
-    </div>
+    <img src="img/logo-madre.png" alt="Bachata Barcelona" class="logo-main">
 
     <!-- MIÉRCOLES -->
     <div class="card">
@@ -124,9 +120,7 @@
         <a href="https://maps.google.com/?q=Sala+Vivaldi+Barcelona" target="_blank">📍 Maps</a>
       </div>
 
-      <a class="instagram"
-         href="https://www.instagram.com/bachataparty.bcn"
-         target="_blank">
+      <a class="instagram" href="https://www.instagram.com/bachataparty.bcn" target="_blank">
         📸 @bachataparty.bcn
       </a>
 
@@ -151,9 +145,7 @@
         <a href="https://maps.google.com/?q=Hyde+Club+Barcelona" target="_blank">📍 Maps</a>
       </div>
 
-      <a class="instagram"
-         href="https://www.instagram.com/bachastation"
-         target="_blank">
+      <a class="instagram" href="https://www.instagram.com/bachastation" target="_blank">
         📸 @bachastation
       </a>
 
