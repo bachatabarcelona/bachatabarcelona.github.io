@@ -20,7 +20,7 @@ body {
 }
 
 .logo-madre {
-  max-width: 240px;            /* MÁS PEQUEÑO */
+  max-width: 240px;
   width: 80%;
   margin: 0 auto;
   display: block;
@@ -45,7 +45,7 @@ body {
 }
 
 .event-logo.small {
-  max-width: 150px; /* DOMINGO MÁS PEQUEÑO */
+  max-width: 150px;
 }
 
 /* TITULOS */
@@ -61,11 +61,11 @@ body {
   margin-bottom: 6px;
 }
 
-/* META (MAPS + INSTAGRAM) */
+/* ===== META ===== */
 .meta {
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 16px;
   margin-bottom: 6px;
   font-size: 13px;
 }
@@ -74,24 +74,31 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #ff4da6;
+  color: #ff6fb5; /* FUCSIA MÁS CLARO */
 }
 
-/* ICONOS */
+/* ICONOS (COLOR CONTROLADO) */
 .icon {
   width: 14px;
   height: 14px;
   display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-color: #ff6fb5; /* FUCSIA CLARO */
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
 }
 
 .maps-icon {
-  background-image: url("https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlemaps.svg");
+  mask-image: url("https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlemaps.svg");
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlemaps.svg");
 }
 
 .insta-icon {
-  background-image: url("https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg");
+  mask-image: url("https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg");
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg");
 }
 
 /* MES */
@@ -118,8 +125,8 @@ body {
 }
 
 .btn-main {
-  background: rgba(255,77,166,0.2);
-  color: #ff4da6;
+  background: rgba(255,111,181,0.22);
+  color: #ff6fb5;
   font-weight: 600;
 }
 
