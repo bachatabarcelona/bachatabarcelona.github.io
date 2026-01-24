@@ -1,85 +1,107 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Bachata Barcelona</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-</head>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<body>
+body {
+  background: radial-gradient(circle at top, #222, #000 75%);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
 
-<header class="header">
-  <img src="img/logo-madre.png" alt="Bachata Barcelona">
-</header>
+/* HEADER */
+.header img {
+  width: 90%;
+  max-width: 420px;
+  margin: 24px auto;
+  display: block;
+  filter: drop-shadow(0 0 22px rgba(255,215,120,0.45));
+}
 
-<main class="home">
+/* HOME */
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 0 14px;
+}
 
-  <!-- MIÉRCOLES -->
-  <section class="card">
-    <img src="img/logo-miercoles.png" class="logo-card">
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 26px;
+  padding: 26px 18px 30px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.8);
+}
 
-    <h2>MIÉRCOLES</h2>
+/* LOGO CARD */
+.logo-card {
+  width: 72%;
+  max-width: 260px;
+  margin-bottom: 14px;
+}
 
-    <p class="venue">
-      Bachata Party’s – Sala Vivaldi Barcelona
-    </p>
+/* TITLES */
+.card h2 {
+  letter-spacing: 4px;
+  margin: 12px 0;
+}
 
-    <div class="social">
-      <span class="map">
-        <img src="img/maps.png"> Maps
-      </span>
-      <span class="insta">
-        <img src="img/instagram.png"> @bachataparty.bcn
-      </span>
-    </div>
+/* VENUE */
+.venue {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
 
-    <div class="month">‹ ENERO 2026 ›</div>
+/* SOCIAL */
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
 
-    <div class="pills">
-      <span class="pill action">Fotos</span>
-      <span class="pill action">Vídeos</span>
-      <span class="pill">7</span>
-      <span class="pill">14</span>
-      <span class="pill">21</span>
-      <span class="pill">28</span>
-    </div>
-  </section>
+.social img {
+  width: 16px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
 
-  <!-- DOMINGO -->
-  <section class="card">
-    <img src="img/logo-domingo.png" class="logo-card">
+/* MONTH */
+.month {
+  margin: 12px 0 18px;
+  letter-spacing: 2px;
+  font-size: 13px;
+  opacity: 0.85;
+}
 
-    <h2>DOMINGO</h2>
+/* PILLS */
+.pills {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
-    <p class="venue">
-      Bachastation – Hyde Club Barcelona
-    </p>
+.pill {
+  background: rgba(0,0,0,0.45);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 14px;
+}
 
-    <div class="social">
-      <span class="map">
-        <img src="img/maps.png"> Maps
-      </span>
-      <span class="insta">
-        <img src="img/instagram.png"> @bachastation
-      </span>
-    </div>
+.pill.action {
+  background: rgba(255,79,163,0.18);
+  color: #ff4fa3;
+}
 
-    <div class="month">‹ ENERO 2026 ›</div>
-
-    <div class="pills">
-      <span class="pill action">Fotos</span>
-      <span class="pill action">Vídeos</span>
-      <span class="pill">4</span>
-      <span class="pill">11</span>
-      <span class="pill">18</span>
-      <span class="pill">25</span>
-    </div>
-  </section>
-
-</main>
-
-<footer>© Bachata Barcelona</footer>
-
-</body>
-</html>
+/* FOOTER */
+footer {
+  margin: 30px 0;
+  font-size: 13px;
+  opacity: 0.6;
+}
