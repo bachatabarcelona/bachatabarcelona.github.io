@@ -8,68 +8,61 @@ body {
   background: radial-gradient(circle at top, #1a1a1a, #000);
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+.top-header {
+  padding: 20px;
+}
+
+.top-header img {
+  max-width: 180px;
+}
+
+/* EVENTO */
+.event {
+  max-width: 480px;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.05);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* BANNER GRANDE */
+.event-banner {
+  width: 100%;
+  display: block;
+}
+
+/* INFO */
+.event-info {
+  padding: 25px 20px 30px;
   text-align: center;
 }
 
-/* =========================
-   LOGO PRINCIPAL
-========================= */
-.main-header {
-  padding: 30px 20px 10px;
-}
-
-.main-header img {
-  width: 100%;
-  max-width: 300px;     /* CLAVE */
-  height: auto;
-  display: block;
-  margin: 0 auto 20px; /* AIRE ABAJO */
-}
-
-/* =========================
-   TARJETAS EVENTO
-========================= */
-.event-card {
-  background: rgba(255,255,255,0.06);
-  margin: 25px auto;
-  padding: 30px 20px;
-  border-radius: 30px;
-  max-width: 420px;
-}
-
-/* LOGOS EVENTO */
-.event-logo {
-  width: 100%;
-  max-width: 220px;
-  margin: 0 auto 20px;
-  display: block;
-}
-
-/* TEXTOS */
 h2 {
   letter-spacing: 4px;
   margin-bottom: 10px;
 }
 
-.subtitle {
-  opacity: 0.8;
-  margin-bottom: 10px;
-}
-
-.maps {
-  color: #ff4da6;
-  display: block;
+.event-info p {
+  opacity: 0.85;
   margin-bottom: 5px;
 }
 
-.instagram {
+.event-info a {
+  color: #ff4da6;
+  text-decoration: none;
+}
+
+.insta {
   color: #ff4da6;
   margin-bottom: 15px;
 }
 
 .month {
   opacity: 0.6;
-  margin-bottom: 20px;
+  margin: 15px 0;
 }
 
 /* BOTONES */
@@ -89,16 +82,8 @@ h2 {
 
 /* FOOTER */
 footer {
+  text-align: center;
   padding: 30px;
   font-size: 12px;
   opacity: 0.5;
-}
-
-/* =========================
-   MOBILE FINO
-========================= */
-@media (max-width: 400px) {
-  .main-header img {
-    max-width: 260px;
-  }
 }
