@@ -1,192 +1,124 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bachata Barcelona</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #000;
-      color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .container {
-      max-width: 420px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* LOGO PRINCIPAL */
-    .logo-main img {
-      width: 100%;
-      border-radius: 14px;
-      box-shadow: 0 0 35px rgba(255, 210, 140, 0.45);
-      margin-bottom: 30px;
-    }
-
-    /* TARJETAS */
-    .card {
-      background: linear-gradient(180deg, #1b1b1b, #0a0a0a);
-      border-radius: 30px;
-      padding: 26px 22px 28px;
-      margin-bottom: 32px;
-      box-shadow: 0 25px 45px rgba(0,0,0,0.7);
-      text-align: center;
-    }
-
-    .card img {
-      width: 100%;
-      margin-bottom: 18px;
-    }
-
-    .day {
-      letter-spacing: 5px;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .place {
-      font-size: 14px;
-      opacity: 0.95;
-      margin-bottom: 6px;
-    }
-
-    .maps a {
-      color: #ff6fae;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .instagram {
-      margin: 12px 0 14px;
-      font-size: 14px;
-    }
-
-    .instagram a {
-      color: #ff6fae;
-      text-decoration: none;
-    }
-
-    .month {
-      font-size: 14px;
-      opacity: 0.85;
-      margin-bottom: 14px;
-    }
-
-    /* BOTONES */
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .btn {
-      padding: 10px 18px;
-      background: #1f1f1f;
-      border-radius: 22px;
-      font-size: 13px;
-      text-decoration: none;
-      color: #fff;
-      min-width: 72px;
-      text-align: center;
-    }
-
-    .btn:hover {
-      background: #2a2a2a;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 12px;
-      opacity: 0.6;
-      margin: 30px 0 10px;
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<div class="container">
+  <!-- =========================
+       HEADER / LOGOS
+  ========================== -->
+  <header>
+    <!-- Logo principal -->
+    <img src="img/bachata-barcelona.png" alt="Bachata Barcelona">
 
-  <!-- LOGO MADRE -->
-  <div class="logo-main">
-    <img src="img/logo-madre.png" alt="Bachata Barcelona">
-  </div>
+    <!-- Logos esdeveniments -->
+    <img src="img/bachata-party.png" alt="Bachata Party’s">
+    <img src="img/bachastation.png" alt="Bachastation">
+  </header>
 
-  <!-- MIÉRCOLES -->
-  <div class="card">
-    <img src="img/logo-miercoles.png" alt="Bachata Party's">
+  <div class="container">
 
-    <div class="day">MIÉRCOLES</div>
-
-    <div class="place">
-      Bachata Party’s – Sala Vivaldi Barcelona
-    </div>
-
-    <div class="maps">
-      📍 <a href="https://maps.google.com/?q=Sala+Vivaldi+Barcelona" target="_blank">Maps</a>
-    </div>
-
-    <div class="instagram">
-      📸 <a href="https://www.instagram.com/bachataparty.bcn" target="_blank">@bachataparty.bcn</a>
-    </div>
-
-    <div class="month">‹ ENERO 2026 ›</div>
-
+    <!-- =========================
+         BOTONS PRINCIPALS
+    ========================== -->
     <div class="buttons">
-      <a class="btn" href="#">Fotos</a>
-      <a class="btn" href="#">Vídeos</a>
-      <a class="btn" href="#">7</a>
-      <a class="btn" href="#">14</a>
-      <a class="btn" href="#">21</a>
-      <a class="btn" href="#">28</a>
+      <a href="#fotos" class="button">Fotos</a>
+      <a href="#videos" class="button">Vídeos</a>
+      <a href="#ubicacio" class="button">Ubicació</a>
     </div>
+
+    <!-- =========================
+         GALERIA FOTOS
+    ========================== -->
+    <section id="fotos" class="section">
+      <h2>Galeria · Fotos</h2>
+
+      <div class="gallery">
+        <!-- EXEMPLES · substitueix o afegeix -->
+        <img src="img/foto1.jpg" alt="Bachata Barcelona">
+        <img src="img/foto2.jpg" alt="Bachata Barcelona">
+        <img src="img/foto3.jpg" alt="Bachata Barcelona">
+      </div>
+    </section>
+
+    <!-- =========================
+         GALERIA VÍDEOS
+    ========================== -->
+    <section id="videos" class="section">
+      <h2>Galeria · Vídeos</h2>
+
+      <div class="gallery">
+        <!-- EXEMPLES -->
+        <video controls>
+          <source src="videos/video1.mp4" type="video/mp4">
+        </video>
+
+        <video controls>
+          <source src="videos/video2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <!-- =========================
+         DIMECRES
+    ========================== -->
+    <section class="section">
+      <h2>Dimecres</h2>
+      <h3>Bachata Party’s · Sala Vivaldi</h3>
+
+      <div class="buttons">
+        <a href="#fotos" class="button">Fotos</a>
+        <a href="#videos" class="button">Vídeos</a>
+      </div>
+    </section>
+
+    <!-- =========================
+         DIUMENGE
+    ========================== -->
+    <section class="section">
+      <h2>Diumenge</h2>
+      <h3>Bachastation · High Club</h3>
+
+      <div class="buttons">
+        <a href="#fotos" class="button">Fotos</a>
+        <a href="#videos" class="button">Vídeos</a>
+      </div>
+    </section>
+
+    <!-- =========================
+         UBICACIÓ
+    ========================== -->
+    <section id="ubicacio" class="section location">
+      <h2>Ubicació</h2>
+
+      <p>Dimecres · Sala Vivaldi</p>
+      <a href="https://maps.google.com/?q=Sala+Vivaldi+Barcelona" target="_blank">
+        Obrir a Google Maps
+      </a>
+
+      <br><br>
+
+      <p>Diumenge · High Club</p>
+      <a href="https://maps.google.com/?q=High+Club+Barcelona" target="_blank">
+        Obrir a Google Maps
+      </a>
+    </section>
+
   </div>
 
-  <!-- DOMINGO -->
-  <div class="card">
-    <img src="img/logo-domingo.png" alt="Bachastation">
-
-    <div class="day">DOMINGO</div>
-
-    <div class="place">
-      Bachastation – Hyde Club Barcelona
-    </div>
-
-    <div class="maps">
-      📍 <a href="https://maps.google.com/?q=Hyde+Club+Barcelona" target="_blank">Maps</a>
-    </div>
-
-    <div class="instagram">
-      📸 <a href="https://www.instagram.com/bachastation" target="_blank">@bachastation</a>
-    </div>
-
-    <div class="month">‹ ENERO 2026 ›</div>
-
-    <div class="buttons">
-      <a class="btn" href="#">Fotos</a>
-      <a class="btn" href="#">Vídeos</a>
-      <a class="btn" href="#">4</a>
-      <a class="btn" href="#">11</a>
-      <a class="btn" href="#">18</a>
-      <a class="btn" href="#">25</a>
-    </div>
-  </div>
-
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <footer>
-    © Bachata Barcelona
+    © Bachata Barcelona · All rights reserved
   </footer>
-
-</div>
 
 </body>
 </html>
