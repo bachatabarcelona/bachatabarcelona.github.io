@@ -7,7 +7,7 @@
 /* BASE */
 html, body {
   height: 100%;
-  overflow: hidden; /* NO SCROLL */
+  overflow: hidden;
 }
 
 body {
@@ -18,55 +18,57 @@ body {
 
 /* HEADER */
 .top-header {
-  padding: 20px 16px 14px;
+  padding: 18px 14px 10px;
   display: flex;
   justify-content: center;
 }
 
 /* LOGO MADRE */
 .logo-madre {
-  max-width: 280px;
+  max-width: 260px;
   width: 100%;
   filter: drop-shadow(0 0 10px rgba(212,175,55,0.9));
 }
 
 /* EVENT CARD */
 .event {
-  max-width: 400px;
-  margin: 14px auto; /* MUY COMPACTO */
+  max-width: 380px;
+  margin: 10px auto;
   background: rgba(255,255,255,0.06);
-  border-radius: 24px;
+  border-radius: 22px;
   overflow: hidden;
 }
 
-/* LOGOS MIÉRCOLES / DOMINGO — 50% MÁS PEQUEÑOS */
+/* 🔥 LOGOS MIÉRCOLES / DOMINGO — REDUCCIÓN REAL (~30%) */
 .event-banner {
-  width: 100%;
-  max-height: 70px;   /* ANTES ~140px */
-  object-fit: contain;
   display: block;
   margin: 6px auto 0;
+  width: auto;
+  max-width: 160px;     /* CLAVE: ancho pequeño */
+  max-height: 55px;     /* MUCHO más pequeño */
+  object-fit: contain;
 }
 
 .small-banner {
-  max-height: 60px;
+  max-width: 150px;
+  max-height: 48px;
 }
 
 /* INFO */
 .event-info {
-  padding: 12px 12px 14px;
+  padding: 10px 10px 12px;
   text-align: center;
 }
 
 h2 {
-  font-size: 14px;
-  letter-spacing: 3px;
+  font-size: 13px;
+  letter-spacing: 2px;
   margin-bottom: 2px;
 }
 
 .subtitle {
-  font-size: 11px;
-  opacity: 0.85;
+  font-size: 10px;
+  opacity: 0.8;
   margin-bottom: 4px;
 }
 
@@ -74,9 +76,9 @@ h2 {
 .meta {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  font-size: 10px;
-  margin-bottom: 6px;
+  gap: 6px;
+  font-size: 9px;
+  margin-bottom: 4px;
 }
 
 .meta-item {
@@ -89,12 +91,11 @@ h2 {
 
 /* ICONOS */
 .icon {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  flex-shrink: 0;
 }
 
 /* MAPS */
@@ -104,28 +105,27 @@ h2 {
 
 /* INSTAGRAM */
 .insta-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff4da6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='5' ry='5'/%3E%3Cpath d='M16 11.37a4 4 0 11-7.94 1.18 4 4 0 017.94-1.18z'/%3E%3Cline x1='17.5' y1='6.5' x2='17.51' y2='6.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff4da6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='5' ry='5'/%3E%3Cpath d='M16 11.37a4 4 0 11-7.94 1.18 4 4.0 0 017.94-1.18z'/%3E%3Cline x1='17.5' y1='6.5' x2='17.51' y2='6.5'/%3E%3C/svg%3E");
 }
 
 /* MES */
 .month {
-  font-size: 10px;
-  opacity: 0.6;
-  margin-bottom: 6px;
+  font-size: 9px;
+  opacity: 0.5;
+  margin-bottom: 4px;
 }
 
 /* BOTONES */
 .event-buttons {
   display: flex;
   justify-content: center;
-  gap: 4px;
-  flex-wrap: nowrap;
+  gap: 3px;
 }
 
 .event-buttons span {
-  padding: 4px 8px;
-  border-radius: 14px;
-  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 12px;
+  font-size: 9px;
   background: rgba(255,255,255,0.08);
   white-space: nowrap;
 }
@@ -140,7 +140,7 @@ h2 {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 10px;
-  font-size: 9px;
+  padding: 6px;
+  font-size: 8px;
   opacity: 0.4;
 }
