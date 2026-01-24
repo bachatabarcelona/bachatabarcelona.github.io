@@ -1,148 +1,131 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BASE */
-html, body {
-  height: 100%;
-  overflow: hidden; /* CLAVE: no scroll */
-}
-
+/* BODY */
 body {
-  background: radial-gradient(circle at top, #1a1a1a, #000);
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #222 0%, #000 70%);
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-}
-
-/* HEADER — MÁS BAJO */
-.top-header {
-  padding: 14px 18px 10px; /* reducido */
-  display: flex;
-  justify-content: center;
-}
-
-/* LOGO MADRE — UN POCO MÁS PEQUEÑO */
-.logo-madre {
-  max-width: 220px; /* ⬅️ reducción real */
-  width: 100%;
-  filter:
-    drop-shadow(0 0 5px rgba(212,175,55,0.7))
-    drop-shadow(0 0 12px rgba(212,175,55,0.35));
-}
-
-/* EVENT CARD — MÁS COMPACTO */
-.event {
-  max-width: 420px;
-  margin: 10px auto; /* menos separación */
-  background: rgba(255,255,255,0.06);
-  border-radius: 22px;
-  overflow: hidden;
-}
-
-/* LOGOS MIÉRCOLES / DOMINGO */
-.event-banner {
-  display: block;
-  margin: 6px auto 0;
-  max-width: 180px;
-  max-height: 70px;
-  object-fit: contain;
-}
-
-.small-banner {
-  max-width: 165px;
-  max-height: 65px;
-}
-
-/* INFO — ALTURA REDUCIDA */
-.event-info {
-  padding: 14px 18px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   text-align: center;
 }
 
-h2 {
+/* ===== HEADER ===== */
+.top-header {
+  padding: 14px 0 6px;
+}
+
+.logo-madre {
+  max-width: 240px;            /* MÁS PEQUEÑO */
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(212,175,55,0.45));
+}
+
+/* ===== EVENT CARD ===== */
+.event-card {
+  max-width: 360px;
+  margin: 12px auto;
+  padding: 14px 14px 16px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 22px;
+}
+
+/* LOGOS EVENTO */
+.event-logo {
+  max-width: 180px;
+  width: 70%;
+  margin: 0 auto 8px;
+  display: block;
+}
+
+.event-logo.small {
+  max-width: 150px; /* DOMINGO MÁS PEQUEÑO */
+}
+
+/* TITULOS */
+.event-card h2 {
   font-size: 16px;
-  letter-spacing: 3px;
-  margin-bottom: 2px;
+  letter-spacing: 4px;
+  margin-bottom: 6px;
 }
 
 .subtitle {
   font-size: 13px;
   opacity: 0.85;
   margin-bottom: 6px;
-  line-height: 1.3;
 }
 
-/* META */
+/* META (MAPS + INSTAGRAM) */
 .meta {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  font-size: 12px;
+  gap: 14px;
   margin-bottom: 6px;
+  font-size: 13px;
 }
 
 .meta-item {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   color: #ff4da6;
-  white-space: nowrap;
 }
 
 /* ICONOS */
 .icon {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
 }
 
-/* MAPS */
 .maps-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff4da6' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z'/%3E%3C/svg%3E");
+  background-image: url("https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlemaps.svg");
 }
 
-/* INSTAGRAM */
 .insta-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff4da6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='5' ry='5'/%3E%3Cpath d='M16 11.37a4 4 0 11-7.94 1.18 4 4 0 017.94-1.18z'/%3E%3Cline x1='17.5' y1='6.5' x2='17.51' y2='6.5'/%3E%3C/svg%3E");
+  background-image: url("https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg");
 }
 
 /* MES */
 .month {
   font-size: 12px;
-  opacity: 0.6;
-  margin-bottom: 8px;
+  letter-spacing: 2px;
+  margin: 6px 0 10px;
+  opacity: 0.7;
 }
 
-/* BOTONES — MÁS BAJOS */
-.event-buttons {
+/* BOTONES */
+.buttons {
   display: flex;
   justify-content: center;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.event-buttons span {
-  padding: 6px 10px;
-  border-radius: 16px;
-  font-size: 12px;
+.buttons span {
+  padding: 6px 12px;
   background: rgba(255,255,255,0.08);
-  white-space: nowrap;
+  border-radius: 18px;
+  font-size: 13px;
 }
 
-/* BOTONES PRINCIPALES */
 .btn-main {
-  background: #ff4da6;
-  color: #fff;
-  font-weight: 500;
+  background: rgba(255,77,166,0.2);
+  color: #ff4da6;
+  font-weight: 600;
 }
 
-/* FOOTER — CASI PEGADO */
+/* FOOTER */
 footer {
-  text-align: center;
-  padding: 10px;
-  font-size: 11px;
-  opacity: 0.45;
+  margin: 10px 0 12px;
+  font-size: 12px;
+  opacity: 0.5;
 }
