@@ -4,24 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visor | Bachata Barcelona</title>
-  <link rel="stylesheet" href="styles.css?v=visor-final">
+  <link rel="stylesheet" href="styles.css?v=visor-ofertas">
 </head>
 
 <body>
 
-  <div class="visor-container" id="visor"></div>
+<div class="visor-container" id="visor"></div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const img = params.get('img');
+<!-- ===== OFERTAS (ABAJO DEL TODO) ===== -->
+<div class="ofertas-footer">
+  <a
+    href="https://www.goandance.com/es/promotores/42147/eventos"
+    target="_blank"
+    rel="noopener"
+  >
+    <span class="btn-main">OFERTAS</span>
+  </a>
+</div>
 
-    if (img) {
-      document.getElementById('visor').innerHTML =
-        '<img src="' + img + '" style="width:100%;border-radius:12px;">';
-    }
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const img = params.get('img');
 
-    document.body.onclick = () => history.back();
-  </script>
+  if (img) {
+    document.getElementById('visor').innerHTML =
+      '<img src="' + img + '" style="width:100%;border-radius:12px;">';
+  }
+
+  document.body.onclick = () => history.back();
+</script>
 
 </body>
 </html>
