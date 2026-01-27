@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galería | Bachata Barcelona</title>
-  <link rel="stylesheet" href="styles.css?v=galeria-ok">
+  <link rel="stylesheet" href="styles.css?v=galeria-final">
 </head>
 
 <body>
@@ -14,8 +14,8 @@
     <img src="img/logo-madre.png" alt="Bachata Barcelona" class="logo-madre">
   </header>
 
-  <!-- ===== MIÉRCOLES ===== -->
-  <section class="event-card">
+  <!-- ================= MIÉRCOLES ================= -->
+  <section class="event-card" id="miercoles">
 
     <img src="img/logo-miercoles.png" alt="Bachata Party’s" class="event-logo">
 
@@ -24,29 +24,43 @@
     <p class="subtitle subtitle-inline">
       Bachata Party’s – Sala Vivaldi Barcelona
       <img src="img/vivaldi.png" alt="Vivaldi" class="inline-logo">
+      <span class="icon maps-icon"></span> Maps
     </p>
+
+    <a class="instagram-line" href="https://www.instagram.com/bachataparty.bcn/" target="_blank">
+      <span class="icon insta-icon"></span> @bachataparty.bcn
+    </a>
 
     <p class="month">‹ ENERO 2026 ›</p>
 
     <div class="buttons">
-      <span class="btn-main">Fotos</span>
-      <span class="btn-main">Vídeos</span>
+      <span class="btn-main" data-tipo="fotos">Fotos</span>
+      <span class="btn-main" data-tipo="videos">Vídeos</span>
+      <span>7</span>
+      <span>14</span>
+      <span>21</span>
+      <span>28</span>
     </div>
 
-    <!-- GALERÍA FOTOS MIÉRCOLES -->
-    <div class="gallery-grid">
-      <a href="VISOR.html?img=fotos/miercoles-01.jpg">
-        <img src="fotos/miercoles-01.jpg" alt="">
-      </a>
-      <a href="VISOR.html?img=fotos/miercoles-02.jpg">
-        <img src="fotos/miercoles-02.jpg" alt="">
+    <!-- FOTOS MIÉRCOLES -->
+    <div class="gallery-grid" data-tipo="fotos">
+      <a href="VISOR.html?img=fotos/miercoles-01.jpg"><img src="fotos/miercoles-01.jpg"></a>
+      <a href="VISOR.html?img=fotos/miercoles-02.jpg"><img src="fotos/miercoles-02.jpg"></a>
+    </div>
+
+    <!-- VIDEOS MIÉRCOLES -->
+    <div class="gallery-grid" data-tipo="videos">
+      <a href="VISOR.html?video=videos/miercoles-01.mp4">
+        <video muted playsinline>
+          <source src="videos/miercoles-01.mp4" type="video/mp4">
+        </video>
       </a>
     </div>
 
   </section>
 
-  <!-- ===== DOMINGO ===== -->
-  <section class="event-card">
+  <!-- ================= DOMINGO ================= -->
+  <section class="event-card" id="domingo">
 
     <img src="img/logo-domingo.png" alt="Bachastation" class="event-logo small">
 
@@ -55,19 +69,35 @@
     <p class="subtitle subtitle-inline">
       Bachastation – Hyde Club Barcelona
       <img src="img/hyde.png" alt="Hyde" class="inline-logo">
+      <span class="icon maps-icon"></span> Maps
     </p>
+
+    <a class="instagram-line" href="https://www.instagram.com/bachastation/" target="_blank">
+      <span class="icon insta-icon"></span> @bachastation
+    </a>
 
     <p class="month">‹ ENERO 2026 ›</p>
 
     <div class="buttons">
-      <span class="btn-main">Fotos</span>
-      <span class="btn-main">Vídeos</span>
+      <span class="btn-main" data-tipo="fotos">Fotos</span>
+      <span class="btn-main" data-tipo="videos">Vídeos</span>
+      <span>4</span>
+      <span>11</span>
+      <span>18</span>
+      <span>25</span>
     </div>
 
-    <!-- GALERÍA FOTOS DOMINGO -->
-    <div class="gallery-grid">
-      <a href="VISOR.html?img=fotos/domingo-01.jpg">
-        <img src="fotos/domingo-01.jpg" alt="">
+    <!-- FOTOS DOMINGO -->
+    <div class="gallery-grid" data-tipo="fotos">
+      <a href="VISOR.html?img=fotos/domingo-01.jpg"><img src="fotos/domingo-01.jpg"></a>
+    </div>
+
+    <!-- VIDEOS DOMINGO -->
+    <div class="gallery-grid" data-tipo="videos">
+      <a href="VISOR.html?video=videos/domingo-01.mp4">
+        <video muted playsinline>
+          <source src="videos/domingo-01.mp4" type="video/mp4">
+        </video>
       </a>
     </div>
 
@@ -76,6 +106,20 @@
   <footer>
     © Bachata Barcelona
   </footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const dia = params.get('dia') || 'miercoles';
+  const tipo = params.get('tipo') || 'fotos';
+
+  document.querySelectorAll('.event-card').forEach(card => {
+    card.style.display = card.id === dia ? 'block' : 'none';
+
+    card.querySelectorAll('.gallery-grid').forEach(grid => {
+      grid.style.display = grid.dataset.tipo === tipo ? 'grid' : 'none';
+    });
+  });
+</script>
 
 </body>
 </html>
