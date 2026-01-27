@@ -9,51 +9,98 @@
 
 <body>
 
-  <h1>Galería</h1>
+  <!-- ===== TÍTULO ===== -->
+  <header class="galeria-header">
+    <h1>Galería</h1>
+  </header>
 
-  <!-- ===== MIÉRCOLES ===== -->
-  <section class="galeria-seccion">
-    <h2>Miércoles · Fotos</h2>
+  <!-- ==================================================
+       MIÉRCOLES
+  ================================================== -->
+  <section class="galeria-bloque">
 
+    <!-- ETIQUETA -->
+    <div class="galeria-etiqueta">
+      <img src="img/logo-miercoles.png" alt="Miércoles">
+      <h2>Miércoles</h2>
+    </div>
+
+    <!-- OPCIONES -->
+    <div class="galeria-opciones">
+      <span class="opcion-activa">Fotos</span>
+      <span>Vídeos</span>
+    </div>
+
+    <!-- FOTOS -->
     <div class="galeria-grid">
+      <!-- DUPLICA / BORRA SEGÚN NECESITES -->
       <a href="VISOR.html?img=fotos/miercoles-01.jpg">
-        <img src="fotos/miercoles-01.jpg">
+        <img src="fotos/miercoles-01.jpg" alt="">
       </a>
+
       <a href="VISOR.html?img=fotos/miercoles-02.jpg">
-        <img src="fotos/miercoles-02.jpg">
+        <img src="fotos/miercoles-02.jpg" alt="">
       </a>
     </div>
 
-    <h2>Miércoles · Vídeos</h2>
-
+    <!-- VIDEOS -->
     <div class="galeria-grid">
       <a href="VISOR.html?video=videos/miercoles-01.mp4">
-        <video muted>
-          <source src="videos/miercoles-01.mp4">
+        <video muted playsinline>
+          <source src="videos/miercoles-01.mp4" type="video/mp4">
         </video>
       </a>
     </div>
+
+    <!-- INFO / CALENDARIO -->
+    <div class="galeria-info">
+      <p>📅 Todos los miércoles</p>
+      <p>📍 Bachata Barcelona</p>
+      <p>💃🕺 Clases + social</p>
+    </div>
+
   </section>
 
-  <!-- ===== DOMINGO ===== -->
-  <section class="galeria-seccion">
-    <h2>Domingo · Fotos</h2>
+  <!-- ==================================================
+       DOMINGO
+  ================================================== -->
+  <section class="galeria-bloque">
 
+    <!-- ETIQUETA -->
+    <div class="galeria-etiqueta">
+      <img src="img/logo-domingo.png" alt="Domingo">
+      <h2>Domingo</h2>
+    </div>
+
+    <!-- OPCIONES -->
+    <div class="galeria-opciones">
+      <span class="opcion-activa">Fotos</span>
+      <span>Vídeos</span>
+    </div>
+
+    <!-- FOTOS -->
     <div class="galeria-grid">
       <a href="VISOR.html?img=fotos/domingo-01.jpg">
-        <img src="fotos/domingo-01.jpg">
+        <img src="fotos/domingo-01.jpg" alt="">
       </a>
     </div>
 
-    <h2>Domingo · Vídeos</h2>
-
+    <!-- VIDEOS -->
     <div class="galeria-grid">
       <a href="VISOR.html?video=videos/domingo-01.mp4">
-        <video muted>
-          <source src="videos/domingo-01.mp4">
+        <video muted playsinline>
+          <source src="videos/domingo-01.mp4" type="video/mp4">
         </video>
       </a>
     </div>
+
+    <!-- INFO / CALENDARIO -->
+    <div class="galeria-info">
+      <p>📅 Domingos especiales</p>
+      <p>📍 Bachata Barcelona</p>
+      <p>🎶 Social & shows</p>
+    </div>
+
   </section>
 
 </body>
