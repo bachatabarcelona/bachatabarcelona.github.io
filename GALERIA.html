@@ -9,42 +9,45 @@
 
 <body>
 
-  <!-- ===== TÍTULO ===== -->
-  <header class="galeria-header">
-    <h1>Galería</h1>
-  </header>
+<div class="pagina-galeria">
 
-  <!-- ==================================================
-       MIÉRCOLES
-  ================================================== -->
-  <section class="galeria-bloque">
+  <h1 class="galeria-title">Galería</h1>
 
-    <!-- ETIQUETA -->
-    <div class="galeria-etiqueta">
+  <!-- ================= MIÉRCOLES ================= -->
+  <section class="galeria-evento" data-dia="miercoles">
+
+    <div class="galeria-header-evento">
       <img src="img/logo-miercoles.png" alt="Miércoles">
-      <h2>Miércoles</h2>
+      <h2>MIÉRCOLES</h2>
+      <p>Bachata Party’s – Sala Vivaldi Barcelona</p>
+
+      <div class="galeria-links">
+        <img src="img/vivaldi.png" alt="">
+        <img src="img/maps.png" alt="">
+      </div>
+
+      <p class="galeria-instagram">
+        <img src="img/instagram.png" alt="">
+        @bachataparty.bcn
+      </p>
+
+      <p class="galeria-mes">‹ ENERO 2026 ›</p>
+
+      <div class="galeria-opciones">
+        <button data-tipo="fotos">Fotos</button>
+        <button data-tipo="videos">Vídeos</button>
+        <span>7</span><span>14</span><span>21</span><span>28</span>
+      </div>
     </div>
 
-    <!-- OPCIONES -->
-    <div class="galeria-opciones">
-      <span class="opcion-activa">Fotos</span>
-      <span>Vídeos</span>
+    <!-- FOTOS MIÉRCOLES -->
+    <div class="galeria-grid" data-tipo="fotos">
+      <a href="VISOR.html?img=fotos/miercoles-01.jpg"><img src="fotos/miercoles-01.jpg"></a>
+      <a href="VISOR.html?img=fotos/miercoles-02.jpg"><img src="fotos/miercoles-02.jpg"></a>
     </div>
 
-    <!-- FOTOS -->
-    <div class="galeria-grid">
-      <!-- DUPLICA / BORRA SEGÚN NECESITES -->
-      <a href="VISOR.html?img=fotos/miercoles-01.jpg">
-        <img src="fotos/miercoles-01.jpg" alt="">
-      </a>
-
-      <a href="VISOR.html?img=fotos/miercoles-02.jpg">
-        <img src="fotos/miercoles-02.jpg" alt="">
-      </a>
-    </div>
-
-    <!-- VIDEOS -->
-    <div class="galeria-grid">
+    <!-- VIDEOS MIÉRCOLES -->
+    <div class="galeria-grid" data-tipo="videos">
       <a href="VISOR.html?video=videos/miercoles-01.mp4">
         <video muted playsinline>
           <source src="videos/miercoles-01.mp4" type="video/mp4">
@@ -52,41 +55,42 @@
       </a>
     </div>
 
-    <!-- INFO / CALENDARIO -->
-    <div class="galeria-info">
-      <p>📅 Todos los miércoles</p>
-      <p>📍 Bachata Barcelona</p>
-      <p>💃🕺 Clases + social</p>
-    </div>
-
   </section>
 
-  <!-- ==================================================
-       DOMINGO
-  ================================================== -->
-  <section class="galeria-bloque">
+  <!-- ================= DOMINGO ================= -->
+  <section class="galeria-evento" data-dia="domingo">
 
-    <!-- ETIQUETA -->
-    <div class="galeria-etiqueta">
+    <div class="galeria-header-evento">
       <img src="img/logo-domingo.png" alt="Domingo">
-      <h2>Domingo</h2>
+      <h2>DOMINGO</h2>
+      <p>Bachastation – Hyde Club Barcelona</p>
+
+      <div class="galeria-links">
+        <img src="img/hyde.png" alt="">
+        <img src="img/maps.png" alt="">
+      </div>
+
+      <p class="galeria-instagram">
+        <img src="img/instagram.png" alt="">
+        @bachastation
+      </p>
+
+      <p class="galeria-mes">‹ ENERO 2026 ›</p>
+
+      <div class="galeria-opciones">
+        <button data-tipo="fotos">Fotos</button>
+        <button data-tipo="videos">Vídeos</button>
+        <span>4</span><span>11</span><span>18</span><span>25</span>
+      </div>
     </div>
 
-    <!-- OPCIONES -->
-    <div class="galeria-opciones">
-      <span class="opcion-activa">Fotos</span>
-      <span>Vídeos</span>
+    <!-- FOTOS DOMINGO -->
+    <div class="galeria-grid" data-tipo="fotos">
+      <a href="VISOR.html?img=fotos/domingo-01.jpg"><img src="fotos/domingo-01.jpg"></a>
     </div>
 
-    <!-- FOTOS -->
-    <div class="galeria-grid">
-      <a href="VISOR.html?img=fotos/domingo-01.jpg">
-        <img src="fotos/domingo-01.jpg" alt="">
-      </a>
-    </div>
-
-    <!-- VIDEOS -->
-    <div class="galeria-grid">
+    <!-- VIDEOS DOMINGO -->
+    <div class="galeria-grid" data-tipo="videos">
       <a href="VISOR.html?video=videos/domingo-01.mp4">
         <video muted playsinline>
           <source src="videos/domingo-01.mp4" type="video/mp4">
@@ -94,14 +98,30 @@
       </a>
     </div>
 
-    <!-- INFO / CALENDARIO -->
-    <div class="galeria-info">
-      <p>📅 Domingos especiales</p>
-      <p>📍 Bachata Barcelona</p>
-      <p>🎶 Social & shows</p>
-    </div>
-
   </section>
+
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const dia = params.get('dia') || 'miercoles';
+  const tipo = params.get('tipo') || 'fotos';
+
+  document.querySelectorAll('.galeria-evento').forEach(evento => {
+    if (evento.dataset.dia !== dia) {
+      evento.style.display = 'none';
+      return;
+    }
+
+    evento.querySelectorAll('[data-tipo]').forEach(el => {
+      el.style.display = el.dataset.tipo === tipo ? 'grid' : 'none';
+    });
+
+    evento.querySelectorAll('.galeria-opciones button').forEach(btn => {
+      btn.classList.toggle('opcion-activa', btn.dataset.tipo === tipo);
+    });
+  });
+</script>
 
 </body>
 </html>
