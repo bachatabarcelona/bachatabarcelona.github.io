@@ -4,50 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visor | Bachata Barcelona</title>
-  <link rel="stylesheet" href="styles.css?v=visor-estable">
+  <link rel="stylesheet" href="styles.css?v=visor-final">
 </head>
 
 <body>
 
-  <!-- CONTENEDOR VISOR -->
-  <div class="visor-container">
-
-    <!-- CONTENIDO DINÁMICO -->
-    <div id="visor-content"></div>
-
-  </div>
+  <div class="visor-container" id="visor"></div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const img = params.get('img');
-    const video = params.get('video');
-    const visor = document.getElementById('visor-content');
 
     if (img) {
-      const image = document.createElement('img');
-      image.src = img;
-      image.alt = '';
-      image.style.width = '100%';
-      image.style.maxWidth = '100%';
-      image.style.borderRadius = '12px';
-      visor.appendChild(image);
+      document.getElementById('visor').innerHTML =
+        '<img src="' + img + '" style="width:100%;border-radius:12px;">';
     }
 
-    if (video) {
-      const vid = document.createElement('video');
-      vid.src = video;
-      vid.controls = true;
-      vid.autoplay = true;
-      vid.playsInline = true;
-      vid.style.width = '100%';
-      vid.style.borderRadius = '12px';
-      visor.appendChild(vid);
-    }
-
-    // Cerrar visor tocando cualquier parte
-    document.body.addEventListener('click', () => {
-      window.history.back();
-    });
+    document.body.onclick = () => history.back();
   </script>
 
 </body>
