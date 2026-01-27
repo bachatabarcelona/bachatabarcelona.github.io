@@ -13,115 +13,56 @@
 
   <h1 class="galeria-title">Galería</h1>
 
-  <!-- ================= MIÉRCOLES ================= -->
-  <section class="galeria-evento" data-dia="miercoles">
+  <!-- ===== MIÉRCOLES ===== -->
+  <section class="galeria-bloque">
 
-    <div class="galeria-header-evento">
-      <img src="img/logo-miercoles.png" alt="Miércoles">
-      <h2>MIÉRCOLES</h2>
-      <p>Bachata Party’s – Sala Vivaldi Barcelona</p>
+    <img src="img/logo-miercoles.png" class="galeria-logo" alt="Miércoles">
 
-      <div class="galeria-links">
-        <img src="img/vivaldi.png" alt="">
-        <img src="img/maps.png" alt="">
-      </div>
+    <h2>MIÉRCOLES</h2>
+    <p class="galeria-sub">
+      Bachata Party’s – Sala Vivaldi Barcelona
+    </p>
 
-      <p class="galeria-instagram">
-        <img src="img/instagram.png" alt="">
-        @bachataparty.bcn
-      </p>
-
-      <p class="galeria-mes">‹ ENERO 2026 ›</p>
-
-      <div class="galeria-opciones">
-        <button data-tipo="fotos">Fotos</button>
-        <button data-tipo="videos">Vídeos</button>
-        <span>7</span><span>14</span><span>21</span><span>28</span>
-      </div>
+    <div class="galeria-icons">
+      <img src="img/vivaldi.png" alt="">
+      <img src="img/maps.png" alt="">
+      <img src="img/instagram.png" alt="">
     </div>
 
-    <!-- FOTOS MIÉRCOLES -->
-    <div class="galeria-grid" data-tipo="fotos">
-      <a href="VISOR.html?img=fotos/miercoles-01.jpg"><img src="fotos/miercoles-01.jpg"></a>
-      <a href="VISOR.html?img=fotos/miercoles-02.jpg"><img src="fotos/miercoles-02.jpg"></a>
-    </div>
+    <p class="galeria-mes">ENERO 2026</p>
 
-    <!-- VIDEOS MIÉRCOLES -->
-    <div class="galeria-grid" data-tipo="videos">
-      <a href="VISOR.html?video=videos/miercoles-01.mp4">
-        <video muted playsinline>
-          <source src="videos/miercoles-01.mp4" type="video/mp4">
-        </video>
-      </a>
+    <div class="galeria-grid">
+      <img src="fotos/miercoles-01.jpg" alt="">
+      <img src="fotos/miercoles-02.jpg" alt="">
     </div>
 
   </section>
 
-  <!-- ================= DOMINGO ================= -->
-  <section class="galeria-evento" data-dia="domingo">
+  <!-- ===== DOMINGO ===== -->
+  <section class="galeria-bloque">
 
-    <div class="galeria-header-evento">
-      <img src="img/logo-domingo.png" alt="Domingo">
-      <h2>DOMINGO</h2>
-      <p>Bachastation – Hyde Club Barcelona</p>
+    <img src="img/logo-domingo.png" class="galeria-logo" alt="Domingo">
 
-      <div class="galeria-links">
-        <img src="img/hyde.png" alt="">
-        <img src="img/maps.png" alt="">
-      </div>
+    <h2>DOMINGO</h2>
+    <p class="galeria-sub">
+      Bachastation – Hyde Club Barcelona
+    </p>
 
-      <p class="galeria-instagram">
-        <img src="img/instagram.png" alt="">
-        @bachastation
-      </p>
-
-      <p class="galeria-mes">‹ ENERO 2026 ›</p>
-
-      <div class="galeria-opciones">
-        <button data-tipo="fotos">Fotos</button>
-        <button data-tipo="videos">Vídeos</button>
-        <span>4</span><span>11</span><span>18</span><span>25</span>
-      </div>
+    <div class="galeria-icons">
+      <img src="img/hyde.png" alt="">
+      <img src="img/maps.png" alt="">
+      <img src="img/instagram.png" alt="">
     </div>
 
-    <!-- FOTOS DOMINGO -->
-    <div class="galeria-grid" data-tipo="fotos">
-      <a href="VISOR.html?img=fotos/domingo-01.jpg"><img src="fotos/domingo-01.jpg"></a>
-    </div>
+    <p class="galeria-mes">ENERO 2026</p>
 
-    <!-- VIDEOS DOMINGO -->
-    <div class="galeria-grid" data-tipo="videos">
-      <a href="VISOR.html?video=videos/domingo-01.mp4">
-        <video muted playsinline>
-          <source src="videos/domingo-01.mp4" type="video/mp4">
-        </video>
-      </a>
+    <div class="galeria-grid">
+      <img src="fotos/domingo-01.jpg" alt="">
     </div>
 
   </section>
 
 </div>
-
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const dia = params.get('dia') || 'miercoles';
-  const tipo = params.get('tipo') || 'fotos';
-
-  document.querySelectorAll('.galeria-evento').forEach(evento => {
-    if (evento.dataset.dia !== dia) {
-      evento.style.display = 'none';
-      return;
-    }
-
-    evento.querySelectorAll('[data-tipo]').forEach(el => {
-      el.style.display = el.dataset.tipo === tipo ? 'grid' : 'none';
-    });
-
-    evento.querySelectorAll('.galeria-opciones button').forEach(btn => {
-      btn.classList.toggle('opcion-activa', btn.dataset.tipo === tipo);
-    });
-  });
-</script>
 
 </body>
 </html>
