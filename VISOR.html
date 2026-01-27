@@ -2,41 +2,53 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Visor | Bachata Barcelona</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <title>Visor | Bachata Barcelona</title>
+  <link rel="stylesheet" href="styles.css?v=visor-estable">
 </head>
 
-<body class="visor-body">
+<body>
 
-<div class="visor-container" id="visor"></div>
+  <!-- CONTENEDOR VISOR -->
+  <div class="visor-container">
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const img = params.get('img');
-  const video = params.get('video');
+    <!-- CONTENIDO DINÁMICO -->
+    <div id="visor-content"></div>
 
-  const visor = document.getElementById('visor');
+  </div>
 
-  if (img) {
-    const image = document.createElement('img');
-    image.src = img;
-    visor.appendChild(image);
-  }
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const img = params.get('img');
+    const video = params.get('video');
+    const visor = document.getElementById('visor-content');
 
-  if (video) {
-    const vid = document.createElement('video');
-    vid.src = video;
-    vid.controls = true;
-    vid.autoplay = true;
-    vid.playsInline = true;
-    visor.appendChild(vid);
-  }
+    if (img) {
+      const image = document.createElement('img');
+      image.src = img;
+      image.alt = '';
+      image.style.width = '100%';
+      image.style.maxWidth = '100%';
+      image.style.borderRadius = '12px';
+      visor.appendChild(image);
+    }
 
-  visor.addEventListener('click', () => {
-    window.history.back();
-  });
-</script>
+    if (video) {
+      const vid = document.createElement('video');
+      vid.src = video;
+      vid.controls = true;
+      vid.autoplay = true;
+      vid.playsInline = true;
+      vid.style.width = '100%';
+      vid.style.borderRadius = '12px';
+      visor.appendChild(vid);
+    }
+
+    // Cerrar visor tocando cualquier parte
+    document.body.addEventListener('click', () => {
+      window.history.back();
+    });
+  </script>
 
 </body>
 </html>
