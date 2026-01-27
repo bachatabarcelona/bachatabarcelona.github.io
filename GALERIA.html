@@ -1,225 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galería – Bachata Barcelona</title>
-
-<style>
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box}
-
-/* BODY */
-body{
-  background:radial-gradient(circle at top,#222 0%,#000 70%);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  color:#fff;
-  text-align:center;
-}
-
-/* CARD */
-.card{
-  max-width:360px;
-  margin:16px auto;
-  padding:18px 14px 20px;
-  background:rgba(255,255,255,.05);
-  border-radius:24px;
-}
-
-/* EVENT LOGO */
-.event-logo{
-  max-width:190px;
-  margin:0 auto 14px;
-  display:block;
-}
-
-/* DAY */
-.day{
-  font-size:16px;
-  letter-spacing:4px;
-  margin-bottom:8px;
-}
-
-/* LINE TEXT */
-.line{
-  font-size:13px;
-  opacity:.9;
-  line-height:1.4;
-}
-
-/* INLINE ICONS */
-.inline{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  margin-left:6px;
-  color:#ff4da6;
-  text-decoration:none;
-}
-
-.icon{
-  width:14px;
-  height:14px;
-}
-
-/* INSTAGRAM */
-.instagram{
-  margin-top:8px;
-  display:block;
-  color:#ff4da6;
-  text-decoration:none;
-  font-size:13px;
-}
-
-/* BUTTONS */
-.switch{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin:18px 0 14px;
-}
-
-.switch button{
-  padding:8px 18px;
-  border-radius:20px;
-  border:none;
-  background:rgba(255,255,255,.08);
-  color:#fff;
-  font-size:14px;
-}
-
-.switch .active{
-  background:rgba(255,77,166,.3);
-  color:#ff4da6;
-}
-
-/* CALENDAR */
-.calendar{
-  font-size:12px;
-  letter-spacing:2px;
-  opacity:.7;
-  margin-bottom:16px;
-}
-
-/* GALLERY */
-.gallery{
-  display:flex;
-  gap:12px;
-  overflow-x:auto;
-  padding-bottom:10px;
-}
-
-.gallery img,
-.gallery video{
-  width:220px;
-  border-radius:16px;
-  flex-shrink:0;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Galería | Bachata Barcelona</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- =========================
- CONFIGURACIÓN RÁPIDA
- Cambia SOLO esto
-========================= -->
-<script>
-const DATA = {
-  evento: "MIÉRCOLES",
-  logo: "img/logo-miercoles.png",
-  texto: "Bachata Party’s – Sala Vivaldi Barcelona",
-  maps: "https://maps.app.goo.gl/3TosNnuhEHq2wNkz7",
-  instagram: "https://www.instagram.com/bachataparty.bcn/",
-  calendario: "‹ ENERO 2026 › 7 · 14 · 21 · 28",
-  fotos: [
-    "img/fotos/1.jpg",
-    "img/fotos/2.jpg",
-    "img/fotos/3.jpg"
-  ],
-  videos: [
-    "img/videos/1.mp4",
-    "img/videos/2.mp4",
-    "img/videos/3.mp4"
-  ]
-}
-</script>
+  <h1>Galería</h1>
 
-<!-- ========================= -->
+  <!-- ===== MIÉRCOLES ===== -->
+  <section class="galeria-seccion">
+    <h2>Miércoles · Fotos</h2>
 
-<div class="card">
+    <div class="galeria-grid">
+      <a href="VISOR.html?img=fotos/miercoles-01.jpg">
+        <img src="fotos/miercoles-01.jpg">
+      </a>
+      <a href="VISOR.html?img=fotos/miercoles-02.jpg">
+        <img src="fotos/miercoles-02.jpg">
+      </a>
+    </div>
 
-  <img id="logo" class="event-logo">
+    <h2>Miércoles · Vídeos</h2>
 
-  <div id="day" class="day"></div>
+    <div class="galeria-grid">
+      <a href="VISOR.html?video=videos/miercoles-01.mp4">
+        <video muted>
+          <source src="videos/miercoles-01.mp4">
+        </video>
+      </a>
+    </div>
+  </section>
 
-  <div class="line">
-    <span id="texto"></span>
-    <a id="maps" class="inline" target="_blank">
-      <img src="img/maps.png" class="icon"> Maps
-    </a>
-  </div>
+  <!-- ===== DOMINGO ===== -->
+  <section class="galeria-seccion">
+    <h2>Domingo · Fotos</h2>
 
-  <a id="insta" class="instagram" target="_blank">
-    <img src="img/instagram.png" class="icon"> <span id="instaText"></span>
-  </a>
+    <div class="galeria-grid">
+      <a href="VISOR.html?img=fotos/domingo-01.jpg">
+        <img src="fotos/domingo-01.jpg">
+      </a>
+    </div>
 
-  <div class="switch">
-    <button id="btnFotos" class="active">Fotos</button>
-    <button id="btnVideos">Vídeos</button>
-  </div>
+    <h2>Domingo · Vídeos</h2>
 
-  <div id="calendar" class="calendar"></div>
-
-  <div id="gallery" class="gallery"></div>
-
-</div>
-
-<script>
-/* LOAD DATA */
-logo.src = DATA.logo
-day.textContent = DATA.evento
-texto.textContent = DATA.texto
-maps.href = DATA.maps
-insta.href = DATA.instagram
-instaText.textContent = DATA.instagram.replace("https://www.instagram.com/","").replace("/","")
-calendar.textContent = DATA.calendario
-
-const gallery = document.getElementById("gallery")
-
-function loadFotos(){
-  gallery.innerHTML=""
-  DATA.fotos.forEach(f=>{
-    const img=document.createElement("img")
-    img.src=f
-    gallery.appendChild(img)
-  })
-}
-
-function loadVideos(){
-  gallery.innerHTML=""
-  DATA.videos.forEach(v=>{
-    const vid=document.createElement("video")
-    vid.src=v
-    vid.controls=true
-    gallery.appendChild(vid)
-  })
-}
-
-btnFotos.onclick=()=>{
-  btnFotos.classList.add("active")
-  btnVideos.classList.remove("active")
-  loadFotos()
-}
-
-btnVideos.onclick=()=>{
-  btnVideos.classList.add("active")
-  btnFotos.classList.remove("active")
-  loadVideos()
-}
-
-loadFotos()
-</script>
+    <div class="galeria-grid">
+      <a href="VISOR.html?video=videos/domingo-01.mp4">
+        <video muted>
+          <source src="videos/domingo-01.mp4">
+        </video>
+      </a>
+    </div>
+  </section>
 
 </body>
 </html>
