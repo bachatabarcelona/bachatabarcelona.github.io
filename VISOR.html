@@ -1,211 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fotos · Bachata Barcelona</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-  background:radial-gradient(circle at top,#111,#000);
-  color:#fff;
-  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
-  min-height:100vh;
-  padding:20px;
-  text-align:center;
-}
-
-.logo-dia{
-  max-width:140px;
-  margin:10px auto 20px;
-}
-
-h1{
-  font-size:18px;
-  letter-spacing:3px;
-  margin-bottom:20px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
-  gap:12px;
-  max-width:900px;
-  margin:0 auto;
-}
-
-.grid img{
-  width:100%;
-  border-radius:14px;
-  cursor:pointer;
-  box-shadow:0 10px 25px rgba(0,0,0,.5);
-}
-
-/* VISOR */
-.viewer{
-  position:fixed;
-  inset:0;
-  background:#000;
-  display:none;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  z-index:999;
-}
-
-.viewer img{
-  max-width:95%;
-  max-height:80%;
-}
-
-/* FLECHAS */
-.arrow{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:40px;
-  padding:10px;
-  cursor:pointer;
-  opacity:.7;
-  user-select:none;
-}
-
-.arrow.left{left:10px}
-.arrow.right{right:10px}
-
-/* CONTROLES */
-.controls{
-  display:flex;
-  gap:20px;
-  margin-top:15px;
-}
-
-.controls img{
-  width:26px;
-  opacity:.8;
-  cursor:pointer;
-}
-
-.close{
-  position:absolute;
-  top:15px;
-  right:20px;
-  font-size:22px;
-  cursor:pointer;
-}
-
-.back{
-  display:block;
-  margin-top:30px;
-  opacity:.7;
-  color:#fff;
-  text-decoration:none;
-  font-size:13px;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Visor | Bachata Barcelona</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="visor-body">
 
-<img id="logoDia" class="logo-dia" src="">
-<h1>FOTOS</h1>
-
-<div class="grid" id="grid"></div>
-
-<a class="back" href="GALERIA.html">← Volver a la galería</a>
-
-<!-- VISOR -->
-<div class="viewer" id="viewer">
-  <div class="close" onclick="closeViewer()">✕</div>
-
-  <div class="arrow left" onclick="prev()">‹</div>
-  <img id="viewerImg">
-  <div class="arrow right" onclick="next()">›</div>
-
-  <div class="controls">
-    <img src="img/download.png" title="Descargar" onclick="downloadImg()">
-    <img src="img/share.png" title="Compartir">
-    <img src="img/instagram.png" title="Instagram">
-  </div>
-</div>
+<div class="visor-container" id="visor"></div>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const dia = params.get("dia");
-const fecha = params.get("fecha");
+  const params = new URLSearchParams(window.location.search);
+  const img = params.get('img');
+  const video = params.get('video');
 
-const config = {
-  miercoles:{
-    logo:"img/logo-miercoles.png",
-    path:`fotos/ENERO-2026/MIERCOLES/${fecha}-miercoles/`
-  },
-  domingo:{
-    logo:"img/logo-domingo.png",
-    path:`fotos/ENERO-2026/DOMINGOS/${fecha}-domingo/`
+  const visor = document.getElementById('visor');
+
+  if (img) {
+    const image = document.createElement('img');
+    image.src = img;
+    visor.appendChild(image);
   }
-};
 
-document.getElementById("logoDia").src = config[dia].logo;
+  if (video) {
+    const vid = document.createElement('video');
+    vid.src = video;
+    vid.controls = true;
+    vid.autoplay = true;
+    vid.playsInline = true;
+    visor.appendChild(vid);
+  }
 
-const grid = document.getElementById("grid");
-const viewer = document.getElementById("viewer");
-const viewerImg = document.getElementById("viewerImg");
-
-let images = [];
-let current = 0;
-
-/* CARGA AUTOMÁTICA */
-for(let i=1;i<=60;i++){
-  const img = document.createElement("img");
-  img.src = config[dia].path + i + ".jpg";
-  img.onerror = () => img.remove();
-  img.onclick = () => openViewer(i-1);
-  images.push(img.src);
-  grid.appendChild(img);
-}
-
-/* VISOR */
-function openViewer(index){
-  current = index;
-  viewerImg.src = images[current];
-  viewer.style.display = "flex";
-}
-
-function closeViewer(){
-  viewer.style.display = "none";
-}
-
-function prev(){
-  current = (current - 1 + images.length) % images.length;
-  viewerImg.src = images[current];
-}
-
-function next(){
-  current = (current + 1) % images.length;
-  viewerImg.src = images[current];
-}
-
-function downloadImg(){
-  const a=document.createElement("a");
-  a.href=images[current];
-  a.download="";
-  a.click();
-}
-
-/* SWIPE */
-let startX=0;
-viewer.addEventListener("touchstart",e=>{
-  startX=e.touches[0].clientX;
-});
-
-viewer.addEventListener("touchend",e=>{
-  let endX=e.changedTouches[0].clientX;
-  if(startX-endX>50) next();
-  if(endX-startX>50) prev();
-});
+  visor.addEventListener('click', () => {
+    window.history.back();
+  });
 </script>
 
 </body>
