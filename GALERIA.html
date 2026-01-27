@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galería | Bachata Barcelona</title>
-  <link rel="stylesheet" href="styles.css?v=galeria-estable">
+  <link rel="stylesheet" href="styles.css?v=galeria-final-ok">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <img src="img/logo-madre.png" alt="Bachata Barcelona" class="logo-madre">
   </header>
 
-  <!-- ================= MIÉRCOLES ================= -->
+  <!-- ===== MIÉRCOLES ===== -->
   <section class="event-card" data-dia="miercoles">
 
     <img src="img/logo-miercoles.png" alt="Bachata Party’s" class="event-logo">
@@ -24,10 +24,12 @@
     <p class="subtitle subtitle-inline">
       Bachata Party’s – Sala Vivaldi Barcelona
       <img src="img/vivaldi.png" alt="Vivaldi" class="inline-logo">
-      <span class="icon maps-icon"></span> Maps
+      <a href="https://maps.app.goo.gl/3TosNnuhEHq2wNkz7" target="_blank" rel="noopener" class="inline-link">
+        <span class="icon maps-icon"></span> Maps
+      </a>
     </p>
 
-    <a class="instagram-line" href="https://www.instagram.com/bachataparty.bcn/" target="_blank">
+    <a class="instagram-line" href="https://www.instagram.com/bachataparty.bcn/" target="_blank" rel="noopener">
       <span class="icon insta-icon"></span> @bachataparty.bcn
     </a>
 
@@ -42,23 +44,9 @@
       <span>28</span>
     </div>
 
-    <div class="gallery-grid" data-tipo="fotos">
-      <a href="VISOR.html?img=fotos/miercoles-01.jpg">
-        <img src="fotos/miercoles-01.jpg">
-      </a>
-    </div>
-
-    <div class="gallery-grid" data-tipo="videos">
-      <a href="VISOR.html?video=videos/miercoles-01.mp4">
-        <video muted playsinline>
-          <source src="videos/miercoles-01.mp4" type="video/mp4">
-        </video>
-      </a>
-    </div>
-
   </section>
 
-  <!-- ================= DOMINGO ================= -->
+  <!-- ===== DOMINGO ===== -->
   <section class="event-card" data-dia="domingo">
 
     <img src="img/logo-domingo.png" alt="Bachastation" class="event-logo small">
@@ -68,10 +56,12 @@
     <p class="subtitle subtitle-inline">
       Bachastation – Hyde Club Barcelona
       <img src="img/hyde.png" alt="Hyde" class="inline-logo">
-      <span class="icon maps-icon"></span> Maps
+      <a href="https://maps.app.goo.gl/nMegUVk8c8yRy26a9" target="_blank" rel="noopener" class="inline-link">
+        <span class="icon maps-icon"></span> Maps
+      </a>
     </p>
 
-    <a class="instagram-line" href="https://www.instagram.com/bachastation/" target="_blank">
+    <a class="instagram-line" href="https://www.instagram.com/bachastation/" target="_blank" rel="noopener">
       <span class="icon insta-icon"></span> @bachastation
     </a>
 
@@ -86,37 +76,21 @@
       <span>25</span>
     </div>
 
-    <div class="gallery-grid" data-tipo="fotos">
-      <a href="VISOR.html?img=fotos/domingo-01.jpg">
-        <img src="fotos/domingo-01.jpg">
-      </a>
-    </div>
-
-    <div class="gallery-grid" data-tipo="videos">
-      <a href="VISOR.html?video=videos/domingo-01.mp4">
-        <video muted playsinline>
-          <source src="videos/domingo-01.mp4" type="video/mp4">
-        </video>
-      </a>
-    </div>
-
   </section>
 
-  <footer>© Bachata Barcelona</footer>
+  <footer>
+    © Bachata Barcelona
+  </footer>
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const dia = params.get('dia');
-  const tipo = params.get('tipo');
+  <!-- ===== LÓGICA (YA LA TENÍAS) ===== -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const dia = params.get('dia');
 
-  document.querySelectorAll('.event-card').forEach(card => {
-    card.style.display = card.dataset.dia === dia ? 'block' : 'none';
-
-    card.querySelectorAll('.gallery-grid').forEach(grid => {
-      grid.style.display = grid.dataset.tipo === tipo ? 'grid' : 'none';
+    document.querySelectorAll('.event-card').forEach(card => {
+      card.style.display = card.dataset.dia === dia ? 'block' : 'none';
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
