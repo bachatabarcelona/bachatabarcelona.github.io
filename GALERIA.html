@@ -3,45 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería | Bachata Barcelona</title>
-  <link rel="stylesheet" href="styles.css?v=galeria-ofertas">
+  <title>Visor | Bachata Barcelona</title>
+  <link rel="stylesheet" href="styles.css?v=visor-ofertas">
 </head>
 
 <body>
 
-<header class="top-header">
-  <img src="img/logo-madre.png" alt="Bachata Barcelona" class="logo-madre">
-</header>
-
-<!-- ===== MIÉRCOLES ===== -->
-<section class="event-card" data-dia="miercoles">
-
-  <img src="img/logo-miercoles.png" class="event-logo">
-  <h2>MIÉRCOLES</h2>
-  <p class="month">‹ ENERO 2026 ›</p>
-
-  <div class="buttons">
-    <span class="btn-main">Fotos</span>
-    <span class="btn-main">Vídeos</span>
-    <span>7</span><span>14</span><span>21</span><span>28</span>
-  </div>
-
-</section>
-
-<!-- ===== DOMINGO ===== -->
-<section class="event-card" data-dia="domingo">
-
-  <img src="img/logo-domingo.png" class="event-logo small">
-  <h2>DOMINGO</h2>
-  <p class="month">‹ ENERO 2026 ›</p>
-
-  <div class="buttons">
-    <span class="btn-main">Fotos</span>
-    <span class="btn-main">Vídeos</span>
-    <span>4</span><span>11</span><span>18</span><span>25</span>
-  </div>
-
-</section>
+<div class="visor-container" id="visor"></div>
 
 <!-- ===== OFERTAS (ABAJO DEL TODO) ===== -->
 <div class="ofertas-footer">
@@ -54,16 +22,16 @@
   </a>
 </div>
 
-<footer>
-  © Bachata Barcelona
-</footer>
-
 <script>
-  const p = new URLSearchParams(location.search);
-  const dia = p.get('dia');
-  document.querySelectorAll('.event-card').forEach(c => {
-    c.style.display = c.dataset.dia === dia ? 'block' : 'none';
-  });
+  const params = new URLSearchParams(window.location.search);
+  const img = params.get('img');
+
+  if (img) {
+    document.getElementById('visor').innerHTML =
+      '<img src="' + img + '" style="width:100%;border-radius:12px;">';
+  }
+
+  document.body.onclick = () => history.back();
 </script>
 
 </body>
