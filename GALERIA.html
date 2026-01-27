@@ -2,67 +2,80 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Galería | Bachata Barcelona</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <title>Galería | Bachata Barcelona</title>
+  <link rel="stylesheet" href="styles.css?v=galeria-ok">
 </head>
 
 <body>
 
-<div class="pagina-galeria">
-
-  <h1 class="galeria-title">Galería</h1>
+  <!-- LOGO MADRE -->
+  <header class="top-header">
+    <img src="img/logo-madre.png" alt="Bachata Barcelona" class="logo-madre">
+  </header>
 
   <!-- ===== MIÉRCOLES ===== -->
-  <section class="galeria-bloque">
+  <section class="event-card">
 
-    <img src="img/logo-miercoles.png" class="galeria-logo" alt="Miércoles">
+    <img src="img/logo-miercoles.png" alt="Bachata Party’s" class="event-logo">
 
     <h2>MIÉRCOLES</h2>
-    <p class="galeria-sub">
+
+    <p class="subtitle subtitle-inline">
       Bachata Party’s – Sala Vivaldi Barcelona
+      <img src="img/vivaldi.png" alt="Vivaldi" class="inline-logo">
     </p>
 
-    <div class="galeria-icons">
-      <img src="img/vivaldi.png" alt="">
-      <img src="img/maps.png" alt="">
-      <img src="img/instagram.png" alt="">
+    <p class="month">‹ ENERO 2026 ›</p>
+
+    <div class="buttons">
+      <span class="btn-main">Fotos</span>
+      <span class="btn-main">Vídeos</span>
     </div>
 
-    <p class="galeria-mes">ENERO 2026</p>
-
-    <div class="galeria-grid">
-      <img src="fotos/miercoles-01.jpg" alt="">
-      <img src="fotos/miercoles-02.jpg" alt="">
+    <!-- GALERÍA FOTOS MIÉRCOLES -->
+    <div class="gallery-grid">
+      <a href="VISOR.html?img=fotos/miercoles-01.jpg">
+        <img src="fotos/miercoles-01.jpg" alt="">
+      </a>
+      <a href="VISOR.html?img=fotos/miercoles-02.jpg">
+        <img src="fotos/miercoles-02.jpg" alt="">
+      </a>
     </div>
 
   </section>
 
   <!-- ===== DOMINGO ===== -->
-  <section class="galeria-bloque">
+  <section class="event-card">
 
-    <img src="img/logo-domingo.png" class="galeria-logo" alt="Domingo">
+    <img src="img/logo-domingo.png" alt="Bachastation" class="event-logo small">
 
     <h2>DOMINGO</h2>
-    <p class="galeria-sub">
+
+    <p class="subtitle subtitle-inline">
       Bachastation – Hyde Club Barcelona
+      <img src="img/hyde.png" alt="Hyde" class="inline-logo">
     </p>
 
-    <div class="galeria-icons">
-      <img src="img/hyde.png" alt="">
-      <img src="img/maps.png" alt="">
-      <img src="img/instagram.png" alt="">
+    <p class="month">‹ ENERO 2026 ›</p>
+
+    <div class="buttons">
+      <span class="btn-main">Fotos</span>
+      <span class="btn-main">Vídeos</span>
     </div>
 
-    <p class="galeria-mes">ENERO 2026</p>
-
-    <div class="galeria-grid">
-      <img src="fotos/domingo-01.jpg" alt="">
+    <!-- GALERÍA FOTOS DOMINGO -->
+    <div class="gallery-grid">
+      <a href="VISOR.html?img=fotos/domingo-01.jpg">
+        <img src="fotos/domingo-01.jpg" alt="">
+      </a>
     </div>
 
   </section>
 
-</div>
+  <footer>
+    © Bachata Barcelona
+  </footer>
 
 </body>
 </html>
