@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galería | Bachata Barcelona</title>
-  <link rel="stylesheet" href="styles.css?v=galeria-final">
+  <link rel="stylesheet" href="styles.css?v=galeria-estable">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
   </header>
 
   <!-- ================= MIÉRCOLES ================= -->
-  <section class="event-card" id="miercoles">
+  <section class="event-card" data-dia="miercoles">
 
     <img src="img/logo-miercoles.png" alt="Bachata Party’s" class="event-logo">
 
@@ -34,21 +34,20 @@
     <p class="month">‹ ENERO 2026 ›</p>
 
     <div class="buttons">
-      <span class="btn-main" data-tipo="fotos">Fotos</span>
-      <span class="btn-main" data-tipo="videos">Vídeos</span>
+      <span class="btn-main">Fotos</span>
+      <span class="btn-main">Vídeos</span>
       <span>7</span>
       <span>14</span>
       <span>21</span>
       <span>28</span>
     </div>
 
-    <!-- FOTOS MIÉRCOLES -->
     <div class="gallery-grid" data-tipo="fotos">
-      <a href="VISOR.html?img=fotos/miercoles-01.jpg"><img src="fotos/miercoles-01.jpg"></a>
-      <a href="VISOR.html?img=fotos/miercoles-02.jpg"><img src="fotos/miercoles-02.jpg"></a>
+      <a href="VISOR.html?img=fotos/miercoles-01.jpg">
+        <img src="fotos/miercoles-01.jpg">
+      </a>
     </div>
 
-    <!-- VIDEOS MIÉRCOLES -->
     <div class="gallery-grid" data-tipo="videos">
       <a href="VISOR.html?video=videos/miercoles-01.mp4">
         <video muted playsinline>
@@ -60,7 +59,7 @@
   </section>
 
   <!-- ================= DOMINGO ================= -->
-  <section class="event-card" id="domingo">
+  <section class="event-card" data-dia="domingo">
 
     <img src="img/logo-domingo.png" alt="Bachastation" class="event-logo small">
 
@@ -79,20 +78,20 @@
     <p class="month">‹ ENERO 2026 ›</p>
 
     <div class="buttons">
-      <span class="btn-main" data-tipo="fotos">Fotos</span>
-      <span class="btn-main" data-tipo="videos">Vídeos</span>
+      <span class="btn-main">Fotos</span>
+      <span class="btn-main">Vídeos</span>
       <span>4</span>
       <span>11</span>
       <span>18</span>
       <span>25</span>
     </div>
 
-    <!-- FOTOS DOMINGO -->
     <div class="gallery-grid" data-tipo="fotos">
-      <a href="VISOR.html?img=fotos/domingo-01.jpg"><img src="fotos/domingo-01.jpg"></a>
+      <a href="VISOR.html?img=fotos/domingo-01.jpg">
+        <img src="fotos/domingo-01.jpg">
+      </a>
     </div>
 
-    <!-- VIDEOS DOMINGO -->
     <div class="gallery-grid" data-tipo="videos">
       <a href="VISOR.html?video=videos/domingo-01.mp4">
         <video muted playsinline>
@@ -103,17 +102,15 @@
 
   </section>
 
-  <footer>
-    © Bachata Barcelona
-  </footer>
+  <footer>© Bachata Barcelona</footer>
 
 <script>
   const params = new URLSearchParams(window.location.search);
-  const dia = params.get('dia') || 'miercoles';
-  const tipo = params.get('tipo') || 'fotos';
+  const dia = params.get('dia');
+  const tipo = params.get('tipo');
 
   document.querySelectorAll('.event-card').forEach(card => {
-    card.style.display = card.id === dia ? 'block' : 'none';
+    card.style.display = card.dataset.dia === dia ? 'block' : 'none';
 
     card.querySelectorAll('.gallery-grid').forEach(grid => {
       grid.style.display = grid.dataset.tipo === tipo ? 'grid' : 'none';
