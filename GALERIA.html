@@ -3,35 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visor | Bachata Barcelona</title>
-  <link rel="stylesheet" href="styles.css?v=visor-ofertas">
+  <title>Galería | Bachata Barcelona</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<div class="visor-container" id="visor"></div>
+<header class="top-header">
+  <img src="img/logo-madre.png" class="logo-madre">
+</header>
 
-<!-- ===== OFERTAS (ABAJO DEL TODO) ===== -->
+<div class="event-card">
+  <h2 id="titulo">GALERÍA</h2>
+</div>
+
+<div class="galeria-grid" id="galeria"></div>
+
 <div class="ofertas-footer">
-  <a
-    href="https://www.goandance.com/es/promotores/42147/eventos"
-    target="_blank"
-    rel="noopener"
-  >
+  <a href="https://www.goandance.com/es/promotores/42147/eventos" target="_blank">
     <span class="btn-main">OFERTAS</span>
   </a>
 </div>
 
 <script>
   const params = new URLSearchParams(window.location.search);
-  const img = params.get('img');
+  const dia = params.get('dia') || 'miercoles';
+  const tipo = params.get('tipo') || 'fotos';
 
-  if (img) {
-    document.getElementById('visor').innerHTML =
-      '<img src="' + img + '" style="width:100%;border-radius:12px;">';
+  const titulo = document.getElementById('titulo');
+  titulo.innerText = dia.toUpperCase() + ' · ' + tipo.toUpperCase();
+
+  const galeria = document.getElementById('galeria');
+
+  // Número de fotos de ejemplo (puedes ampliarlo)
+  const TOTAL = 12;
+
+  for (let i = 1; i <= TOTAL; i++) {
+    const img = document.createElement('img');
+    img.src = `img/galeria/${dia}/${i}.jpg`;
+    img.className = 'thumb';
+    img.onclick = () => {
+      window.location.href = `VISOR.html?img=${img.src}`;
+    };
+    galeria.appendChild(img);
   }
-
-  document.body.onclick = () => history.back();
 </script>
 
 </body>
